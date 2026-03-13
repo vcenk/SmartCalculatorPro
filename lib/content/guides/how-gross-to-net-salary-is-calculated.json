@@ -17,8 +17,8 @@
   "schemaType": "Article",
   "ogImageTemplate": "guide-default",
   "guideType": "how-to",
-  "summary": "This guide explains how salary estimates move between gross pay and take-home pay, including filing-status-specific federal taxes, state taxes, Social Security, Medicare, and common deductions under simplified 2025 U.S. assumptions.",
-  "quickAnswer": "Gross salary minus federal taxes, state taxes, Social Security, Medicare, and other deductions equals your net take-home pay. If you start with a target net amount instead, you can work backward to estimate the gross salary required using the same 2025 U.S. assumptions.",
+  "summary": "This guide explains how salary estimates move between gross pay and take-home pay, including filing-status-specific federal taxes, state taxes, Social Security, Medicare, and common deductions under simplified 2025 U.S. assumptions. It also shows where hourly-to-salary conversions fit into compensation planning.",
+  "quickAnswer": "Gross salary minus federal taxes, state taxes, Social Security, Medicare, and other deductions equals your net take-home pay. If you start with a target net amount instead, you can work backward to estimate the gross salary required using the same 2025 U.S. assumptions. If you start with an hourly rate, convert it to a salary estimate first using consistent work-hour assumptions.",
   "sections": [
     {
       "heading": "Understanding the Gross to Net Formula",
@@ -63,6 +63,10 @@
     {
       "heading": "Estimating Your Take-Home Pay",
       "content": "<p>Use the gross to net salary calculator when you already know the pay before taxes and want to estimate take-home pay. Use the net to gross salary calculator when you know the take-home pay you want and need to estimate the gross salary required. Here is how to make the most of either estimate:</p><ol><li><strong>Use your most recent pay stub or offer letter:</strong> Enter the pay amount that matches the selected frequency</li><li><strong>Enter the pay frequency correctly:</strong> Monthly, biweekly, semimonthly, and annual scenarios produce different salary views</li><li><strong>Research state tax rates:</strong> Enter your state's approximate income tax rate for more realistic planning</li><li><strong>Account for all deductions:</strong> Include 401(k), HSA, health insurance, and life insurance when relevant</li><li><strong>Check your filing status:</strong> Different statuses change the federal bracket thresholds, standard deduction defaults, and some payroll thresholds in the estimate</li></ol><p><strong>Remember:</strong> Both salary calculators are estimate tools for 2025 U.S. planning. Your actual paycheck may differ because of local taxes, employer benefits, or other payroll settings.</p>"
+    },
+    {
+      "heading": "Using Hourly And Salary Conversion Tools",
+      "content": "<p>If your starting point is an hourly wage instead of an annual salary, convert it first before estimating taxes. Our hourly to salary calculator helps you translate hourly pay into annual, monthly, biweekly, and semimonthly salary views using your expected hours per week and weeks worked per year.</p><p>If you already have a salary offer and want to compare it with hourly work or freelance rates, the salary to hourly calculator can estimate the effective hourly rate under the same schedule assumptions. These tools do not estimate taxes, but they make it easier to move into the gross-to-net and net-to-gross planning workflow with cleaner compensation inputs.</p>"
     }
   ],
   "faq": [
@@ -89,7 +93,9 @@
   ],
   "relatedCalculators": [
     "gross-to-net-salary-calculator",
-    "net-to-gross-salary-calculator"
+    "net-to-gross-salary-calculator",
+    "hourly-to-salary-calculator",
+    "salary-to-hourly-calculator"
   ],
   "relatedComparisons": [
     "gross-to-net-salary-calculator-vs-net-to-gross-salary-calculator"

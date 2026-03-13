@@ -299,7 +299,11 @@
       "answer": "If you already know your gross salary and want to estimate take-home pay, use the gross to net salary calculator instead. The two tools are designed to work together."
     }
   ],
-  "relatedCalculators": ["gross-to-net-salary-calculator", "savings-calculator"],
+  "relatedCalculators": [
+    "gross-to-net-salary-calculator",
+    "hourly-to-salary-calculator",
+    "salary-to-hourly-calculator"
+  ],
   "relatedGuides": ["how-gross-to-net-salary-is-calculated"],
   "comparisonPages": ["gross-to-net-salary-calculator-vs-net-to-gross-salary-calculator"],
   "parentCategoryPath": "/finance/salary",

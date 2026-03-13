@@ -64,6 +64,36 @@ export interface SavingsCalculatorOutput {
   totalInterestEarned: number;
 }
 
+export interface HourlyToSalaryCalculatorInput {
+  hourlyRate: number;
+  hoursPerWeek: number;
+  weeksPerYear: number;
+}
+
+export interface HourlyToSalaryCalculatorOutput {
+  weeklyPay: number;
+  biweeklyPay: number;
+  semimonthlyPay: number;
+  monthlySalary: number;
+  annualSalary: number;
+}
+
+export interface SalaryToHourlyCalculatorInput {
+  salaryAmount: number;
+  salaryFrequency: 'annual' | 'monthly' | 'biweekly' | 'semimonthly' | 'weekly';
+  hoursPerWeek: number;
+  weeksPerYear: number;
+}
+
+export interface SalaryToHourlyCalculatorOutput {
+  hourlyRate: number;
+  weeklyPay: number;
+  biweeklyPay: number;
+  semimonthlyPay: number;
+  monthlySalary: number;
+  annualSalary: number;
+}
+
 // ============================================================================
 // Utility Functions
 // ============================================================================
@@ -81,6 +111,34 @@ function getPeriodsPerYear(frequency: string): number {
     daily: 365,
   };
   return periods[frequency] || 12;
+}
+
+function getCompensationPeriodsPerYear(
+  frequency: SalaryToHourlyCalculatorInput['salaryFrequency']
+): number {
+  switch (frequency) {
+    case 'weekly':
+      return 52;
+    case 'biweekly':
+      return 26;
+    case 'semimonthly':
+      return 24;
+    case 'monthly':
+      return 12;
+    case 'annual':
+    default:
+      return 1;
+  }
+}
+
+function buildCompensationBreakdown(annualSalary: number) {
+  return {
+    weeklyPay: annualSalary / 52,
+    biweeklyPay: annualSalary / 26,
+    semimonthlyPay: annualSalary / 24,
+    monthlySalary: annualSalary / 12,
+    annualSalary,
+  };
 }
 
 // ============================================================================
@@ -286,6 +344,44 @@ export function calculateSavings(input: SavingsCalculatorInput): SavingsCalculat
     yearsToGoal: months / 12,
     totalContributions,
     totalInterestEarned,
+  };
+}
+
+// ============================================================================
+// Hourly / Salary Conversion
+// ============================================================================
+
+export function calculateHourlyToSalary(
+  input: HourlyToSalaryCalculatorInput
+): HourlyToSalaryCalculatorOutput {
+  const {
+    hourlyRate,
+    hoursPerWeek = 40,
+    weeksPerYear = 52,
+  } = input;
+
+  const annualSalary = hourlyRate * hoursPerWeek * weeksPerYear;
+
+  return buildCompensationBreakdown(annualSalary);
+}
+
+export function calculateSalaryToHourly(
+  input: SalaryToHourlyCalculatorInput
+): SalaryToHourlyCalculatorOutput {
+  const {
+    salaryAmount,
+    salaryFrequency = 'annual',
+    hoursPerWeek = 40,
+    weeksPerYear = 52,
+  } = input;
+
+  const annualSalary = salaryAmount * getCompensationPeriodsPerYear(salaryFrequency);
+  const annualHours = hoursPerWeek * weeksPerYear;
+  const hourlyRate = annualHours > 0 ? annualSalary / annualHours : 0;
+
+  return {
+    hourlyRate,
+    ...buildCompensationBreakdown(annualSalary),
   };
 }
 

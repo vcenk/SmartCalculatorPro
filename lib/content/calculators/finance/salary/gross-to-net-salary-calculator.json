@@ -291,7 +291,11 @@
       "answer": "If you contribute to a traditional 401(k) plan, you can enter those contributions as a pre-tax deduction. However, note that there are annual contribution limits set by the IRS that affect how much reduces your taxable income."
     }
   ],
-  "relatedCalculators": ["net-to-gross-salary-calculator", "savings-calculator", "loan-calculator"],
+  "relatedCalculators": [
+    "net-to-gross-salary-calculator",
+    "hourly-to-salary-calculator",
+    "salary-to-hourly-calculator"
+  ],
   "relatedGuides": ["how-gross-to-net-salary-is-calculated"],
   "comparisonPages": ["gross-to-net-salary-calculator-vs-net-to-gross-salary-calculator"],
   "parentCategoryPath": "/finance/salary",

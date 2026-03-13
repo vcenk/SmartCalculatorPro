@@ -1,0 +1,212 @@
+{
+  "id": "salary-to-hourly-calculator",
+  "pageType": "calculator",
+  "status": "published",
+  "indexable": true,
+  "category": "finance",
+  "subcategory": "salary",
+  "slug": "salary-to-hourly-calculator",
+  "path": "finance/salary/salary-to-hourly-calculator",
+  "title": "Salary to Hourly Calculator",
+  "name": "Salary to Hourly Calculator",
+  "titleTag": "Salary to Hourly Calculator | Smart Calculator Pro",
+  "metaDescription": "Convert salary figures into an estimated hourly rate using work-hour and weeks-per-year assumptions for cleaner compensation comparisons.",
+  "h1": "Salary to Hourly Calculator",
+  "intro": "Estimate what a salary works out to per hour using your own weekly hours and weeks-worked assumptions.",
+  "shortDescription": "Convert salary pay into an hourly rate using work-schedule assumptions.",
+  "longDescription": "This calculator works backward from a salary figure and translates it into an estimated hourly rate. It is useful when you want to compare salaried roles with hourly jobs, contract work, or side-income opportunities using consistent hours-per-week and weeks-per-year assumptions.",
+  "primaryKeyword": "salary to hourly calculator",
+  "secondaryKeywords": ["annual salary to hourly", "salary hourly rate calculator", "salary to wage converter"],
+  "searchIntent": "transactional-tool",
+  "canonicalPath": "/finance/salary/salary-to-hourly-calculator",
+  "schemaType": "SoftwareApplication",
+  "ogImageTemplate": "calculator-default",
+  "problemSolved": "Helps compare salary compensation to hourly work using consistent schedule assumptions.",
+  "whoItsFor": ["job seekers", "salary employees", "freelancers", "compensation planners"],
+  "calculationType": "conversion",
+  "inputs": [
+    {
+      "key": "salaryAmount",
+      "label": "Salary Amount",
+      "type": "number",
+      "unit": "currency",
+      "required": true,
+      "explanation": "Enter the salary figure you want to convert.",
+      "min": 0,
+      "step": 1000,
+      "defaultValue": 78000
+    },
+    {
+      "key": "salaryFrequency",
+      "label": "Salary Frequency",
+      "type": "select",
+      "required": true,
+      "explanation": "Choose the pay interval that matches the salary amount you entered.",
+      "options": [
+        { "value": "annual", "label": "Annual" },
+        { "value": "monthly", "label": "Monthly" },
+        { "value": "biweekly", "label": "Biweekly" },
+        { "value": "semimonthly", "label": "Semi-Monthly" },
+        { "value": "weekly", "label": "Weekly" }
+      ],
+      "defaultValue": "annual"
+    },
+    {
+      "key": "hoursPerWeek",
+      "label": "Hours Per Week",
+      "type": "number",
+      "required": true,
+      "explanation": "Use the average number of paid hours you expect to work each week.",
+      "min": 1,
+      "max": 100,
+      "step": 1,
+      "defaultValue": 40
+    },
+    {
+      "key": "weeksPerYear",
+      "label": "Weeks Worked Per Year",
+      "type": "number",
+      "required": true,
+      "explanation": "Use the number of paid work weeks you expect across the year.",
+      "min": 1,
+      "max": 52,
+      "step": 1,
+      "defaultValue": 52
+    }
+  ],
+  "outputs": [
+    {
+      "key": "hourlyRate",
+      "label": "Hourly Rate",
+      "explanation": "Estimated hourly compensation under the assumptions shown.",
+      "unit": "currency",
+      "precision": 2
+    },
+    {
+      "key": "weeklyPay",
+      "label": "Weekly Pay",
+      "explanation": "Estimated weekly pay after converting the salary to an annual amount.",
+      "unit": "currency",
+      "precision": 0
+    },
+    {
+      "key": "biweeklyPay",
+      "label": "Biweekly Pay",
+      "explanation": "Estimated pay for a 26-pay-period schedule.",
+      "unit": "currency",
+      "precision": 0
+    },
+    {
+      "key": "semimonthlyPay",
+      "label": "Semi-Monthly Pay",
+      "explanation": "Estimated pay for a 24-pay-period schedule.",
+      "unit": "currency",
+      "precision": 0
+    },
+    {
+      "key": "monthlySalary",
+      "label": "Monthly Salary",
+      "explanation": "Estimated monthly compensation based on the annualized amount.",
+      "unit": "currency",
+      "precision": 0
+    },
+    {
+      "key": "annualSalary",
+      "label": "Annual Salary",
+      "explanation": "Annualized salary used for the hourly conversion.",
+      "unit": "currency",
+      "precision": 0
+    }
+  ],
+  "defaultValues": {
+    "salaryAmount": 78000,
+    "salaryFrequency": "annual",
+    "hoursPerWeek": 40,
+    "weeksPerYear": 52
+  },
+  "formula": {
+    "label": "Salary To Hourly Formula",
+    "expression": "Hourly Rate = Annual Salary ÷ (Hours Per Week × Weeks Per Year)",
+    "plainText": "The calculator converts your salary into an annual amount first, then divides it by your expected annual work hours."
+  },
+  "formulaExplanation": [
+    "First, the calculator converts your entered salary into an annual amount based on the frequency you selected.",
+    "It multiplies your weekly hours by weeks worked per year to estimate total annual work hours.",
+    "The hourly rate is calculated by dividing annual salary by annual work hours.",
+    "Additional weekly, biweekly, semimonthly, and monthly views are shown so you can compare compensation on several pay rhythms."
+  ],
+  "methodologyNotes": [
+    "This calculator uses the same hours-per-week and weeks-per-year assumption model as the hourly-to-salary calculator.",
+    "The conversion is schedule-based and does not include taxes, benefits, bonuses, or overtime premiums.",
+    "If a salary job consistently requires more than the assumed weekly hours, the effective hourly rate will be lower than the estimate shown here.",
+    "The tool is best for compensation comparisons, budgeting, and offer framing."
+  ],
+  "example": {
+    "scenario": "A salaried role offers $78,000 per year, and the worker expects to average 40 hours per week across 52 paid weeks.",
+    "inputs": {
+      "salaryAmount": 78000,
+      "salaryFrequency": "annual",
+      "hoursPerWeek": 40,
+      "weeksPerYear": 52
+    },
+    "resultSummary": "The calculator estimates an hourly rate of about $37.50, along with roughly $1,500 per week, $3,000 biweekly, and $6,500 per month."
+  },
+  "resultInterpretation": {
+    "defaultText": "Use the hourly result as a comparison tool, not a promise of what every hour is worth in practice. Real compensation quality also depends on overtime expectations, benefits, and unpaid extra time.",
+    "thresholds": [
+      {
+        "label": "Hourly Rate",
+        "min": 25,
+        "max": 60,
+        "interpretation": "An estimate in this range can be helpful when comparing salaried roles with hourly jobs or freelance work, but the meaning still depends on your actual working hours."
+      }
+    ],
+    "warningMessages": [
+      "If a salaried role regularly requires extra unpaid hours, the effective hourly rate will be lower than this estimate."
+    ]
+  },
+  "faq": [
+    {
+      "question": "How do I convert salary to hourly pay?",
+      "answer": "Convert the salary to an annual amount first, then divide by total annual work hours. Total annual work hours equal hours per week times weeks worked per year."
+    },
+    {
+      "question": "Why do hours per week matter so much?",
+      "answer": "Because the same salary can imply a very different effective hourly rate depending on whether the role averages 35, 40, 45, or more hours each week."
+    },
+    {
+      "question": "Can I enter a monthly or biweekly salary amount?",
+      "answer": "Yes. Choose the salary frequency that matches the number you enter, and the calculator will annualize it before converting to an hourly rate."
+    },
+    {
+      "question": "Does this include taxes or benefits?",
+      "answer": "No. This is a gross compensation conversion tool. If you want an estimate of take-home pay after taxes, use the gross to net or net to gross salary calculators."
+    },
+    {
+      "question": "How should I compare salary and hourly jobs fairly?",
+      "answer": "Use the same weekly hours and weeks-worked assumptions for both roles. That keeps the comparison cleaner and makes differences in compensation easier to interpret."
+    }
+  ],
+  "relatedCalculators": [
+    "hourly-to-salary-calculator",
+    "gross-to-net-salary-calculator",
+    "net-to-gross-salary-calculator"
+  ],
+  "relatedGuides": ["how-gross-to-net-salary-is-calculated"],
+  "parentCategoryPath": "/finance/salary",
+  "disclaimer": "This calculator provides assumptions-based compensation conversions only. It estimates an hourly rate from the salary amount, hours per week, and weeks worked per year that you enter. It does not account for taxes, bonuses, overtime premiums, benefits, or employer-specific compensation rules.",
+  "ui": {
+    "buttonText": "Convert To Hourly",
+    "resetButtonText": "Reset",
+    "resultTitle": "Your Hourly Conversion",
+    "showFormulaSection": true,
+    "showExampleSection": true,
+    "showInterpretation": true,
+    "showFAQSection": true,
+    "showRelatedLinks": true
+  },
+  "countryCode": "US",
+  "currencyCode": "USD",
+  "calculationVersion": "2026.1",
+  "assumptions": "Uses user-entered salary amount, salary frequency, hours per week, and weeks worked per year to estimate an effective hourly rate and common pay-period equivalents."
+}
