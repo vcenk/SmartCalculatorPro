@@ -1,0 +1,179 @@
+{
+  "id": "gravel-calculator",
+  "pageType": "calculator",
+  "status": "published",
+  "indexable": true,
+  "category": "construction",
+  "subcategory": "materials",
+  "slug": "gravel-calculator",
+  "path": "construction/materials/gravel-calculator",
+  "name": "Gravel Calculator",
+  "titleTag": "Gravel Calculator - Estimate Gravel Needs | Smart Calculator Pro",
+  "metaDescription": "Calculate the amount of gravel needed for your project. Estimate tons, cubic yards, and coverage for driveways and landscaping.",
+  "h1": "Gravel Calculator",
+  "intro": "Calculate how much gravel you need for your driveway, walkway, or landscaping project. Enter dimensions and depth to get material estimates.",
+  "shortDescription": "Calculate gravel volume and weight needed.",
+  "longDescription": "This calculator estimates the amount of gravel needed based on area dimensions and desired depth. Results include cubic yards, tons, and coverage area.",
+  "searchIntent": "transactional-tool",
+  "primaryKeyword": "gravel calculator",
+  "secondaryKeywords": ["gravel coverage calculator", "how much gravel do i need", "driveway gravel calculator"],
+  "canonicalPath": "/construction/materials/gravel-calculator",
+  "schemaType": "SoftwareApplication",
+  "ogImageTemplate": "calculator-default",
+  "problemSolved": "Helps users estimate gravel materials for landscaping and construction.",
+  "whoItsFor": ["homeowners", "landscapers", "DIYers", "contractors"],
+  "calculationType": "formula",
+  "inputs": [
+    {
+      "key": "areaType",
+      "label": "Area Type",
+      "type": "select",
+      "required": true,
+      "explanation": "Select how you're measuring the area.",
+      "defaultValue": "rectangle",
+      "validationMessage": "Please select an area type."
+    },
+    {
+      "key": "length",
+      "label": "Length",
+      "type": "number",
+      "unit": "feet",
+      "required": true,
+      "explanation": "The length of the area in feet.",
+      "min": 1,
+      "step": 0.5,
+      "defaultValue": 10,
+      "placeholder": "e.g., 10"
+    },
+    {
+      "key": "width",
+      "label": "Width",
+      "type": "number",
+      "unit": "feet",
+      "required": true,
+      "explanation": "The width of the area in feet.",
+      "min": 1,
+      "step": 0.5,
+      "defaultValue": 10,
+      "placeholder": "e.g., 10"
+    },
+    {
+      "key": "depth",
+      "label": "Depth",
+      "type": "number",
+      "unit": "inches",
+      "required": true,
+      "explanation": "The depth of gravel in inches.",
+      "min": 1,
+      "max": 24,
+      "step": 0.5,
+      "defaultValue": 2,
+      "placeholder": "e.g., 2"
+    },
+    {
+      "key": "gravelType",
+      "label": "Gravel Type",
+      "type": "select",
+      "required": true,
+      "explanation": "Different gravel types have different densities.",
+      "defaultValue": "standard",
+      "validationMessage": "Please select a gravel type."
+    }
+  ],
+  "outputs": [
+    {
+      "key": "cubicYards",
+      "label": "Volume",
+      "explanation": "Total volume in cubic yards.",
+      "unit": "cubic yards",
+      "precision": 2
+    },
+    {
+      "key": "tons",
+      "label": "Weight",
+      "explanation": "Estimated weight in tons.",
+      "unit": "tons",
+      "precision": 2
+    },
+    {
+      "key": "coverage",
+      "label": "Coverage",
+      "explanation": "Area covered at specified depth.",
+      "unit": "sq ft",
+      "precision": 0
+    }
+  ],
+  "defaultValues": {
+    "areaType": "rectangle",
+    "length": 10,
+    "width": 10,
+    "depth": 2,
+    "gravelType": "standard"
+  },
+  "formula": {
+    "label": "Gravel Volume Formula",
+    "expression": "Volume = (L × W × D ÷ 27)",
+    "plainText": "Volume in cubic yards equals length times width times depth (in feet), divided by 27."
+  },
+  "formulaExplanation": [
+    "Convert depth from inches to feet by dividing by 12",
+    "Calculate area in square feet: length × width",
+    "Calculate volume in cubic yards: area × depth (in feet) ÷ 27"
+  ],
+  "methodologyNotes": [
+    "One cubic yard covers approximately 108 square feet at 3 inches deep",
+    "Standard gravel weighs approximately 1.4 tons per cubic yard",
+    "Different gravel types have different densities",
+    "Always order 10-15% extra for compaction and settling"
+  ],
+  "example": {
+    "scenario": "A rectangular driveway 10 feet by 20 feet, 2 inches deep.",
+    "inputs": {
+      "areaType": "rectangle",
+      "length": 20,
+      "width": 10,
+      "depth": 2,
+      "gravelType": "standard"
+    },
+    "resultSummary": "You'll need approximately 1.23 cubic yards of gravel, weighing about 1.72 tons, covering 200 square feet."
+  },
+  "resultInterpretation": {
+    "defaultText": "Use these estimates to order gravel. Gravel settles and compacts over time, so consider ordering slightly more than calculated.",
+    "warningMessages": [
+      "Order 10-15% extra to account for compaction and settling.",
+      "Gravel depth may need to be deeper for driveways to support vehicle weight.",
+      "Consider using a landscape fabric underneath to prevent weed growth."
+    ]
+  },
+  "faq": [
+    {
+      "question": "How much gravel do I need?",
+      "answer": "Multiply the area in square feet by the desired depth in feet, then divide by 27 to get cubic yards. Order 10-15% extra for compaction."
+    },
+    {
+      "question": "How deep should gravel be?",
+      "answer": "For walkways and patios, 2-3 inches is usually sufficient. For driveways, use 4-6 inches or more to support vehicle weight."
+    },
+    {
+      "question": "How much does a cubic yard of gravel weigh?",
+      "answer": "A cubic yard of standard gravel typically weighs about 1.4 tons (2,800 lbs). This can vary depending on the type of gravel and moisture content."
+    }
+  ],
+  "relatedCalculators": ["concrete-calculator", "area-calculator"],
+  "relatedGuides": ["how-to-check-calculator-estimates"],
+  "comparisonPages": [],
+  "parentCategoryPath": "/construction",
+  "siblingCalculators": ["concrete-calculator"],
+  "disclaimer": "This calculator provides estimates only. Actual material needs may vary based on site conditions, gravel type, and compaction.",
+  "ui": {
+    "buttonText": "Calculate Gravel",
+    "resetButtonText": "Reset",
+    "resultTitle": "Your Gravel Estimates",
+    "showFormulaSection": true,
+    "showExampleSection": true,
+    "showFAQSection": true,
+    "showRelatedLinks": true
+  },
+  "lastReviewedAt": "2025-03-11",
+  "reviewedBy": "Smart Calculator Pro Team"
+}

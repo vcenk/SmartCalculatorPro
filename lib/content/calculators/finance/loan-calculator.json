@@ -1,0 +1,162 @@
+{
+  "id": "loan-calculator",
+  "pageType": "calculator",
+  "status": "published",
+  "indexable": true,
+  "category": "finance",
+  "subcategory": "personal",
+  "slug": "loan-calculator",
+  "path": "finance/personal/loan-calculator",
+  "name": "Loan Calculator",
+  "titleTag": "Loan Calculator with Monthly Payment Breakdown | Smart Calculator Pro",
+  "metaDescription": "Calculate monthly loan payments, total interest, and total cost using loan amount, interest rate, and term. Free loan calculator for personal loans, auto loans, and more.",
+  "h1": "Loan Calculator",
+  "intro": "Use this loan calculator to estimate your monthly payment, total interest, and full repayment cost for any amortized loan.",
+  "shortDescription": "Estimate monthly loan payments and total borrowing cost.",
+  "longDescription": "This calculator helps users estimate how much they will pay each month and how much interest they will pay over the full loan term. Perfect for personal loans, auto loans, and student loans.",
+  "searchIntent": "transactional-tool",
+  "primaryKeyword": "loan calculator",
+  "secondaryKeywords": ["monthly payment calculator", "loan repayment calculator", "interest payment calculator"],
+  "canonicalPath": "/finance/personal/loan-calculator",
+  "schemaType": "SoftwareApplication",
+  "ogImageTemplate": "calculator-default",
+  "problemSolved": "Helps users estimate loan affordability and repayment cost before borrowing.",
+  "whoItsFor": ["borrowers", "home buyers", "car buyers", "students"],
+  "calculationType": "formula",
+  "inputs": [
+    {
+      "key": "loanAmount",
+      "label": "Loan Amount",
+      "type": "number",
+      "unit": "currency",
+      "required": true,
+      "explanation": "The total amount you plan to borrow (principal).",
+      "min": 1,
+      "step": 100,
+      "defaultValue": 20000,
+      "placeholder": "e.g., 20000"
+    },
+    {
+      "key": "annualInterestRate",
+      "label": "Annual Interest Rate",
+      "type": "number",
+      "unit": "percent",
+      "required": true,
+      "explanation": "The yearly interest rate charged by the lender as a percentage.",
+      "min": 0,
+      "max": 100,
+      "step": 0.01,
+      "defaultValue": 6,
+      "placeholder": "e.g., 6.5"
+    },
+    {
+      "key": "loanTermYears",
+      "label": "Loan Term",
+      "type": "number",
+      "unit": "years",
+      "required": true,
+      "explanation": "The total repayment period in years.",
+      "min": 1,
+      "max": 50,
+      "step": 1,
+      "defaultValue": 5,
+      "placeholder": "e.g., 5"
+    }
+  ],
+  "outputs": [
+    {
+      "key": "monthlyPayment",
+      "label": "Monthly Payment",
+      "explanation": "The amount you need to pay each month to fully repay the loan on schedule.",
+      "unit": "currency",
+      "precision": 2
+    },
+    {
+      "key": "totalInterest",
+      "label": "Total Interest",
+      "explanation": "The total amount of interest you will pay over the entire loan term.",
+      "unit": "currency",
+      "precision": 2
+    },
+    {
+      "key": "totalCost",
+      "label": "Total Repayment",
+      "explanation": "The total amount you will repay including both principal and interest.",
+      "unit": "currency",
+      "precision": 2
+    }
+  ],
+  "defaultValues": {
+    "loanAmount": 20000,
+    "annualInterestRate": 6,
+    "loanTermYears": 5
+  },
+  "formula": {
+    "label": "Amortized Loan Payment Formula",
+    "expression": "M = P x [r(1+r)^n] / [(1+r)^n - 1]",
+    "plainText": "Monthly payment equals principal times the monthly rate growth factor divided by the growth factor minus one."
+  },
+  "formulaExplanation": [
+    "M is the monthly payment",
+    "P is the principal or loan amount",
+    "r is the monthly interest rate (annual rate divided by 12)",
+    "n is the total number of monthly payments (years multiplied by 12)"
+  ],
+  "methodologyNotes": [
+    "This calculator assumes a fixed interest rate for the entire loan term.",
+    "Payments are calculated using the standard amortization formula.",
+    "This version does not include origination fees, insurance, or other additional costs."
+  ],
+  "example": {
+    "scenario": "A user borrows $20,000 at 6% annual interest for 5 years.",
+    "inputs": {
+      "loanAmount": 20000,
+      "annualInterestRate": 6,
+      "loanTermYears": 5
+    },
+    "resultSummary": "The monthly payment would be approximately $386.66. Total interest paid over 5 years would be $3,199.60, making the total repayment cost $23,199.60."
+  },
+  "resultInterpretation": {
+    "defaultText": "Review the monthly payment first to ensure it fits your budget, then consider the total interest paid over the loan term.",
+    "warningMessages": [
+      "Longer loan terms reduce monthly payments but usually increase total interest paid.",
+      "Very high interest rates can significantly increase the total cost of borrowing.",
+      "A lower monthly payment does not always mean a cheaper loan - always check total cost."
+    ]
+  },
+  "faq": [
+    {
+      "question": "How is a monthly loan payment calculated?",
+      "answer": "Monthly payments are calculated using an amortization formula that accounts for the loan amount, interest rate, and repayment term. The formula ensures that each payment covers both interest and a portion of the principal so the loan is fully repaid by the end of the term."
+    },
+    {
+      "question": "Does this calculator include fees?",
+      "answer": "No, this calculator only shows principal and interest. Many loans also include origination fees, closing costs, insurance, and other charges that can increase your actual cost."
+    },
+    {
+      "question": "What's the difference between interest rate and APR?",
+      "answer": "The interest rate is the cost of borrowing expressed as a percentage. APR (Annual Percentage Rate) includes both the interest rate and certain fees, giving you a more complete picture of borrowing costs."
+    },
+    {
+      "question": "Should I choose a shorter or longer loan term?",
+      "answer": "A shorter term means higher monthly payments but less total interest. A longer term means lower monthly payments but more total interest. Choose based on what fits your budget and how much total interest you're willing to pay."
+    }
+  ],
+  "relatedCalculators": ["mortgage-calculator", "compound-interest-calculator", "savings-calculator"],
+  "relatedGuides": ["how-to-calculate-loan-payments"],
+  "comparisonPages": ["loan-calculator-vs-mortgage-calculator"],
+  "parentCategoryPath": "/finance",
+  "siblingCalculators": ["mortgage-calculator", "compound-interest-calculator", "savings-calculator"],
+  "disclaimer": "This calculator provides estimates only and does not replace professional financial advice. Actual loan terms may vary based on lender, credit score, and other factors.",
+  "ui": {
+    "buttonText": "Calculate Payment",
+    "resetButtonText": "Reset",
+    "resultTitle": "Your Loan Payment Results",
+    "showFormulaSection": true,
+    "showExampleSection": true,
+    "showFAQSection": true,
+    "showRelatedLinks": true
+  },
+  "lastReviewedAt": "2025-03-11",
+  "reviewedBy": "Smart Calculator Pro Team"
+}

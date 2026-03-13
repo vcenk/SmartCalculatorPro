@@ -1,0 +1,137 @@
+{
+  "id": "percentage-calculator",
+  "pageType": "calculator",
+  "status": "published",
+  "indexable": true,
+  "category": "math",
+  "subcategory": "basic",
+  "slug": "percentage-calculator",
+  "path": "math/basic/percentage-calculator",
+  "name": "Percentage Calculator",
+  "titleTag": "Percentage Calculator - Calculate Percentages Easily | Smart Calculator Pro",
+  "metaDescription": "Free percentage calculator. Find percentage of a number, percentage increase/decrease, and more. Quick and easy percentage calculations.",
+  "h1": "Percentage Calculator",
+  "intro": "Calculate percentages quickly and easily. Find what percentage one number is of another, calculate percentage change, and more.",
+  "shortDescription": "Calculate percentages, percentage change, and percentage of a number.",
+  "longDescription": "This calculator handles all common percentage calculations: finding a percentage of a number, calculating what percentage one number is of another, and computing percentage increase or decrease.",
+  "searchIntent": "transactional-tool",
+  "primaryKeyword": "percentage calculator",
+  "secondaryKeywords": ["percent calculator", "percentage change", "calculate percent"],
+  "canonicalPath": "/math/basic/percentage-calculator",
+  "schemaType": "SoftwareApplication",
+  "ogImageTemplate": "calculator-default",
+  "problemSolved": "Helps users solve everyday percentage problems quickly.",
+  "whoItsFor": ["students", "shoppers", "business owners", "anyone who needs percentages"],
+  "calculationType": "simple",
+  "inputs": [
+    {
+      "key": "value",
+      "label": "Value",
+      "type": "number",
+      "unit": "number",
+      "required": true,
+      "explanation": "The value you want to find a percentage of.",
+      "min": 0,
+      "step": 0.01,
+      "defaultValue": 100,
+      "placeholder": "e.g., 100"
+    },
+    {
+      "key": "percentage",
+      "label": "Percentage",
+      "type": "number",
+      "unit": "percent",
+      "required": true,
+      "explanation": "The percentage to calculate.",
+      "min": 0,
+      "max": 100,
+      "step": 0.1,
+      "defaultValue": 25,
+      "placeholder": "e.g., 25"
+    },
+    {
+      "key": "mode",
+      "label": "Calculation Type",
+      "type": "select",
+      "required": true,
+      "explanation": "Choose the type of percentage calculation.",
+      "defaultValue": "of",
+      "validationMessage": "Please select a calculation type."
+    }
+  ],
+  "outputs": [
+    {
+      "key": "result",
+      "label": "Result",
+      "explanation": "The calculated percentage result.",
+      "unit": "number",
+      "precision": 2
+    }
+  ],
+  "defaultValues": {
+    "value": 100,
+    "percentage": 25,
+    "mode": "of"
+  },
+  "formula": {
+    "label": "Percentage Formulas",
+    "expression": "X% of Y = (X/100) × Y",
+    "plainText": "Percentage of a value equals the percentage divided by 100, multiplied by the value."
+  },
+  "formulaExplanation": [
+    "Percentage of a number: (percentage ÷ 100) × value",
+    "Percentage change: ((new - old) ÷ old) × 100",
+    "Value is what percentage: (value ÷ total) × 100"
+  ],
+  "methodologyNotes": [
+    "Percent means 'per hundred' or 'out of 100'",
+    "50% is equivalent to the fraction 1/2 or the decimal 0.5",
+    "This calculator rounds results to 2 decimal places for readability"
+  ],
+  "example": {
+    "scenario": "Find 25% of 200.",
+    "inputs": {
+      "value": 200,
+      "percentage": 25,
+      "mode": "of"
+    },
+    "resultSummary": "25% of 200 equals 50."
+  },
+  "resultInterpretation": {
+    "defaultText": "Use this result for discounts, tips, grades, financial calculations, and any situation involving percentages.",
+    "warningMessages": [
+      "Be careful with percentage change calculations—a decrease from 100 to 50 is a 50% decrease, but an increase from 50 to 100 is a 100% increase."
+    ]
+  },
+  "faq": [
+    {
+      "question": "How do I calculate a percentage?",
+      "answer": "To find X% of Y, divide X by 100 to convert it to a decimal, then multiply by Y. For example, 20% of 50 equals 0.20 × 50 = 10."
+    },
+    {
+      "question": "How do I calculate percentage change?",
+      "answer": "Subtract the original value from the new value, divide by the original value, and multiply by 100. For example, going from 80 to 100: (100 - 80) ÷ 80 × 100 = 25% increase."
+    },
+    {
+      "question": "What is a percentage?",
+      "answer": "A percentage is a way to express a number as a fraction of 100. The word 'percent' literally means 'per hundred'."
+    }
+  ],
+  "relatedCalculators": ["area-calculator", "tip-calculator"],
+  "relatedGuides": ["how-to-check-calculator-estimates"],
+  "comparisonPages": [],
+  "parentCategoryPath": "/math",
+  "siblingCalculators": ["area-calculator"],
+  "disclaimer": "This calculator provides mathematical results based on standard percentage formulas. Verify calculations for critical applications.",
+  "ui": {
+    "buttonText": "Calculate",
+    "resetButtonText": "Reset",
+    "resultTitle": "Your Result",
+    "showFormulaSection": true,
+    "showExampleSection": true,
+    "showFAQSection": true,
+    "showRelatedLinks": true
+  },
+  "lastReviewedAt": "2025-03-11",
+  "reviewedBy": "Smart Calculator Pro Team"
+}

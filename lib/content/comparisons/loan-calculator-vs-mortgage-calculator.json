@@ -1,0 +1,89 @@
+{
+  "id": "loan-calculator-vs-mortgage-calculator",
+  "pageType": "comparison",
+  "status": "published",
+  "indexable": true,
+  "slug": "loan-calculator-vs-mortgage-calculator",
+  "path": "compare/loan-calculator-vs-mortgage-calculator",
+  "title": "Loan Calculator vs Mortgage Calculator",
+  "titleTag": "Loan Calculator vs Mortgage Calculator: What's the Difference? | Smart Calculator Pro",
+  "metaDescription": "Learn the key differences between loan calculators and mortgage calculators, when to use each, and find the right tool for your borrowing needs.",
+  "h1": "Loan Calculator vs Mortgage Calculator",
+  "intro": "Understanding the difference between loans and mortgages helps you choose the right calculator and financing option for your situation.",
+  "primaryKeyword": "loan calculator vs mortgage calculator",
+  "secondaryKeywords": ["personal loan vs mortgage", "loan payment calculator", "mortgage payment calculator"],
+  "searchIntent": "comparison",
+  "canonicalPath": "/compare/loan-calculator-vs-mortgage-calculator",
+  "schemaType": "Article",
+  "ogImageTemplate": "comparison-default",
+  "comparedItems": ["Loan Calculator", "Mortgage Calculator"],
+  "summary": "While both calculators help estimate monthly payments, they serve different purposes. Loan calculators work for unsecured personal loans, auto loans, and student loans. Mortgage calculators are designed for home loans with property-specific features like taxes and insurance.",
+  "quickDecision": "Use the Loan Calculator for personal, auto, and student loans. Use the Mortgage Calculator when buying a home, refinancing, or calculating housing costs.",
+  "keyDifferences": [
+    {
+      "topic": "Best For",
+      "itemA": "Personal loans, auto loans, student loans",
+      "itemB": "Home purchase, mortgage refinancing"
+    },
+    {
+      "topic": "Collateral",
+      "itemA": "Usually unsecured (no collateral required)",
+      "itemB": "Secured by the property being purchased"
+    },
+    {
+      "topic": "Interest Rates",
+      "itemA": "Higher rates (typically 6-36%)",
+      "itemB": "Lower rates (typically 5-8%)"
+    },
+    {
+      "topic": "Loan Terms",
+      "itemA": "1-7 years (shorter terms)",
+      "itemB": "15-30 years (longer terms)"
+    },
+    {
+      "topic": "Additional Costs",
+      "itemA": "Simple principal and interest",
+      "itemB": "Includes property taxes, insurance, PMI"
+    }
+  ],
+  "whenToUseA": [
+    "You need money for a car purchase or home improvement",
+    "You want to consolidate high-interest debt",
+    "You're paying for education expenses",
+    "You need a shorter repayment timeline",
+    "You don't have property to use as collateral"
+  ],
+  "whenToUseB": [
+    "You're buying a home or property",
+    "You're refinancing an existing mortgage",
+    "You want to see how much home you can afford",
+    "You need to account for property taxes and insurance",
+    "You're comparing 15-year vs 30-year mortgage options"
+  ],
+  "exampleScenarios": [
+    "A borrower needs $15,000 for a home renovation and plans to repay over 3 years. The Loan Calculator is appropriate here because it's a personal loan with a shorter term.",
+    "A home buyer is purchasing a $300,000 house with a 20% down payment and choosing between a 15-year and 30-year mortgage. The Mortgage Calculator handles the longer term and includes estimated property taxes and insurance."
+  ],
+  "relatedCalculators": ["loan-calculator", "mortgage-calculator"],
+  "relatedGuides": ["how-to-calculate-loan-payments"],
+  "faq": [
+    {
+      "question": "Can I use a loan calculator for a mortgage?",
+      "answer": "You can use a loan calculator for basic mortgage calculations, but you'll miss important home-specific costs like property taxes and insurance. Mortgage calculators are designed to include these costs, giving you a more accurate estimate of your total monthly housing payment."
+    },
+    {
+      "question": "Why are mortgage rates typically lower than loan rates?",
+      "answer": "Mortgages are secured by the property, meaning the lender can foreclose if you default. This security reduces the lender's risk, allowing them to offer lower rates. Personal loans are usually unsecured, carrying higher risk and therefore higher rates."
+    },
+    {
+      "question": "Which calculator should I use for a home equity loan?",
+      "answer": "Home equity loans use your home as collateral but work more like traditional loans with shorter terms and higher rates than first mortgages. Use the Loan Calculator but remember that your home secures the debt."
+    },
+    {
+      "question": "Should I use a calculator with or without taxes and insurance?",
+      "answer": "For complete budgeting, use the Mortgage Calculator with taxes and insurance included. Lenders qualify you based on your total housing payment (PITI: principal, interest, taxes, insurance), so it's important to understand all components of your monthly cost."
+    }
+  ],
+  "lastReviewedAt": "2025-03-12",
+  "reviewedBy": "Smart Calculator Pro Team"
+}

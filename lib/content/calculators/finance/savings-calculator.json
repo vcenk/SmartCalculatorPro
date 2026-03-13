@@ -1,0 +1,183 @@
+{
+  "id": "savings-calculator",
+  "pageType": "calculator",
+  "status": "published",
+  "indexable": true,
+  "category": "finance",
+  "subcategory": "investing",
+  "slug": "savings-calculator",
+  "path": "finance/investing/savings-calculator",
+  "name": "Savings Calculator",
+  "titleTag": "Savings Calculator - Plan Your Financial Goals | Smart Calculator Pro",
+  "metaDescription": "Calculate how long it will take to reach your savings goal with regular contributions. Plan for emergencies, big purchases, or retirement.",
+  "h1": "Savings Calculator",
+  "intro": "Plan your savings journey by calculating how long it will take to reach your financial goals with regular contributions.",
+  "shortDescription": "Calculate time to reach savings goals with regular deposits.",
+  "longDescription": "This calculator helps you determine how long it will take to reach a savings goal based on your current balance, planned contributions, and interest rate.",
+  "searchIntent": "transactional-tool",
+  "primaryKeyword": "savings calculator",
+  "secondaryKeywords": ["savings goal calculator", "time to save", "savings planner"],
+  "canonicalPath": "/finance/investing/savings-calculator",
+  "schemaType": "SoftwareApplication",
+  "ogImageTemplate": "calculator-default",
+  "problemSolved": "Helps users plan and track progress toward savings goals.",
+  "whoItsFor": ["savers", "goal-setters", "emergency fund builders", "retirement planners"],
+  "calculationType": "iterative",
+  "inputs": [
+    {
+      "key": "currentSavings",
+      "label": "Current Savings",
+      "type": "number",
+      "unit": "currency",
+      "required": true,
+      "explanation": "The amount you have saved so far.",
+      "min": 0,
+      "step": 100,
+      "defaultValue": 0,
+      "placeholder": "e.g., 5000"
+    },
+    {
+      "key": "monthlyContribution",
+      "label": "Monthly Contribution",
+      "type": "number",
+      "unit": "currency",
+      "required": true,
+      "explanation": "How much you plan to save each month.",
+      "min": 0,
+      "step": 10,
+      "defaultValue": 500,
+      "placeholder": "e.g., 500"
+    },
+    {
+      "key": "annualInterestRate",
+      "label": "Annual Interest Rate",
+      "type": "number",
+      "unit": "percent",
+      "required": false,
+      "explanation": "The annual interest rate on your savings account (optional).",
+      "min": 0,
+      "max": 20,
+      "step": 0.01,
+      "defaultValue": 4,
+      "placeholder": "e.g., 4"
+    },
+    {
+      "key": "savingsGoal",
+      "label": "Savings Goal",
+      "type": "number",
+      "unit": "currency",
+      "required": true,
+      "explanation": "The total amount you want to save.",
+      "min": 1,
+      "step": 100,
+      "defaultValue": 20000,
+      "placeholder": "e.g., 20000"
+    }
+  ],
+  "outputs": [
+    {
+      "key": "monthsToGoal",
+      "label": "Months to Reach Goal",
+      "explanation": "The number of months needed to reach your savings goal.",
+      "unit": "number",
+      "precision": 1
+    },
+    {
+      "key": "yearsToGoal",
+      "label": "Years to Reach Goal",
+      "explanation": "The number of years needed to reach your savings goal.",
+      "unit": "number",
+      "precision": 1
+    },
+    {
+      "key": "totalContributions",
+      "label": "Total Amount Saved",
+      "explanation": "The total amount you will have saved (principal + contributions + interest).",
+      "unit": "currency",
+      "precision": 2
+    },
+    {
+      "key": "totalInterestEarned",
+      "label": "Interest Earned",
+      "explanation": "The total interest earned over the savings period.",
+      "unit": "currency",
+      "precision": 2
+    }
+  ],
+  "defaultValues": {
+    "currentSavings": 0,
+    "monthlyContribution": 500,
+    "annualInterestRate": 4,
+    "savingsGoal": 20000
+  },
+  "formula": {
+    "label": "Savings Growth Formula",
+    "expression": "FV = P(1 + r)^t + PMT x [((1 + r)^t - 1) / r]",
+    "plainText": "Future value equals the compounded initial savings plus compounded monthly contributions."
+  },
+  "formulaExplanation": [
+    "FV is the future value (your goal)",
+    "P is the current savings (principal)",
+    "PMT is the monthly contribution",
+    "r is the monthly interest rate",
+    "t is the number of months"
+  ],
+  "methodologyNotes": [
+    "This calculator assumes monthly compounding of interest.",
+    "Contributions are made at the end of each month.",
+    "Interest rate is optional - if zero, the calculator simply divides the goal by monthly contribution."
+  ],
+  "example": {
+    "scenario": "Starting with no savings, contributing $500 monthly at 4% interest to reach a $20,000 goal.",
+    "inputs": {
+      "currentSavings": 0,
+      "monthlyContribution": 500,
+      "annualInterestRate": 4,
+      "savingsGoal": 20000
+    },
+    "resultSummary": "It will take approximately 38 months (about 3.2 years) to reach $20,000. You will have contributed $19,000 and earned approximately $1,000 in interest."
+  },
+  "resultInterpretation": {
+    "defaultText": "Use this timeline to plan your savings goals. Adjust your monthly contributions or interest rate expectations to see how they affect your timeline.",
+    "warningMessages": [
+      "Higher interest rates can significantly speed up reaching your goals.",
+      "Increasing your monthly contribution is often more effective than waiting for better interest rates.",
+      "Emergency savings should prioritize liquidity over interest rates."
+    ]
+  },
+  "faq": [
+    {
+      "question": "How much should I save each month?",
+      "answer": "A common rule of thumb is to save at least 20% of your income. However, the right amount depends on your income, expenses, goals, and timeline. Start with what you can and increase when possible."
+    },
+    {
+      "question": "What's a good emergency fund amount?",
+      "answer": "Most financial experts recommend saving 3-6 months of essential expenses in an emergency fund. This gives you a safety net for unexpected costs like medical bills or job loss."
+    },
+    {
+      "question": "Where should I keep my savings?",
+      "answer": "For emergency funds and short-term goals, high-yield savings accounts offer safety and liquidity. For long-term goals (5+ years), consider investments with higher return potential but more risk."
+    },
+    {
+      "question": "How can I save more money?",
+      "answer": "Track your spending to identify areas to cut, automate your savings so you save before spending, increase your income through raises or side work, and avoid high-interest debt that drains your resources."
+    }
+  ],
+  "relatedCalculators": ["compound-interest-calculator", "loan-calculator", "mortgage-calculator"],
+  "relatedGuides": ["how-to-calculate-loan-payments"],
+  "comparisonPages": [],
+  "parentCategoryPath": "/finance",
+  "siblingCalculators": ["compound-interest-calculator", "loan-calculator", "mortgage-calculator"],
+  "disclaimer": "This calculator provides estimates only and does not constitute financial advice. Interest rates can change and actual results may vary based on account terms and conditions.",
+  "ui": {
+    "buttonText": "Calculate Timeline",
+    "resetButtonText": "Reset",
+    "resultTitle": "Your Savings Plan Results",
+    "showFormulaSection": true,
+    "showExampleSection": true,
+    "showFAQSection": true,
+    "showRelatedLinks": true
+  },
+  "lastReviewedAt": "2025-03-11",
+  "reviewedBy": "Smart Calculator Pro Team"
+}

@@ -1,0 +1,323 @@
+{
+  "id": "net-to-gross-salary-calculator",
+  "pageType": "calculator",
+  "status": "published",
+  "indexable": true,
+  "category": "finance",
+  "subcategory": "salary",
+  "slug": "net-to-gross-salary-calculator",
+  "path": "finance/salary/net-to-gross-salary-calculator",
+  "title": "Net to Gross Salary Calculator",
+  "name": "Net to Gross Salary Calculator",
+  "titleTag": "Net to Gross Salary Calculator | Smart Calculator Pro",
+  "metaDescription": "Estimate the gross salary needed to reach a target take-home pay with our U.S. net to gross salary calculator for tax year 2025.",
+  "h1": "Net to Gross Salary Calculator",
+  "intro": "Estimate the gross pay you may need to earn in the U.S. to reach a target net salary after federal taxes, state taxes, Social Security, Medicare, and optional deductions.",
+  "shortDescription": "Estimate the gross pay needed to reach a target take-home salary under 2025 U.S. tax assumptions.",
+  "longDescription": "This calculator works backward from a target net salary to estimate the gross salary required under simplified 2025 U.S. payroll tax assumptions. It is useful for offer planning, freelance rate checks, and salary negotiation prep when you care more about take-home pay than headline salary.",
+  "primaryKeyword": "net to gross salary calculator",
+  "secondaryKeywords": ["gross pay from net pay", "salary before taxes calculator", "gross salary estimator"],
+  "searchIntent": "transactional-tool",
+  "canonicalPath": "/finance/salary/net-to-gross-salary-calculator",
+  "schemaType": "SoftwareApplication",
+  "ogImageTemplate": "calculator-default",
+  "problemSolved": "Helps estimate the gross salary needed to hit a target take-home pay.",
+  "whoItsFor": ["employees", "job seekers", "freelancers", "salary negotiators"],
+  "calculationType": "iterative",
+  "inputs": [
+    {
+      "key": "netSalary",
+      "label": "Target Net Salary",
+      "type": "number",
+      "unit": "currency",
+      "required": true,
+      "explanation": "Enter the take-home pay you want after taxes and deductions for the pay frequency you selected.",
+      "min": 0,
+      "step": 100
+    },
+    {
+      "key": "payFrequency",
+      "label": "Pay Frequency",
+      "type": "select",
+      "required": true,
+      "explanation": "How often you want to receive the target net pay.",
+      "options": [
+        { "value": "annual", "label": "Annual" },
+        { "value": "monthly", "label": "Monthly" },
+        { "value": "biweekly", "label": "Bi-Weekly (every 2 weeks)" },
+        { "value": "semimonthly", "label": "Semi-Monthly (twice a month)" }
+      ],
+      "defaultValue": "monthly"
+    },
+    {
+      "key": "taxYear",
+      "label": "Tax Year",
+      "type": "number",
+      "unit": "year",
+      "required": true,
+      "explanation": "The U.S. tax year used for the estimate.",
+      "min": 2024,
+      "max": 2099,
+      "step": 1,
+      "defaultValue": 2025
+    },
+    {
+      "key": "filingStatus",
+      "label": "Filing Status",
+      "type": "select",
+      "required": true,
+      "explanation": "Your filing status affects the federal deduction assumption used in this estimate.",
+      "options": [
+        { "value": "single", "label": "Single" },
+        { "value": "marriedJoint", "label": "Married Filing Jointly" },
+        { "value": "marriedSeparate", "label": "Married Filing Separately" },
+        { "value": "headOfHousehold", "label": "Head of Household" }
+      ],
+      "defaultValue": "single"
+    },
+    {
+      "key": "federalAllowances",
+      "label": "Federal Deduction Amount",
+      "type": "number",
+      "unit": "currency",
+      "required": false,
+      "explanation": "The federal deduction amount to subtract before applying simplified 2025 tax brackets.",
+      "min": 0,
+      "step": 100,
+      "defaultValue": 14600
+    },
+    {
+      "key": "stateTaxRate",
+      "label": "State Tax Rate",
+      "type": "number",
+      "unit": "percent",
+      "required": true,
+      "explanation": "Estimated flat state income tax rate for this planning scenario.",
+      "min": 0,
+      "max": 15,
+      "step": 0.1,
+      "defaultValue": 5
+    },
+    {
+      "key": "socialSecurityRate",
+      "label": "Social Security Tax Rate",
+      "type": "number",
+      "unit": "percent",
+      "required": true,
+      "explanation": "Employee Social Security tax rate used in the estimate.",
+      "min": 0,
+      "max": 8,
+      "step": 0.1,
+      "defaultValue": 6.2
+    },
+    {
+      "key": "medicareRate",
+      "label": "Medicare Tax Rate",
+      "type": "number",
+      "unit": "percent",
+      "required": true,
+      "explanation": "Employee Medicare tax rate used in the estimate.",
+      "min": 0,
+      "max": 5,
+      "step": 0.1,
+      "defaultValue": 1.45
+    },
+    {
+      "key": "pretaxDeductions",
+      "label": "Pre-Tax Deductions",
+      "type": "number",
+      "unit": "currency",
+      "required": false,
+      "explanation": "Annual pre-tax deductions such as traditional retirement or HSA contributions.",
+      "min": 0,
+      "step": 500,
+      "defaultValue": 0
+    },
+    {
+      "key": "posttaxDeductions",
+      "label": "Post-Tax Deductions",
+      "type": "number",
+      "unit": "currency",
+      "required": false,
+      "explanation": "Annual post-tax deductions such as insurance premiums or other paycheck deductions.",
+      "min": 0,
+      "step": 100,
+      "defaultValue": 0
+    }
+  ],
+  "outputs": [
+    {
+      "key": "requiredGrossSalary",
+      "label": "Required Gross Salary",
+      "explanation": "Estimated gross pay needed at the selected pay frequency.",
+      "unit": "currency",
+      "precision": 0
+    },
+    {
+      "key": "annualGrossSalary",
+      "label": "Annual Gross Salary",
+      "explanation": "Estimated total gross salary over the full year.",
+      "unit": "currency",
+      "precision": 0
+    },
+    {
+      "key": "federalTax",
+      "label": "Federal Tax",
+      "explanation": "Estimated federal income tax under the selected assumptions.",
+      "unit": "currency",
+      "precision": 0
+    },
+    {
+      "key": "stateTax",
+      "label": "State Tax",
+      "explanation": "Estimated state income tax based on the rate you entered.",
+      "unit": "currency",
+      "precision": 0
+    },
+    {
+      "key": "socialSecurityTax",
+      "label": "Social Security Tax",
+      "explanation": "Estimated employee Social Security withholding.",
+      "unit": "currency",
+      "precision": 0
+    },
+    {
+      "key": "medicareTax",
+      "label": "Medicare Tax",
+      "explanation": "Estimated employee Medicare withholding.",
+      "unit": "currency",
+      "precision": 0
+    },
+    {
+      "key": "totalTaxes",
+      "label": "Total Taxes",
+      "explanation": "Combined federal, state, Social Security, and Medicare taxes.",
+      "unit": "currency",
+      "precision": 0
+    },
+    {
+      "key": "totalDeductions",
+      "label": "Total Deductions",
+      "explanation": "Combined pre-tax and post-tax deductions included in the estimate.",
+      "unit": "currency",
+      "precision": 0
+    },
+    {
+      "key": "effectiveTaxRate",
+      "label": "Effective Tax Rate",
+      "explanation": "Combined tax burden as a percentage of annual gross salary.",
+      "unit": "percent",
+      "precision": 1
+    },
+    {
+      "key": "annualNetSalary",
+      "label": "Annual Net Salary",
+      "explanation": "Estimated annual take-home pay matching your target scenario.",
+      "unit": "currency",
+      "precision": 0
+    }
+  ],
+  "defaultValues": {
+    "netSalary": 4500,
+    "payFrequency": "monthly",
+    "taxYear": 2025,
+    "filingStatus": "single",
+    "federalAllowances": 14600,
+    "stateTaxRate": 5,
+    "socialSecurityRate": 6.2,
+    "medicareRate": 1.45,
+    "pretaxDeductions": 0,
+    "posttaxDeductions": 0
+  },
+  "formula": {
+    "label": "Reverse Salary Estimate Method",
+    "expression": "Find Gross such that Net = Gross - Federal Tax - State Tax - Social Security - Medicare - Other Deductions",
+    "plainText": "The calculator works backward from a target net salary and estimates the gross salary needed so that taxes and deductions reduce that gross amount down to your target take-home pay."
+  },
+  "formulaExplanation": [
+    "The calculator converts your target net pay into an annual target based on the selected pay frequency.",
+    "It then estimates federal tax using simplified 2025 U.S. tax brackets after subtracting the deduction amount and any pre-tax deductions.",
+    "State tax is estimated from the flat rate you enter, and Social Security and Medicare use the employee payroll tax rates shown on the form.",
+    "Because taxes depend on gross pay, the calculator solves the result iteratively until the estimated annual net pay is close to your target."
+  ],
+  "methodologyNotes": [
+    "This calculator is U.S.-oriented and uses simplified 2025 assumptions for planning purposes.",
+    "Federal tax is estimated with published 2025 single-filer brackets and a configurable deduction amount.",
+    "State income tax is modeled as a flat percentage estimate rather than a state-specific bracket system.",
+    "Social Security uses the 2025 wage base limit, while Medicare is applied without a wage cap.",
+    "Results can differ from an actual paycheck because employer benefits, local taxes, credits, and withholding elections vary."
+  ],
+  "example": {
+    "scenario": "A single filer wants to take home about $4,500 per month in 2025, uses a 5% state tax estimate, and has no additional deductions.",
+    "inputs": {
+      "netSalary": 4500,
+      "payFrequency": "monthly",
+      "taxYear": 2025,
+      "filingStatus": "single",
+      "federalAllowances": 14600,
+      "stateTaxRate": 5,
+      "socialSecurityRate": 6.2,
+      "medicareRate": 1.45,
+      "pretaxDeductions": 0,
+      "posttaxDeductions": 0
+    },
+    "resultSummary": "The estimate suggests gross pay of about $5,846 per month, or roughly $70,147 annually, to land near $54,000 in annual take-home pay under these assumptions."
+  },
+  "resultInterpretation": {
+    "defaultText": "Use the required gross salary as a planning estimate, then compare it with real pay stubs, offer letters, or payroll calculations before making a decision.",
+    "thresholds": [
+      {
+        "label": "Effective Tax Rate",
+        "min": 20,
+        "max": 35,
+        "interpretation": "An effective tax rate in this range is common for many U.S. salary scenarios once federal, state, and payroll taxes are combined."
+      }
+    ],
+    "warningMessages": [
+      "Large differences between your estimate and a real paycheck often come from local taxes, benefit elections, or withholding choices not modeled here."
+    ]
+  },
+  "faq": [
+    {
+      "question": "When should I use a net to gross salary calculator?",
+      "answer": "Use it when you know the take-home pay you want and need to estimate the gross salary required to reach that target. It is especially useful for job offer planning, contractor pricing, and salary negotiations."
+    },
+    {
+      "question": "Why is the result only an estimate?",
+      "answer": "Real payroll calculations can include local taxes, employer-specific benefits, withholding elections, tax credits, and special deductions that are not fully modeled here. This tool is designed for planning, not payroll processing."
+    },
+    {
+      "question": "Does the calculator work outside the United States?",
+      "answer": "No. This version is U.S.-oriented and explicitly based on 2025 U.S. federal payroll assumptions. Country-specific salary calculators should use local tax rules instead."
+    },
+    {
+      "question": "Should I enter monthly or annual net pay?",
+      "answer": "Enter the pay amount that matches the pay frequency you select. If you choose monthly, enter the monthly take-home pay you want. The calculator then converts that target into an annual planning estimate behind the scenes."
+    },
+    {
+      "question": "What if I already know my gross salary?",
+      "answer": "If you already know your gross salary and want to estimate take-home pay, use the gross to net salary calculator instead. The two tools are designed to work together."
+    }
+  ],
+  "relatedCalculators": ["gross-to-net-salary-calculator", "savings-calculator"],
+  "relatedGuides": ["how-gross-to-net-salary-is-calculated"],
+  "comparisonPages": ["gross-to-net-salary-calculator-vs-net-to-gross-salary-calculator"],
+  "parentCategoryPath": "/finance/salary",
+  "disclaimer": "This calculator provides estimate-based U.S. salary planning output for tax year 2025. It is not payroll software, tax filing software, or tax advice. Confirm important decisions with a qualified tax professional or your payroll provider.",
+  "ui": {
+    "buttonText": "Estimate Gross Pay",
+    "resetButtonText": "Reset",
+    "resultTitle": "Your Gross Salary Estimate",
+    "showFormulaSection": true,
+    "showExampleSection": true,
+    "showInterpretation": true,
+    "showFAQSection": true,
+    "showRelatedLinks": true
+  },
+  "countryCode": "US",
+  "currencyCode": "USD",
+  "taxYear": 2025,
+  "payFrequency": "monthly",
+  "calculationVersion": "2025.1",
+  "assumptions": "Uses simplified 2025 U.S. federal brackets, a configurable deduction amount, a flat state tax estimate, the 2025 Social Security wage base, and standard employee Medicare withholding."
+}

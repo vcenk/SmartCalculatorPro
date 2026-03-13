@@ -1,0 +1,87 @@
+{
+  "id": "gross-to-net-salary-calculator-vs-net-to-gross-salary-calculator",
+  "pageType": "comparison",
+  "status": "published",
+  "indexable": true,
+  "slug": "gross-to-net-salary-calculator-vs-net-to-gross-salary-calculator",
+  "path": "compare/gross-to-net-salary-calculator-vs-net-to-gross-salary-calculator",
+  "title": "Gross to Net Salary Calculator vs Net to Gross Salary Calculator",
+  "titleTag": "Gross to Net Salary Calculator vs Net to Gross Salary Calculator | Smart Calculator Pro",
+  "metaDescription": "Compare gross to net and net to gross salary calculators, learn when to use each one, and choose the right salary-planning tool for 2025 U.S. estimates.",
+  "h1": "Gross to Net Salary Calculator vs Net to Gross Salary Calculator",
+  "intro": "These two salary tools solve opposite planning questions. One starts with gross pay and estimates take-home pay. The other starts with target take-home pay and estimates the gross salary needed to reach it.",
+  "primaryKeyword": "gross to net salary calculator vs net to gross salary calculator",
+  "secondaryKeywords": ["salary calculator comparison", "gross pay vs take-home calculator", "net pay vs gross pay tool"],
+  "searchIntent": "comparison",
+  "canonicalPath": "/compare/gross-to-net-salary-calculator-vs-net-to-gross-salary-calculator",
+  "schemaType": "Article",
+  "ogImageTemplate": "comparison-default",
+  "comparedItems": ["Gross to Net Salary Calculator", "Net to Gross Salary Calculator"],
+  "summary": "Use the gross to net tool when you already know the salary offer or paycheck amount before taxes. Use the net to gross tool when you want to work backward from a target take-home number and estimate the salary required to reach it. Both tools are U.S.-oriented estimates for tax year 2025.",
+  "quickDecision": "If your starting point is gross pay, use gross to net. If your starting point is target take-home pay, use net to gross. Both use the same 2025 U.S. planning assumptions.",
+  "keyDifferences": [
+    {
+      "topic": "Starting Input",
+      "itemA": "Gross salary before taxes and deductions",
+      "itemB": "Target take-home pay after taxes and deductions"
+    },
+    {
+      "topic": "Best Use Case",
+      "itemA": "Reviewing a paycheck or job offer",
+      "itemB": "Salary negotiation or freelance pricing"
+    },
+    {
+      "topic": "Main Output",
+      "itemA": "Estimated net pay",
+      "itemB": "Estimated gross pay required"
+    },
+    {
+      "topic": "Question It Answers",
+      "itemA": "What will I take home from this salary?",
+      "itemB": "What salary do I need to take home this amount?"
+    },
+    {
+      "topic": "Best Next Step",
+      "itemA": "Check taxes, deductions, and actual take-home pay",
+      "itemB": "Compare the gross target against real offers or rate quotes"
+    }
+  ],
+  "whenToUseA": [
+    "You already know the salary offer before taxes",
+    "You want to estimate take-home pay from a proposed raise",
+    "You are checking whether payroll deductions feel reasonable",
+    "You are budgeting from a known gross pay figure"
+  ],
+  "whenToUseB": [
+    "You want to negotiate toward a target take-home number",
+    "You are comparing offers based on monthly lifestyle needs",
+    "You need to estimate a freelance rate from a net income goal",
+    "You are reverse-engineering compensation scenarios for 2025 planning"
+  ],
+  "exampleScenarios": [
+    "A candidate receives a $78,000 salary offer and wants to estimate monthly take-home pay before accepting. The gross to net calculator is the right starting point.",
+    "A worker wants to clear about $5,000 per month after taxes and wants to estimate what gross salary might support that goal. The net to gross calculator is the better tool."
+  ],
+  "relatedCalculators": ["gross-to-net-salary-calculator", "net-to-gross-salary-calculator"],
+  "relatedGuides": ["how-gross-to-net-salary-is-calculated"],
+  "faq": [
+    {
+      "question": "Do these two salary calculators use the same assumptions?",
+      "answer": "Yes. They are designed to use the same 2025 U.S.-oriented tax assumptions so you can move between them consistently. One runs forward from gross pay, and the other works backward from target net pay."
+    },
+    {
+      "question": "Which tool should I use for job offer negotiations?",
+      "answer": "Start with the net to gross salary calculator if your goal is a take-home number. Once you have a rough gross target, compare that estimate with the offer using the gross to net calculator."
+    },
+    {
+      "question": "Can I use these calculators for exact paycheck withholding?",
+      "answer": "No. Both tools are estimate-based planning calculators. Real withholding can differ because of local taxes, benefit elections, special deductions, or employer payroll settings."
+    },
+    {
+      "question": "Why link the two calculators together?",
+      "answer": "They answer complementary questions. Linking them helps you move from a known salary to take-home pay, or from a desired take-home pay back to the salary you may need."
+    }
+  ],
+  "lastReviewedAt": "2026-03-13",
+  "reviewedBy": "Smart Calculator Pro Team"
+}

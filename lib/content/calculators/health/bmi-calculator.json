@@ -1,0 +1,159 @@
+{
+  "id": "bmi-calculator",
+  "pageType": "calculator",
+  "status": "published",
+  "indexable": true,
+  "category": "health",
+  "subcategory": "fitness",
+  "slug": "bmi-calculator",
+  "path": "health/fitness/bmi-calculator",
+  "name": "BMI Calculator",
+  "titleTag": "BMI Calculator - Calculate Body Mass Index | Smart Calculator Pro",
+  "metaDescription": "Calculate your BMI (Body Mass Index) with our free BMI calculator. Understand your weight category and health implications.",
+  "h1": "BMI Calculator",
+  "intro": "Calculate your Body Mass Index (BMI) to understand if your weight is in a healthy range for your height.",
+  "shortDescription": "Calculate Body Mass Index from height and weight.",
+  "longDescription": "Body Mass Index (BMI) is a simple calculation using a person's height and weight. This calculator helps you determine if your weight is within a healthy range.",
+  "searchIntent": "transactional-tool",
+  "primaryKeyword": "bmi calculator",
+  "secondaryKeywords": ["body mass index calculator", " bmi for adults", "healthy weight calculator"],
+  "canonicalPath": "/health/fitness/bmi-calculator",
+  "schemaType": "SoftwareApplication",
+  "ogImageTemplate": "calculator-default",
+  "problemSolved": "Helps users understand their weight category and associated health risks.",
+  "whoItsFor": ["adults", "fitness enthusiasts", "health-conscious individuals"],
+  "calculationType": "formula",
+  "inputs": [
+    {
+      "key": "height",
+      "label": "Height",
+      "type": "number",
+      "unit": "inches",
+      "required": true,
+      "explanation": "Your height in inches (e.g., 68 for 5'8\").",
+      "min": 36,
+      "max": 96,
+      "step": 0.5,
+      "defaultValue": 68,
+      "placeholder": "e.g., 68"
+    },
+    {
+      "key": "weight",
+      "label": "Weight",
+      "type": "number",
+      "unit": "pounds",
+      "required": true,
+      "explanation": "Your weight in pounds.",
+      "min": 50,
+      "max": 600,
+      "step": 1,
+      "defaultValue": 150,
+      "placeholder": "e.g., 150"
+    }
+  ],
+  "outputs": [
+    {
+      "key": "bmi",
+      "label": "BMI",
+      "explanation": "Your Body Mass Index value.",
+      "unit": "number",
+      "precision": 1
+    },
+    {
+      "key": "category",
+      "label": "Weight Category",
+      "explanation": "Your BMI weight classification.",
+      "unit": "text",
+      "precision": 0
+    }
+  ],
+  "defaultValues": {
+    "height": 68,
+    "weight": 150
+  },
+  "formula": {
+    "label": "BMI Formula",
+    "expression": "BMI = (weight × 703) / (height × height)",
+    "plainText": "BMI equals weight in pounds times 703, divided by height in inches squared."
+  },
+  "formulaExplanation": [
+    "BMI uses a mathematical formula to calculate weight status",
+    "The formula was developed in the 19th century by Adolphe Quetelet",
+    "703 is the conversion factor for metric to imperial units"
+  ],
+  "methodologyNotes": [
+    "BMI is a general screening tool and does not measure body fat directly",
+    "BMI may overestimate body fat in athletes and underestimate it in older adults",
+    "Always consult a healthcare provider for personalized health advice"
+  ],
+  "example": {
+    "scenario": "An adult who is 68 inches tall and weighs 150 pounds.",
+    "inputs": {
+      "height": 68,
+      "weight": 150
+    },
+    "resultSummary": "Their BMI is approximately 22.8, which falls within the Normal weight range."
+  },
+  "resultInterpretation": {
+    "defaultText": "Your BMI result places you in one of four weight categories. While BMI is a useful screening tool, it doesn't account for muscle mass, bone density, or overall body composition.",
+    "thresholds": [
+      {
+        "label": "Underweight",
+        "max": 18.5,
+        "interpretation": "BMI below 18.5 suggests underweight. Consider consulting a healthcare provider."
+      },
+      {
+        "label": "Normal weight",
+        "min": 18.5,
+        "max": 24.9,
+        "interpretation": "BMI between 18.5 and 24.9 is considered a healthy weight range."
+      },
+      {
+        "label": "Overweight",
+        "min": 25,
+        "max": 29.9,
+        "interpretation": "BMI between 25 and 29.9 suggests overweight. Lifestyle changes may be beneficial."
+      },
+      {
+        "label": "Obese",
+        "min": 30,
+        "interpretation": "BMI of 30 or higher indicates obesity. Consult a healthcare provider."
+      }
+    ],
+    "warningMessages": [
+      "BMI is not suitable for children, pregnant women, or highly muscular individuals.",
+      "A healthy BMI doesn't guarantee good health—other factors like diet, exercise, and genetics matter."
+    ]
+  },
+  "faq": [
+    {
+      "question": "What is BMI?",
+      "answer": "BMI (Body Mass Index) is a measure of body fat based on height and weight. It's used as a screening tool to identify possible weight problems in adults."
+    },
+    {
+      "question": "What is a healthy BMI?",
+      "answer": "A healthy BMI for adults is typically between 18.5 and 24.9. However, individual factors like muscle mass, age, and overall health should also be considered."
+    },
+    {
+      "question": "Does BMI work for everyone?",
+      "answer": "No. BMI may not be accurate for athletes, older adults, pregnant women, or people with high muscle mass. It's a general screening tool, not a diagnostic tool."
+    }
+  ],
+  "relatedCalculators": ["calorie-calculator", "age-calculator"],
+  "relatedGuides": ["how-to-check-calculator-estimates"],
+  "comparisonPages": [],
+  "parentCategoryPath": "/health",
+  "siblingCalculators": ["calorie-calculator"],
+  "disclaimer": "This calculator provides general information only and is not a substitute for professional medical advice. Consult a healthcare provider for personalized guidance.",
+  "ui": {
+    "buttonText": "Calculate BMI",
+    "resetButtonText": "Reset",
+    "resultTitle": "Your BMI Results",
+    "showFormulaSection": true,
+    "showExampleSection": true,
+    "showFAQSection": true,
+    "showRelatedLinks": true
+  },
+  "lastReviewedAt": "2025-03-11",
+  "reviewedBy": "Smart Calculator Pro Team"
+}

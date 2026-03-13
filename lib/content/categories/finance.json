@@ -1,0 +1,55 @@
+{
+  "id": "finance",
+  "pageType": "category",
+  "status": "published",
+  "indexable": true,
+  "category": "finance",
+  "name": "Finance Calculators",
+  "slug": "finance",
+  "path": "finance",
+  "titleTag": "Finance Calculators - Loans, Mortgages, Interest & Savings | Smart Calculator Pro",
+  "metaDescription": "Calculate loan payments, mortgage costs, compound interest, and savings growth with our free finance calculators. Make informed financial decisions today.",
+  "h1": "Finance Calculators",
+  "intro": "Plan your financial future with our collection of finance calculators. From estimating loan payments to projecting investment growth, get the numbers you need to make smart money decisions.",
+  "primaryKeyword": "finance calculators",
+  "secondaryKeywords": ["loan calculator", "mortgage calculator", "compound interest calculator", "savings calculator"],
+  "searchIntent": "informational",
+  "canonicalPath": "/finance",
+  "schemaType": "CollectionPage",
+  "ogImageTemplate": "category-default",
+  "summary": "Comprehensive finance calculators for personal and business financial planning.",
+  "purpose": "Help users understand costs, plan payments, and project financial outcomes.",
+  "featuredCalculators": ["loan-calculator", "mortgage-calculator", "compound-interest-calculator", "savings-calculator"],
+  "featuredGuides": [],
+  "relatedCategories": ["math", "everyday-life"],
+  "faq": [
+    {
+      "question": "Are these finance calculators accurate?",
+      "answer": "Yes, our finance calculators use standard mathematical formulas and are designed for accuracy. However, results are estimates and should not replace professional financial advice."
+    },
+    {
+      "question": "Do I need to create an account to use the calculators?",
+      "answer": "No, all our calculators are free to use without registration."
+    },
+    {
+      "question": "Can I use these calculators on my phone?",
+      "answer": "Yes, our calculators are fully responsive and work on any device."
+    }
+  ],
+  "seoBodySections": [
+    {
+      "heading": "Why Use Finance Calculators?",
+      "content": "Finance calculators help you make informed decisions by showing you the numbers behind loans, mortgages, investments, and savings. Before signing any financial agreement, use a calculator to understand the total cost, monthly payments, and how interest affects your money over time."
+    },
+    {
+      "heading": "Understanding Loan Terms",
+      "content": "When borrowing money, it's important to understand the total cost. Our loan and mortgage calculators show you not just the monthly payment, but also the total interest you'll pay over the life of the loan. This helps you compare different loan offers and choose the one that costs less in the long run."
+    },
+    {
+      "heading": "Planning for the Future",
+      "content": "Use our compound interest and savings calculators to see how your money can grow over time. Small contributions today can compound into significant savings tomorrow. Understanding the power of compound interest is key to building long-term wealth."
+    }
+  ],
+  "lastReviewedAt": "2025-03-11",
+  "reviewedBy": "Smart Calculator Pro Team"
+}

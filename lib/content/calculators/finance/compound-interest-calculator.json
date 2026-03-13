@@ -1,0 +1,200 @@
+{
+  "id": "compound-interest-calculator",
+  "pageType": "calculator",
+  "status": "published",
+  "indexable": true,
+  "category": "finance",
+  "subcategory": "investing",
+  "slug": "compound-interest-calculator",
+  "path": "finance/investing/compound-interest-calculator",
+  "name": "Compound Interest Calculator",
+  "titleTag": "Compound Interest Calculator - Watch Your Money Grow | Smart Calculator Pro",
+  "metaDescription": "Calculate compound interest and see how your investments grow over time. Free calculator for savings accounts, investments, and retirement planning.",
+  "h1": "Compound Interest Calculator",
+  "intro": "See how compound interest can help your money grow over time. Enter your initial investment, contribution amount, interest rate, and time horizon.",
+  "shortDescription": "Calculate investment growth with compound interest over time.",
+  "longDescription": "This calculator shows how compound interest works - the phenomenon of earning interest on your interest. See how different contribution amounts, interest rates, and time periods affect your final balance.",
+  "searchIntent": "transactional-tool",
+  "primaryKeyword": "compound interest calculator",
+  "secondaryKeywords": ["investment calculator", "savings growth calculator", "future value calculator"],
+  "canonicalPath": "/finance/investing/compound-interest-calculator",
+  "schemaType": "SoftwareApplication",
+  "ogImageTemplate": "calculator-default",
+  "problemSolved": "Helps users understand and project investment growth using compound interest.",
+  "whoItsFor": ["investors", "savers", "retirement planners", "students"],
+  "calculationType": "iterative",
+  "inputs": [
+    {
+      "key": "principal",
+      "label": "Initial Investment",
+      "type": "number",
+      "unit": "currency",
+      "required": true,
+      "explanation": "The amount you start with (your initial deposit or principal).",
+      "min": 0,
+      "step": 100,
+      "defaultValue": 10000,
+      "placeholder": "e.g., 10000"
+    },
+    {
+      "key": "annualInterestRate",
+      "label": "Annual Interest Rate",
+      "type": "number",
+      "unit": "percent",
+      "required": true,
+      "explanation": "The expected annual interest rate or rate of return.",
+      "min": 0,
+      "max": 100,
+      "step": 0.01,
+      "defaultValue": 7,
+      "placeholder": "e.g., 7"
+    },
+    {
+      "key": "years",
+      "label": "Investment Period",
+      "type": "number",
+      "unit": "years",
+      "required": true,
+      "explanation": "How long you plan to leave the money invested.",
+      "min": 1,
+      "max": 100,
+      "step": 1,
+      "defaultValue": 20,
+      "placeholder": "e.g., 20"
+    },
+    {
+      "key": "contributionAmount",
+      "label": "Regular Contribution",
+      "type": "number",
+      "unit": "currency",
+      "required": false,
+      "explanation": "Optional regular contribution (e.g., monthly deposits into savings).",
+      "min": 0,
+      "step": 10,
+      "defaultValue": 500,
+      "placeholder": "e.g., 500"
+    },
+    {
+      "key": "contributionFrequency",
+      "label": "Contribution Frequency",
+      "type": "select",
+      "required": false,
+      "explanation": "How often you make regular contributions.",
+      "defaultValue": "monthly",
+      "validationMessage": "Please select a contribution frequency."
+    },
+    {
+      "key": "compoundingFrequency",
+      "label": "Compounding Frequency",
+      "type": "select",
+      "required": false,
+      "explanation": "How often interest is calculated and added to your account.",
+      "defaultValue": "monthly",
+      "validationMessage": "Please select a compounding frequency."
+    }
+  ],
+  "outputs": [
+    {
+      "key": "finalBalance",
+      "label": "Final Balance",
+      "explanation": "The total value of your investment at the end of the period.",
+      "unit": "currency",
+      "precision": 2
+    },
+    {
+      "key": "totalContributions",
+      "label": "Total Contributions",
+      "explanation": "The total amount you deposited including the initial investment.",
+      "unit": "currency",
+      "precision": 2
+    },
+    {
+      "key": "totalInterest",
+      "label": "Total Interest Earned",
+      "explanation": "The amount of interest earned through compounding over the period.",
+      "unit": "currency",
+      "precision": 2
+    }
+  ],
+  "defaultValues": {
+    "principal": 10000,
+    "annualInterestRate": 7,
+    "years": 20,
+    "contributionAmount": 500,
+    "contributionFrequency": "monthly",
+    "compoundingFrequency": "monthly"
+  },
+  "formula": {
+    "label": "Compound Interest Formula",
+    "expression": "A = P(1 + r/n)^(nt) + PMT x [((1 + r/n)^(nt) - 1) / (r/n)]",
+    "plainText": "The future value equals the compounded principal plus compounded regular contributions."
+  },
+  "formulaExplanation": [
+    "A is the final amount (future value)",
+    "P is the principal (initial investment)",
+    "PMT is the regular contribution amount",
+    "r is the annual interest rate (as a decimal)",
+    "n is the number of times interest is compounded per year",
+    "t is the number of years"
+  ],
+  "methodologyNotes": [
+    "This calculator assumes compound interest is added at regular intervals based on the compounding frequency.",
+    "Contributions are assumed to be made at the end of each period.",
+    "Actual returns may vary and are not guaranteed - this calculator uses hypothetical returns."
+  ],
+  "example": {
+    "scenario": "Starting with $10,000 and adding $500 monthly at 7% annual interest for 20 years.",
+    "inputs": {
+      "principal": 10000,
+      "annualInterestRate": 7,
+      "years": 20,
+      "contributionAmount": 500,
+      "contributionFrequency": "monthly",
+      "compoundingFrequency": "monthly"
+    },
+    "resultSummary": "The final balance would be approximately $325,525. You contributed $130,000 total, meaning compound interest earned you approximately $195,525."
+  },
+  "resultInterpretation": {
+    "defaultText": "Notice how total interest earned can exceed your total contributions when given enough time. This demonstrates the power of compound interest.",
+    "warningMessages": [
+      "Actual returns may differ from the projected rate. Past performance does not guarantee future results.",
+      "Inflation can reduce the purchasing power of your money over long time periods.",
+      "Tax implications are not considered here - investment gains may be taxable."
+    ]
+  },
+  "faq": [
+    {
+      "question": "What is compound interest?",
+      "answer": "Compound interest is interest earned on both your original money (principal) and the interest that money has already earned. Over time, this creates exponential growth as your interest on interest accumulates."
+    },
+    {
+      "question": "How often should interest compound?",
+      "answer": "More frequent compounding (daily or monthly) generally yields higher returns than less frequent compounding (annually). However, the difference becomes less significant at higher interest rates and longer time periods."
+    },
+    {
+      "question": "What's a good interest rate to expect?",
+      "answer": "Historical stock market returns average about 7-10% annually (before inflation). Savings accounts and CDs typically offer lower but more guaranteed returns. Your expected rate depends on your risk tolerance and investment choices."
+    },
+    {
+      "question": "Why does starting early matter so much?",
+      "answer": "Because compound interest grows exponentially, time is your most valuable asset. Starting even a few years earlier can dramatically increase your final balance due to the compounding effect."
+    }
+  ],
+  "relatedCalculators": ["savings-calculator", "loan-calculator", "mortgage-calculator"],
+  "relatedGuides": ["how-to-calculate-loan-payments"],
+  "comparisonPages": [],
+  "parentCategoryPath": "/finance",
+  "siblingCalculators": ["savings-calculator", "loan-calculator", "mortgage-calculator"],
+  "disclaimer": "This calculator provides estimates only and does not constitute investment advice. Actual investment returns may vary and are not guaranteed. Consider consulting a financial advisor for personalized guidance.",
+  "ui": {
+    "buttonText": "Calculate Growth",
+    "resetButtonText": "Reset",
+    "resultTitle": "Your Investment Growth Results",
+    "showFormulaSection": true,
+    "showExampleSection": true,
+    "showFAQSection": true,
+    "showRelatedLinks": true
+  },
+  "lastReviewedAt": "2025-03-11",
+  "reviewedBy": "Smart Calculator Pro Team"
+}

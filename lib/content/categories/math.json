@@ -1,0 +1,39 @@
+{
+  "id": "math",
+  "pageType": "category",
+  "status": "published",
+  "indexable": true,
+  "category": "math",
+  "name": "Math Calculators",
+  "slug": "math",
+  "path": "math",
+  "titleTag": "Math Calculators - Percentage, Area & More | Smart Calculator Pro",
+  "metaDescription": "Free online math calculators for percentages, areas, volumes, and more. Solve math problems quickly and accurately.",
+  "h1": "Math Calculators",
+  "intro": "Solve everyday math problems with our collection of math calculators. Calculate percentages, areas, volumes, and more.",
+  "primaryKeyword": "math calculators",
+  "secondaryKeywords": ["percentage calculator", "area calculator", "math tools"],
+  "searchIntent": "informational",
+  "canonicalPath": "/math",
+  "schemaType": "CollectionPage",
+  "ogImageTemplate": "category-default",
+  "summary": "Mathematical calculators for common calculations.",
+  "purpose": "Help users solve common math problems quickly.",
+  "featuredCalculators": ["percentage-calculator", "area-calculator"],
+  "featuredGuides": [],
+  "relatedCategories": ["construction", "everyday-life"],
+  "faq": [
+    {
+      "question": "Are these math calculators accurate?",
+      "answer": "Yes, our math calculators use standard mathematical formulas and are accurate to the displayed precision."
+    }
+  ],
+  "seoBodySections": [
+    {
+      "heading": "Why Use Math Calculators?",
+      "content": "Math calculators save time and reduce errors in everyday calculations. Whether you're calculating a tip, figuring out percentages, or estimating materials for a project, our tools provide quick answers."
+    }
+  ],
+  "lastReviewedAt": "2025-03-11",
+  "reviewedBy": "Smart Calculator Pro Team"
+}

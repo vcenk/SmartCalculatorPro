@@ -1,0 +1,39 @@
+{
+  "id": "construction",
+  "pageType": "category",
+  "status": "published",
+  "indexable": true,
+  "category": "construction",
+  "name": "Construction Calculators",
+  "slug": "construction",
+  "path": "construction",
+  "titleTag": "Construction Calculators - Concrete, Gravel & Materials | Smart Calculator Pro",
+  "metaDescription": "Calculate construction materials including concrete, gravel, and more. Estimate project costs accurately with our free construction calculators.",
+  "h1": "Construction Calculators",
+  "intro": "Estimate materials and costs for your construction projects with our collection of calculators. Calculate concrete volumes, gravel needs, and more.",
+  "primaryKeyword": "construction calculators",
+  "secondaryKeywords": ["concrete calculator", "gravel calculator", "material calculator"],
+  "searchIntent": "informational",
+  "canonicalPath": "/construction",
+  "schemaType": "CollectionPage",
+  "ogImageTemplate": "category-default",
+  "summary": "Construction material estimators and calculators.",
+  "purpose": "Help users estimate materials for construction projects.",
+  "featuredCalculators": ["concrete-calculator", "gravel-calculator"],
+  "featuredGuides": [],
+  "relatedCategories": ["math", "everyday-life"],
+  "faq": [
+    {
+      "question": "Are these construction calculators accurate?",
+      "answer": "Our calculators use standard formulas for material estimation. Always add a 5-10% buffer for waste and cutting."
+    }
+  ],
+  "seoBodySections": [
+    {
+      "heading": "Why Use Construction Calculators?",
+      "content": "Construction calculators help you estimate material needs accurately, reducing waste and ensuring you order the right amount. This saves both time and money on your projects."
+    }
+  ],
+  "lastReviewedAt": "2025-03-11",
+  "reviewedBy": "Smart Calculator Pro Team"
+}

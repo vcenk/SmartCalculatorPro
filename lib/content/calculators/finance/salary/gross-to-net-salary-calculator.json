@@ -1,0 +1,315 @@
+{
+  "id": "gross-to-net-salary-calculator",
+  "pageType": "calculator",
+  "status": "published",
+  "indexable": true,
+  "category": "finance",
+  "subcategory": "salary",
+  "slug": "gross-to-net-salary-calculator",
+  "path": "finance/salary/gross-to-net-salary-calculator",
+  "title": "Gross to Net Salary Calculator",
+  "name": "Gross to Net Salary Calculator",
+  "titleTag": "Gross to Net Salary Calculator | Smart Calculator Pro",
+  "metaDescription": "Estimate your U.S. take-home pay for tax year 2025 with our gross to net salary calculator. Review taxes, payroll deductions, and planning assumptions in one place.",
+  "h1": "Gross to Net Salary Calculator",
+  "intro": "Estimate your U.S. net pay for tax year 2025 after federal taxes, state taxes, Social Security, Medicare, and common payroll deductions.",
+  "shortDescription": "Estimate U.S. take-home pay after taxes, payroll deductions, and common 2025 withholding assumptions.",
+  "longDescription": "This salary calculator estimates how gross pay may translate into take-home pay under simplified 2025 U.S. payroll tax assumptions. It is designed for job-offer review, paycheck planning, and salary comparisons when you want to understand what a headline salary may mean for actual take-home pay.",
+  "primaryKeyword": "gross to net salary calculator",
+  "secondaryKeywords": ["net pay calculator", "take home pay calculator", "salary after taxes"],
+  "searchIntent": "transactional-tool",
+  "canonicalPath": "/finance/salary/gross-to-net-salary-calculator",
+  "schemaType": "SoftwareApplication",
+  "ogImageTemplate": "calculator-default",
+  "problemSolved": "Understanding net pay helps with budgeting and financial planning.",
+  "whoItsFor": ["employees", "job seekers", "freelancers", "contractors"],
+  "calculationType": "formula",
+  "inputs": [
+    {
+      "key": "grossSalary",
+      "label": "Gross Pay",
+      "type": "number",
+      "unit": "currency",
+      "required": true,
+      "explanation": "Enter the pay amount before taxes and deductions for the pay frequency you selected.",
+      "min": 0,
+      "step": 1000
+    },
+    {
+      "key": "payFrequency",
+      "label": "Pay Frequency",
+      "type": "select",
+      "required": true,
+      "explanation": "How often you receive payment.",
+      "options": [
+        { "value": "annual", "label": "Annual" },
+        { "value": "monthly", "label": "Monthly" },
+        { "value": "biweekly", "label": "Bi-Weekly (every 2 weeks)" },
+        { "value": "semimonthly", "label": "Semi-Monthly (twice a month)" }
+      ],
+      "defaultValue": "annual"
+    },
+    {
+      "key": "taxYear",
+      "label": "Tax Year",
+      "type": "number",
+      "unit": "year",
+      "required": true,
+      "explanation": "This salary calculator is currently tuned for 2025 U.S. planning assumptions.",
+      "min": 2024,
+      "max": 2099,
+      "step": 1,
+      "defaultValue": 2025
+    },
+    {
+      "key": "filingStatus",
+      "label": "Filing Status",
+      "type": "select",
+      "required": true,
+      "explanation": "Your tax filing status affects deductions.",
+      "options": [
+        { "value": "single", "label": "Single" },
+        { "value": "marriedJoint", "label": "Married Filing Jointly" },
+        { "value": "marriedSeparate", "label": "Married Filing Separately" },
+        { "value": "headOfHousehold", "label": "Head of Household" }
+      ],
+      "defaultValue": "single"
+    },
+    {
+      "key": "federalAllowances",
+      "label": "Federal Deduction Amount",
+      "type": "number",
+      "unit": "currency",
+      "required": false,
+      "explanation": "The federal deduction amount used before applying simplified 2025 tax brackets.",
+      "min": 0,
+      "step": 100,
+      "defaultValue": 14600
+    },
+    {
+      "key": "stateTaxRate",
+      "label": "State Tax Rate",
+      "type": "number",
+      "unit": "percent",
+      "required": true,
+      "explanation": "Use a flat state income tax estimate for planning. Actual state rules vary.",
+      "min": 0,
+      "max": 15,
+      "step": 0.1,
+      "defaultValue": 5
+    },
+    {
+      "key": "socialSecurityRate",
+      "label": "Social Security Tax Rate",
+      "type": "number",
+      "unit": "percent",
+      "required": true,
+      "explanation": "Employee Social Security rate used for the estimate.",
+      "min": 0,
+      "max": 8,
+      "step": 0.1,
+      "defaultValue": 6.2
+    },
+    {
+      "key": "medicareRate",
+      "label": "Medicare Tax Rate",
+      "type": "number",
+      "unit": "percent",
+      "required": true,
+      "explanation": "Employee Medicare rate used for the estimate.",
+      "min": 0,
+      "max": 5,
+      "step": 0.1,
+      "defaultValue": 1.45
+    },
+    {
+      "key": "pretaxDeductions",
+      "label": "Pre-Tax Deductions",
+      "type": "number",
+      "unit": "currency",
+      "required": false,
+      "explanation": "Annual pre-tax deductions such as traditional 401(k) or HSA contributions.",
+      "min": 0,
+      "step": 500,
+      "defaultValue": 0
+    },
+    {
+      "key": "posttaxDeductions",
+      "label": "Post-Tax Deductions",
+      "type": "number",
+      "unit": "currency",
+      "required": false,
+      "explanation": "Annual post-tax deductions such as insurance premiums or other paycheck deductions.",
+      "min": 0,
+      "step": 100,
+      "defaultValue": 0
+    }
+  ],
+  "outputs": [
+    {
+      "key": "netSalary",
+      "label": "Net Salary",
+      "explanation": "Your take-home pay after all deductions.",
+      "unit": "currency",
+      "precision": 0
+    },
+    {
+      "key": "federalTax",
+      "label": "Federal Tax",
+      "explanation": "Federal income tax withholding.",
+      "unit": "currency",
+      "precision": 0
+    },
+    {
+      "key": "stateTax",
+      "label": "State Tax",
+      "explanation": "State income tax withholding.",
+      "unit": "currency",
+      "precision": 0
+    },
+    {
+      "key": "socialSecurityTax",
+      "label": "Social Security Tax",
+      "explanation": "Social Security contribution.",
+      "unit": "currency",
+      "precision": 0
+    },
+    {
+      "key": "medicareTax",
+      "label": "Medicare Tax",
+      "explanation": "Medicare contribution.",
+      "unit": "currency",
+      "precision": 0
+    },
+    {
+      "key": "totalTaxes",
+      "label": "Total Taxes",
+      "explanation": "Sum of all tax withholdings.",
+      "unit": "currency",
+      "precision": 0
+    },
+    {
+      "key": "totalDeductions",
+      "label": "Total Deductions",
+      "explanation": "Sum of all pre-tax and post-tax deductions.",
+      "unit": "currency",
+      "precision": 0
+    },
+    {
+      "key": "effectiveTaxRate",
+      "label": "Effective Tax Rate",
+      "explanation": "Combined tax burden as a percentage of gross salary.",
+      "unit": "percent",
+      "precision": 1
+    },
+    {
+      "key": "annualNetSalary",
+      "label": "Annual Net Salary",
+      "explanation": "Estimated take-home pay across the full year.",
+      "unit": "currency",
+      "precision": 0
+    }
+  ],
+  "defaultValues": {
+    "grossSalary": 75000,
+    "payFrequency": "annual",
+    "taxYear": 2025,
+    "filingStatus": "single",
+    "federalAllowances": 14600,
+    "stateTaxRate": 5,
+    "socialSecurityRate": 6.2,
+    "medicareRate": 1.45
+  },
+  "formula": {
+    "label": "Net Pay Formula",
+    "expression": "Net = Gross - Federal Tax - State Tax - Social Security - Medicare - Other Deductions",
+    "plainText": "Net salary equals gross salary minus estimated taxes and any pre-tax or post-tax deductions included in the scenario."
+  },
+  "formulaExplanation": [
+    "Federal Tax is calculated using progressive tax brackets based on taxable income.",
+    "State Tax is calculated using the provided state tax rate.",
+    "Social Security Tax is calculated as a percentage of wages (up to Social Security wage base limit).",
+    "Medicare Tax is calculated as a percentage of wages (no income limit).",
+    "Pre-tax deductions (like 401k retirement contributions) reduce taxable income.",
+    "Post-tax deductions (like health insurance) are subtracted after taxes to determine net pay."
+  ],
+  "methodologyNotes": [
+    "This calculator uses simplified 2025 tax brackets and rates.",
+    "Federal tax brackets are for single filers with no dependents.",
+    "State tax is calculated as a flat percentage of gross wages (actual state taxes vary significantly).",
+    "Social Security and Medicare rates are standard percentages set by law.",
+    "The standard deduction is applied based on filing status.",
+    "This calculator does not account for state-specific tax credits, deductions, or exemptions."
+  ],
+  "example": {
+    "scenario": "A single filer earning $75,000 annually, paid annually, with no additional deductions.",
+    "inputs": {
+      "grossSalary": 75000,
+      "payFrequency": "annual",
+      "taxYear": 2025,
+      "filingStatus": "single",
+      "federalAllowances": 14600,
+      "stateTaxRate": 5,
+      "socialSecurityRate": 6.2,
+      "medicareRate": 1.45
+    },
+    "resultSummary": "The calculator shows a federal tax of approximately $8,341, state tax of $3,750, Social Security of $4,650, Medicare of $1,088, resulting in annual net pay of about $57,172, or roughly $4,764 per month."
+  },
+  "resultInterpretation": {
+    "defaultText": "Use this result as a planning estimate for what may reach your bank account after withholding and deductions under these 2025 U.S. assumptions.",
+    "thresholds": [
+      {
+        "label": "Effective Tax Rate",
+        "min": 20,
+        "max": 35,
+        "interpretation": "Combined federal, state, Social Security, and Medicare taxes typically range from 20-35% of gross wages for most employees."
+      }
+    ],
+    "warningMessages": [
+      "If your real paycheck includes local taxes, employer-paid benefits, or custom withholding elections, your actual take-home pay may differ."
+    ]
+  },
+  "faq": [
+    {
+      "question": "What is the difference between gross and net salary?",
+      "answer": "Gross salary is your total pay before any deductions. Net salary is what remains after all taxes and other deductions are subtracted. Net salary is your actual take-home pay."
+    },
+    {
+      "question": "What is the Social Security wage base limit?",
+      "answer": "The Social Security wage base limit is the maximum amount of earnings subject to Social Security tax. In 2025, this limit is $174,900. Earnings above this amount are not subject to Social Security tax."
+    },
+    {
+      "question": "How does filing status affect my taxes?",
+      "answer": "Filing status determines your standard deduction amount and tax bracket thresholds. Single filers receive one standard deduction, while married couples filing jointly receive double. Married filing separately can sometimes result in lower taxes for high-income earners."
+    },
+    {
+      "question": "Are state taxes the same everywhere?",
+      "answer": "No, state tax rates vary significantly by location. This calculator uses a flat rate for estimation purposes only. For accurate state tax calculations, refer to your state's tax authority or consult a tax professional."
+    },
+    {
+      "question": "What if my employer offers a 401(k) plan?",
+      "answer": "If you contribute to a traditional 401(k) plan, you can enter those contributions as a pre-tax deduction. However, note that there are annual contribution limits set by the IRS that affect how much reduces your taxable income."
+    }
+  ],
+  "relatedCalculators": ["net-to-gross-salary-calculator", "savings-calculator", "loan-calculator"],
+  "relatedGuides": ["how-gross-to-net-salary-is-calculated"],
+  "comparisonPages": ["gross-to-net-salary-calculator-vs-net-to-gross-salary-calculator"],
+  "parentCategoryPath": "/finance/salary",
+  "disclaimer": "This calculator provides estimates for U.S. federal and state taxes based on 2025 tax brackets and rates. Actual tax liabilities vary based on individual circumstances, location, and filing status. This is an educational tool and does not constitute tax or financial advice. Consult a qualified tax professional or the IRS for personalized tax planning.",
+  "ui": {
+    "buttonText": "Calculate Net Pay",
+    "resetButtonText": "Reset",
+    "resultTitle": "Your Salary Estimate",
+    "showFormulaSection": true,
+    "showExampleSection": true,
+    "showInterpretation": true,
+    "showFAQSection": true,
+    "showRelatedLinks": true
+  },
+  "countryCode": "US",
+  "currencyCode": "USD",
+  "taxYear": 2025,
+  "payFrequency": "annual",
+  "calculationVersion": "2025.1",
+  "assumptions": "Based on 2025 U.S. federal tax brackets for single filers with no dependents. State tax calculated as flat rate. Social Security and Medicare rates are statutory percentages. Pre-tax deductions reduce taxable income. Post-tax deductions subtracted from net pay."
+}

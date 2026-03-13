@@ -1,0 +1,39 @@
+{
+  "id": "everyday-life",
+  "pageType": "category",
+  "status": "published",
+  "indexable": true,
+  "category": "everyday-life",
+  "name": "Everyday Life Calculators",
+  "slug": "everyday-life",
+  "path": "everyday-life",
+  "titleTag": "Everyday Life Calculators - Tips, Age & More | Smart Calculator Pro",
+  "metaDescription": "Free calculators for everyday situations including tip calculation, age calculation, unit converters, and more.",
+  "h1": "Everyday Life Calculators",
+  "intro": "Quick calculators for everyday situations. Calculate tips, find your age in days, and handle common calculations easily.",
+  "primaryKeyword": "everyday life calculators",
+  "secondaryKeywords": ["tip calculator", "age calculator", "unit converter"],
+  "searchIntent": "informational",
+  "canonicalPath": "/everyday-life",
+  "schemaType": "CollectionPage",
+  "ogImageTemplate": "category-default",
+  "summary": "Everyday utility calculators for common tasks.",
+  "purpose": "Help users with everyday calculations and conversions.",
+  "featuredCalculators": ["tip-calculator", "age-calculator"],
+  "featuredGuides": [],
+  "relatedCategories": ["math", "finance"],
+  "faq": [
+    {
+      "question": "Are these calculators free?",
+      "answer": "Yes, all our calculators are free to use with no registration required."
+    }
+  ],
+  "seoBodySections": [
+    {
+      "heading": "Why Use Everyday Life Calculators?",
+      "content": "Everyday life calculators solve common problems quickly. Whether you're figuring out a tip, calculating someone's age, or converting units, our tools provide instant answers."
+    }
+  ],
+  "lastReviewedAt": "2025-03-11",
+  "reviewedBy": "Smart Calculator Pro Team"
+}

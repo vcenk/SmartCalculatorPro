@@ -1,0 +1,68 @@
+{
+  "id": "how-to-calculate-loan-payments",
+  "pageType": "guide",
+  "status": "published",
+  "indexable": true,
+  "slug": "how-to-calculate-loan-payments",
+  "path": "guides/how-to-calculate-loan-payments",
+  "title": "How to Calculate Loan Payments",
+  "titleTag": "How to Calculate Loan Payments - Complete Guide | Smart Calculator Pro",
+  "metaDescription": "Learn the formula for calculating monthly loan payments, understand amortization, and use our free loan calculator to estimate your payments.",
+  "h1": "How to Calculate Loan Payments",
+  "intro": "Understanding how loan payments are calculated helps you make better borrowing decisions and plan your budget effectively.",
+  "primaryKeyword": "how to calculate loan payments",
+  "secondaryKeywords": ["loan payment formula", "amortization formula", "monthly loan calculation"],
+  "searchIntent": "informational",
+  "canonicalPath": "/guides/how-to-calculate-loan-payments",
+  "schemaType": "Article",
+  "ogImageTemplate": "guide-default",
+  "guideType": "how-to",
+  "summary": "This guide explains the loan payment formula, how amortization works, and provides a step-by-step method for calculating monthly payments.",
+  "quickAnswer": "Monthly loan payments are calculated using the amortization formula: M = P x [r(1+r)^n] / [(1+r)^n - 1], where M is the monthly payment, P is the loan amount, r is the monthly interest rate, and n is the total number of payments.",
+  "sections": [
+    {
+      "heading": "Understanding the Loan Payment Formula",
+      "content": "<p>The standard formula for calculating monthly loan payments is called the amortization formula. This formula ensures that each payment covers both the interest accrued that month and a portion of the principal, so that the loan is fully paid off by the end of the term.</p><p><strong>The formula is:</strong></p><p><code>M = P x [r(1+r)^n] / [(1+r)^n - 1]</code></p><p>Where:</p><ul><li><strong>M</strong> = Monthly payment</li><li><strong>P</strong> = Principal (loan amount)</li><li><strong>r</strong> = Monthly interest rate (annual rate divided by 12)</li><li><strong>n</strong> = Total number of monthly payments (years x 12)</li></ul>"
+    },
+    {
+      "heading": "Step-by-Step Calculation Example",
+      "content": "<p>Let's walk through a concrete example. Suppose you borrow $20,000 at 6% annual interest for 5 years.</p><p><strong>Step 1:</strong> Convert the annual interest rate to a monthly rate:<br><code>r = 6% / 12 = 0.5% = 0.005</code></p><p><strong>Step 2:</strong> Calculate the total number of payments:<br><code>n = 5 years x 12 = 60 payments</code></p><p><strong>Step 3:</strong> Calculate the growth factor (1 + r)^n:<br><code>(1 + 0.005)^60 = 1.34885</code></p><p><strong>Step 4:</strong> Apply the full formula:<br><code>M = 20,000 x [0.005 x 1.34885] / [1.34885 - 1]</code><br><code>M = 20,000 x 0.006744 / 0.34885</code><br><code>M = 386.66</code></p><p>Your monthly payment would be approximately <strong>$386.66</strong>.</p>"
+    },
+    {
+      "heading": "How Amortization Works",
+      "content": "<p>Amortization is the process of spreading loan payments over time. In the early years of a loan, a larger portion of each payment goes toward interest rather than principal. As the principal balance decreases, less interest accrues each month, so more of your payment goes toward paying down the principal.</p><p>This is why shorter loan terms often save you significant money in interest - even though the monthly payments are higher, you are paying off principal faster and spending fewer years paying interest.</p>"
+    },
+    {
+      "heading": "Factors That Affect Your Payment",
+      "content": "<p>Several factors determine your monthly payment amount:</p><ul><li><strong>Loan Amount:</strong> Higher principal means higher monthly payments.</li><li><strong>Interest Rate:</strong> Higher rates increase your monthly payment and total cost.</li><li><strong>Loan Term:</strong> Longer terms reduce monthly payments but increase total interest paid.</li><li><strong>Payment Frequency:</strong> Most loans use monthly payments, but weekly or bi-weekly payments can reduce total interest.</li></ul>"
+    },
+    {
+      "heading": "Why This Matters",
+      "content": "<p>Understanding loan payments helps you:</p><ul><li><strong>Budget effectively:</strong> Know exactly what you'll owe each month.</li><li><strong>Compare loan offers:</strong> See which loan actually costs less over time, not just the monthly payment.</li><li><strong>Choose the right term:</strong> Balance affordable monthly payments against total interest cost.</li><li><strong>Pay extra strategically:</strong> Extra payments toward principal can save significant interest and shorten your loan.</li></ul>"
+    }
+  ],
+  "faq": [
+    {
+      "question": "What's the difference between interest rate and APR?",
+      "answer": "The interest rate is the cost of borrowing money, expressed as a percentage. APR (Annual Percentage Rate) includes both the interest rate and certain fees, giving you a more complete picture of the total cost of borrowing."
+    },
+    {
+      "question": "Does the formula work for all types of loans?",
+      "answer": "This amortization formula works for fixed-rate installment loans like personal loans, auto loans, and mortgages. It doesn't apply to interest-only loans, variable-rate loans (unless using the current rate), or revolving credit like credit cards."
+    },
+    {
+      "question": "Can I calculate loan payments for a different payment frequency?",
+      "answer": "Yes. Adjust the formula by using the appropriate number of periods per year and dividing the annual rate by that number instead of 12. For example, bi-weekly payments would use 26 periods per year."
+    },
+    {
+      "question": "What happens if I make extra payments?",
+      "answer": "Extra payments typically go directly toward reducing your principal. This reduces the remaining balance faster, which means less interest accrues in future months. This can shorten your loan term and save significant money in interest."
+    }
+  ],
+  "relatedCalculators": ["loan-calculator", "mortgage-calculator"],
+  "relatedComparisons": ["loan-calculator-vs-mortgage-calculator"],
+  "relatedGuides": [],
+  "disclaimer": "This guide is for educational purposes only. Loan terms, rates, and qualification requirements vary by lender and borrower. Consult a financial professional for personalized advice.",
+  "lastReviewedAt": "2025-03-12",
+  "reviewedBy": "Smart Calculator Pro Team"
+}

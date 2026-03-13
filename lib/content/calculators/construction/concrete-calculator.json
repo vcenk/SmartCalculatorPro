@@ -1,0 +1,179 @@
+{
+  "id": "concrete-calculator",
+  "pageType": "calculator",
+  "status": "published",
+  "indexable": true,
+  "category": "construction",
+  "subcategory": "materials",
+  "slug": "concrete-calculator",
+  "path": "construction/materials/concrete-calculator",
+  "name": "Concrete Calculator",
+  "titleTag": "Concrete Calculator - Estimate Concrete Volume | Smart Calculator Pro",
+  "metaDescription": "Calculate concrete volume for slabs, footings, and columns. Estimate cubic yards needed for your concrete project.",
+  "h1": "Concrete Calculator",
+  "intro": "Calculate the amount of concrete needed for your project. Enter dimensions to get volume estimates in cubic yards and bags of concrete.",
+  "shortDescription": "Calculate concrete volume for slabs, footings, and columns.",
+  "longDescription": "This calculator estimates concrete volume for common construction projects including slabs, footings, and columns. Get results in cubic yards and the number of concrete bags needed.",
+  "searchIntent": "transactional-tool",
+  "primaryKeyword": "concrete calculator",
+  "secondaryKeywords": ["concrete volume calculator", "cubic yards calculator", "concrete bag calculator"],
+  "canonicalPath": "/construction/materials/concrete-calculator",
+  "schemaType": "SoftwareApplication",
+  "ogImageTemplate": "calculator-default",
+  "problemSolved": "Helps users estimate concrete materials needed for construction projects.",
+  "whoItsFor": ["DIYers", "contractors", "homeowners", "construction workers"],
+  "calculationType": "formula",
+  "inputs": [
+    {
+      "key": "shape",
+      "label": "Project Type",
+      "type": "select",
+      "required": true,
+      "explanation": "Select the type of concrete project.",
+      "defaultValue": "slab",
+      "validationMessage": "Please select a project type."
+    },
+    {
+      "key": "length",
+      "label": "Length",
+      "type": "number",
+      "unit": "feet",
+      "required": true,
+      "explanation": "The length of the project in feet.",
+      "min": 0.5,
+      "step": 0.5,
+      "defaultValue": 10,
+      "placeholder": "e.g., 10"
+    },
+    {
+      "key": "width",
+      "label": "Width",
+      "type": "number",
+      "unit": "feet",
+      "required": true,
+      "explanation": "The width of the project in feet.",
+      "min": 0.5,
+      "step": 0.5,
+      "defaultValue": 10,
+      "placeholder": "e.g., 10"
+    },
+    {
+      "key": "depth",
+      "label": "Depth/Thickness",
+      "type": "number",
+      "unit": "inches",
+      "required": true,
+      "explanation": "The thickness or depth in inches.",
+      "min": 1,
+      "max": 48,
+      "step": 0.5,
+      "defaultValue": 4,
+      "placeholder": "e.g., 4"
+    },
+    {
+      "key": "bagSize",
+      "label": "Bag Size",
+      "type": "select",
+      "required": true,
+      "explanation": "Size of concrete bags you'll be using.",
+      "defaultValue": "80",
+      "validationMessage": "Please select a bag size."
+    }
+  ],
+  "outputs": [
+    {
+      "key": "cubicYards",
+      "label": "Concrete Volume",
+      "explanation": "Total volume needed in cubic yards.",
+      "unit": "cubic yards",
+      "precision": 2
+    },
+    {
+      "key": "cubicFeet",
+      "label": "Volume",
+      "explanation": "Total volume in cubic feet.",
+      "unit": "cubic feet",
+      "precision": 2
+    },
+    {
+      "key": "numberOfBags",
+      "label": "Number of Bags",
+      "explanation": "Estimated number of concrete bags needed.",
+      "unit": "bags",
+      "precision": 0
+    }
+  ],
+  "defaultValues": {
+    "shape": "slab",
+    "length": 10,
+    "width": 10,
+    "depth": 4,
+    "bagSize": "80"
+  },
+  "formula": {
+    "label": "Concrete Volume Formula",
+    "expression": "Volume (cubic yards) = (L × W × D ÷ 27)",
+    "plainText": "Volume in cubic yards equals length times width times depth (in feet), divided by 27."
+  },
+  "formulaExplanation": [
+    "Convert depth from inches to feet by dividing by 12",
+    "Multiply length × width × depth (in feet) to get cubic feet",
+    "Divide by 27 to convert cubic feet to cubic yards"
+  ],
+  "methodologyNotes": [
+    "One cubic yard equals 27 cubic feet",
+    "Standard 80 lb bag of concrete yields approximately 0.6 cubic feet",
+    "Standard 60 lb bag of concrete yields approximately 0.45 cubic feet",
+    "Standard 40 lb bag of concrete yields approximately 0.3 cubic feet"
+  ],
+  "example": {
+    "scenario": "A concrete slab 10 feet by 10 feet, 4 inches thick, using 80 lb bags.",
+    "inputs": {
+      "shape": "slab",
+      "length": 10,
+      "width": 10,
+      "depth": 4,
+      "bagSize": "80"
+    },
+    "resultSummary": "You'll need approximately 1.24 cubic yards of concrete, which is about 56 bags of 80 lb concrete mix."
+  },
+  "resultInterpretation": {
+    "defaultText": "Use these estimates to order concrete. Always order 5-10% extra to account for spillage, uneven subgrade, and variations in thickness.",
+    "warningMessages": [
+      "Always add 5-10% extra to your calculation to account for waste and variations.",
+      "For large projects, consider ordering ready-mix concrete by the yard instead of bags.",
+      "Ensure your subgrade is properly prepared and compacted before pouring."
+    ]
+  },
+  "faq": [
+    {
+      "question": "How much concrete do I need?",
+      "answer": "Calculate the volume by multiplying length × width × thickness (in feet), then divide by 27 to get cubic yards. Always add 5-10% for waste."
+    },
+    {
+      "question": "How many bags of concrete make a yard?",
+      "answer": "It takes about 45 bags of 80 lb concrete, 60 bags of 60 lb concrete, or 90 bags of 40 lb concrete to make one cubic yard."
+    },
+    {
+      "question": "What thickness should my concrete slab be?",
+      "answer": "Standard slabs are 4 inches thick for most residential uses. For driveways and areas with heavy loads, use 6 inches or more."
+    }
+  ],
+  "relatedCalculators": ["gravel-calculator", "area-calculator"],
+  "relatedGuides": ["how-to-check-calculator-estimates"],
+  "comparisonPages": [],
+  "parentCategoryPath": "/construction",
+  "siblingCalculators": ["gravel-calculator"],
+  "disclaimer": "This calculator provides estimates only. Actual concrete needs may vary based on specific site conditions. Consult a professional for critical projects.",
+  "ui": {
+    "buttonText": "Calculate Concrete",
+    "resetButtonText": "Reset",
+    "resultTitle": "Your Concrete Estimates",
+    "showFormulaSection": true,
+    "showExampleSection": true,
+    "showFAQSection": true,
+    "showRelatedLinks": true
+  },
+  "lastReviewedAt": "2025-03-11",
+  "reviewedBy": "Smart Calculator Pro Team"
+}

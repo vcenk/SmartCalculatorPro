@@ -1,0 +1,156 @@
+{
+  "id": "tip-calculator",
+  "pageType": "calculator",
+  "status": "published",
+  "indexable": true,
+  "category": "everyday-life",
+  "subcategory": "money",
+  "slug": "tip-calculator",
+  "path": "everyday-life/money/tip-calculator",
+  "name": "Tip Calculator",
+  "titleTag": "Tip Calculator - Calculate Tips Quickly | Smart Calculator Pro",
+  "metaDescription": "Calculate tips, split bills, and determine per-person costs with our free tip calculator. Perfect for restaurants and group dining.",
+  "h1": "Tip Calculator",
+  "intro": "Calculate tips quickly and easily. Enter your bill amount to see tip amounts at different percentages and split the bill among friends.",
+  "shortDescription": "Calculate tips and split bills among friends.",
+  "longDescription": "This calculator helps you determine the appropriate tip for various service scenarios and allows you to split the total bill evenly among multiple people.",
+  "searchIntent": "transactional-tool",
+  "primaryKeyword": "tip calculator",
+  "secondaryKeywords": ["tip splitter", "bill calculator", "restaurant tip"],
+  "canonicalPath": "/everyday-life/money/tip-calculator",
+  "schemaType": "SoftwareApplication",
+  "ogImageTemplate": "calculator-default",
+  "problemSolved": "Helps users calculate tips and split restaurant bills.",
+  "whoItsFor": ["diners", "groups", "service industry customers"],
+  "calculationType": "formula",
+  "inputs": [
+    {
+      "key": "billAmount",
+      "label": "Bill Amount",
+      "type": "number",
+      "unit": "currency",
+      "required": true,
+      "explanation": "The total bill amount before tip.",
+      "min": 0.01,
+      "step": 0.01,
+      "defaultValue": 50,
+      "placeholder": "e.g., 50"
+    },
+    {
+      "key": "tipPercentage",
+      "label": "Tip Percentage",
+      "type": "number",
+      "unit": "percent",
+      "required": true,
+      "explanation": "The percentage you want to tip.",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "defaultValue": 20,
+      "placeholder": "e.g., 20"
+    },
+    {
+      "key": "splitBetween",
+      "label": "Split Between",
+      "type": "number",
+      "unit": "people",
+      "required": false,
+      "explanation": "Number of people to split the bill between.",
+      "min": 1,
+      "max": 20,
+      "step": 1,
+      "defaultValue": 1,
+      "placeholder": "e.g., 2"
+    }
+  ],
+  "outputs": [
+    {
+      "key": "tipAmount",
+      "label": "Tip Amount",
+      "explanation": "The calculated tip amount.",
+      "unit": "currency",
+      "precision": 2
+    },
+    {
+      "key": "totalAmount",
+      "label": "Total",
+      "explanation": "Bill amount plus tip.",
+      "unit": "currency",
+      "precision": 2
+    },
+    {
+      "key": "perPerson",
+      "label": "Per Person",
+      "explanation": "Amount each person pays if splitting.",
+      "unit": "currency",
+      "precision": 2
+    }
+  ],
+  "defaultValues": {
+    "billAmount": 50,
+    "tipPercentage": 20,
+    "splitBetween": 1
+  },
+  "formula": {
+    "label": "Tip Calculation Formula",
+    "expression": "Tip = Bill × (Tip% ÷ 100) | Total = Bill + Tip",
+    "plainText": "Tip equals bill amount times tip percentage divided by 100. Total equals bill plus tip."
+  },
+  "formulaExplanation": [
+    "Tip amount = bill amount × (tip percentage ÷ 100)",
+    "Total with tip = bill amount + tip amount",
+    "Per person = total with tip ÷ number of people"
+  ],
+  "methodologyNotes": [
+    "Standard tipping in the US is 15-20% for good service",
+    "Different countries have different tipping customs",
+    "Tip percentage may vary based on service quality and dining context"
+  ],
+  "example": {
+    "scenario": "A $50 bill with 20% tip, split between 2 people.",
+    "inputs": {
+      "billAmount": 50,
+      "tipPercentage": 20,
+      "splitBetween": 2
+    },
+    "resultSummary": "The tip is $10, making the total $60. Split between 2 people, each pays $30."
+  },
+  "resultInterpretation": {
+    "defaultText": "Use this calculator to quickly determine appropriate tips for various situations. Standard tipping in the US ranges from 15% to 20% depending on service quality.",
+    "warningMessages": [
+      "Tipping customs vary significantly by country. Research local customs when traveling abroad.",
+      "Consider tipping more for exceptional service, especially for small bills where percentage-based tips may seem low."
+    ]
+  },
+  "faq": [
+    {
+      "question": "How much should I tip?",
+      "answer": "In the US, standard tipping is 15-20% for restaurants. Tip 15% for average service, 18% for good service, and 20% or more for excellent service. Other service industries may have different norms."
+    },
+    {
+      "question": "Do I tip on tax?",
+      "answer": "Most people tip on the pre-tax amount, though some tip on the total including tax. Either approach is acceptable in the US."
+    },
+    {
+      "question": "Should I tip for takeout?",
+      "answer": "Tipping for takeout is generally not required in the US, though a small tip (5-10%) is appreciated for large or complicated orders."
+    }
+  ],
+  "relatedCalculators": ["percentage-calculator", "age-calculator"],
+  "relatedGuides": ["how-to-check-calculator-estimates"],
+  "comparisonPages": [],
+  "parentCategoryPath": "/everyday-life",
+  "siblingCalculators": ["age-calculator"],
+  "disclaimer": "This calculator provides mathematical results only. Tipping is personal and may vary based on local customs, service quality, and personal preference.",
+  "ui": {
+    "buttonText": "Calculate Tip",
+    "resetButtonText": "Reset",
+    "resultTitle": "Your Tip Results",
+    "showFormulaSection": true,
+    "showExampleSection": true,
+    "showFAQSection": true,
+    "showRelatedLinks": true
+  },
+  "lastReviewedAt": "2025-03-11",
+  "reviewedBy": "Smart Calculator Pro Team"
+}

@@ -1,0 +1,187 @@
+{
+  "id": "calorie-calculator",
+  "pageType": "calculator",
+  "status": "published",
+  "indexable": true,
+  "category": "health",
+  "subcategory": "fitness",
+  "slug": "calorie-calculator",
+  "path": "health/fitness/calorie-calculator",
+  "name": "Calorie Calculator",
+  "titleTag": "Calorie Calculator - Daily Calorie Needs | Smart Calculator Pro",
+  "metaDescription": "Calculate your daily calorie needs based on age, gender, height, weight, and activity level. Plan your diet effectively.",
+  "h1": "Calorie Calculator",
+  "intro": "Calculate your daily calorie needs to maintain, lose, or gain weight based on your personal details and activity level.",
+  "shortDescription": "Calculate daily calorie needs for weight goals.",
+  "longDescription": "This calculator estimates your Total Daily Energy Expenditure (TDEE) using the Mifflin-St Jeor equation, considered the most accurate formula for most people.",
+  "searchIntent": "transactional-tool",
+  "primaryKeyword": "calorie calculator",
+  "secondaryKeywords": ["daily calorie needs", "tdee calculator", "bmr calculator"],
+  "canonicalPath": "/health/fitness/calorie-calculator",
+  "schemaType": "SoftwareApplication",
+  "ogImageTemplate": "calculator-default",
+  "problemSolved": "Helps users understand their daily calorie needs for weight management.",
+  "whoItsFor": ["people tracking calories", "weight loss goals", "fitness enthusiasts"],
+  "calculationType": "formula",
+  "inputs": [
+    {
+      "key": "gender",
+      "label": "Gender",
+      "type": "radio",
+      "required": true,
+      "explanation": "Your biological sex affects BMR calculation.",
+      "defaultValue": true,
+      "validationMessage": "Please select a gender."
+    },
+    {
+      "key": "age",
+      "label": "Age",
+      "type": "number",
+      "unit": "years",
+      "required": true,
+      "explanation": "Your age in years.",
+      "min": 18,
+      "max": 100,
+      "step": 1,
+      "defaultValue": 30,
+      "placeholder": "e.g., 30"
+    },
+    {
+      "key": "height",
+      "label": "Height",
+      "type": "number",
+      "unit": "inches",
+      "required": true,
+      "explanation": "Your height in inches.",
+      "min": 48,
+      "max": 96,
+      "step": 0.5,
+      "defaultValue": 68,
+      "placeholder": "e.g., 68"
+    },
+    {
+      "key": "weight",
+      "label": "Weight",
+      "type": "number",
+      "unit": "pounds",
+      "required": true,
+      "explanation": "Your weight in pounds.",
+      "min": 80,
+      "max": 500,
+      "step": 1,
+      "defaultValue": 150,
+      "placeholder": "e.g., 150"
+    },
+    {
+      "key": "activityLevel",
+      "label": "Activity Level",
+      "type": "select",
+      "required": true,
+      "explanation": "How physically active you are.",
+      "defaultValue": "sedentary",
+      "validationMessage": "Please select an activity level."
+    }
+  ],
+  "outputs": [
+    {
+      "key": "bmr",
+      "label": "BMR (Basal Metabolic Rate)",
+      "explanation": "Calories burned at complete rest.",
+      "unit": "calories",
+      "precision": 0
+    },
+    {
+      "key": "tdee",
+      "label": "Daily Calorie Needs (TDEE)",
+      "explanation": "Calories needed to maintain current weight.",
+      "unit": "calories",
+      "precision": 0
+    },
+    {
+      "key": "loseWeight",
+      "label": "For Weight Loss",
+      "explanation": "Calories for losing ~1 lb per week.",
+      "unit": "calories",
+      "precision": 0
+    },
+    {
+      "key": "gainWeight",
+      "label": "For Weight Gain",
+      "explanation": "Calories for gaining ~1 lb per week.",
+      "unit": "calories",
+      "precision": 0
+    }
+  ],
+  "defaultValues": {
+    "gender": true,
+    "age": 30,
+    "height": 68,
+    "weight": 150,
+    "activityLevel": "sedentary"
+  },
+  "formula": {
+    "label": "Mifflin-St Jeor Equation",
+    "expression": "TDEE = BMR × Activity Multiplier",
+    "plainText": "Total Daily Energy Expenditure equals Basal Metabolic Rate multiplied by activity level."
+  },
+  "formulaExplanation": [
+    "BMR for men: (10 × weight in kg) + (6.25 × height in cm) - (5 × age) + 5",
+    "BMR for women: (10 × weight in kg) + (6.25 × height in cm) - (5 × age) - 161",
+    "TDEE is calculated by multiplying BMR by your activity level"
+  ],
+  "methodologyNotes": [
+    "This calculator uses the Mifflin-St Jeor equation, considered most accurate for most people",
+    "Activity multipliers: Sedentary (1.2), Light (1.375), Moderate (1.55), Active (1.725), Very Active (1.9)",
+    "Individual variations in metabolism are not accounted for"
+  ],
+  "example": {
+    "scenario": "A 30-year-old woman, 68 inches tall, weighing 150 pounds, with moderate activity.",
+    "inputs": {
+      "gender": false,
+      "age": 30,
+      "height": 68,
+      "weight": 150,
+      "activityLevel": "moderate"
+    },
+    "resultSummary": "Her BMR is approximately 1,488 calories. With moderate activity, her TDEE is approximately 2,306 calories per day."
+  },
+  "resultInterpretation": {
+    "defaultText": "Your TDEE represents the calories you burn daily. To lose weight, eat fewer calories than your TDEE. To gain weight, eat more. For maintenance, eat approximately your TDEE.",
+    "warningMessages": [
+      "Don't drop calories too low—eating below 1,200 calories for women or 1,500 for men may be harmful.",
+      "Weight loss of 1-2 pounds per week is considered healthy and sustainable.",
+      "Individual results may vary; consult a healthcare provider or registered dietitian for personalized advice."
+    ]
+  },
+  "faq": [
+    {
+      "question": "What is BMR?",
+      "answer": "BMR (Basal Metabolic Rate) is the number of calories your body needs at complete rest to maintain basic functions like breathing and circulation."
+    },
+    {
+      "question": "What is TDEE?",
+      "answer": "TDEE (Total Daily Energy Expenditure) is your BMR plus calories burned through physical activity. It represents your total daily calorie needs."
+    },
+    {
+      "question": "How many calories should I eat to lose weight?",
+      "answer": "Eating 500 calories below your TDEE typically results in losing about 1 pound per week. A sustainable approach aims for 1-2 pounds of weight loss per week."
+    }
+  ],
+  "relatedCalculators": ["bmi-calculator", "age-calculator"],
+  "relatedGuides": ["how-to-check-calculator-estimates"],
+  "comparisonPages": [],
+  "parentCategoryPath": "/health",
+  "siblingCalculators": ["bmi-calculator"],
+  "disclaimer": "This calculator provides estimates only and is not a substitute for professional medical or nutritional advice. Individual calorie needs may vary based on metabolism, genetics, and other factors.",
+  "ui": {
+    "buttonText": "Calculate Calories",
+    "resetButtonText": "Reset",
+    "resultTitle": "Your Calorie Needs",
+    "showFormulaSection": true,
+    "showExampleSection": true,
+    "showFAQSection": true,
+    "showRelatedLinks": true
+  },
+  "lastReviewedAt": "2025-03-11",
+  "reviewedBy": "Smart Calculator Pro Team"
+}

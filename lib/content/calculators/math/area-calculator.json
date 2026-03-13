@@ -1,0 +1,187 @@
+{
+  "id": "area-calculator",
+  "pageType": "calculator",
+  "status": "published",
+  "indexable": true,
+  "category": "math",
+  "subcategory": "geometry",
+  "slug": "area-calculator",
+  "path": "math/geometry/area-calculator",
+  "name": "Area Calculator",
+  "titleTag": "Area Calculator - Square, Rectangle, Circle & More | Smart Calculator Pro",
+  "metaDescription": "Calculate the area of squares, rectangles, circles, triangles, and more. Free area calculator for geometry and construction.",
+  "h1": "Area Calculator",
+  "intro": "Calculate the area of common shapes including squares, rectangles, circles, and triangles. Perfect for geometry homework, construction projects, and more.",
+  "shortDescription": "Calculate area of squares, rectangles, circles, and triangles.",
+  "longDescription": "This calculator computes the area of common geometric shapes using standard formulas. Simply select your shape and enter the required dimensions.",
+  "searchIntent": "transactional-tool",
+  "primaryKeyword": "area calculator",
+  "secondaryKeywords": ["square area", "rectangle area", "circle area", "triangle area"],
+  "canonicalPath": "/math/geometry/area-calculator",
+  "schemaType": "SoftwareApplication",
+  "ogImageTemplate": "calculator-default",
+  "problemSolved": "Helps users calculate area for various shapes and applications.",
+  "whoItsFor": ["students", "DIY enthusiasts", "construction workers", "designers"],
+  "calculationType": "formula",
+  "inputs": [
+    {
+      "key": "shape",
+      "label": "Shape",
+      "type": "select",
+      "required": true,
+      "explanation": "Select the shape you want to calculate the area for.",
+      "defaultValue": "rectangle",
+      "validationMessage": "Please select a shape."
+    },
+    {
+      "key": "width",
+      "label": "Width",
+      "type": "number",
+      "unit": "feet",
+      "required": false,
+      "explanation": "The width of the rectangle or square.",
+      "min": 0,
+      "step": 0.1,
+      "defaultValue": 10,
+      "placeholder": "e.g., 10"
+    },
+    {
+      "key": "length",
+      "label": "Length",
+      "type": "number",
+      "unit": "feet",
+      "required": false,
+      "explanation": "The length of the rectangle.",
+      "min": 0,
+      "step": 0.1,
+      "defaultValue": 15,
+      "placeholder": "e.g., 15"
+    },
+    {
+      "key": "radius",
+      "label": "Radius",
+      "type": "number",
+      "unit": "feet",
+      "required": false,
+      "explanation": "The radius of the circle (distance from center to edge).",
+      "min": 0,
+      "step": 0.1,
+      "defaultValue": 5,
+      "placeholder": "e.g., 5"
+    },
+    {
+      "key": "base",
+      "label": "Base",
+      "type": "number",
+      "unit": "feet",
+      "required": false,
+      "explanation": "The base length of the triangle.",
+      "min": 0,
+      "step": 0.1,
+      "defaultValue": 10,
+      "placeholder": "e.g., 10"
+    },
+    {
+      "key": "height",
+      "label": "Height",
+      "type": "number",
+      "unit": "feet",
+      "required": false,
+      "explanation": "The height of the triangle.",
+      "min": 0,
+      "step": 0.1,
+      "defaultValue": 6,
+      "placeholder": "e.g., 6"
+    }
+  ],
+  "outputs": [
+    {
+      "key": "area",
+      "label": "Area",
+      "explanation": "The calculated area in square feet.",
+      "unit": "sq ft",
+      "precision": 2
+    },
+    {
+      "key": "perimeter",
+      "label": "Perimeter",
+      "explanation": "The calculated perimeter (for applicable shapes).",
+      "unit": "feet",
+      "precision": 2
+    }
+  ],
+  "defaultValues": {
+    "shape": "rectangle",
+    "width": 10,
+    "length": 15,
+    "radius": 5,
+    "base": 10,
+    "height": 6
+  },
+  "formula": {
+    "label": "Area Formulas",
+    "expression": "Rectangle: A = l × w | Circle: A = πr² | Triangle: A = (b × h) / 2",
+    "plainText": "Each shape has its own formula: rectangle is length times width, circle is pi times radius squared, triangle is base times height divided by 2."
+  },
+  "formulaExplanation": [
+    "Rectangle: Area = length × width",
+    "Square: Area = side × side",
+    "Circle: Area = π × radius²",
+    "Triangle: Area = (base × height) ÷ 2"
+  ],
+  "methodologyNotes": [
+    "All measurements should be in the same unit for accurate results",
+    "π (pi) is approximately 3.14159",
+    "Perimeter is calculated for rectangles and circles"
+  ],
+  "example": {
+    "scenario": "Calculate the area of a rectangle with length 15 feet and width 10 feet.",
+    "inputs": {
+      "shape": "rectangle",
+      "length": 15,
+      "width": 10,
+      "radius": 0,
+      "base": 0,
+      "height": 0
+    },
+    "resultSummary": "The area is 150 square feet with a perimeter of 50 feet."
+  },
+  "resultInterpretation": {
+    "defaultText": "Use the area result for purchasing materials, planning layouts, or solving geometry problems. Add 5-10% extra when ordering materials to account for waste and cutting.",
+    "warningMessages": [
+      "Always measure carefully—small errors in measurement can lead to significant area calculation errors.",
+      "For construction projects, consider adding a waste factor of 5-10% to your calculated area."
+    ]
+  },
+  "faq": [
+    {
+      "question": "How do I calculate area?",
+      "answer": "Area is the size of a two-dimensional surface. The formula depends on the shape: rectangle = length × width, circle = π × radius², triangle = (base × height) ÷ 2."
+    },
+    {
+      "question": "What is the difference between area and perimeter?",
+      "answer": "Area measures the space inside a shape (2D), while perimeter measures the distance around the outside edge (1D). Area is expressed in square units, perimeter in linear units."
+    },
+    {
+      "question": "How many square feet are in an acre?",
+      "answer": "One acre equals 43,560 square feet. This is a useful conversion for land measurements."
+    }
+  ],
+  "relatedCalculators": ["percentage-calculator", "concrete-calculator"],
+  "relatedGuides": ["how-to-check-calculator-estimates"],
+  "comparisonPages": [],
+  "parentCategoryPath": "/math",
+  "siblingCalculators": ["percentage-calculator"],
+  "disclaimer": "This calculator provides mathematical results based on standard geometric formulas. For critical applications, verify your calculations.",
+  "ui": {
+    "buttonText": "Calculate Area",
+    "resetButtonText": "Reset",
+    "resultTitle": "Your Area Results",
+    "showFormulaSection": true,
+    "showExampleSection": true,
+    "showFAQSection": true,
+    "showRelatedLinks": true
+  },
+  "lastReviewedAt": "2025-03-11",
+  "reviewedBy": "Smart Calculator Pro Team"
+}

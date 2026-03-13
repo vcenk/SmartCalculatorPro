@@ -1,0 +1,43 @@
+{
+  "id": "health",
+  "pageType": "category",
+  "status": "published",
+  "indexable": true,
+  "category": "health",
+  "name": "Health Calculators",
+  "slug": "health",
+  "path": "health",
+  "titleTag": "Health Calculators - BMI, Calories & Fitness | Smart Calculator Pro",
+  "metaDescription": "Calculate BMI, daily calories, and other health metrics with our free health calculators. Track your fitness goals today.",
+  "h1": "Health Calculators",
+  "intro": "Track your health and fitness goals with our collection of health calculators. Calculate BMI, determine daily calorie needs, and monitor your progress.",
+  "primaryKeyword": "health calculators",
+  "secondaryKeywords": ["bmi calculator", "calorie calculator", "fitness calculator"],
+  "searchIntent": "informational",
+  "canonicalPath": "/health",
+  "schemaType": "CollectionPage",
+  "ogImageTemplate": "category-default",
+  "summary": "Health and fitness calculators for wellness tracking.",
+  "purpose": "Help users track and understand their health metrics.",
+  "featuredCalculators": ["bmi-calculator", "calorie-calculator"],
+  "featuredGuides": [],
+  "relatedCategories": ["everyday-life", "math"],
+  "faq": [
+    {
+      "question": "Are these health calculators accurate?",
+      "answer": "Our health calculators use standard formulas and are designed for informational purposes. Always consult a healthcare professional for medical advice."
+    },
+    {
+      "question": "Should I use these calculators to make medical decisions?",
+      "answer": "No, these calculators provide general information only. They are not a substitute for professional medical diagnosis or treatment."
+    }
+  ],
+  "seoBodySections": [
+    {
+      "heading": "Why Use Health Calculators?",
+      "content": "Health calculators help you understand important metrics like BMI and daily calorie needs. By tracking these numbers, you can make informed decisions about your diet and exercise routines."
+    }
+  ],
+  "lastReviewedAt": "2025-03-11",
+  "reviewedBy": "Smart Calculator Pro Team"
+}

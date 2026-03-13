@@ -1,0 +1,211 @@
+{
+  "id": "mortgage-calculator",
+  "pageType": "calculator",
+  "status": "published",
+  "indexable": true,
+  "category": "finance",
+  "subcategory": "personal",
+  "slug": "mortgage-calculator",
+  "path": "finance/personal/mortgage-calculator",
+  "name": "Mortgage Calculator",
+  "titleTag": "Mortgage Calculator - Estimate Monthly Payments & Interest | Smart Calculator Pro",
+  "metaDescription": "Calculate your monthly mortgage payment including principal, interest, taxes, and insurance. Free mortgage calculator for home buyers and refinancing.",
+  "h1": "Mortgage Calculator",
+  "intro": "Calculate your monthly mortgage payment to understand how much home you can afford and plan your budget accordingly.",
+  "shortDescription": "Estimate monthly mortgage payments with property taxes and insurance.",
+  "longDescription": "This mortgage calculator helps home buyers estimate monthly payments based on loan amount, interest rate, and term. Includes options for property taxes and insurance.",
+  "searchIntent": "transactional-tool",
+  "primaryKeyword": "mortgage calculator",
+  "secondaryKeywords": ["monthly mortgage payment", "home loan calculator", "mortgage payment estimator"],
+  "canonicalPath": "/finance/personal/mortgage-calculator",
+  "schemaType": "SoftwareApplication",
+  "ogImageTemplate": "calculator-default",
+  "problemSolved": "Helps home buyers understand monthly mortgage costs and total loan cost.",
+  "whoItsFor": ["home buyers", "homeowners", "real estate agents"],
+  "calculationType": "formula",
+  "inputs": [
+    {
+      "key": "loanAmount",
+      "label": "Loan Amount",
+      "type": "number",
+      "unit": "currency",
+      "required": true,
+      "explanation": "The principal amount you need to borrow (home price minus down payment).",
+      "min": 1000,
+      "step": 1000,
+      "defaultValue": 300000,
+      "placeholder": "e.g., 300000"
+    },
+    {
+      "key": "annualInterestRate",
+      "label": "Annual Interest Rate",
+      "type": "number",
+      "unit": "percent",
+      "required": true,
+      "explanation": "The annual mortgage interest rate.",
+      "min": 0,
+      "max": 20,
+      "step": 0.01,
+      "defaultValue": 6.5,
+      "placeholder": "e.g., 6.5"
+    },
+    {
+      "key": "loanTermYears",
+      "label": "Loan Term",
+      "type": "number",
+      "unit": "years",
+      "required": true,
+      "explanation": "The mortgage term in years. Common terms are 15 and 30 years.",
+      "min": 1,
+      "max": 40,
+      "step": 1,
+      "defaultValue": 30,
+      "placeholder": "e.g., 30"
+    },
+    {
+      "key": "propertyTaxAnnual",
+      "label": "Annual Property Tax",
+      "type": "number",
+      "unit": "currency",
+      "required": false,
+      "explanation": "The estimated annual property tax (optional).",
+      "min": 0,
+      "step": 100,
+      "defaultValue": 3600,
+      "placeholder": "e.g., 3600"
+    },
+    {
+      "key": "insuranceAnnual",
+      "label": "Annual Home Insurance",
+      "type": "number",
+      "unit": "currency",
+      "required": false,
+      "explanation": "The estimated annual home insurance premium (optional).",
+      "min": 0,
+      "step": 100,
+      "defaultValue": 1200,
+      "placeholder": "e.g., 1200"
+    }
+  ],
+  "outputs": [
+    {
+      "key": "monthlyPrincipalInterest",
+      "label": "Monthly Principal & Interest",
+      "explanation": "The portion of your payment that goes toward loan principal and interest.",
+      "unit": "currency",
+      "precision": 2
+    },
+    {
+      "key": "monthlyTax",
+      "label": "Monthly Property Tax",
+      "explanation": "The monthly portion of your annual property tax.",
+      "unit": "currency",
+      "precision": 2
+    },
+    {
+      "key": "monthlyInsurance",
+      "label": "Monthly Insurance",
+      "explanation": "The monthly portion of your annual insurance premium.",
+      "unit": "currency",
+      "precision": 2
+    },
+    {
+      "key": "monthlyPayment",
+      "label": "Total Monthly Payment",
+      "explanation": "Your total monthly payment including principal, interest, taxes, and insurance.",
+      "unit": "currency",
+      "precision": 2
+    },
+    {
+      "key": "totalInterest",
+      "label": "Total Interest Paid",
+      "explanation": "The total interest paid over the entire loan term.",
+      "unit": "currency",
+      "precision": 2
+    },
+    {
+      "key": "totalCost",
+      "label": "Total Repayment Cost",
+      "explanation": "The total amount repaid including principal and interest over the loan term.",
+      "unit": "currency",
+      "precision": 2
+    }
+  ],
+  "defaultValues": {
+    "loanAmount": 300000,
+    "annualInterestRate": 6.5,
+    "loanTermYears": 30,
+    "propertyTaxAnnual": 3600,
+    "insuranceAnnual": 1200
+  },
+  "formula": {
+    "label": "Mortgage Payment Formula",
+    "expression": "M = P x [r(1+r)^n] / [(1+r)^n - 1]",
+    "plainText": "Monthly payment equals principal times the monthly rate growth factor divided by the growth factor minus one."
+  },
+  "formulaExplanation": [
+    "M is the monthly principal and interest payment",
+    "P is the loan principal amount",
+    "r is the monthly interest rate (annual rate divided by 12)",
+    "n is the total number of monthly payments"
+  ],
+  "methodologyNotes": [
+    "This calculator uses the standard mortgage amortization formula.",
+    "Property taxes and insurance are divided by 12 and added to the monthly payment.",
+    "This calculator does not include PMI (Private Mortgage Insurance), HOA fees, or other closing costs."
+  ],
+  "example": {
+    "scenario": "A buyer takes a $300,000 mortgage at 6.5% interest for 30 years, with $3,600 annual property tax and $1,200 annual insurance.",
+    "inputs": {
+      "loanAmount": 300000,
+      "annualInterestRate": 6.5,
+      "loanTermYears": 30,
+      "propertyTaxAnnual": 3600,
+      "insuranceAnnual": 1200
+    },
+    "resultSummary": "The monthly principal and interest payment is approximately $1,896.20. With taxes and insurance included, the total monthly payment is approximately $2,346.20. Total interest paid over 30 years would be approximately $382,632."
+  },
+  "resultInterpretation": {
+    "defaultText": "Use the total monthly payment to determine what you can afford. Lenders typically recommend that your total monthly housing payment not exceed 28-31% of your gross monthly income.",
+    "warningMessages": [
+      "A 30-year term has lower monthly payments but significantly higher total interest paid.",
+      "A 15-year term has higher monthly payments but saves tens of thousands in interest.",
+      "Property taxes and insurance can add hundreds to your monthly payment - do not overlook them."
+    ]
+  },
+  "faq": [
+    {
+      "question": "What's the difference between a 15-year and 30-year mortgage?",
+      "answer": "A 15-year mortgage has higher monthly payments but significantly less total interest. A 30-year mortgage has lower monthly payments but you pay much more interest over time. The 30-year is more common because it offers more flexibility, but the 15-year builds equity faster."
+    },
+    {
+      "question": "How much down payment do I need?",
+      "answer": "Many lenders require at least 3-5% down. A 20% down payment helps you avoid PMI and often gets you a better interest rate. However, many buyers successfully purchase homes with 10% or less down."
+    },
+    {
+      "question": "What is PMI and when is it required?",
+      "answer": "PMI (Private Mortgage Insurance) protects the lender if you default. It's typically required when your down payment is less than 20%. PMI adds to your monthly payment and can usually be removed once you reach 20% equity in the home."
+    },
+    {
+      "question": "Should I pay extra on my mortgage?",
+      "answer": "Paying extra on your principal can save thousands in interest and pay off your loan years early. However, consider whether you could earn more by investing that money elsewhere. This decision depends on your interest rate, investment returns, and financial goals."
+    }
+  ],
+  "relatedCalculators": ["loan-calculator", "compound-interest-calculator", "savings-calculator"],
+  "relatedGuides": ["how-to-calculate-loan-payments"],
+  "comparisonPages": ["loan-calculator-vs-mortgage-calculator"],
+  "parentCategoryPath": "/finance",
+  "siblingCalculators": ["loan-calculator", "compound-interest-calculator", "savings-calculator"],
+  "disclaimer": "This calculator provides estimates only and does not replace professional financial advice. Mortgage rates, taxes, and insurance can vary. Consult a mortgage professional for personalized advice.",
+  "ui": {
+    "buttonText": "Calculate Payment",
+    "resetButtonText": "Reset",
+    "resultTitle": "Your Mortgage Payment Results",
+    "showFormulaSection": true,
+    "showExampleSection": true,
+    "showFAQSection": true,
+    "showRelatedLinks": true
+  },
+  "lastReviewedAt": "2025-03-11",
+  "reviewedBy": "Smart Calculator Pro Team"
+}
