@@ -17,8 +17,8 @@
   "schemaType": "Article",
   "ogImageTemplate": "guide-default",
   "guideType": "how-to",
-  "summary": "This guide explains how salary estimates move between gross pay and take-home pay, including federal taxes, state taxes, Social Security, Medicare, and common deductions under simplified 2025 U.S. assumptions.",
-  "quickAnswer": "Gross salary minus federal taxes, state taxes, Social Security, Medicare, and other deductions equals your net take-home pay. If you start with a target net amount instead, you can work backward to estimate the gross salary required.",
+  "summary": "This guide explains how salary estimates move between gross pay and take-home pay, including filing-status-specific federal taxes, state taxes, Social Security, Medicare, and common deductions under simplified 2025 U.S. assumptions.",
+  "quickAnswer": "Gross salary minus federal taxes, state taxes, Social Security, Medicare, and other deductions equals your net take-home pay. If you start with a target net amount instead, you can work backward to estimate the gross salary required using the same 2025 U.S. assumptions.",
   "sections": [
     {
       "heading": "Understanding the Gross to Net Formula",
@@ -26,11 +26,11 @@
     },
     {
       "heading": "Federal Income Tax",
-      "content": "<p>Federal income tax is calculated using a progressive tax bracket system. This means your income is divided into segments, with each segment taxed at a different rate.</p><p>For example, in 2025, the federal tax brackets for single filers are:</p><ul><li><strong>$0 - $11,600:</strong> 10% of this amount</li><li><strong>$11,601 - $47,150:</strong> 12% of the amount over $11,600</li><li><strong>$47,151 - $100,525:</strong> 22% of the amount over $47,150</li><li><strong>$100,526 - $191,950:</strong> 24% of the amount over $100,525</li><li><strong>$191,951 - $243,725:</strong> 32% of the amount over $191,950</li><li><strong>$243,726 - $609,350:</strong> 35% of the amount over $243,725</li><li><strong>$609,351 and above:</strong> 37% of the amount over $609,350</li></ul><p>You can reduce your taxable income by taking pre-tax deductions like 401(k) retirement contributions and certain HSA contributions.</p>"
+      "content": "<p>Federal income tax is calculated using a progressive tax bracket system. This means your income is divided into segments, with each segment taxed at a different rate.</p><p>Our salary tools use filing-status-specific 2025 federal bracket thresholds. For example, the single-filer thresholds are:</p><ul><li><strong>$0 - $11,925:</strong> 10% of this amount</li><li><strong>$11,926 - $48,475:</strong> 12% of the amount over $11,925</li><li><strong>$48,476 - $103,350:</strong> 22% of the amount over $48,475</li><li><strong>$103,351 - $197,300:</strong> 24% of the amount over $103,350</li><li><strong>$197,301 - $250,525:</strong> 32% of the amount over $197,300</li><li><strong>$250,526 - $626,350:</strong> 35% of the amount over $250,525</li><li><strong>$626,351 and above:</strong> 37% of the amount over $626,350</li></ul><p>If you choose married filing jointly, married filing separately, or head of household, the bracket thresholds shift to the 2025 values for that filing status. You can also reduce taxable income by taking pre-tax deductions like 401(k) retirement contributions and certain HSA contributions.</p>"
     },
     {
       "heading": "Standard Deductions",
-      "content": "<p>Every taxpayer is entitled to a standard deduction, which reduces taxable income before applying the tax brackets. For 2025, the standard deduction amounts are:</p><ul><li><strong>Single:</strong> $14,600</li><li><strong>Married Filing Jointly:</strong> $29,200</li><li><strong>Married Filing Separately:</strong> $14,600</li><li><strong>Head of Household:</strong> $21,900</li></ul><p>Your filing status also affects other aspects of your taxes, so it is worth checking that this setting matches your real situation before you rely on an estimate.</p>"
+      "content": "<p>Every taxpayer is entitled to a standard deduction, which reduces taxable income before applying the tax brackets. For 2025, the standard deduction amounts used in our salary tools are:</p><ul><li><strong>Single:</strong> $15,750</li><li><strong>Married Filing Jointly:</strong> $31,500</li><li><strong>Married Filing Separately:</strong> $15,750</li><li><strong>Head of Household:</strong> $23,625</li></ul><p>Your filing status also affects bracket thresholds and the additional Medicare surtax threshold, so it is worth checking that this setting matches your real situation before you rely on an estimate.</p>"
     },
     {
       "heading": "Social Security Tax",
@@ -38,7 +38,7 @@
     },
     {
       "heading": "Medicare Tax",
-      "content": "<p>Medicare is the federal health insurance program for people 65 and older, funded by a separate payroll tax of 1.45% on wages. Unlike Social Security, there is no income limit for Medicare tax, so higher earners pay more in total Medicare.</p><p>Medicare Hospital Insurance (Part A) has no premium for most people, but Medicare Part B does require a premium that may be deducted from income in some circumstances.</p>"
+      "content": "<p>Medicare is the federal health insurance program for people 65 and older, funded by a separate payroll tax of 1.45% on wages. Unlike Social Security, there is no income limit for Medicare tax, so higher earners pay more in total Medicare.</p><p>Higher-income employees can also owe the additional 0.9% Medicare surtax once wages exceed the filing-status threshold used by the calculator. This means filing status can affect Medicare estimates in higher-income scenarios as well as federal income tax.</p>"
     },
     {
       "heading": "State Income Tax",
@@ -62,7 +62,7 @@
     },
     {
       "heading": "Estimating Your Take-Home Pay",
-      "content": "<p>Use the gross to net salary calculator when you already know the pay before taxes and want to estimate take-home pay. Use the net to gross salary calculator when you know the take-home pay you want and need to estimate the gross salary required. Here is how to make the most of either estimate:</p><ol><li><strong>Use your most recent pay stub or offer letter:</strong> Enter the pay amount that matches the selected frequency</li><li><strong>Enter the pay frequency correctly:</strong> Monthly, biweekly, semimonthly, and annual scenarios produce different salary views</li><li><strong>Research state tax rates:</strong> Enter your state's approximate income tax rate for more realistic planning</li><li><strong>Account for all deductions:</strong> Include 401(k), HSA, health insurance, and life insurance when relevant</li><li><strong>Check your filing status:</strong> Different statuses have different deduction assumptions</li></ol><p><strong>Remember:</strong> Both salary calculators are estimate tools for 2025 U.S. planning. Your actual paycheck may differ because of local taxes, employer benefits, or other payroll settings.</p>"
+      "content": "<p>Use the gross to net salary calculator when you already know the pay before taxes and want to estimate take-home pay. Use the net to gross salary calculator when you know the take-home pay you want and need to estimate the gross salary required. Here is how to make the most of either estimate:</p><ol><li><strong>Use your most recent pay stub or offer letter:</strong> Enter the pay amount that matches the selected frequency</li><li><strong>Enter the pay frequency correctly:</strong> Monthly, biweekly, semimonthly, and annual scenarios produce different salary views</li><li><strong>Research state tax rates:</strong> Enter your state's approximate income tax rate for more realistic planning</li><li><strong>Account for all deductions:</strong> Include 401(k), HSA, health insurance, and life insurance when relevant</li><li><strong>Check your filing status:</strong> Different statuses change the federal bracket thresholds, standard deduction defaults, and some payroll thresholds in the estimate</li></ol><p><strong>Remember:</strong> Both salary calculators are estimate tools for 2025 U.S. planning. Your actual paycheck may differ because of local taxes, employer benefits, or other payroll settings.</p>"
     }
   ],
   "faq": [

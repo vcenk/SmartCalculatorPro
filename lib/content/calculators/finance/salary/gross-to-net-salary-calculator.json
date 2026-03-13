@@ -55,7 +55,7 @@
       "type": "number",
       "unit": "year",
       "required": true,
-      "explanation": "This salary calculator is currently tuned for 2025 U.S. planning assumptions.",
+      "explanation": "This salary calculator is currently tuned for 2025 U.S. federal payroll assumptions.",
       "min": 2024,
       "max": 2099,
       "step": 1,
@@ -66,7 +66,7 @@
       "label": "Filing Status",
       "type": "select",
       "required": true,
-      "explanation": "Your tax filing status affects deductions.",
+      "explanation": "Your filing status changes the 2025 federal standard deduction, bracket thresholds, and additional Medicare threshold used in the estimate.",
       "options": [
         { "value": "single", "label": "Single" },
         { "value": "marriedJoint", "label": "Married Filing Jointly" },
@@ -81,10 +81,10 @@
       "type": "number",
       "unit": "currency",
       "required": false,
-      "explanation": "The federal deduction amount used before applying simplified 2025 tax brackets.",
+      "explanation": "Defaults to the 2025 U.S. standard deduction for your selected filing status. Change it only if you want to model a different federal deduction amount.",
       "min": 0,
       "step": 100,
-      "defaultValue": 14600
+      "defaultValue": 15750
     },
     {
       "key": "stateTaxRate",
@@ -215,7 +215,7 @@
     "payFrequency": "annual",
     "taxYear": 2025,
     "filingStatus": "single",
-    "federalAllowances": 14600,
+    "federalAllowances": 15750,
     "stateTaxRate": 5,
     "socialSecurityRate": 6.2,
     "medicareRate": 1.45
@@ -226,7 +226,7 @@
     "plainText": "Net salary equals gross salary minus estimated taxes and any pre-tax or post-tax deductions included in the scenario."
   },
   "formulaExplanation": [
-    "Federal Tax is calculated using progressive tax brackets based on taxable income.",
+    "Federal tax is calculated using filing-status-specific 2025 U.S. tax brackets applied to taxable income.",
     "State Tax is calculated using the provided state tax rate.",
     "Social Security Tax is calculated as a percentage of wages (up to Social Security wage base limit).",
     "Medicare Tax is calculated as a percentage of wages (no income limit).",
@@ -234,35 +234,35 @@
     "Post-tax deductions (like health insurance) are subtracted after taxes to determine net pay."
   ],
   "methodologyNotes": [
-    "This calculator uses simplified 2025 tax brackets and rates.",
-    "Federal tax brackets are for single filers with no dependents.",
-    "State tax is calculated as a flat percentage of gross wages (actual state taxes vary significantly).",
-    "Social Security and Medicare rates are standard percentages set by law.",
-    "The standard deduction is applied based on filing status.",
-    "This calculator does not account for state-specific tax credits, deductions, or exemptions."
+    "This calculator uses simplified 2025 U.S. federal tax brackets, standard deductions, and payroll tax rates for planning purposes.",
+    "Federal income tax uses filing-status-specific bracket thresholds, while the deduction field can override the default standard deduction for scenario testing.",
+    "State tax is calculated as a flat percentage of payroll-taxable wages rather than a state-specific bracket system.",
+    "Social Security uses the 2025 wage base limit, and Medicare includes the additional 0.9% surtax above the filing-status threshold.",
+    "Pre-tax deductions reduce the wages used for federal, state, Social Security, and Medicare estimates in this simplified model.",
+    "This calculator does not account for tax credits, local income taxes, dependent rules, or employer-specific payroll settings."
   ],
   "example": {
-    "scenario": "A single filer earning $75,000 annually, paid annually, with no additional deductions.",
+    "scenario": "A single filer earning $75,000 annually in tax year 2025, paid annually, with no additional deductions.",
     "inputs": {
       "grossSalary": 75000,
       "payFrequency": "annual",
       "taxYear": 2025,
       "filingStatus": "single",
-      "federalAllowances": 14600,
+      "federalAllowances": 15750,
       "stateTaxRate": 5,
       "socialSecurityRate": 6.2,
       "medicareRate": 1.45
     },
-    "resultSummary": "The calculator shows a federal tax of approximately $8,341, state tax of $3,750, Social Security of $4,650, Medicare of $1,088, resulting in annual net pay of about $57,172, or roughly $4,764 per month."
+    "resultSummary": "The calculator shows a federal tax of approximately $7,949, state tax of $3,750, Social Security of $4,650, and Medicare of $1,088, resulting in annual net pay of about $57,564, or roughly $4,797 per month."
   },
   "resultInterpretation": {
     "defaultText": "Use this result as a planning estimate for what may reach your bank account after withholding and deductions under these 2025 U.S. assumptions.",
     "thresholds": [
       {
         "label": "Effective Tax Rate",
-        "min": 20,
+        "min": 18,
         "max": 35,
-        "interpretation": "Combined federal, state, Social Security, and Medicare taxes typically range from 20-35% of gross wages for most employees."
+        "interpretation": "Combined federal, state, Social Security, and Medicare taxes often fall in this range for many U.S. salary scenarios once filing status and deduction assumptions are applied."
       }
     ],
     "warningMessages": [
@@ -280,7 +280,7 @@
     },
     {
       "question": "How does filing status affect my taxes?",
-      "answer": "Filing status determines your standard deduction amount and tax bracket thresholds. Single filers receive one standard deduction, while married couples filing jointly receive double. Married filing separately can sometimes result in lower taxes for high-income earners."
+      "answer": "Filing status changes the standard deduction, federal tax bracket thresholds, and the additional Medicare surtax threshold used in this estimate. It can materially change the projected take-home pay, especially when you compare single, married filing jointly, and head of household scenarios."
     },
     {
       "question": "Are state taxes the same everywhere?",
@@ -295,7 +295,7 @@
   "relatedGuides": ["how-gross-to-net-salary-is-calculated"],
   "comparisonPages": ["gross-to-net-salary-calculator-vs-net-to-gross-salary-calculator"],
   "parentCategoryPath": "/finance/salary",
-  "disclaimer": "This calculator provides estimates for U.S. federal and state taxes based on 2025 tax brackets and rates. Actual tax liabilities vary based on individual circumstances, location, and filing status. This is an educational tool and does not constitute tax or financial advice. Consult a qualified tax professional or the IRS for personalized tax planning.",
+  "disclaimer": "This calculator provides estimate-based U.S. salary planning output for tax year 2025. It uses filing-status-specific federal brackets, a flat state tax estimate, and simplified payroll tax assumptions. It is not payroll software, tax filing software, or tax advice. Confirm important decisions with a qualified tax professional or your payroll provider.",
   "ui": {
     "buttonText": "Calculate Net Pay",
     "resetButtonText": "Reset",
@@ -310,6 +310,6 @@
   "currencyCode": "USD",
   "taxYear": 2025,
   "payFrequency": "annual",
-  "calculationVersion": "2025.1",
-  "assumptions": "Based on 2025 U.S. federal tax brackets for single filers with no dependents. State tax calculated as flat rate. Social Security and Medicare rates are statutory percentages. Pre-tax deductions reduce taxable income. Post-tax deductions subtracted from net pay."
+  "calculationVersion": "2025.2",
+  "assumptions": "Uses filing-status-specific 2025 U.S. federal brackets and standard deductions, a flat state tax estimate, the 2025 Social Security wage base, and standard Medicare withholding with the additional Medicare surtax threshold. Pre-tax deductions reduce payroll-taxable wages in this simplified model, and post-tax deductions are subtracted from net pay."
 }

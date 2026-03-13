@@ -293,34 +293,98 @@ export function calculateSavings(input: SavingsCalculatorInput): SavingsCalculat
 // Salary Calculation
 // ============================================================================
 
-/**
- * 2025 U.S. Federal Income Tax Brackets (Single Filer)
- */
-const FEDERAL_TAX_BRACKETS_2025 = [
-  { min: 0, max: 11600, rate: 0.10 },
-  { min: 11600, max: 47150, rate: 0.12 },
-  { min: 47150, max: 100525, rate: 0.22 },
-  { min: 100525, max: 191950, rate: 0.24 },
-  { min: 191950, max: 243725, rate: 0.32 },
-  { min: 243725, max: 609350, rate: 0.35 },
-  { min: 609350, max: Infinity, rate: 0.37 },
-];
+type FilingStatus =
+  | 'single'
+  | 'marriedJoint'
+  | 'marriedSeparate'
+  | 'headOfHousehold';
+
+interface TaxBracket {
+  min: number;
+  max: number;
+  rate: number;
+}
+
+interface UsSalaryRules {
+  standardDeduction: Record<FilingStatus, number>;
+  federalBrackets: Record<FilingStatus, TaxBracket[]>;
+  socialSecurity: {
+    wageBaseLimit: number;
+  };
+  medicare: {
+    additionalRateThreshold: Record<FilingStatus, number>;
+  };
+}
 
 /**
- * Standard deduction amounts by filing status (2025)
+ * Simplified 2025 U.S. salary-planning rules.
+ *
+ * Federal bracket thresholds are filing-status specific. Standard deduction
+ * values reflect the 2025 amounts currently published by the IRS.
  */
-const STANDARD_DEDUCTION_2025 = {
-  single: 14600,
-  marriedJoint: 29200,
-  marriedSeparate: 14600,
-  headOfHousehold: 21900,
+const US_SALARY_RULES_2025: UsSalaryRules = {
+  standardDeduction: {
+    single: 15750,
+    marriedJoint: 31500,
+    marriedSeparate: 15750,
+    headOfHousehold: 23625,
+  },
+  federalBrackets: {
+    single: [
+      { min: 0, max: 11925, rate: 0.10 },
+      { min: 11925, max: 48475, rate: 0.12 },
+      { min: 48475, max: 103350, rate: 0.22 },
+      { min: 103350, max: 197300, rate: 0.24 },
+      { min: 197300, max: 250525, rate: 0.32 },
+      { min: 250525, max: 626350, rate: 0.35 },
+      { min: 626350, max: Infinity, rate: 0.37 },
+    ],
+    marriedJoint: [
+      { min: 0, max: 23850, rate: 0.10 },
+      { min: 23850, max: 96950, rate: 0.12 },
+      { min: 96950, max: 206700, rate: 0.22 },
+      { min: 206700, max: 394600, rate: 0.24 },
+      { min: 394600, max: 501050, rate: 0.32 },
+      { min: 501050, max: 751600, rate: 0.35 },
+      { min: 751600, max: Infinity, rate: 0.37 },
+    ],
+    marriedSeparate: [
+      { min: 0, max: 11925, rate: 0.10 },
+      { min: 11925, max: 48475, rate: 0.12 },
+      { min: 48475, max: 103350, rate: 0.22 },
+      { min: 103350, max: 197300, rate: 0.24 },
+      { min: 197300, max: 250525, rate: 0.32 },
+      { min: 250525, max: 375800, rate: 0.35 },
+      { min: 375800, max: Infinity, rate: 0.37 },
+    ],
+    headOfHousehold: [
+      { min: 0, max: 17000, rate: 0.10 },
+      { min: 17000, max: 64850, rate: 0.12 },
+      { min: 64850, max: 103350, rate: 0.22 },
+      { min: 103350, max: 197300, rate: 0.24 },
+      { min: 197300, max: 250500, rate: 0.32 },
+      { min: 250500, max: 626350, rate: 0.35 },
+      { min: 626350, max: Infinity, rate: 0.37 },
+    ],
+  },
+  socialSecurity: {
+    wageBaseLimit: 176100,
+  },
+  medicare: {
+    additionalRateThreshold: {
+      single: 200000,
+      marriedJoint: 250000,
+      marriedSeparate: 125000,
+      headOfHousehold: 200000,
+    },
+  },
 };
 
 /**
  * Social Security parameters (2025)
  */
 const SOCIAL_SECURITY_2025 = {
-  wageBaseLimit: 174900,
+  wageBaseLimit: US_SALARY_RULES_2025.socialSecurity.wageBaseLimit,
   taxRate: 0.062, // 6.2%
 };
 
@@ -329,6 +393,7 @@ const SOCIAL_SECURITY_2025 = {
  */
 const MEDICARE_2025 = {
   taxRate: 0.0145, // 1.45%
+  additionalTaxRate: 0.009, // 0.9%
 };
 
 /**
@@ -338,7 +403,7 @@ export interface GrossToNetSalaryCalculatorInput {
   grossSalary: number;
   payFrequency: 'annual' | 'monthly' | 'biweekly' | 'semimonthly';
   taxYear: number;
-  filingStatus: 'single' | 'marriedJoint' | 'marriedSeparate' | 'headOfHousehold';
+  filingStatus: FilingStatus;
   federalAllowances?: number;
   stateTaxRate: number;
   socialSecurityRate: number;
@@ -363,7 +428,7 @@ export interface NetToGrossSalaryCalculatorInput {
   netSalary: number;
   payFrequency: 'annual' | 'monthly' | 'biweekly' | 'semimonthly';
   taxYear: number;
-  filingStatus: 'single' | 'marriedJoint' | 'marriedSeparate' | 'headOfHousehold';
+  filingStatus: FilingStatus;
   federalAllowances?: number;
   stateTaxRate: number;
   socialSecurityRate: number;
@@ -415,10 +480,16 @@ function fromAnnualSalary(
   return annualAmount / getSalaryPeriodsPerYear(payFrequency);
 }
 
-function calculateFederalIncomeTax(taxableIncome: number): number {
+function getUsSalaryRules(taxYear: number): UsSalaryRules {
+  void taxYear;
+  return US_SALARY_RULES_2025;
+}
+
+function calculateFederalIncomeTax(taxableIncome: number, filingStatus: FilingStatus): number {
+  const brackets = US_SALARY_RULES_2025.federalBrackets[filingStatus];
   let federalTax = 0;
 
-  for (const bracket of FEDERAL_TAX_BRACKETS_2025) {
+  for (const bracket of brackets) {
     if (taxableIncome > bracket.max) {
       federalTax += bracket.rate * (bracket.max - bracket.min);
     } else if (taxableIncome > bracket.min) {
@@ -433,7 +504,7 @@ function calculateFederalIncomeTax(taxableIncome: number): number {
 /**
  * Calculate gross to net salary with federal, state, Social Security, and Medicare taxes
  *
- * Note: This uses simplified 2025 U.S. tax brackets and assumes no dependents.
+ * Note: This uses simplified 2025 U.S. tax assumptions for planning.
  * This is an educational estimate and not tax advice.
  */
 export function calculateGrossToNetSalary(input: GrossToNetSalaryCalculatorInput): GrossToNetSalaryCalculatorOutput {
@@ -450,21 +521,27 @@ export function calculateGrossToNetSalary(input: GrossToNetSalaryCalculatorInput
     posttaxDeductions = 0,
   } = input;
 
-  void taxYear;
+  const salaryRules = getUsSalaryRules(taxYear);
 
   const annualGrossSalary = toAnnualSalary(grossSalary, payFrequency);
   const totalPretaxDeductions = pretaxDeductions || 0;
   const payrollTaxableWages = Math.max(0, annualGrossSalary - totalPretaxDeductions);
   const federalDeduction =
-    federalAllowances ?? STANDARD_DEDUCTION_2025[filingStatus] ?? STANDARD_DEDUCTION_2025.single;
+    federalAllowances
+    ?? salaryRules.standardDeduction[filingStatus]
+    ?? salaryRules.standardDeduction.single;
   const federalTaxableIncome = Math.max(
     0,
     annualGrossSalary - federalDeduction - totalPretaxDeductions
   );
-  const federalTax = calculateFederalIncomeTax(federalTaxableIncome);
+  const federalTax = calculateFederalIncomeTax(federalTaxableIncome, filingStatus);
   const socialSecurityWages = Math.min(payrollTaxableWages, SOCIAL_SECURITY_2025.wageBaseLimit);
   const socialSecurityTax = socialSecurityWages * (socialSecurityRate / 100);
-  const medicareTax = payrollTaxableWages * (medicareRate / 100);
+  const additionalMedicareThreshold = salaryRules.medicare.additionalRateThreshold[filingStatus];
+  const additionalMedicareTaxableWages = Math.max(0, payrollTaxableWages - additionalMedicareThreshold);
+  const medicareTax =
+    payrollTaxableWages * (medicareRate / 100)
+    + additionalMedicareTaxableWages * MEDICARE_2025.additionalTaxRate;
   const stateTax = payrollTaxableWages * (stateTaxRate / 100);
 
   // Total taxes

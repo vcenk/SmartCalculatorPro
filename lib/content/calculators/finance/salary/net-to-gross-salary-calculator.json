@@ -66,7 +66,7 @@
       "label": "Filing Status",
       "type": "select",
       "required": true,
-      "explanation": "Your filing status affects the federal deduction assumption used in this estimate.",
+      "explanation": "Your filing status changes the 2025 federal standard deduction, bracket thresholds, and additional Medicare threshold used in the estimate.",
       "options": [
         { "value": "single", "label": "Single" },
         { "value": "marriedJoint", "label": "Married Filing Jointly" },
@@ -81,10 +81,10 @@
       "type": "number",
       "unit": "currency",
       "required": false,
-      "explanation": "The federal deduction amount to subtract before applying simplified 2025 tax brackets.",
+      "explanation": "Defaults to the 2025 U.S. standard deduction for your selected filing status. Change it only if you want to model a different federal deduction amount.",
       "min": 0,
       "step": 100,
-      "defaultValue": 14600
+      "defaultValue": 15750
     },
     {
       "key": "stateTaxRate",
@@ -222,7 +222,7 @@
     "payFrequency": "monthly",
     "taxYear": 2025,
     "filingStatus": "single",
-    "federalAllowances": 14600,
+    "federalAllowances": 15750,
     "stateTaxRate": 5,
     "socialSecurityRate": 6.2,
     "medicareRate": 1.45,
@@ -236,41 +236,41 @@
   },
   "formulaExplanation": [
     "The calculator converts your target net pay into an annual target based on the selected pay frequency.",
-    "It then estimates federal tax using simplified 2025 U.S. tax brackets after subtracting the deduction amount and any pre-tax deductions.",
+    "It then estimates federal tax using filing-status-specific 2025 U.S. tax brackets after subtracting the deduction amount and any pre-tax deductions.",
     "State tax is estimated from the flat rate you enter, and Social Security and Medicare use the employee payroll tax rates shown on the form.",
     "Because taxes depend on gross pay, the calculator solves the result iteratively until the estimated annual net pay is close to your target."
   ],
   "methodologyNotes": [
-    "This calculator is U.S.-oriented and uses simplified 2025 assumptions for planning purposes.",
-    "Federal tax is estimated with published 2025 single-filer brackets and a configurable deduction amount.",
+    "This calculator is U.S.-oriented and uses simplified 2025 federal tax and payroll assumptions for planning purposes.",
+    "Federal tax uses filing-status-specific 2025 bracket thresholds, and the deduction field can override the default standard deduction for scenario testing.",
     "State income tax is modeled as a flat percentage estimate rather than a state-specific bracket system.",
-    "Social Security uses the 2025 wage base limit, while Medicare is applied without a wage cap.",
+    "Social Security uses the 2025 wage base limit, and Medicare includes the additional 0.9% surtax above the filing-status threshold.",
     "Results can differ from an actual paycheck because employer benefits, local taxes, credits, and withholding elections vary."
   ],
   "example": {
-    "scenario": "A single filer wants to take home about $4,500 per month in 2025, uses a 5% state tax estimate, and has no additional deductions.",
+    "scenario": "A single filer wants to take home about $4,500 per month in tax year 2025, uses a 5% state tax estimate, and has no additional deductions.",
     "inputs": {
       "netSalary": 4500,
       "payFrequency": "monthly",
       "taxYear": 2025,
       "filingStatus": "single",
-      "federalAllowances": 14600,
+      "federalAllowances": 15750,
       "stateTaxRate": 5,
       "socialSecurityRate": 6.2,
       "medicareRate": 1.45,
       "pretaxDeductions": 0,
       "posttaxDeductions": 0
     },
-    "resultSummary": "The estimate suggests gross pay of about $5,846 per month, or roughly $70,147 annually, to land near $54,000 in annual take-home pay under these assumptions."
+    "resultSummary": "The estimate suggests gross pay of about $5,796 per month, or roughly $69,547 annually, to land near $54,000 in annual take-home pay under these assumptions."
   },
   "resultInterpretation": {
     "defaultText": "Use the required gross salary as a planning estimate, then compare it with real pay stubs, offer letters, or payroll calculations before making a decision.",
     "thresholds": [
       {
         "label": "Effective Tax Rate",
-        "min": 20,
+        "min": 18,
         "max": 35,
-        "interpretation": "An effective tax rate in this range is common for many U.S. salary scenarios once federal, state, and payroll taxes are combined."
+        "interpretation": "An effective tax rate in this range is common for many U.S. salary scenarios once filing status, state tax, and payroll taxes are combined."
       }
     ],
     "warningMessages": [
@@ -303,7 +303,7 @@
   "relatedGuides": ["how-gross-to-net-salary-is-calculated"],
   "comparisonPages": ["gross-to-net-salary-calculator-vs-net-to-gross-salary-calculator"],
   "parentCategoryPath": "/finance/salary",
-  "disclaimer": "This calculator provides estimate-based U.S. salary planning output for tax year 2025. It is not payroll software, tax filing software, or tax advice. Confirm important decisions with a qualified tax professional or your payroll provider.",
+  "disclaimer": "This calculator provides estimate-based U.S. salary planning output for tax year 2025. It uses filing-status-specific federal brackets, a flat state tax estimate, and simplified payroll tax assumptions. It is not payroll software, tax filing software, or tax advice. Confirm important decisions with a qualified tax professional or your payroll provider.",
   "ui": {
     "buttonText": "Estimate Gross Pay",
     "resetButtonText": "Reset",
@@ -318,6 +318,6 @@
   "currencyCode": "USD",
   "taxYear": 2025,
   "payFrequency": "monthly",
-  "calculationVersion": "2025.1",
-  "assumptions": "Uses simplified 2025 U.S. federal brackets, a configurable deduction amount, a flat state tax estimate, the 2025 Social Security wage base, and standard employee Medicare withholding."
+  "calculationVersion": "2025.2",
+  "assumptions": "Uses filing-status-specific 2025 U.S. federal brackets and standard deductions, a flat state tax estimate, the 2025 Social Security wage base, and standard Medicare withholding with the additional Medicare surtax threshold."
 }

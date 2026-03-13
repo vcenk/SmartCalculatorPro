@@ -13,6 +13,13 @@ import { InputField } from './InputField';
 import { ResultDisplay } from './ResultDisplay';
 import { Button } from '@/components/ui/Button';
 
+const SALARY_STANDARD_DEDUCTIONS: Record<string, number> = {
+  single: 15750,
+  marriedJoint: 31500,
+  marriedSeparate: 15750,
+  headOfHousehold: 23625,
+};
+
 interface CalculatorWidgetProps {
   calculatorId: string;
   inputs: CalculatorInputType[];
@@ -37,7 +44,25 @@ export function CalculatorWidget({
   const [hasCalculated, setHasCalculated] = useState(false);
 
   const handleChange = (key: string, value: number | string | boolean) => {
-    setValues(prev => ({ ...prev, [key]: value }));
+    setValues(prev => {
+      const nextValues = { ...prev, [key]: value };
+
+      if (
+        key === 'filingStatus'
+        && typeof value === 'string'
+        && typeof prev.filingStatus === 'string'
+        && typeof prev.federalAllowances === 'number'
+      ) {
+        const previousDefault = SALARY_STANDARD_DEDUCTIONS[prev.filingStatus];
+        const nextDefault = SALARY_STANDARD_DEDUCTIONS[value];
+
+        if (previousDefault !== undefined && nextDefault !== undefined && prev.federalAllowances === previousDefault) {
+          nextValues.federalAllowances = nextDefault;
+        }
+      }
+
+      return nextValues;
+    });
     // Clear results when inputs change
     setHasCalculated(false);
   };

@@ -17,8 +17,8 @@
   "schemaType": "Article",
   "ogImageTemplate": "comparison-default",
   "comparedItems": ["Gross to Net Salary Calculator", "Net to Gross Salary Calculator"],
-  "summary": "Use the gross to net tool when you already know the salary offer or paycheck amount before taxes. Use the net to gross tool when you want to work backward from a target take-home number and estimate the salary required to reach it. Both tools are U.S.-oriented estimates for tax year 2025.",
-  "quickDecision": "If your starting point is gross pay, use gross to net. If your starting point is target take-home pay, use net to gross. Both use the same 2025 U.S. planning assumptions.",
+  "summary": "Use the gross to net tool when you already know the salary offer or paycheck amount before taxes. Use the net to gross tool when you want to work backward from a target take-home number and estimate the salary required to reach it. Both tools are U.S.-oriented estimates for tax year 2025 and use the same filing-status-specific federal tax model.",
+  "quickDecision": "If your starting point is gross pay, use gross to net. If your starting point is target take-home pay, use net to gross. Both use the same 2025 U.S. planning assumptions, filing-status-specific federal brackets, and simplified payroll tax model.",
   "keyDifferences": [
     {
       "topic": "Starting Input",
@@ -67,7 +67,7 @@
   "faq": [
     {
       "question": "Do these two salary calculators use the same assumptions?",
-      "answer": "Yes. They are designed to use the same 2025 U.S.-oriented tax assumptions so you can move between them consistently. One runs forward from gross pay, and the other works backward from target net pay."
+      "answer": "Yes. They are designed to use the same 2025 U.S.-oriented tax assumptions so you can move between them consistently. Both use filing-status-specific federal bracket thresholds, the same standard deduction defaults, and the same simplified state and payroll tax approach."
     },
     {
       "question": "Which tool should I use for job offer negotiations?",
