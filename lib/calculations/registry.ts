@@ -21,6 +21,7 @@ import {
   calculateSalaryIncrease,
   calculateContractorVsEmployeeTakeHome,
   calculateSideHustleProfit,
+  calculateContractorRate,
   calculateGrossToNetSalary,
   calculateNetToGrossSalary,
 } from './finance';
@@ -133,6 +134,13 @@ export const calculatorRegistry: Record<string, CalculatorRegistryEntry> = {
     calculate: calculateSideHustleProfit,
     inputType: 'SideHustleProfitEstimatorInput',
     outputType: 'SideHustleProfitEstimatorOutput',
+    category: 'finance',
+    implemented: true,
+  },
+  'contractor-rate-calculator': {
+    calculate: calculateContractorRate,
+    inputType: 'ContractorRateCalculatorInput',
+    outputType: 'ContractorRateCalculatorOutput',
     category: 'finance',
     implemented: true,
   },

@@ -192,6 +192,7 @@
     }
   ],
   "relatedCalculators": [
+    "contractor-rate-calculator",
     "contractor-vs-employee-take-home-estimator",
     "gross-to-net-salary-calculator",
     "net-to-gross-salary-calculator",
@@ -199,6 +200,7 @@
     "salary-increase-calculator"
   ],
   "relatedGuides": [
+    "how-to-calculate-a-contractor-rate",
     "how-to-estimate-side-hustle-profit",
     "contractor-vs-employee-income-explained",
     "how-gross-to-net-salary-is-calculated"

@@ -270,6 +270,7 @@
     }
   ],
   "relatedCalculators": [
+    "contractor-rate-calculator",
     "side-hustle-profit-estimator",
     "hourly-to-salary-calculator",
     "salary-to-hourly-calculator",
@@ -279,6 +280,7 @@
     "overtime-calculator"
   ],
   "relatedGuides": [
+    "how-to-calculate-a-contractor-rate",
     "contractor-vs-employee-income-explained",
     "how-to-estimate-side-hustle-profit",
     "how-gross-to-net-salary-is-calculated",

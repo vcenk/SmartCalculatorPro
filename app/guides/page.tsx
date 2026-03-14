@@ -16,6 +16,7 @@ const PAGE_PATH = '/guides';
 const featuredGuideIds = [
   'how-gross-to-net-salary-is-calculated',
   'contractor-vs-employee-income-explained',
+  'how-to-calculate-a-contractor-rate',
   'how-to-estimate-side-hustle-profit',
   'how-to-calculate-a-salary-increase',
   'how-overtime-pay-works',
@@ -31,6 +32,7 @@ const guideGroups = [
     ids: [
       'how-gross-to-net-salary-is-calculated',
       'contractor-vs-employee-income-explained',
+      'how-to-calculate-a-contractor-rate',
       'how-to-estimate-side-hustle-profit',
       'how-to-calculate-a-salary-increase',
       'how-overtime-pay-works',

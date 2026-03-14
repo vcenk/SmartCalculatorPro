@@ -38,7 +38,7 @@
     },
     {
       "heading": "A Practical Work-Income Workflow",
-      "content": "<p>Use the side hustle profit estimator first when you want to understand what a business idea may really leave you with. If you are choosing between side income and employee-style compensation, compare the result with the contractor vs employee estimator. If your decision is really about improving job income instead, use gross to net or net to gross salary for take-home planning, salary increase for raise scenarios, and overtime if extra hours are a realistic alternative.</p>"
+      "content": "<p>Use the side hustle profit estimator first when you want to understand what a business idea may really leave you with. If you are choosing between side income and employee-style compensation, compare the result with the contractor vs employee estimator. If you are trying to price freelance or contract work instead of just testing a small side-income stream, use the contractor rate calculator next. If your decision is really about improving job income instead, use gross to net or net to gross salary for take-home planning, salary increase for raise scenarios, and overtime if extra hours are a realistic alternative.</p>"
     }
   ],
   "faq": [
@@ -65,6 +65,7 @@
   ],
   "relatedCalculators": [
     "side-hustle-profit-estimator",
+    "contractor-rate-calculator",
     "contractor-vs-employee-take-home-estimator",
     "gross-to-net-salary-calculator",
     "net-to-gross-salary-calculator",
@@ -76,12 +77,13 @@
     "salary-increase-vs-side-hustle-income"
   ],
   "relatedGuides": [
+    "how-to-calculate-a-contractor-rate",
     "contractor-vs-employee-income-explained",
     "how-gross-to-net-salary-is-calculated",
     "how-to-calculate-a-salary-increase",
     "how-overtime-pay-works"
   ],
   "disclaimer": "This guide is for educational purposes only. Side-hustle income, taxes, deductions, and business rules vary widely. Use it for planning, not tax, legal, payroll, or accounting advice.",
-  "lastReviewedAt": "2026-03-13",
+  "lastReviewedAt": "2026-03-14",
   "reviewedBy": "Smart Calculator Pro Team"
 }

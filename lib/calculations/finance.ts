@@ -164,6 +164,22 @@ export interface SideHustleProfitEstimatorOutput {
   totalCosts: number;
 }
 
+export interface ContractorRateCalculatorInput {
+  targetAnnualIncome: number;
+  estimatedTaxRate: number;
+  businessExpenses: number;
+  billableHoursPerWeek: number;
+  weeksWorkedPerYear: number;
+  utilizationRate: number;
+}
+
+export interface ContractorRateCalculatorOutput {
+  requiredHourlyRate: number;
+  requiredAnnualRevenue: number;
+  requiredMonthlyRevenue: number;
+  effectiveBillableRateNeeded: number;
+}
+
 // ============================================================================
 // Utility Functions
 // ============================================================================
@@ -604,6 +620,38 @@ export function calculateSideHustleProfit(
     effectiveHourlyProfit,
     retainedPercentage,
     totalCosts,
+  };
+}
+
+export function calculateContractorRate(
+  input: ContractorRateCalculatorInput
+): ContractorRateCalculatorOutput {
+  const {
+    targetAnnualIncome,
+    estimatedTaxRate = 25,
+    businessExpenses = 0,
+    billableHoursPerWeek,
+    weeksWorkedPerYear,
+    utilizationRate = 75,
+  } = input;
+
+  const netRetentionRate = Math.max(0.01, 1 - estimatedTaxRate / 100);
+  const requiredAnnualRevenue =
+    (Math.max(0, targetAnnualIncome) + Math.max(0, businessExpenses)) / netRetentionRate;
+  const requiredMonthlyRevenue = requiredAnnualRevenue / 12;
+  const annualBillableHours = Math.max(0, billableHoursPerWeek) * Math.max(0, weeksWorkedPerYear);
+  const utilizationDecimal = Math.max(0.01, utilizationRate / 100);
+  const totalWorkingHours = annualBillableHours / utilizationDecimal;
+  const effectiveBillableRateNeeded =
+    annualBillableHours > 0 ? requiredAnnualRevenue / annualBillableHours : 0;
+  const requiredHourlyRate =
+    totalWorkingHours > 0 ? requiredAnnualRevenue / totalWorkingHours : 0;
+
+  return {
+    requiredHourlyRate,
+    requiredAnnualRevenue,
+    requiredMonthlyRevenue,
+    effectiveBillableRateNeeded,
   };
 }
 

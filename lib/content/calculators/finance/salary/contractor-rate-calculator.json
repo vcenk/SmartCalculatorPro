@@ -1,0 +1,231 @@
+{
+  "id": "contractor-rate-calculator",
+  "pageType": "calculator",
+  "status": "published",
+  "indexable": true,
+  "category": "finance",
+  "subcategory": "salary",
+  "slug": "contractor-rate-calculator",
+  "path": "finance/salary/contractor-rate-calculator",
+  "title": "Contractor Rate Calculator",
+  "name": "Contractor Rate Calculator",
+  "titleTag": "Contractor Rate Calculator | Smart Calculator Pro",
+  "metaDescription": "Estimate the contractor rate needed to hit a target annual income after taxes, expenses, billable hours, and utilization assumptions.",
+  "h1": "Contractor Rate Calculator",
+  "intro": "Estimate the hourly contractor rate and revenue target needed to hit a personal income goal after taxes, expenses, and non-billable time.",
+  "shortDescription": "Estimate the contractor rate required to reach a target annual income using practical tax, expense, billable-hours, and utilization assumptions.",
+  "longDescription": "This contractor rate calculator helps translate a personal income target into the revenue and billable rate a contractor may actually need. It is designed for freelancers, consultants, and independent workers who want a practical first-pass estimate instead of comparing contractor pricing directly with employee hourly pay. The tool makes taxes, business expenses, billable hours, weeks worked, and non-billable time explicit so the rate target is easier to understand and defend.",
+  "primaryKeyword": "contractor rate calculator",
+  "secondaryKeywords": ["freelance rate calculator", "consultant rate calculator", "contractor hourly rate estimator"],
+  "searchIntent": "transactional-tool",
+  "canonicalPath": "/finance/salary/contractor-rate-calculator",
+  "schemaType": "SoftwareApplication",
+  "ogImageTemplate": "calculator-default",
+  "problemSolved": "Helps estimate the contractor rate needed to support an income target after taxes, expenses, and non-billable time.",
+  "whoItsFor": ["freelancers", "contractors", "consultants", "self-employed workers", "workers pricing services"],
+  "calculationType": "formula",
+  "inputs": [
+    {
+      "key": "targetAnnualIncome",
+      "label": "Target Annual Income",
+      "type": "number",
+      "unit": "currency",
+      "required": true,
+      "explanation": "Enter the annual personal income you want to keep before working backward into revenue and pricing.",
+      "min": 0,
+      "step": 1000,
+      "defaultValue": 90000
+    },
+    {
+      "key": "estimatedTaxRate",
+      "label": "Estimated Tax Rate",
+      "type": "number",
+      "unit": "percent",
+      "required": true,
+      "explanation": "Use a flat tax estimate for planning. This keeps the first version simple and transparent.",
+      "min": 0,
+      "max": 50,
+      "step": 0.5,
+      "defaultValue": 28
+    },
+    {
+      "key": "businessExpenses",
+      "label": "Business Expenses",
+      "type": "number",
+      "unit": "currency",
+      "required": false,
+      "explanation": "Estimate annual contractor costs such as software, insurance, equipment, accounting, travel, or marketing.",
+      "min": 0,
+      "step": 500,
+      "defaultValue": 18000
+    },
+    {
+      "key": "billableHoursPerWeek",
+      "label": "Billable Hours Per Week",
+      "type": "number",
+      "unit": "hours",
+      "required": true,
+      "explanation": "Enter the average number of client-billable hours you expect in a typical working week.",
+      "min": 1,
+      "max": 80,
+      "step": 1,
+      "defaultValue": 22
+    },
+    {
+      "key": "weeksWorkedPerYear",
+      "label": "Weeks Worked Per Year",
+      "type": "number",
+      "required": true,
+      "explanation": "Reduce this if you expect unpaid time off, gaps between contracts, or slower periods during the year.",
+      "min": 1,
+      "max": 52,
+      "step": 1,
+      "defaultValue": 48
+    },
+    {
+      "key": "utilizationRate",
+      "label": "Utilization Rate",
+      "type": "number",
+      "unit": "percent",
+      "required": true,
+      "explanation": "Use this to reflect non-billable time. A 70% utilization rate means about 30% of your working time is not directly billable.",
+      "min": 1,
+      "max": 100,
+      "step": 1,
+      "defaultValue": 70
+    }
+  ],
+  "outputs": [
+    {
+      "key": "requiredHourlyRate",
+      "label": "Required Hourly Rate",
+      "explanation": "The blended hourly revenue target across all working time implied by your utilization assumption.",
+      "unit": "currency",
+      "precision": 2
+    },
+    {
+      "key": "requiredAnnualRevenue",
+      "label": "Required Annual Revenue",
+      "explanation": "Estimated annual contractor revenue required to support your income target and expenses under the tax assumption shown.",
+      "unit": "currency",
+      "precision": 0
+    },
+    {
+      "key": "requiredMonthlyRevenue",
+      "label": "Required Monthly Revenue",
+      "explanation": "Estimated monthly revenue needed to stay on track for the annual target.",
+      "unit": "currency",
+      "precision": 0
+    },
+    {
+      "key": "effectiveBillableRateNeeded",
+      "label": "Effective Billable Rate Needed",
+      "explanation": "The client-facing billable rate required based on the billable hours you expect to have available.",
+      "unit": "currency",
+      "precision": 2
+    }
+  ],
+  "defaultValues": {
+    "targetAnnualIncome": 90000,
+    "estimatedTaxRate": 28,
+    "businessExpenses": 18000,
+    "billableHoursPerWeek": 22,
+    "weeksWorkedPerYear": 48,
+    "utilizationRate": 70
+  },
+  "formula": {
+    "label": "Contractor Rate Method",
+    "expression": "Required Revenue = (Target Income + Expenses) / (1 - Tax Rate); Billable Rate = Required Revenue / Annual Billable Hours",
+    "plainText": "The calculator grosses up your income target for taxes and expenses, then divides the revenue target across your expected billable hours and utilization assumptions to estimate the rate you may need."
+  },
+  "formulaExplanation": [
+    "Start with the annual income you want to keep personally, then add annual business expenses that your pricing also needs to cover.",
+    "The calculator grosses that total up using your estimated tax rate so the revenue target reflects what must be earned before taxes.",
+    "Annual billable hours are estimated from billable hours per week and weeks worked per year.",
+    "The effective billable rate is calculated by dividing required annual revenue by annual billable hours, while the blended hourly rate uses the utilization factor to account for non-billable time."
+  ],
+  "methodologyNotes": [
+    "This is a first-pass contractor pricing estimator, not accounting, payroll, or tax software.",
+    "The flat tax rate is a planning shortcut. Real contractor taxes can vary based on entity structure, deductions, location, and filing details.",
+    "Utilization matters because many contractor hours are spent on proposals, admin, sales, revisions, and other non-billable work.",
+    "If your expected billable hours are too optimistic, the required rate will be understated.",
+    "This tool is best used before quoting clients, comparing contractor work with employment, or checking whether freelance income goals are realistic."
+  ],
+  "example": {
+    "scenario": "A contractor wants to keep about $90,000 per year, expects about $18,000 in annual business expenses, estimates a 28% tax rate, plans for 22 billable hours per week across 48 working weeks, and expects about 70% utilization overall.",
+    "inputs": {
+      "targetAnnualIncome": 90000,
+      "estimatedTaxRate": 28,
+      "businessExpenses": 18000,
+      "billableHoursPerWeek": 22,
+      "weeksWorkedPerYear": 48,
+      "utilizationRate": 70
+    },
+    "resultSummary": "The calculator estimates required annual revenue of about $150,000, required monthly revenue of about $12,500, an effective billable rate of about $142.05, and a blended hourly revenue target of about $99.43."
+  },
+  "resultInterpretation": {
+    "defaultText": "Use the billable rate as a planning anchor, not a final quote. Real contractor pricing also depends on market demand, niche value, risk, payment terms, and how consistent your billable workload is.",
+    "thresholds": [
+      {
+        "label": "Effective Billable Rate Needed",
+        "min": 80,
+        "max": 180,
+        "interpretation": "A rate in this range can still be reasonable, but it usually needs a clear service offer, consistent utilization, and honest expense assumptions to be sustainable."
+      }
+    ],
+    "warningMessages": [
+      "If you underestimate non-billable time or annual expenses, the rate you actually need may be materially higher than this estimate."
+    ]
+  },
+  "faq": [
+    {
+      "question": "Why is contractor rate not the same as employee hourly pay?",
+      "answer": "Because contractor pricing often needs to cover taxes, business expenses, benefits, unpaid admin work, and gaps between billable projects. Employee hourly pay usually does not carry all of those burdens directly."
+    },
+    {
+      "question": "What is utilization rate in a contractor business?",
+      "answer": "Utilization rate is the share of your working time that is actually billable. The rest often goes to admin, sales, marketing, proposals, and other unpaid work."
+    },
+    {
+      "question": "Why does billable hours per week matter so much?",
+      "answer": "Because the same annual income target requires a higher rate when you have fewer billable hours available to spread the revenue target across."
+    },
+    {
+      "question": "Does this calculator model exact contractor taxes?",
+      "answer": "No. It uses a flat tax assumption to keep the first version practical and transparent. It is for planning, not tax filing."
+    },
+    {
+      "question": "What should I compare this with next?",
+      "answer": "If you want to compare contract work with employment, use the contractor vs employee estimator next. If you are testing whether extra business income is worth it, compare the result with side-hustle profit and salary-growth alternatives."
+    }
+  ],
+  "relatedCalculators": [
+    "contractor-vs-employee-take-home-estimator",
+    "side-hustle-profit-estimator",
+    "gross-to-net-salary-calculator",
+    "net-to-gross-salary-calculator",
+    "salary-increase-calculator"
+  ],
+  "relatedGuides": [
+    "how-to-calculate-a-contractor-rate",
+    "contractor-vs-employee-income-explained",
+    "how-to-estimate-side-hustle-profit"
+  ],
+  "comparisonPages": [],
+  "parentCategoryPath": "/finance/salary",
+  "disclaimer": "This contractor rate calculator is an assumptions-based planning tool only. It uses simplified tax, expense, billable-hours, and utilization assumptions and does not provide tax, accounting, legal, payroll, or pricing advice.",
+  "ui": {
+    "buttonText": "Estimate Contractor Rate",
+    "resetButtonText": "Reset",
+    "resultTitle": "Your Contractor Rate Estimate",
+    "showFormulaSection": true,
+    "showExampleSection": true,
+    "showInterpretation": true,
+    "showFAQSection": true,
+    "showRelatedLinks": true
+  },
+  "countryCode": "US",
+  "currencyCode": "USD",
+  "calculationVersion": "2026.1",
+  "assumptions": "Uses a target annual income, flat tax estimate, annual business expenses, billable hours, weeks worked, and utilization to estimate contractor revenue targets and pricing. It is designed for work-income planning, not accounting or tax filing."
+}

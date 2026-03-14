@@ -1,0 +1,84 @@
+{
+  "id": "how-to-calculate-a-contractor-rate",
+  "pageType": "guide",
+  "status": "published",
+  "indexable": true,
+  "slug": "how-to-calculate-a-contractor-rate",
+  "path": "guides/how-to-calculate-a-contractor-rate",
+  "title": "How to Calculate a Contractor Rate",
+  "titleTag": "How to Calculate a Contractor Rate | Smart Calculator Pro",
+  "metaDescription": "Learn how to calculate a contractor rate by accounting for taxes, business expenses, billable hours, non-billable time, and income targets.",
+  "h1": "How to Calculate a Contractor Rate",
+  "intro": "A contractor rate should not be treated like employee hourly pay with a markup on top. Contractors usually need their rate to cover taxes, expenses, benefits, and the unpaid time that never reaches an invoice.",
+  "primaryKeyword": "how to calculate a contractor rate",
+  "secondaryKeywords": ["contractor rate formula", "freelance rate guide", "consultant rate explained"],
+  "searchIntent": "informational",
+  "canonicalPath": "/guides/how-to-calculate-a-contractor-rate",
+  "schemaType": "Article",
+  "ogImageTemplate": "guide-default",
+  "guideType": "how-to",
+  "summary": "This guide explains how to calculate a contractor rate by separating employee-style pay from contractor pricing, accounting for billable and non-billable time, and building taxes, expenses, and benefits into the rate target.",
+  "quickAnswer": "To estimate a contractor rate, start with the income you want to keep, add annual business expenses, gross the result up for taxes, and divide the revenue target across realistic billable hours rather than all working hours.",
+  "sections": [
+    {
+      "heading": "Why Contractor Rate Is Not Employee Hourly Pay",
+      "content": "<p>Employee hourly pay is usually just one layer of compensation. Employers may also cover payroll taxes, benefits, equipment, software, and some overhead. Contractors often have to cover those costs themselves. That is why a contractor who wants to keep the equivalent of a $45 per hour employee outcome may need to charge far more than $45 per billable hour.</p>"
+    },
+    {
+      "heading": "Billable Time Vs Non-Billable Time",
+      "content": "<p>One of the biggest pricing mistakes contractors make is dividing their revenue target across all the hours they work instead of the hours they can actually bill. Client meetings, proposals, admin work, revisions, sales calls, bookkeeping, and downtime between projects can all reduce utilization. If only 70% of your working time is billable, the billable rate needs to be high enough to carry the other 30% too.</p>"
+    },
+    {
+      "heading": "How Taxes, Expenses, And Benefits Change The Rate",
+      "content": "<p>Taxes reduce what you keep. Business expenses reduce what the business keeps before that. Benefits matter too because contractors may need to fund health insurance, retirement, and unpaid time off directly. That means a contractor rate needs to support both the business and the person behind it. A rate that looks high in isolation may still be only barely workable once those layers are included.</p>"
+    },
+    {
+      "heading": "A Practical Contractor-Rate Workflow",
+      "content": "<p>Start with the contractor rate calculator when your main question is what you need to charge. Then use the contractor vs employee estimator if you want to compare that contractor path with a job opportunity. If your work is closer to a part-time business or small side-income stream, use the side hustle profit estimator to see how the income really behaves after costs and taxes. If you are comparing contract work with a stronger main-job path, salary increase, gross to net, and net to gross tools can help anchor the employee-side alternative.</p>"
+    },
+    {
+      "heading": "When A Higher Rate Is Still The Right Rate",
+      "content": "<p>A contractor rate can feel uncomfortably high when you first calculate it, especially if you are comparing it with employee wages. That does not automatically mean the rate is wrong. It often means the contractor model includes taxes, risk, downtime, and expenses more honestly. The useful question is not whether the number looks high. It is whether the number is realistic for your market, your utilization, and your income goal.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "question": "Why is contractor rate usually higher than employee hourly pay?",
+      "answer": "Because contractor pricing often needs to absorb taxes, business expenses, benefits, unpaid admin time, and revenue gaps that employees do not usually price directly into their hourly wage."
+    },
+    {
+      "question": "What is the difference between billable and non-billable time?",
+      "answer": "Billable time is time you can invoice to a client. Non-billable time includes sales, admin, proposals, revisions, operations, and other work that still consumes time but is not directly billed."
+    },
+    {
+      "question": "Why does utilization matter in a contractor rate estimate?",
+      "answer": "Because a lower utilization rate means fewer invoiceable hours are available to support the same income target, which pushes the required billable rate higher."
+    },
+    {
+      "question": "Should I compare contractor rate with take-home salary too?",
+      "answer": "Yes. A strong workflow is to estimate the contractor rate first, then compare that path with contractor vs employee and employee take-home tools so the choice is based on usable income rather than gross numbers alone."
+    },
+    {
+      "question": "Can this guide tell me the exact rate I should quote?",
+      "answer": "No. It gives a planning framework, not a market quote. Real pricing also depends on niche value, positioning, demand, risk, and payment terms."
+    }
+  ],
+  "relatedCalculators": [
+    "contractor-rate-calculator",
+    "contractor-vs-employee-take-home-estimator",
+    "side-hustle-profit-estimator",
+    "gross-to-net-salary-calculator",
+    "salary-increase-calculator"
+  ],
+  "relatedComparisons": [
+    "salary-increase-vs-side-hustle-income"
+  ],
+  "relatedGuides": [
+    "contractor-vs-employee-income-explained",
+    "how-to-estimate-side-hustle-profit",
+    "how-gross-to-net-salary-is-calculated"
+  ],
+  "disclaimer": "This guide is for educational purposes only. Contractor pricing, taxes, expenses, and utilization vary widely by business model and jurisdiction. Use it for planning, not tax, legal, accounting, or pricing advice.",
+  "lastReviewedAt": "2026-03-14",
+  "reviewedBy": "Smart Calculator Pro Team"
+}
