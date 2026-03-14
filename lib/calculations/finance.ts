@@ -125,6 +125,29 @@ export interface SalaryIncreaseCalculatorOutput {
   newSalary: number;
 }
 
+export interface ContractorVsEmployeeTakeHomeEstimatorInput {
+  employeeGrossPay: number;
+  contractorGrossRevenue: number;
+  filingStatus: 'single' | 'marriedJoint' | 'marriedSeparate' | 'headOfHousehold';
+  taxYear: number;
+  stateTaxRate: number;
+  employeeBenefitsAdjustment: number;
+  contractorBusinessExpenses: number;
+  contractorBenefitsAdjustment: number;
+  selfEmploymentTaxRate: number;
+}
+
+export interface ContractorVsEmployeeTakeHomeEstimatorOutput {
+  employeeTakeHome: number;
+  contractorTakeHome: number;
+  employeeTaxes: number;
+  contractorTaxes: number;
+  contractorBusinessExpenses: number;
+  employeeBenefitsAdjustment: number;
+  contractorBenefitsAdjustment: number;
+  takeHomeDifference: number;
+}
+
 // ============================================================================
 // Utility Functions
 // ============================================================================
@@ -468,6 +491,72 @@ export function calculateSalaryIncrease(
     increaseAmount,
     increasePercent,
     newSalary,
+  };
+}
+
+export function calculateContractorVsEmployeeTakeHome(
+  input: ContractorVsEmployeeTakeHomeEstimatorInput
+): ContractorVsEmployeeTakeHomeEstimatorOutput {
+  const {
+    employeeGrossPay,
+    contractorGrossRevenue,
+    filingStatus = 'single',
+    taxYear = 2025,
+    stateTaxRate = 5,
+    employeeBenefitsAdjustment = 0,
+    contractorBusinessExpenses = 0,
+    contractorBenefitsAdjustment = 0,
+    selfEmploymentTaxRate = 15.3,
+  } = input;
+
+  const employeeEstimate = calculateGrossToNetSalary({
+    grossSalary: employeeGrossPay,
+    payFrequency: 'annual',
+    taxYear,
+    filingStatus,
+    stateTaxRate,
+    socialSecurityRate: 6.2,
+    medicareRate: 1.45,
+    pretaxDeductions: 0,
+    posttaxDeductions: employeeBenefitsAdjustment,
+  });
+
+  const contractorNetBusinessIncome = Math.max(
+    0,
+    contractorGrossRevenue - contractorBusinessExpenses
+  );
+  const salaryRules = getUsSalaryRules(taxYear);
+  const federalDeduction = salaryRules.standardDeduction[filingStatus];
+  const contractorTaxableIncome = Math.max(
+    0,
+    contractorNetBusinessIncome - federalDeduction
+  );
+  const contractorFederalTax = calculateFederalIncomeTax(
+    contractorTaxableIncome,
+    filingStatus
+  );
+  const contractorStateTax = contractorNetBusinessIncome * (stateTaxRate / 100);
+  const contractorSelfEmploymentTax =
+    contractorNetBusinessIncome * (selfEmploymentTaxRate / 100);
+  const contractorTaxes =
+    contractorFederalTax + contractorStateTax + contractorSelfEmploymentTax;
+  const contractorTakeHome = Math.max(
+    0,
+    contractorGrossRevenue
+      - contractorBusinessExpenses
+      - contractorTaxes
+      - contractorBenefitsAdjustment
+  );
+
+  return {
+    employeeTakeHome: employeeEstimate.annualNetSalary,
+    contractorTakeHome,
+    employeeTaxes: employeeEstimate.totalTaxes,
+    contractorTaxes,
+    contractorBusinessExpenses,
+    employeeBenefitsAdjustment,
+    contractorBenefitsAdjustment,
+    takeHomeDifference: contractorTakeHome - employeeEstimate.annualNetSalary,
   };
 }
 

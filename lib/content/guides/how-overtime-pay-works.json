@@ -17,7 +17,7 @@
   "schemaType": "Article",
   "ogImageTemplate": "guide-default",
   "guideType": "how-to",
-  "summary": "This guide explains how overtime pay is estimated, how time-and-a-half changes gross earnings, and how to connect overtime estimates with hourly, salary, raise, and take-home pay planning.",
+  "summary": "This guide explains how overtime pay is estimated, how time-and-a-half changes gross earnings, and how to connect overtime estimates with hourly, salary, raise, contractor-vs-employee, and take-home pay planning.",
   "quickAnswer": "Overtime pay is typically estimated by multiplying regular hourly pay by an overtime multiplier such as 1.5, then multiplying that overtime rate by the overtime hours worked. Total gross pay equals regular pay plus overtime pay.",
   "sections": [
     {
@@ -66,6 +66,7 @@
   "relatedCalculators": [
     "overtime-calculator",
     "salary-increase-calculator",
+    "contractor-vs-employee-take-home-estimator",
     "hourly-to-salary-calculator",
     "salary-to-hourly-calculator",
     "gross-to-net-salary-calculator"
@@ -76,7 +77,8 @@
   "relatedGuides": [
     "how-hourly-pay-and-annual-salary-convert",
     "how-gross-to-net-salary-is-calculated",
-    "how-to-calculate-a-salary-increase"
+    "how-to-calculate-a-salary-increase",
+    "contractor-vs-employee-income-explained"
   ],
   "disclaimer": "This guide is for educational purposes only. Overtime eligibility, exemption status, and payroll treatment can depend on labor laws, employer policies, and job classification. Use it for planning, not legal or payroll advice.",
   "lastReviewedAt": "2026-03-13",

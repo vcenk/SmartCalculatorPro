@@ -1,0 +1,303 @@
+{
+  "id": "contractor-vs-employee-take-home-estimator",
+  "pageType": "calculator",
+  "status": "published",
+  "indexable": true,
+  "category": "finance",
+  "subcategory": "salary",
+  "slug": "contractor-vs-employee-take-home-estimator",
+  "path": "finance/salary/contractor-vs-employee-take-home-estimator",
+  "title": "Contractor vs Employee Take-Home Estimator",
+  "name": "Contractor vs Employee Take-Home Estimator",
+  "titleTag": "Contractor vs Employee Take-Home Estimator | Smart Calculator Pro",
+  "metaDescription": "Compare estimated employee take-home pay with contractor take-home pay using practical assumptions for taxes, business expenses, and benefits costs.",
+  "h1": "Contractor vs Employee Take-Home Estimator",
+  "intro": "Compare an employee compensation scenario with a contractor scenario using transparent annual assumptions for taxes, business expenses, and benefits costs.",
+  "shortDescription": "Estimate employee take-home versus contractor take-home using practical assumptions for taxes, business expenses, and benefits adjustments.",
+  "longDescription": "This estimator compares two simplified annual work-income scenarios: employee take-home pay and contractor or self-employed take-home pay. It is designed for planning when gross pay alone is misleading and you want a clearer view of how taxes, business expenses, and benefits costs can change the real income picture.",
+  "primaryKeyword": "contractor vs employee take home estimator",
+  "secondaryKeywords": ["contractor vs employee calculator", "1099 vs employee take home", "contractor income vs salary"],
+  "searchIntent": "transactional-tool",
+  "canonicalPath": "/finance/salary/contractor-vs-employee-take-home-estimator",
+  "schemaType": "SoftwareApplication",
+  "ogImageTemplate": "calculator-default",
+  "problemSolved": "Helps compare employee and contractor income scenarios when gross compensation alone is not enough for a real decision.",
+  "whoItsFor": ["employees", "contractors", "freelancers", "job seekers", "compensation planners"],
+  "calculationType": "formula",
+  "inputs": [
+    {
+      "key": "employeeGrossPay",
+      "label": "Employee Gross Pay",
+      "type": "number",
+      "unit": "currency",
+      "required": true,
+      "explanation": "Enter the annual gross pay for the employee scenario.",
+      "min": 0,
+      "step": 1000,
+      "defaultValue": 90000
+    },
+    {
+      "key": "contractorGrossRevenue",
+      "label": "Contractor Gross Revenue",
+      "type": "number",
+      "unit": "currency",
+      "required": true,
+      "explanation": "Enter the annual gross revenue or contract income before business expenses.",
+      "min": 0,
+      "step": 1000,
+      "defaultValue": 110000
+    },
+    {
+      "key": "filingStatus",
+      "label": "Filing Status",
+      "type": "select",
+      "required": true,
+      "explanation": "Used for the simplified 2025 U.S. federal tax estimate on both scenarios.",
+      "options": [
+        { "value": "single", "label": "Single" },
+        { "value": "marriedJoint", "label": "Married Filing Jointly" },
+        { "value": "marriedSeparate", "label": "Married Filing Separately" },
+        { "value": "headOfHousehold", "label": "Head of Household" }
+      ],
+      "defaultValue": "single"
+    },
+    {
+      "key": "taxYear",
+      "label": "Tax Year",
+      "type": "number",
+      "unit": "year",
+      "required": true,
+      "explanation": "The first version is currently tuned to simplified 2025 U.S. planning assumptions.",
+      "min": 2024,
+      "max": 2099,
+      "step": 1,
+      "defaultValue": 2025
+    },
+    {
+      "key": "stateTaxRate",
+      "label": "State Tax Rate",
+      "type": "number",
+      "unit": "percent",
+      "required": true,
+      "explanation": "Use a flat state income tax estimate for planning. Real state tax rules vary.",
+      "min": 0,
+      "max": 15,
+      "step": 0.1,
+      "defaultValue": 5
+    },
+    {
+      "key": "employeeBenefitsAdjustment",
+      "label": "Employee Benefits Cost",
+      "type": "number",
+      "unit": "currency",
+      "required": false,
+      "explanation": "Use an annual estimate for employee-paid benefits or payroll costs that reduce visible take-home pay.",
+      "min": 0,
+      "step": 500,
+      "defaultValue": 2500
+    },
+    {
+      "key": "contractorBusinessExpenses",
+      "label": "Contractor Business Expenses",
+      "type": "number",
+      "unit": "currency",
+      "required": false,
+      "explanation": "Use an annual estimate for tools, software, travel, insurance, or other business costs.",
+      "min": 0,
+      "step": 500,
+      "defaultValue": 12000
+    },
+    {
+      "key": "contractorBenefitsAdjustment",
+      "label": "Contractor Benefits Cost",
+      "type": "number",
+      "unit": "currency",
+      "required": false,
+      "explanation": "Use an annual estimate for costs the contractor covers directly, such as health insurance or retirement support.",
+      "min": 0,
+      "step": 500,
+      "defaultValue": 6000
+    },
+    {
+      "key": "selfEmploymentTaxRate",
+      "label": "Self-Employment Tax Rate",
+      "type": "number",
+      "unit": "percent",
+      "required": true,
+      "explanation": "Use a simplified self-employment tax estimate for the contractor scenario.",
+      "min": 0,
+      "max": 20,
+      "step": 0.1,
+      "defaultValue": 15.3
+    }
+  ],
+  "outputs": [
+    {
+      "key": "employeeTakeHome",
+      "label": "Employee Take-Home",
+      "explanation": "Estimated annual take-home pay for the employee scenario after simplified taxes and benefits costs.",
+      "unit": "currency",
+      "precision": 0
+    },
+    {
+      "key": "contractorTakeHome",
+      "label": "Contractor Take-Home",
+      "explanation": "Estimated annual take-home pay for the contractor scenario after business expenses, simplified taxes, and benefits costs.",
+      "unit": "currency",
+      "precision": 0
+    },
+    {
+      "key": "employeeTaxes",
+      "label": "Employee Taxes",
+      "explanation": "Estimated taxes used for the employee scenario.",
+      "unit": "currency",
+      "precision": 0
+    },
+    {
+      "key": "contractorTaxes",
+      "label": "Contractor Taxes",
+      "explanation": "Estimated taxes used for the contractor scenario, including simplified self-employment tax.",
+      "unit": "currency",
+      "precision": 0
+    },
+    {
+      "key": "contractorBusinessExpenses",
+      "label": "Contractor Business Expenses",
+      "explanation": "Annual business costs subtracted before contractor take-home is estimated.",
+      "unit": "currency",
+      "precision": 0
+    },
+    {
+      "key": "employeeBenefitsAdjustment",
+      "label": "Employee Benefits Cost",
+      "explanation": "Annual employee-paid benefits cost included in the estimate.",
+      "unit": "currency",
+      "precision": 0
+    },
+    {
+      "key": "contractorBenefitsAdjustment",
+      "label": "Contractor Benefits Cost",
+      "explanation": "Annual contractor-paid benefits cost included in the estimate.",
+      "unit": "currency",
+      "precision": 0
+    },
+    {
+      "key": "takeHomeDifference",
+      "label": "Take-Home Difference",
+      "explanation": "Contractor take-home minus employee take-home under the assumptions shown.",
+      "unit": "currency",
+      "precision": 0
+    }
+  ],
+  "defaultValues": {
+    "employeeGrossPay": 90000,
+    "contractorGrossRevenue": 110000,
+    "filingStatus": "single",
+    "taxYear": 2025,
+    "stateTaxRate": 5,
+    "employeeBenefitsAdjustment": 2500,
+    "contractorBusinessExpenses": 12000,
+    "contractorBenefitsAdjustment": 6000,
+    "selfEmploymentTaxRate": 15.3
+  },
+  "formula": {
+    "label": "Contractor vs Employee Take-Home Method",
+    "expression": "Employee Take-Home = Employee Gross Pay - Estimated Taxes - Benefits Cost; Contractor Take-Home = Contractor Gross Revenue - Business Expenses - Estimated Taxes - Benefits Cost",
+    "plainText": "The estimator calculates employee take-home using the existing salary tax model and compares it with a simplified contractor scenario that subtracts business expenses, benefits costs, and estimated contractor taxes, including self-employment tax."
+  },
+  "formulaExplanation": [
+    "The employee side uses the existing simplified 2025 U.S. salary model to estimate take-home pay from annual gross pay, filing status, state tax, and employee-paid benefits costs.",
+    "The contractor side starts with gross revenue, subtracts business expenses, estimates federal and state tax on the remaining income, applies a simplified self-employment tax rate, and then subtracts contractor-paid benefits costs.",
+    "The result is a side-by-side annual planning estimate that highlights why gross pay alone can be misleading.",
+    "This first version is designed for transparent decision support, not detailed tax filing or entity-structure analysis."
+  ],
+  "methodologyNotes": [
+    "This tool is U.S.-oriented and uses simplified 2025 planning assumptions.",
+    "Employee take-home uses the existing gross-to-net salary model with employee-paid benefits costs treated as a planning adjustment.",
+    "Contractor take-home assumes business expenses reduce usable income before contractor taxes and benefits costs are applied.",
+    "The contractor side uses a simplified self-employment tax rate rather than a full tax-return model.",
+    "This estimator does not model deductions by business entity type, retirement contribution rules, quarterly payments, local taxes, or tax credits."
+  ],
+  "example": {
+    "scenario": "A worker compares a $90,000 employee role with a contractor opportunity expected to generate $110,000 in gross revenue, $12,000 in business expenses, and $6,000 in self-funded benefits costs.",
+    "inputs": {
+      "employeeGrossPay": 90000,
+      "contractorGrossRevenue": 110000,
+      "filingStatus": "single",
+      "taxYear": 2025,
+      "stateTaxRate": 5,
+      "employeeBenefitsAdjustment": 2500,
+      "contractorBusinessExpenses": 12000,
+      "contractorBenefitsAdjustment": 6000,
+      "selfEmploymentTaxRate": 15.3
+    },
+    "resultSummary": "The estimator shows employee take-home of about $64,866 versus contractor take-home of about $59,097, meaning the contractor scenario trails by roughly $5,769 under these assumptions."
+  },
+  "resultInterpretation": {
+    "defaultText": "Use the difference as a planning signal, not a final answer. Contractor income can look higher in gross terms while landing lower in usable income once business costs, self-employment taxes, and self-funded benefits are included.",
+    "thresholds": [
+      {
+        "label": "Take-Home Difference",
+        "min": -15000,
+        "max": 15000,
+        "interpretation": "If the modeled take-home difference lands in this band, the decision often depends on non-salary tradeoffs such as schedule flexibility, business growth upside, or benefit quality rather than gross pay alone."
+      }
+    ],
+    "warningMessages": [
+      "Small assumption changes in business expenses, self-employment tax, or benefits costs can materially change which path looks better."
+    ]
+  },
+  "faq": [
+    {
+      "question": "Why can contractor gross pay look better but take-home look worse?",
+      "answer": "Because contractors often pay their own business expenses, self-employment taxes, and benefits costs. Those costs can materially reduce usable income even when gross revenue looks higher."
+    },
+    {
+      "question": "Does this estimator decide whether contractor work is better than employment?",
+      "answer": "No. It is a planning tool for take-home comparisons only. Real decisions may also depend on schedule flexibility, business upside, risk, paid time off, and benefits quality."
+    },
+    {
+      "question": "Why include business expenses and benefits adjustments?",
+      "answer": "Because gross pay alone is misleading. Contractors often cover software, equipment, insurance, accounting, and health coverage directly, while employees may have some of those costs partially subsidized."
+    },
+    {
+      "question": "Does this use exact self-employment tax rules?",
+      "answer": "No. It uses a simplified self-employment tax assumption so the first version stays practical and transparent."
+    },
+    {
+      "question": "What should I use after this estimator?",
+      "answer": "If you want to test employee take-home more directly, use gross to net or net to gross salary. If the decision also involves overtime, raises, or other work-income paths, compare those scenarios too."
+    }
+  ],
+  "relatedCalculators": [
+    "hourly-to-salary-calculator",
+    "salary-to-hourly-calculator",
+    "gross-to-net-salary-calculator",
+    "net-to-gross-salary-calculator",
+    "salary-increase-calculator",
+    "overtime-calculator"
+  ],
+  "relatedGuides": [
+    "contractor-vs-employee-income-explained",
+    "how-gross-to-net-salary-is-calculated",
+    "how-hourly-pay-and-annual-salary-convert"
+  ],
+  "comparisonPages": [],
+  "parentCategoryPath": "/finance/salary",
+  "disclaimer": "This estimator is an assumptions-based planning tool only. It uses simplified 2025 U.S. tax, expense, and benefits assumptions and does not provide tax, payroll, legal, or entity-structure advice.",
+  "ui": {
+    "buttonText": "Compare Take-Home",
+    "resetButtonText": "Reset",
+    "resultTitle": "Your Take-Home Comparison",
+    "showFormulaSection": true,
+    "showExampleSection": true,
+    "showInterpretation": true,
+    "showFAQSection": true,
+    "showRelatedLinks": true
+  },
+  "countryCode": "US",
+  "currencyCode": "USD",
+  "taxYear": 2025,
+  "calculationVersion": "2026.1",
+  "assumptions": "Uses simplified 2025 U.S. planning assumptions for employee taxes, contractor self-employment tax, business expenses, and benefits costs. It is intended for annual planning comparisons, not tax filing or payroll processing."
+}

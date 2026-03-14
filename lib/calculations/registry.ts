@@ -19,6 +19,7 @@ import {
   calculateSalaryToHourly,
   calculateOvertime,
   calculateSalaryIncrease,
+  calculateContractorVsEmployeeTakeHome,
   calculateGrossToNetSalary,
   calculateNetToGrossSalary,
 } from './finance';
@@ -117,6 +118,13 @@ export const calculatorRegistry: Record<string, CalculatorRegistryEntry> = {
     calculate: calculateSalaryIncrease,
     inputType: 'SalaryIncreaseCalculatorInput',
     outputType: 'SalaryIncreaseCalculatorOutput',
+    category: 'finance',
+    implemented: true,
+  },
+  'contractor-vs-employee-take-home-estimator': {
+    calculate: calculateContractorVsEmployeeTakeHome,
+    inputType: 'ContractorVsEmployeeTakeHomeEstimatorInput',
+    outputType: 'ContractorVsEmployeeTakeHomeEstimatorOutput',
     category: 'finance',
     implemented: true,
   },

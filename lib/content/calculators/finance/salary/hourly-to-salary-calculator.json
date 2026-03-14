@@ -165,12 +165,14 @@
     }
   ],
   "relatedCalculators": [
+    "contractor-vs-employee-take-home-estimator",
     "overtime-calculator",
     "salary-to-hourly-calculator",
     "gross-to-net-salary-calculator",
     "net-to-gross-salary-calculator"
   ],
   "relatedGuides": [
+    "contractor-vs-employee-income-explained",
     "how-overtime-pay-works",
     "how-hourly-pay-and-annual-salary-convert",
     "how-gross-to-net-salary-is-calculated"
