@@ -127,8 +127,8 @@ export default async function GuidePage({ params }: GuidePageProps) {
           />
 
           {/* Header */}
-          <div className="mb-8">
-            <div className="inline-block bg-primary/10 text-primary text-sm font-medium px-3 py-1 rounded-full mb-4">
+          <div className="mb-8 rounded-3xl border border-amber-200 bg-gradient-to-br from-amber-50 via-orange-50 to-white p-6 shadow-sm">
+            <div className="inline-block rounded-full bg-amber-600 px-3 py-1 text-sm font-medium text-white mb-4">
               {guide.guideType}
             </div>
             <h1 className="text-4xl font-bold mb-4">{guide.title}</h1>
@@ -137,7 +137,7 @@ export default async function GuidePage({ params }: GuidePageProps) {
 
           {/* Quick Answer */}
           {guide.quickAnswer && (
-            <div className="bg-primary/5 border-l-4 border-primary rounded-lg p-6 mb-8">
+            <div className="mb-8 rounded-2xl border border-teal-200 bg-gradient-to-r from-teal-50 to-cyan-50 p-6">
               <h2 className="text-lg font-semibold mb-2">Quick Answer</h2>
               <p className="text-muted-foreground">{guide.quickAnswer}</p>
             </div>
@@ -145,7 +145,7 @@ export default async function GuidePage({ params }: GuidePageProps) {
 
           {/* Content Sections */}
           {guide.sections && guide.sections.length > 0 && (
-            <div className="prose prose-slate max-w-none mb-8">
+            <div className="prose prose-slate max-w-none mb-8 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
               {guide.sections.map((section, index) => (
                 <div key={index}>
                   <h2>{section.heading}</h2>
@@ -157,17 +157,17 @@ export default async function GuidePage({ params }: GuidePageProps) {
 
           {/* Calculator Links */}
           {guide.relatedCalculators && guide.relatedCalculators.length > 0 && (
-            <div className="bg-muted/50 rounded-lg p-6 mb-8">
+            <div className="mb-8 rounded-2xl border border-indigo-200 bg-gradient-to-br from-indigo-50 to-white p-6">
               <h2 className="text-xl font-semibold mb-4">Try Our Calculators</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {guideCalculators.map((relatedCalc) => (
                   <Link
                     key={relatedCalc.id}
                     href={relatedCalc.canonicalPath}
-                    className="flex items-center gap-3 p-4 bg-background rounded-lg border hover:border-primary transition-colors"
+                    className="flex items-center gap-3 rounded-xl border border-white/70 bg-white/80 p-4 shadow-sm transition-colors hover:border-indigo-300"
                   >
-                    <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
-                      <svg className="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-100">
+                      <svg className="h-5 w-5 text-indigo-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 11h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2 2v14a2 2 0 00-2 2H7a2 2 0 002-2z" />
                       </svg>
                     </div>

@@ -103,7 +103,7 @@
   },
   "formula": {
     "label": "Hourly To Salary Formula",
-    "expression": "Annual Salary = Hourly Rate × Hours Per Week × Weeks Per Year",
+    "expression": "Annual Salary = Hourly Rate x Hours Per Week x Weeks Per Year",
     "plainText": "The calculator multiplies your hourly rate by the hours you expect to work each week and then by the number of weeks you expect to work in a year."
   },
   "formulaExplanation": [
@@ -169,7 +169,13 @@
     "gross-to-net-salary-calculator",
     "net-to-gross-salary-calculator"
   ],
-  "relatedGuides": ["how-gross-to-net-salary-is-calculated"],
+  "relatedGuides": [
+    "how-hourly-pay-and-annual-salary-convert",
+    "how-gross-to-net-salary-is-calculated"
+  ],
+  "comparisonPages": [
+    "hourly-to-salary-calculator-vs-salary-to-hourly-calculator"
+  ],
   "parentCategoryPath": "/finance/salary",
   "disclaimer": "This calculator provides assumptions-based compensation conversions only. It estimates salary views from hourly pay using the hours and weeks you enter, and it does not account for taxes, overtime premiums, bonuses, or employer-specific payroll rules.",
   "ui": {

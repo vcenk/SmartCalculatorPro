@@ -117,8 +117,8 @@ export default async function ComparisonPage({ params }: ComparisonPageProps) {
           />
 
           {/* Header */}
-          <div className="mb-8">
-            <div className="inline-block bg-primary/10 text-primary text-sm font-medium px-3 py-1 rounded-full mb-4">
+          <div className="mb-8 rounded-3xl border border-sky-200 bg-gradient-to-br from-sky-50 via-cyan-50 to-white p-6 shadow-sm">
+            <div className="inline-block rounded-full bg-sky-600 px-3 py-1 text-sm font-medium text-white mb-4">
               Comparison
             </div>
             <h1 className="text-4xl font-bold mb-4">{comparison.title}</h1>
@@ -127,22 +127,22 @@ export default async function ComparisonPage({ params }: ComparisonPageProps) {
 
           {/* Quick Decision */}
           {comparison.quickDecision && (
-            <div className="bg-primary/5 border-l-4 border-primary rounded-lg p-6 mb-8">
+            <div className="mb-8 rounded-2xl border border-emerald-200 bg-gradient-to-r from-emerald-50 to-teal-50 p-6">
               <h2 className="text-lg font-semibold mb-2">Quick Decision</h2>
               <p className="text-muted-foreground">{comparison.quickDecision}</p>
             </div>
           )}
 
           {/* Comparison Table */}
-          <div className="bg-white rounded-xl border overflow-hidden mb-8">
-            <div className="grid grid-cols-3 bg-muted/50 border-b">
+          <div className="mb-8 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
+            <div className="grid grid-cols-3 border-b bg-gradient-to-r from-slate-100 to-sky-50">
               <div className="p-4 font-semibold">Feature</div>
               <div className="p-4 font-semibold text-center">{itemA}</div>
               <div className="p-4 font-semibold text-center">{itemB}</div>
             </div>
             {comparison.keyDifferences.map((diff, index) => (
               <div key={index} className="grid grid-cols-3 border-b last:border-b-0">
-                <div className="p-4 text-muted-foreground">{diff.topic}</div>
+                <div className="bg-slate-50 p-4 text-muted-foreground">{diff.topic}</div>
                 <div className="p-4 text-center bg-white">{diff.itemA}</div>
                 <div className="p-4 text-center bg-white">{diff.itemB}</div>
               </div>
@@ -151,7 +151,7 @@ export default async function ComparisonPage({ params }: ComparisonPageProps) {
 
           {/* When to Use Each */}
           <div className="grid md:grid-cols-2 gap-6 mb-8">
-            <div className="bg-muted/50 rounded-lg p-6">
+            <div className="rounded-2xl border border-sky-200 bg-gradient-to-br from-sky-50 to-white p-6">
               <h2 className="text-xl font-semibold mb-4">When to Use {itemA}</h2>
               <ul className="space-y-3">
                 {comparison.whenToUseA.map((point, index) => (
@@ -173,7 +173,7 @@ export default async function ComparisonPage({ params }: ComparisonPageProps) {
                 </Link>
               )}
             </div>
-            <div className="bg-muted/50 rounded-lg p-6">
+            <div className="rounded-2xl border border-amber-200 bg-gradient-to-br from-amber-50 to-white p-6">
               <h2 className="text-xl font-semibold mb-4">When to Use {itemB}</h2>
               <ul className="space-y-3">
                 {comparison.whenToUseB.map((point, index) => (
@@ -203,7 +203,7 @@ export default async function ComparisonPage({ params }: ComparisonPageProps) {
               <h2 className="text-2xl font-semibold mb-4">Example Scenarios</h2>
               <div className="space-y-4">
                 {comparison.exampleScenarios.map((scenario, index) => (
-                  <div key={index} className="bg-muted/30 rounded-lg p-5">
+                  <div key={index} className="rounded-2xl border border-violet-200 bg-gradient-to-r from-violet-50 to-fuchsia-50 p-5">
                     <p>{scenario}</p>
                   </div>
                 ))}

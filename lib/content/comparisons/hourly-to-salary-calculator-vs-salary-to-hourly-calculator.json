@@ -1,0 +1,94 @@
+{
+  "id": "hourly-to-salary-calculator-vs-salary-to-hourly-calculator",
+  "pageType": "comparison",
+  "status": "published",
+  "indexable": true,
+  "slug": "hourly-to-salary-calculator-vs-salary-to-hourly-calculator",
+  "path": "compare/hourly-to-salary-calculator-vs-salary-to-hourly-calculator",
+  "title": "Hourly to Salary Calculator vs Salary to Hourly Calculator",
+  "titleTag": "Hourly to Salary Calculator vs Salary to Hourly Calculator | Smart Calculator Pro",
+  "metaDescription": "Compare hourly to salary and salary to hourly calculators, learn when to use each direction, and make cleaner compensation comparisons with aligned work-hour assumptions.",
+  "h1": "Hourly to Salary Calculator vs Salary to Hourly Calculator",
+  "intro": "These two compensation tools solve opposite conversion questions. One starts with an hourly wage and estimates salary-style pay views. The other starts with a salary figure and estimates an hourly rate.",
+  "primaryKeyword": "hourly to salary calculator vs salary to hourly calculator",
+  "secondaryKeywords": ["hourly vs salary calculator", "salary conversion comparison", "hourly salary conversion tools"],
+  "searchIntent": "comparison",
+  "canonicalPath": "/compare/hourly-to-salary-calculator-vs-salary-to-hourly-calculator",
+  "schemaType": "Article",
+  "ogImageTemplate": "comparison-default",
+  "comparedItems": ["Hourly to Salary Calculator", "Salary to Hourly Calculator"],
+  "summary": "Use the hourly to salary tool when your starting point is an hourly wage and you want annual, monthly, or paycheck-style salary estimates. Use the salary to hourly tool when your starting point is a salary figure and you want to understand the effective hourly rate under the same hours-per-week and weeks-per-year assumptions.",
+  "quickDecision": "If you know the hourly rate, use hourly to salary. If you know the salary amount, use salary to hourly. Both tools use the same schedule-based assumption model and are designed to be used together.",
+  "keyDifferences": [
+    {
+      "topic": "Starting Input",
+      "itemA": "Hourly pay rate",
+      "itemB": "Salary amount and salary frequency"
+    },
+    {
+      "topic": "Primary Direction",
+      "itemA": "Forward conversion from wage to salary views",
+      "itemB": "Reverse conversion from salary to effective hourly pay"
+    },
+    {
+      "topic": "Best Use Case",
+      "itemA": "Comparing hourly work with salaried offers",
+      "itemB": "Testing how valuable a salary is per hour"
+    },
+    {
+      "topic": "Main Output",
+      "itemA": "Annual, monthly, biweekly, and semimonthly salary estimates",
+      "itemB": "Hourly rate plus aligned pay-period breakdowns"
+    },
+    {
+      "topic": "Assumption Sensitivity",
+      "itemA": "Depends on hours per week and weeks worked per year",
+      "itemB": "Depends on salary frequency, hours per week, and weeks worked per year"
+    }
+  ],
+  "whenToUseA": [
+    "You are evaluating an hourly job and want to compare it with salary offers.",
+    "You want to budget from an hourly pay rate using an expected work schedule.",
+    "You need annual or monthly salary-style numbers from a wage-based role.",
+    "You want a cleaner gross salary starting point before using take-home salary tools."
+  ],
+  "whenToUseB": [
+    "You have a salary offer and want to estimate the effective hourly rate.",
+    "You want to compare a salaried job with freelance, contract, or hourly work.",
+    "You want to test how the hourly value changes if the role demands longer workweeks.",
+    "You want to normalize salary figures across different pay frequencies."
+  ],
+  "exampleScenarios": [
+    "A worker earning $32.50 per hour wants to know whether that role is roughly comparable to a $65,000 salaried job under a 40-hour, 50-week schedule. The hourly to salary calculator is the right starting point.",
+    "A candidate receives a $78,000 salary offer and wants to know what that means per hour under a 40-hour, 52-week schedule. The salary to hourly calculator is the better starting point.",
+    "A freelancer wants to compare a contractor rate with a salary offer before running either number through a take-home pay estimate. Using the matching conversion direction first keeps the comparison cleaner."
+  ],
+  "relatedCalculators": [
+    "hourly-to-salary-calculator",
+    "salary-to-hourly-calculator"
+  ],
+  "relatedGuides": [
+    "how-hourly-pay-and-annual-salary-convert",
+    "how-gross-to-net-salary-is-calculated"
+  ],
+  "faq": [
+    {
+      "question": "What is the directional difference between these calculators?",
+      "answer": "Hourly to salary starts with a wage and projects salary-style pay views. Salary to hourly starts with a salary amount and works backward to estimate an hourly rate. They use the same assumptions but in opposite directions."
+    },
+    {
+      "question": "Do both calculators use the same assumptions?",
+      "answer": "Yes. Both rely on hours per week and weeks worked per year so you can compare hourly and salary compensation using the same schedule model."
+    },
+    {
+      "question": "Which tool should I use before estimating take-home pay?",
+      "answer": "Use the conversion tool that matches your starting point first. Then, if you want a rough after-tax estimate, move into the gross to net or net to gross salary calculators."
+    },
+    {
+      "question": "Why can the same salary imply different hourly rates?",
+      "answer": "Because the effective hourly value depends on how many hours you expect to work and how many weeks you expect to be paid. More hours or fewer paid weeks can change the implied hourly rate materially."
+    }
+  ],
+  "lastReviewedAt": "2026-03-13",
+  "reviewedBy": "Smart Calculator Pro Team"
+}

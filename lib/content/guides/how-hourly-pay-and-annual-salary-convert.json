@@ -1,0 +1,82 @@
+{
+  "id": "how-hourly-pay-and-annual-salary-convert",
+  "pageType": "guide",
+  "status": "published",
+  "indexable": true,
+  "slug": "how-hourly-pay-and-annual-salary-convert",
+  "path": "guides/how-hourly-pay-and-annual-salary-convert",
+  "title": "How Hourly Pay and Annual Salary Convert",
+  "titleTag": "How Hourly Pay and Annual Salary Convert | Smart Calculator Pro",
+  "metaDescription": "Learn how hourly pay converts to annual salary and how salary converts back to an hourly rate using hours-per-week and weeks-per-year assumptions.",
+  "h1": "How Hourly Pay and Annual Salary Convert",
+  "intro": "Hourly wages and salaries can describe the same compensation in different ways, but the comparison only makes sense when you use consistent work-schedule assumptions.",
+  "primaryKeyword": "how hourly pay and annual salary convert",
+  "secondaryKeywords": ["hourly to annual salary formula", "salary to hourly formula", "hours per week salary conversion"],
+  "searchIntent": "informational",
+  "canonicalPath": "/guides/how-hourly-pay-and-annual-salary-convert",
+  "schemaType": "Article",
+  "ogImageTemplate": "guide-default",
+  "guideType": "how-to",
+  "summary": "This guide explains how to convert hourly pay into annual salary, how to convert salary back into an hourly rate, and why hours per week and weeks worked per year can change the result more than many people expect.",
+  "quickAnswer": "To convert hourly pay to salary, multiply hourly rate by hours per week and weeks worked per year. To convert salary to an hourly rate, divide annual salary by total annual work hours. In both cases, the quality of the result depends on the schedule assumptions you use.",
+  "sections": [
+    {
+      "heading": "Hourly Pay to Annual Salary",
+      "content": "<p>The basic hourly-to-salary conversion is straightforward: take the hourly rate, multiply it by the number of hours worked each week, and then multiply that by the number of weeks worked per year.</p><p><strong>Formula:</strong></p><p><code>Annual Salary = Hourly Rate x Hours Per Week x Weeks Worked Per Year</code></p><p>If someone earns $32.50 per hour, works 40 hours per week, and works 50 paid weeks each year, the estimate is $65,000 annually.</p>"
+    },
+    {
+      "heading": "Annual Salary to Hourly Pay",
+      "content": "<p>The salary-to-hourly conversion works in the opposite direction. First, make sure the salary amount is annualized. Then divide that annual salary by the total number of work hours across the year.</p><p><strong>Formula:</strong></p><p><code>Hourly Rate = Annual Salary / (Hours Per Week x Weeks Worked Per Year)</code></p><p>If a role pays $78,000 annually and you expect 40 hours per week across 52 paid weeks, the implied hourly rate is about $37.50.</p>"
+    },
+    {
+      "heading": "Why Hours Per Week Matter",
+      "content": "<p>Hours per week shape the effective value of both hourly and salaried roles. A salary that looks strong on paper can feel less attractive if the role consistently requires 45 or 50 hours per week instead of 40. Likewise, an hourly role with capped hours may produce a lower annual total than expected even when the hourly rate looks competitive.</p>"
+    },
+    {
+      "heading": "Why Weeks Worked Per Year Matter",
+      "content": "<p>Weeks worked per year are just as important. Some workers are paid across a full 52-week year, while others expect unpaid time off, seasonal downtime, or project gaps. That means two people with the same hourly rate can land on very different annual income estimates depending on whether they work 46, 50, or 52 paid weeks.</p>"
+    },
+    {
+      "heading": "Using Conversion Tools for Real Comparisons",
+      "content": "<p>Use the hourly to salary calculator when you know the wage first and want annual, monthly, biweekly, or semimonthly salary-style numbers. Use the salary to hourly calculator when you know the salary first and want to estimate the effective hourly rate under the same assumptions.</p><p>Once you have a gross annual compensation estimate, the gross to net salary calculator can help you approximate take-home pay under the current U.S.-oriented salary assumptions. If your goal is a target net amount, the net to gross salary calculator can help you work backward from take-home pay to a rough gross salary target.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "question": "What is the fastest way to convert hourly pay to salary?",
+      "answer": "Multiply hourly pay by hours per week and weeks worked per year. If you also want monthly, biweekly, or semimonthly views, use the hourly to salary calculator."
+    },
+    {
+      "question": "How do I convert a salary offer into an hourly rate?",
+      "answer": "Annualize the salary if needed, then divide by total annual work hours. The salary to hourly calculator handles that conversion using your selected work schedule assumptions."
+    },
+    {
+      "question": "Why can a salaried job have a lower effective hourly rate than expected?",
+      "answer": "Because salaried roles sometimes require more hours than the standard 40-hour workweek. If the actual workweek is longer, the implied hourly value falls."
+    },
+    {
+      "question": "Do these conversions include taxes?",
+      "answer": "No. These are gross compensation conversions. If you want a take-home estimate after taxes, pair the result with the gross to net or net to gross salary calculators."
+    },
+    {
+      "question": "Should I use 52 weeks per year by default?",
+      "answer": "Only if that reflects your real paid schedule. If you expect unpaid leave, seasonal downtime, or a shorter paid year, reduce the weeks-worked assumption so the estimate stays realistic."
+    }
+  ],
+  "relatedCalculators": [
+    "hourly-to-salary-calculator",
+    "salary-to-hourly-calculator",
+    "gross-to-net-salary-calculator",
+    "net-to-gross-salary-calculator"
+  ],
+  "relatedComparisons": [
+    "hourly-to-salary-calculator-vs-salary-to-hourly-calculator",
+    "gross-to-net-salary-calculator-vs-net-to-gross-salary-calculator"
+  ],
+  "relatedGuides": [
+    "how-gross-to-net-salary-is-calculated"
+  ],
+  "disclaimer": "This guide is for educational purposes only. Compensation conversion estimates depend heavily on your hours-per-week and weeks-worked assumptions, and they do not reflect taxes, benefits, overtime premiums, or employer-specific payroll terms.",
+  "lastReviewedAt": "2026-03-13",
+  "reviewedBy": "Smart Calculator Pro Team"
+}

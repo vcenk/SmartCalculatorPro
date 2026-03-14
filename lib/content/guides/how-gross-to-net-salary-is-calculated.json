@@ -98,9 +98,12 @@
     "salary-to-hourly-calculator"
   ],
   "relatedComparisons": [
-    "gross-to-net-salary-calculator-vs-net-to-gross-salary-calculator"
+    "gross-to-net-salary-calculator-vs-net-to-gross-salary-calculator",
+    "hourly-to-salary-calculator-vs-salary-to-hourly-calculator"
   ],
-  "relatedGuides": [],
+  "relatedGuides": [
+    "how-hourly-pay-and-annual-salary-convert"
+  ],
   "disclaimer": "This guide is for educational purposes only and does not constitute tax or financial advice. Tax laws change frequently, and individual circumstances vary. Consult a qualified tax professional for personalized advice.",
   "lastReviewedAt": "2026-03-13",
   "reviewedBy": "Smart Calculator Pro Team"
