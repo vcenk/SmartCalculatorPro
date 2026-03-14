@@ -1,0 +1,78 @@
+{
+  "id": "how-gst-and-hst-work-in-canada",
+  "pageType": "guide",
+  "status": "published",
+  "indexable": true,
+  "slug": "how-gst-and-hst-work-in-canada",
+  "path": "guides/how-gst-and-hst-work-in-canada",
+  "title": "How GST and HST Work in Canada",
+  "titleTag": "How GST and HST Work in Canada | Smart Calculator Pro",
+  "metaDescription": "Learn how GST, HST, PST, and other province-based sales tax layers work in Canada, and how to calculate before-tax and after-tax amounts more clearly.",
+  "h1": "How GST and HST Work in Canada",
+  "intro": "Canada sales tax is straightforward once you know which tax system applies in the province you are dealing with. The biggest source of confusion is that not every province uses the same mix of federal and provincial sales tax.",
+  "primaryKeyword": "how gst and hst work in canada",
+  "secondaryKeywords": ["gst vs hst vs pst", "canada sales tax guide", "before tax after tax canada"],
+  "searchIntent": "informational",
+  "canonicalPath": "/guides/how-gst-and-hst-work-in-canada",
+  "schemaType": "Article",
+  "ogImageTemplate": "guide-default",
+  "guideType": "explanation",
+  "summary": "This guide explains the difference between GST, HST, PST, and other province-based sales tax layers in Canada, why rates vary by province, and how to move between before-tax and after-tax amounts.",
+  "quickAnswer": "GST is the federal sales tax used across Canada. Some provinces combine it into HST, while others use GST plus a separate provincial sales tax layer such as PST, RST, or QST. The correct rate depends on the province involved and whether you are starting with a before-tax amount or a total after tax.",
+  "sections": [
+    {
+      "heading": "GST vs HST vs PST",
+      "content": "<p>GST is the federal goods and services tax. HST is a harmonized sales tax used by some provinces instead of separate federal and provincial sales taxes. Other provinces use GST plus a separate provincial layer such as PST, RST, or QST. That is why a sales-tax estimate that works in one province may be wrong in another.</p>"
+    },
+    {
+      "heading": "Why Tax Rates Vary By Province",
+      "content": "<p>Canada does not use one single sales-tax structure nationwide. Provinces can participate in the harmonized model or maintain their own provincial sales tax systems. That means Ontario and Alberta do not work the same way, and Quebec also differs from provinces that use HST.</p>"
+    },
+    {
+      "heading": "Before-Tax vs After-Tax Calculation",
+      "content": "<p>If you start with a before-tax amount, the after-tax total is found by multiplying that amount by one plus the combined sales tax rate. If you start with the total after tax, you reverse the process by dividing the total by one plus the combined rate. Both directions are useful: one for purchase planning or invoices, the other for working backward from a total you already know.</p>"
+    },
+    {
+      "heading": "Why The Province Assumption Matters",
+      "content": "<p>A 5% GST-only province produces a very different result from a province using 13%, 14%, or 15% HST, and different again from a province with separate GST and PST or QST layers. That is why the first step in any Canada sales-tax estimate is choosing the correct province or territory.</p>"
+    },
+    {
+      "heading": "A Practical Canada Finance Starting Point",
+      "content": "<p>Use the Canada GST/HST calculator when you need a quick estimate of before-tax amount, after-tax total, or tax breakdown by province. It is a useful first foothold for Canada personal finance because it solves a common everyday tax question clearly. As the Canada cluster grows, this kind of province-aware logic can also support future workflows around budgeting, home costs, or other tax-sensitive money decisions.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "question": "What is the difference between GST and HST?",
+      "answer": "GST is the federal sales tax. HST is a harmonized sales tax used by certain provinces instead of separate federal and provincial sales tax layers."
+    },
+    {
+      "question": "What is PST in Canada?",
+      "answer": "PST is a provincial sales tax used in some provinces alongside GST. Manitoba uses a retail sales tax layer, Quebec uses QST, and some provinces use HST instead."
+    },
+    {
+      "question": "Why do Canadian sales tax rates vary by province?",
+      "answer": "Because provinces do not all use the same sales-tax system. Some harmonize with the federal GST, some maintain separate provincial rates, and some apply only GST."
+    },
+    {
+      "question": "How do I calculate a before-tax amount from a total after tax?",
+      "answer": "Divide the total after tax by one plus the combined tax rate for the province. The GST/HST calculator does this for you when you choose the reverse workflow."
+    },
+    {
+      "question": "Can I use this guide for exact tax compliance?",
+      "answer": "Use it for education and planning. Exact sales tax treatment can depend on exemptions, product rules, business registration, and province-specific details."
+    }
+  ],
+  "relatedCalculators": [
+    "gst-hst-calculator",
+    "loan-calculator",
+    "mortgage-calculator"
+  ],
+  "relatedComparisons": [],
+  "relatedGuides": [
+    "how-to-calculate-loan-payments"
+  ],
+  "disclaimer": "This guide is for educational purposes only. Canadian sales tax rules can vary by province, product, exemption status, and business registration details. Use it for planning, not tax filing or legal advice.",
+  "lastReviewedAt": "2026-03-14",
+  "reviewedBy": "Smart Calculator Pro Team"
+}

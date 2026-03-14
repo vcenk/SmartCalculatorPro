@@ -1,0 +1,213 @@
+{
+  "id": "gst-hst-calculator",
+  "pageType": "calculator",
+  "status": "published",
+  "indexable": true,
+  "category": "finance",
+  "subcategory": "canada",
+  "slug": "gst-hst-calculator",
+  "path": "finance/canada/gst-hst-calculator",
+  "title": "Canada GST/HST Calculator",
+  "name": "Canada GST/HST Calculator",
+  "titleTag": "Canada GST/HST Calculator | Smart Calculator Pro",
+  "metaDescription": "Calculate GST, HST, and provincial sales tax by province in Canada. Estimate before-tax amounts, after-tax totals, and tax breakdowns with one tool.",
+  "h1": "Canada GST/HST Calculator",
+  "intro": "Estimate Canadian sales tax by province using a practical calculator that supports before-tax amounts, after-tax totals, and tax breakdowns.",
+  "shortDescription": "Estimate GST, HST, and province-based sales tax totals in Canada with before-tax and after-tax workflows.",
+  "longDescription": "This Canada GST/HST calculator helps users estimate sales tax totals using province-appropriate assumptions for GST, HST, PST, RST, and QST where relevant. It supports two common workflows: starting with a before-tax amount to find the after-tax total, or starting with a total after tax to work backward to the before-tax amount. It also breaks out the tax layers so the result is easier to review and explain.",
+  "primaryKeyword": "canada gst hst calculator",
+  "secondaryKeywords": ["gst calculator canada", "hst calculator canada", "canada sales tax calculator"],
+  "searchIntent": "transactional-tool",
+  "canonicalPath": "/finance/canada/gst-hst-calculator",
+  "schemaType": "SoftwareApplication",
+  "ogImageTemplate": "calculator-default",
+  "problemSolved": "Helps estimate province-appropriate Canadian sales tax totals and before-tax or after-tax amounts with a transparent breakdown.",
+  "whoItsFor": ["canadian shoppers", "freelancers", "small businesses", "invoice planners", "canada personal finance users"],
+  "calculationType": "lookup",
+  "inputs": [
+    {
+      "key": "calculationMode",
+      "label": "Calculation Mode",
+      "type": "select",
+      "required": true,
+      "explanation": "Choose whether you are starting with a before-tax amount or an after-tax total.",
+      "options": [
+        { "value": "beforeTaxToTotal", "label": "Before-Tax Amount to After-Tax Total" },
+        { "value": "totalToBeforeTax", "label": "After-Tax Total to Before-Tax Amount" }
+      ],
+      "defaultValue": "beforeTaxToTotal"
+    },
+    {
+      "key": "provinceCode",
+      "label": "Province or Territory",
+      "type": "select",
+      "required": true,
+      "explanation": "Select the Canadian province or territory so the calculator can apply the appropriate GST, HST, PST, RST, or QST assumptions.",
+      "options": [
+        { "value": "AB", "label": "Alberta" },
+        { "value": "BC", "label": "British Columbia" },
+        { "value": "MB", "label": "Manitoba" },
+        { "value": "NB", "label": "New Brunswick" },
+        { "value": "NL", "label": "Newfoundland and Labrador" },
+        { "value": "NS", "label": "Nova Scotia" },
+        { "value": "NT", "label": "Northwest Territories" },
+        { "value": "NU", "label": "Nunavut" },
+        { "value": "ON", "label": "Ontario" },
+        { "value": "PE", "label": "Prince Edward Island" },
+        { "value": "QC", "label": "Quebec" },
+        { "value": "SK", "label": "Saskatchewan" },
+        { "value": "YT", "label": "Yukon" }
+      ],
+      "defaultValue": "ON"
+    },
+    {
+      "key": "amount",
+      "label": "Amount",
+      "type": "number",
+      "unit": "currency",
+      "required": true,
+      "explanation": "Enter the amount that matches your selected workflow. Use a before-tax amount in the first workflow or a total-after-tax amount in the reverse workflow.",
+      "min": 0,
+      "step": 0.01,
+      "defaultValue": 100
+    }
+  ],
+  "outputs": [
+    {
+      "key": "beforeTaxAmount",
+      "label": "Before-Tax Amount",
+      "explanation": "The amount before GST, HST, or provincial sales tax is applied.",
+      "unit": "currency",
+      "precision": 2
+    },
+    {
+      "key": "totalAfterTax",
+      "label": "Total After Tax",
+      "explanation": "The full amount after all applicable sales tax assumptions are applied.",
+      "unit": "currency",
+      "precision": 2
+    },
+    {
+      "key": "totalTaxAmount",
+      "label": "Total Tax Amount",
+      "explanation": "The total combined sales tax in the result.",
+      "unit": "currency",
+      "precision": 2
+    },
+    {
+      "key": "gstAmount",
+      "label": "GST Amount",
+      "explanation": "The GST portion when a separate GST layer applies.",
+      "unit": "currency",
+      "precision": 2
+    },
+    {
+      "key": "hstAmount",
+      "label": "HST Amount",
+      "explanation": "The HST portion when the province uses a harmonized sales tax rate.",
+      "unit": "currency",
+      "precision": 2
+    },
+    {
+      "key": "provincialTaxAmount",
+      "label": "Provincial Tax Amount",
+      "explanation": "The separate provincial sales tax layer where a province uses PST, RST, or QST instead of HST.",
+      "unit": "currency",
+      "precision": 2
+    }
+  ],
+  "defaultValues": {
+    "calculationMode": "beforeTaxToTotal",
+    "provinceCode": "ON",
+    "amount": 100
+  },
+  "formula": {
+    "label": "Canada GST/HST Method",
+    "expression": "After-Tax Total = Before-Tax Amount x (1 + Combined Tax Rate); Before-Tax Amount = After-Tax Total / (1 + Combined Tax Rate)",
+    "plainText": "The calculator applies province-based sales tax rates to move from a before-tax amount to an after-tax total, or reverses that process when you start with the after-tax total."
+  },
+  "formulaExplanation": [
+    "When you start with a before-tax amount, the calculator applies the province's combined sales tax assumption to estimate the full after-tax total.",
+    "When you start with a total after tax, the calculator divides the total by one plus the combined rate to recover the before-tax amount.",
+    "For HST provinces, the calculator treats the sales tax as a single harmonized layer.",
+    "For provinces with separate GST and provincial sales tax layers, the calculator shows the GST portion and the separate provincial portion in the breakdown."
+  ],
+  "methodologyNotes": [
+    "This calculator is a practical Canada sales tax estimator, not tax filing or accounting software.",
+    "Province and territory assumptions are based on current standard published GST, HST, PST, RST, and QST rates used for straightforward planning scenarios.",
+    "Some real transactions may be tax-exempt, zero-rated, or subject to special rules that this first version does not model.",
+    "Quebec is shown using a separate provincial tax layer for practical planning even though the provincial component is QST rather than PST.",
+    "This tool is best for estimate-based budgeting, invoice checks, and quick tax math."
+  ],
+  "example": {
+    "scenario": "A user in Ontario wants to estimate the total cost of a $100 purchase before tax.",
+    "inputs": {
+      "calculationMode": "beforeTaxToTotal",
+      "provinceCode": "ON",
+      "amount": 100
+    },
+    "resultSummary": "The calculator shows a before-tax amount of $100, HST of about $13, total tax of about $13, and a total after tax of about $113."
+  },
+  "resultInterpretation": {
+    "defaultText": "Use the breakdown as a quick planning estimate. The most important thing is that the province assumption matches the place where the tax rate applies.",
+    "thresholds": [
+      {
+        "label": "Total Tax Amount",
+        "min": 5,
+        "max": 50,
+        "interpretation": "A tax amount in this range is common for everyday purchases and invoice checks, but the exact layer depends on whether the province uses GST only, HST, or a GST-plus-provincial-tax structure."
+      }
+    ],
+    "warningMessages": [
+      "Sales tax treatment can vary by province, product type, and transaction rules, so use this as an estimate unless you have confirmed the exact tax treatment."
+    ]
+  },
+  "faq": [
+    {
+      "question": "What is the difference between GST, HST, and PST in Canada?",
+      "answer": "GST is the federal goods and services tax. HST is a harmonized sales tax used in some provinces instead of separate federal and provincial sales taxes. PST is a separate provincial sales tax layer used in some provinces alongside GST."
+    },
+    {
+      "question": "Why does the tax rate change by province?",
+      "answer": "Because provinces do not all use the same sales tax structure. Some use HST, some use GST plus a separate provincial tax, and some use only GST."
+    },
+    {
+      "question": "Can I use this calculator backward from a total after tax?",
+      "answer": "Yes. Choose the reverse workflow and enter the after-tax total. The calculator will estimate the before-tax amount and tax breakdown using the province you selected."
+    },
+    {
+      "question": "Why does Quebec use a separate provincial tax amount in this calculator?",
+      "answer": "Because Quebec uses GST plus QST rather than HST. This calculator shows the provincial layer separately for practical planning and breakdown clarity."
+    },
+    {
+      "question": "Is this calculator enough for invoices or tax filing?",
+      "answer": "It is useful for quick planning and checks, but real invoices and tax reporting can depend on product rules, exemptions, and business registration details."
+    }
+  ],
+  "relatedCalculators": [
+    "loan-calculator",
+    "mortgage-calculator",
+    "savings-calculator"
+  ],
+  "relatedGuides": [
+    "how-gst-and-hst-work-in-canada",
+    "how-to-calculate-loan-payments"
+  ],
+  "comparisonPages": [],
+  "parentCategoryPath": "/finance",
+  "disclaimer": "This Canada GST/HST calculator provides estimate-based sales tax results only. Actual tax treatment can vary by province, transaction type, exemptions, and business rules. Use it for planning, not tax filing or legal advice.",
+  "ui": {
+    "buttonText": "Calculate Tax",
+    "resetButtonText": "Reset",
+    "resultTitle": "Your Canada Sales Tax Estimate",
+    "showFormulaSection": true,
+    "showExampleSection": true,
+    "showInterpretation": true,
+    "showFAQSection": true,
+    "showRelatedLinks": true
+  },
+  "countryCode": "CA",
+  "currencyCode": "CAD",
+  "calculationVersion": "2026.1",
+  "assumptions": "Uses standard province-based GST, HST, PST, RST, and QST assumptions for straightforward before-tax and after-tax sales tax planning in Canada."
+}

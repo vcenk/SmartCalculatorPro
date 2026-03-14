@@ -46,6 +46,7 @@ export default async function FinanceCategoryPage() {
   const salaryCalculators = calculators.filter((calculator) => calculator.subcategory === 'salary');
   const borrowingCalculators = calculators.filter((calculator) => calculator.subcategory === 'personal');
   const growthCalculators = calculators.filter((calculator) => calculator.subcategory === 'investing');
+  const canadaCalculators = calculators.filter((calculator) => calculator.subcategory === 'canada');
 
   const featuredGuides = await Promise.all(
     (category.featuredGuides ?? []).map((guideId) => loadGuide(guideId))
@@ -102,14 +103,14 @@ export default async function FinanceCategoryPage() {
                         Live Finance Cluster
                       </p>
                       <h2 className="mt-2 text-2xl font-semibold">
-                        Salary, borrowing, and growth planning in one place
+                        Salary, borrowing, growth, and Canada money planning in one place
                       </h2>
                     </div>
                     <div className="rounded-2xl bg-white/10 px-4 py-2 text-sm font-semibold">
                       {calculators.length} live tools
                     </div>
                   </div>
-                  <div className="grid gap-3 sm:grid-cols-3">
+                  <div className="grid gap-3 sm:grid-cols-4">
                     <div className="rounded-2xl bg-white/10 p-4">
                       <p className="text-xs uppercase tracking-[0.14em] text-sky-100/70">Salary</p>
                       <p className="mt-2 text-lg font-semibold">{salaryCalculators.length} calculators</p>
@@ -121,6 +122,10 @@ export default async function FinanceCategoryPage() {
                     <div className="rounded-2xl bg-white/10 p-4">
                       <p className="text-xs uppercase tracking-[0.14em] text-sky-100/70">Growth</p>
                       <p className="mt-2 text-lg font-semibold">{growthCalculators.length} calculators</p>
+                    </div>
+                    <div className="rounded-2xl bg-white/10 p-4">
+                      <p className="text-xs uppercase tracking-[0.14em] text-sky-100/70">Canada</p>
+                      <p className="mt-2 text-lg font-semibold">{canadaCalculators.length} calculators</p>
                     </div>
                   </div>
                   <p className="mt-5 text-sm leading-6 text-sky-50/84">
@@ -145,7 +150,7 @@ export default async function FinanceCategoryPage() {
               </h2>
             </div>
 
-            <div className="grid gap-6 xl:grid-cols-3">
+            <div className="grid gap-6 xl:grid-cols-2">
               <div className="rounded-[2rem] border border-[#dce7f1] bg-white/80 p-6 shadow-[0_18px_40px_rgba(16,32,51,0.06)]">
                 <div className="mb-4 inline-flex rounded-full bg-[linear-gradient(135deg,#0b6bcb,#0d8eb8)] px-4 py-2 text-xs font-semibold uppercase tracking-[0.14em] text-white">
                   Salary & Compensation
@@ -207,6 +212,30 @@ export default async function FinanceCategoryPage() {
                       key={calculator.id}
                       href={calculator.canonicalPath}
                       className="rounded-2xl border border-[#dbe7f2] bg-[#f7fbff] p-4 transition-colors hover:border-primary hover:bg-white"
+                    >
+                      <p className="font-semibold text-slate-950">{calculator.name}</p>
+                      <p className="mt-1 text-sm leading-6 text-[#52697f]">{calculator.shortDescription}</p>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+
+              <div className="rounded-[2rem] border border-[#dce7f1] bg-white/80 p-6 shadow-[0_18px_40px_rgba(16,32,51,0.06)]">
+                <div className="mb-4 inline-flex rounded-full bg-[linear-gradient(135deg,#d9485f,#f06b4f)] px-4 py-2 text-xs font-semibold uppercase tracking-[0.14em] text-white">
+                  Canada Personal Finance
+                </div>
+                <h3 className="text-2xl font-semibold text-slate-950">Start with province-aware tax math and practical everyday money decisions</h3>
+                <p className="mt-4 text-base leading-7 text-[#52697f]">
+                  Use these tools when the answer depends on Canadian province assumptions
+                  instead of one national default. This is the first focused entry point for
+                  Pillar 2.
+                </p>
+                <div className="mt-6 grid gap-4">
+                  {canadaCalculators.map((calculator) => (
+                    <Link
+                      key={calculator.id}
+                      href={calculator.canonicalPath}
+                      className="rounded-2xl border border-[#f1ddd6] bg-[#fff8f6] p-4 transition-colors hover:border-primary hover:bg-white"
                     >
                       <p className="font-semibold text-slate-950">{calculator.name}</p>
                       <p className="mt-1 text-sm leading-6 text-[#52697f]">{calculator.shortDescription}</p>

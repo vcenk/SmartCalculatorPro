@@ -22,6 +22,7 @@ import {
   calculateContractorVsEmployeeTakeHome,
   calculateSideHustleProfit,
   calculateContractorRate,
+  calculateCanadaGstHst,
   calculateGrossToNetSalary,
   calculateNetToGrossSalary,
 } from './finance';
@@ -141,6 +142,13 @@ export const calculatorRegistry: Record<string, CalculatorRegistryEntry> = {
     calculate: calculateContractorRate,
     inputType: 'ContractorRateCalculatorInput',
     outputType: 'ContractorRateCalculatorOutput',
+    category: 'finance',
+    implemented: true,
+  },
+  'gst-hst-calculator': {
+    calculate: calculateCanadaGstHst,
+    inputType: 'CanadaGstHstCalculatorInput',
+    outputType: 'CanadaGstHstCalculatorOutput',
     category: 'finance',
     implemented: true,
   },

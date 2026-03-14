@@ -180,6 +180,21 @@ export interface ContractorRateCalculatorOutput {
   effectiveBillableRateNeeded: number;
 }
 
+export interface CanadaGstHstCalculatorInput {
+  calculationMode: 'beforeTaxToTotal' | 'totalToBeforeTax';
+  provinceCode: string;
+  amount: number;
+}
+
+export interface CanadaGstHstCalculatorOutput {
+  beforeTaxAmount: number;
+  totalAfterTax: number;
+  totalTaxAmount: number;
+  gstAmount: number;
+  hstAmount: number;
+  provincialTaxAmount: number;
+}
+
 // ============================================================================
 // Utility Functions
 // ============================================================================
@@ -225,6 +240,35 @@ function buildCompensationBreakdown(annualSalary: number) {
     monthlySalary: annualSalary / 12,
     annualSalary,
   };
+}
+
+interface CanadaSalesTaxRates {
+  provinceCode: string;
+  provinceName: string;
+  gstRate: number;
+  hstRate: number;
+  provincialRate: number;
+  provincialLabel: 'PST' | 'QST' | 'RST' | 'GST';
+}
+
+const CANADA_SALES_TAX_RATES: Record<string, CanadaSalesTaxRates> = {
+  AB: { provinceCode: 'AB', provinceName: 'Alberta', gstRate: 5, hstRate: 0, provincialRate: 0, provincialLabel: 'GST' },
+  BC: { provinceCode: 'BC', provinceName: 'British Columbia', gstRate: 5, hstRate: 0, provincialRate: 7, provincialLabel: 'PST' },
+  MB: { provinceCode: 'MB', provinceName: 'Manitoba', gstRate: 5, hstRate: 0, provincialRate: 7, provincialLabel: 'RST' },
+  NB: { provinceCode: 'NB', provinceName: 'New Brunswick', gstRate: 0, hstRate: 15, provincialRate: 0, provincialLabel: 'GST' },
+  NL: { provinceCode: 'NL', provinceName: 'Newfoundland and Labrador', gstRate: 0, hstRate: 15, provincialRate: 0, provincialLabel: 'GST' },
+  NS: { provinceCode: 'NS', provinceName: 'Nova Scotia', gstRate: 0, hstRate: 14, provincialRate: 0, provincialLabel: 'GST' },
+  NT: { provinceCode: 'NT', provinceName: 'Northwest Territories', gstRate: 5, hstRate: 0, provincialRate: 0, provincialLabel: 'GST' },
+  NU: { provinceCode: 'NU', provinceName: 'Nunavut', gstRate: 5, hstRate: 0, provincialRate: 0, provincialLabel: 'GST' },
+  ON: { provinceCode: 'ON', provinceName: 'Ontario', gstRate: 0, hstRate: 13, provincialRate: 0, provincialLabel: 'GST' },
+  PE: { provinceCode: 'PE', provinceName: 'Prince Edward Island', gstRate: 0, hstRate: 15, provincialRate: 0, provincialLabel: 'GST' },
+  QC: { provinceCode: 'QC', provinceName: 'Quebec', gstRate: 5, hstRate: 0, provincialRate: 9.975, provincialLabel: 'QST' },
+  SK: { provinceCode: 'SK', provinceName: 'Saskatchewan', gstRate: 5, hstRate: 0, provincialRate: 6, provincialLabel: 'PST' },
+  YT: { provinceCode: 'YT', provinceName: 'Yukon', gstRate: 5, hstRate: 0, provincialRate: 0, provincialLabel: 'GST' },
+};
+
+function getCanadaSalesTaxRates(provinceCode: string): CanadaSalesTaxRates {
+  return CANADA_SALES_TAX_RATES[provinceCode] ?? CANADA_SALES_TAX_RATES.ON;
 }
 
 // ============================================================================
@@ -652,6 +696,38 @@ export function calculateContractorRate(
     requiredAnnualRevenue,
     requiredMonthlyRevenue,
     effectiveBillableRateNeeded,
+  };
+}
+
+export function calculateCanadaGstHst(
+  input: CanadaGstHstCalculatorInput
+): CanadaGstHstCalculatorOutput {
+  const { calculationMode, provinceCode, amount } = input;
+  const rates = getCanadaSalesTaxRates(provinceCode);
+  const combinedRate = (rates.hstRate || rates.gstRate + rates.provincialRate) / 100;
+
+  const beforeTaxAmount =
+    calculationMode === 'totalToBeforeTax'
+      ? Math.max(0, amount) / (1 + combinedRate)
+      : Math.max(0, amount);
+  const totalAfterTax =
+    calculationMode === 'totalToBeforeTax'
+      ? Math.max(0, amount)
+      : beforeTaxAmount * (1 + combinedRate);
+
+  const hstAmount = rates.hstRate > 0 ? beforeTaxAmount * (rates.hstRate / 100) : 0;
+  const gstAmount = rates.hstRate > 0 ? 0 : beforeTaxAmount * (rates.gstRate / 100);
+  const provincialTaxAmount =
+    rates.hstRate > 0 ? 0 : beforeTaxAmount * (rates.provincialRate / 100);
+  const totalTaxAmount = hstAmount + gstAmount + provincialTaxAmount;
+
+  return {
+    beforeTaxAmount,
+    totalAfterTax,
+    totalTaxAmount,
+    gstAmount,
+    hstAmount,
+    provincialTaxAmount,
   };
 }
 

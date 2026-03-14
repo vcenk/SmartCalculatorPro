@@ -14,6 +14,7 @@ import type { CalculatorPage, GuidePage } from '@/lib/types/content';
 const PAGE_PATH = '/guides';
 
 const featuredGuideIds = [
+  'how-gst-and-hst-work-in-canada',
   'how-gross-to-net-salary-is-calculated',
   'contractor-vs-employee-income-explained',
   'how-to-calculate-a-contractor-rate',
@@ -44,7 +45,7 @@ const guideGroups = [
     description:
       'These guides break down common finance formulas so users can understand the numbers behind borrowing and repayment decisions.',
     accent: 'from-indigo-600 via-blue-600 to-sky-500',
-    ids: ['how-to-calculate-loan-payments'],
+    ids: ['how-gst-and-hst-work-in-canada', 'how-to-calculate-loan-payments'],
   },
   {
     title: 'Calculator Trust & Methodology',

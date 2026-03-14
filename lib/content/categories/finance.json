@@ -17,10 +17,11 @@
   "canonicalPath": "/finance",
   "schemaType": "CollectionPage",
   "ogImageTemplate": "category-default",
-  "summary": "Comprehensive finance calculators for personal and business financial planning.",
-  "purpose": "Help users understand costs, plan payments, and project financial outcomes.",
-  "featuredCalculators": ["loan-calculator", "mortgage-calculator", "compound-interest-calculator", "savings-calculator"],
+  "summary": "Finance calculators for salary workflows, borrowing, savings, and the first Canada personal finance use cases.",
+  "purpose": "Help users understand costs, plan payments, compare work-income paths, and estimate finance outcomes with practical, reviewable workflows.",
+  "featuredCalculators": ["loan-calculator", "mortgage-calculator", "gst-hst-calculator", "compound-interest-calculator", "savings-calculator"],
   "featuredGuides": [
+    "how-gst-and-hst-work-in-canada",
     "how-gross-to-net-salary-is-calculated",
     "contractor-vs-employee-income-explained",
     "how-to-calculate-a-contractor-rate",
@@ -57,8 +58,12 @@
     {
       "heading": "Planning for the Future",
       "content": "Use our compound interest and savings calculators to see how your money can grow over time. Small contributions today can compound into significant savings tomorrow. Understanding the power of compound interest is key to building long-term wealth."
+    },
+    {
+      "heading": "Canada Personal Finance Starting Points",
+      "content": "Some finance decisions depend on province-specific rules instead of one national assumption set. The Canada GST/HST calculator is the first focused entry point in our Canada personal finance cluster, giving users a practical way to estimate before-tax amounts, after-tax totals, and province-based sales tax layers."
     }
   ],
-  "lastReviewedAt": "2025-03-11",
+  "lastReviewedAt": "2026-03-14",
   "reviewedBy": "Smart Calculator Pro Team"
 }
