@@ -207,6 +207,7 @@
   "relatedCalculators": [
     "salary-increase-calculator",
     "contractor-vs-employee-take-home-estimator",
+    "side-hustle-profit-estimator",
     "hourly-to-salary-calculator",
     "salary-to-hourly-calculator",
     "gross-to-net-salary-calculator"
@@ -214,6 +215,7 @@
   "relatedGuides": [
     "how-overtime-pay-works",
     "contractor-vs-employee-income-explained",
+    "how-to-estimate-side-hustle-profit",
     "how-to-calculate-a-salary-increase",
     "how-hourly-pay-and-annual-salary-convert"
   ],

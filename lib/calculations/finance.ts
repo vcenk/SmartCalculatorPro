@@ -148,6 +148,22 @@ export interface ContractorVsEmployeeTakeHomeEstimatorOutput {
   takeHomeDifference: number;
 }
 
+export interface SideHustleProfitEstimatorInput {
+  revenue: number;
+  businessExpenses: number;
+  optionalFees: number;
+  estimatedTaxRate: number;
+  hoursWorked: number;
+}
+
+export interface SideHustleProfitEstimatorOutput {
+  estimatedProfit: number;
+  estimatedAfterTaxProfit: number;
+  effectiveHourlyProfit: number;
+  retainedPercentage: number;
+  totalCosts: number;
+}
+
 // ============================================================================
 // Utility Functions
 // ============================================================================
@@ -557,6 +573,37 @@ export function calculateContractorVsEmployeeTakeHome(
     employeeBenefitsAdjustment,
     contractorBenefitsAdjustment,
     takeHomeDifference: contractorTakeHome - employeeEstimate.annualNetSalary,
+  };
+}
+
+export function calculateSideHustleProfit(
+  input: SideHustleProfitEstimatorInput
+): SideHustleProfitEstimatorOutput {
+  const {
+    revenue,
+    businessExpenses = 0,
+    optionalFees = 0,
+    estimatedTaxRate = 25,
+    hoursWorked = 0,
+  } = input;
+
+  const totalCosts = businessExpenses + optionalFees;
+  const estimatedProfit = Math.max(0, revenue - totalCosts);
+  const estimatedAfterTaxProfit = Math.max(
+    0,
+    estimatedProfit * (1 - estimatedTaxRate / 100)
+  );
+  const effectiveHourlyProfit =
+    hoursWorked > 0 ? estimatedAfterTaxProfit / hoursWorked : 0;
+  const retainedPercentage =
+    revenue > 0 ? (estimatedAfterTaxProfit / revenue) * 100 : 0;
+
+  return {
+    estimatedProfit,
+    estimatedAfterTaxProfit,
+    effectiveHourlyProfit,
+    retainedPercentage,
+    totalCosts,
   };
 }
 

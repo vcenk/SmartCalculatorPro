@@ -38,7 +38,7 @@
     },
     {
       "heading": "A Practical Raise Workflow",
-      "content": "<p>Use the salary increase calculator first to estimate the gross raise in both dollars and percentage terms. Then use the gross to net salary calculator if you want to estimate take-home pay from the new salary. If you are planning from a target take-home number instead, the net to gross salary calculator can help you estimate whether the raise gets you close enough. If overtime is part of the decision, compare the raise with the overtime calculator before treating the raise as the only path to higher earnings.</p>"
+      "content": "<p>Use the salary increase calculator first to estimate the gross raise in both dollars and percentage terms. Then use the gross to net salary calculator if you want to estimate take-home pay from the new salary. If you are planning from a target take-home number instead, the net to gross salary calculator can help you estimate whether the raise gets you close enough. If overtime is part of the decision, compare the raise with the overtime calculator before treating the raise as the only path to higher earnings. If the real alternative is building side income instead of negotiating a raise, compare the raise path with a side hustle profit estimate as well.</p>"
     }
   ],
   "faq": [
@@ -65,6 +65,7 @@
   ],
   "relatedCalculators": [
     "salary-increase-calculator",
+    "side-hustle-profit-estimator",
     "gross-to-net-salary-calculator",
     "net-to-gross-salary-calculator",
     "overtime-calculator"
@@ -74,6 +75,7 @@
   ],
   "relatedGuides": [
     "how-gross-to-net-salary-is-calculated",
+    "how-to-estimate-side-hustle-profit",
     "how-overtime-pay-works"
   ],
   "disclaimer": "This guide is for educational purposes only. Salary increases, payroll timing, deductions, taxes, and compensation structures vary. Use it for planning, not payroll, tax, or legal advice.",

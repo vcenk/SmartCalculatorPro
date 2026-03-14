@@ -34,7 +34,7 @@
     },
     {
       "heading": "How To Estimate The Real Comparison",
-      "content": "<p>Start with the contractor vs employee take-home estimator to compare the two paths with explicit assumptions. Then use the gross to net salary calculator if you want a more focused employee take-home estimate. If you are planning backward from a target usable income, the net to gross salary calculator can help you estimate how much employee pay may be needed. If your employee path also includes raises or overtime, compare those scenarios too so you do not treat the base salary as the whole story.</p>"
+      "content": "<p>Start with the contractor vs employee take-home estimator to compare the two paths with explicit assumptions. Then use the gross to net salary calculator if you want a more focused employee take-home estimate. If you are planning backward from a target usable income, the net to gross salary calculator can help you estimate how much employee pay may be needed. If your employee path also includes raises or overtime, compare those scenarios too so you do not treat the base salary as the whole story. If you are comparing employee work with a smaller self-directed business or freelance stream, the side hustle profit estimator can help you check whether that extra income really holds up once costs, taxes, and hours are counted.</p>"
     },
     {
       "heading": "When A Higher Contractor Rate Still Makes Sense",
@@ -64,6 +64,7 @@
     }
   ],
   "relatedCalculators": [
+    "side-hustle-profit-estimator",
     "contractor-vs-employee-take-home-estimator",
     "gross-to-net-salary-calculator",
     "net-to-gross-salary-calculator",
@@ -74,6 +75,7 @@
     "gross-to-net-salary-calculator-vs-net-to-gross-salary-calculator"
   ],
   "relatedGuides": [
+    "how-to-estimate-side-hustle-profit",
     "how-gross-to-net-salary-is-calculated",
     "how-to-calculate-a-salary-increase",
     "how-overtime-pay-works"

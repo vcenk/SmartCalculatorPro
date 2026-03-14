@@ -295,11 +295,12 @@
     "net-to-gross-salary-calculator",
     "salary-increase-calculator",
     "contractor-vs-employee-take-home-estimator",
+    "side-hustle-profit-estimator",
     "overtime-calculator",
     "hourly-to-salary-calculator",
     "salary-to-hourly-calculator"
   ],
-  "relatedGuides": ["how-gross-to-net-salary-is-calculated", "contractor-vs-employee-income-explained", "how-to-calculate-a-salary-increase", "how-overtime-pay-works"],
+  "relatedGuides": ["how-gross-to-net-salary-is-calculated", "contractor-vs-employee-income-explained", "how-to-estimate-side-hustle-profit", "how-to-calculate-a-salary-increase", "how-overtime-pay-works"],
   "comparisonPages": ["gross-to-net-salary-calculator-vs-net-to-gross-salary-calculator"],
   "parentCategoryPath": "/finance/salary",
   "disclaimer": "This calculator provides estimate-based U.S. salary planning output for tax year 2025. It uses filing-status-specific federal brackets, a flat state tax estimate, and simplified payroll tax assumptions. It is not payroll software, tax filing software, or tax advice. Confirm important decisions with a qualified tax professional or your payroll provider.",

@@ -73,6 +73,12 @@ const calculatorContentPaths: Record<string, string> = {
     'salary',
     'contractor-vs-employee-take-home-estimator.json'
   ),
+  'side-hustle-profit-estimator': path.join(
+    CALCULATORS_ROOT,
+    'finance',
+    'salary',
+    'side-hustle-profit-estimator.json'
+  ),
   'bmi-calculator': path.join(CALCULATORS_ROOT, 'health', 'bmi-calculator.json'),
   'calorie-calculator': path.join(CALCULATORS_ROOT, 'health', 'calorie-calculator.json'),
   'percentage-calculator': path.join(CALCULATORS_ROOT, 'math', 'percentage-calculator.json'),

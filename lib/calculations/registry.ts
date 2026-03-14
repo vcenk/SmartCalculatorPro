@@ -20,6 +20,7 @@ import {
   calculateOvertime,
   calculateSalaryIncrease,
   calculateContractorVsEmployeeTakeHome,
+  calculateSideHustleProfit,
   calculateGrossToNetSalary,
   calculateNetToGrossSalary,
 } from './finance';
@@ -125,6 +126,13 @@ export const calculatorRegistry: Record<string, CalculatorRegistryEntry> = {
     calculate: calculateContractorVsEmployeeTakeHome,
     inputType: 'ContractorVsEmployeeTakeHomeEstimatorInput',
     outputType: 'ContractorVsEmployeeTakeHomeEstimatorOutput',
+    category: 'finance',
+    implemented: true,
+  },
+  'side-hustle-profit-estimator': {
+    calculate: calculateSideHustleProfit,
+    inputType: 'SideHustleProfitEstimatorInput',
+    outputType: 'SideHustleProfitEstimatorOutput',
     category: 'finance',
     implemented: true,
   },

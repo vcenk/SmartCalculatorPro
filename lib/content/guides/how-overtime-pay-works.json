@@ -67,6 +67,7 @@
     "overtime-calculator",
     "salary-increase-calculator",
     "contractor-vs-employee-take-home-estimator",
+    "side-hustle-profit-estimator",
     "hourly-to-salary-calculator",
     "salary-to-hourly-calculator",
     "gross-to-net-salary-calculator"
@@ -78,6 +79,7 @@
     "how-hourly-pay-and-annual-salary-convert",
     "how-gross-to-net-salary-is-calculated",
     "how-to-calculate-a-salary-increase",
+    "how-to-estimate-side-hustle-profit",
     "contractor-vs-employee-income-explained"
   ],
   "disclaimer": "This guide is for educational purposes only. Overtime eligibility, exemption status, and payroll treatment can depend on labor laws, employer policies, and job classification. Use it for planning, not legal or payroll advice.",
