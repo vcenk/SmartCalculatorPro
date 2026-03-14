@@ -211,7 +211,9 @@
     "contractor-vs-employee-income-explained",
     "how-to-estimate-side-hustle-profit"
   ],
-  "comparisonPages": [],
+  "comparisonPages": [
+    "contractor-rate-calculator-vs-salary-to-hourly-calculator"
+  ],
   "parentCategoryPath": "/finance/salary",
   "disclaimer": "This contractor rate calculator is an assumptions-based planning tool only. It uses simplified tax, expense, billable-hours, and utilization assumptions and does not provide tax, accounting, legal, payroll, or pricing advice.",
   "ui": {

@@ -1,0 +1,104 @@
+{
+  "id": "contractor-rate-calculator-vs-salary-to-hourly-calculator",
+  "pageType": "comparison",
+  "status": "published",
+  "indexable": true,
+  "slug": "contractor-rate-calculator-vs-salary-to-hourly-calculator",
+  "path": "compare/contractor-rate-calculator-vs-salary-to-hourly-calculator",
+  "title": "Contractor Rate Calculator vs Salary to Hourly Calculator",
+  "titleTag": "Contractor Rate Calculator vs Salary to Hourly Calculator | Smart Calculator Pro",
+  "metaDescription": "Compare contractor rate and salary-to-hourly calculators, learn why contractor rates and employee hourly equivalents are not interchangeable, and choose the right tool for the decision.",
+  "h1": "Contractor Rate Calculator vs Salary to Hourly Calculator",
+  "intro": "These two tools both produce hourly-looking numbers, but they answer very different questions. One estimates what a salary is worth per hour under a work schedule. The other estimates what a contractor may need to charge per hour to support taxes, expenses, and non-billable time.",
+  "primaryKeyword": "contractor rate calculator vs salary to hourly calculator",
+  "secondaryKeywords": ["contractor rate vs salary hourly", "employee hourly value vs contractor rate", "salary to hourly vs freelance rate"],
+  "searchIntent": "comparison",
+  "canonicalPath": "/compare/contractor-rate-calculator-vs-salary-to-hourly-calculator",
+  "schemaType": "Article",
+  "ogImageTemplate": "comparison-default",
+  "comparedItems": ["Contractor Rate Calculator", "Salary to Hourly Calculator"],
+  "summary": "Use salary to hourly when you want to understand the effective hourly value of a salary under your schedule assumptions. Use contractor rate when you want to work backward from the income you need to keep and estimate the billable rate required to support it. These numbers are not directly interchangeable because contractor pricing usually has to absorb taxes, business expenses, benefits, and non-billable time that employee hourly pay does not price the same way.",
+  "quickDecision": "If you are decoding a salary offer, use salary to hourly. If you are pricing freelance or contract work, use contractor rate. Do not treat the two hourly figures as equal without adjusting for taxes, expenses, and utilization.",
+  "keyDifferences": [
+    {
+      "topic": "Starting Question",
+      "itemA": "What do I need to charge as a contractor?",
+      "itemB": "What is this salary worth per hour?"
+    },
+    {
+      "topic": "Main Inputs",
+      "itemA": "Income target, taxes, expenses, billable hours, utilization",
+      "itemB": "Salary amount, pay frequency, hours per week, weeks worked"
+    },
+    {
+      "topic": "What The Hourly Result Means",
+      "itemA": "Rate needed to support a contractor business model",
+      "itemB": "Employee-equivalent hourly value under a work schedule"
+    },
+    {
+      "topic": "Why It Can Be Higher",
+      "itemA": "Must cover expenses, taxes, downtime, and self-funded benefits",
+      "itemB": "Usually reflects only gross job compensation over time"
+    },
+    {
+      "topic": "Best Follow-Up",
+      "itemA": "Check contractor vs employee take-home",
+      "itemB": "Compare against contractor pricing or take-home salary tools"
+    }
+  ],
+  "whenToUseA": [
+    "You are trying to price freelance, consulting, or contract work realistically.",
+    "You need a rate that supports your income target after expenses and taxes.",
+    "You want to account for non-billable time before quoting clients.",
+    "You are testing whether contract work can compete with your job financially."
+  ],
+  "whenToUseB": [
+    "You have a salary offer and want to understand its effective hourly value.",
+    "You want to compare salaried work with hourly jobs or contract work using a consistent schedule model.",
+    "You need to normalize salary figures across different workweek assumptions.",
+    "You want a clean employee-side hourly anchor before comparing contractor paths."
+  ],
+  "exampleScenarios": [
+    "A worker with a $92,000 salary offer wants to understand the role's effective hourly value before deciding whether independent consulting could beat it financially. Salary to hourly is the right first step.",
+    "A freelancer wants to keep about $90,000 per year and needs to know whether a $120 hourly quote is actually enough once expenses, taxes, and non-billable time are included. Contractor rate is the right starting tool.",
+    "A consultant is comparing staying employed with taking on contract work full-time. The salary-to-hourly result provides an employee anchor, while contractor rate shows what pricing would need to look like for the move to make sense."
+  ],
+  "relatedCalculators": [
+    "contractor-rate-calculator",
+    "salary-to-hourly-calculator",
+    "contractor-vs-employee-take-home-estimator",
+    "side-hustle-profit-estimator",
+    "gross-to-net-salary-calculator",
+    "net-to-gross-salary-calculator"
+  ],
+  "relatedGuides": [
+    "how-to-calculate-a-contractor-rate",
+    "how-hourly-pay-and-annual-salary-convert",
+    "contractor-vs-employee-income-explained",
+    "how-to-estimate-side-hustle-profit"
+  ],
+  "faq": [
+    {
+      "question": "Why are contractor rate and salary-to-hourly not interchangeable?",
+      "answer": "Because salary-to-hourly estimates the value of a salary across your working schedule, while contractor rate estimates what a business must charge to support income, expenses, taxes, and non-billable time. They answer different questions."
+    },
+    {
+      "question": "When is salary-to-hourly the better tool?",
+      "answer": "Use salary-to-hourly when your starting point is a job salary and you want to understand its effective hourly value for comparison or budgeting."
+    },
+    {
+      "question": "When is contractor rate the better tool?",
+      "answer": "Use contractor rate when you need to set or test freelance pricing from the perspective of what income you need to keep after costs and taxes."
+    },
+    {
+      "question": "Why can the contractor rate be much higher than a salary's hourly value?",
+      "answer": "Because contractors often need their pricing to absorb taxes, business expenses, self-funded benefits, downtime, and non-billable work that employee compensation does not directly price the same way."
+    },
+    {
+      "question": "What should I use after comparing these two tools?",
+      "answer": "Use contractor vs employee take-home if the real decision is whether to stay employed or move into contract work. Use gross to net or net to gross if you need a stronger employee take-home estimate as part of that choice."
+    }
+  ],
+  "lastReviewedAt": "2026-03-14",
+  "reviewedBy": "Smart Calculator Pro Team"
+}

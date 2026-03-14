@@ -201,7 +201,8 @@
     "how-gross-to-net-salary-is-calculated"
   ],
   "comparisonPages": [
-    "hourly-to-salary-calculator-vs-salary-to-hourly-calculator"
+    "hourly-to-salary-calculator-vs-salary-to-hourly-calculator",
+    "contractor-rate-calculator-vs-salary-to-hourly-calculator"
   ],
   "parentCategoryPath": "/finance/salary",
   "disclaimer": "This calculator provides assumptions-based compensation conversions only. It estimates an hourly rate from the salary amount, hours per week, and weeks worked per year that you enter. It does not account for taxes, bonuses, overtime premiums, benefits, or employer-specific compensation rules.",
