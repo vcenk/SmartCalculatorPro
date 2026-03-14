@@ -24,6 +24,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: number;
   }> = [
     {
+      url: 'https://smartcalculatorpro.com/guides',
+      changeFrequency: 'weekly' as const,
+      priority: 0.7,
+    },
+    {
       url: 'https://smartcalculatorpro.com/about',
       changeFrequency: 'monthly' as const,
       priority: 0.4,

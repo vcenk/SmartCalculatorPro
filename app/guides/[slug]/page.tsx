@@ -26,6 +26,7 @@ import { CalculatorBreadcrumbs } from '@/components/layout/Breadcrumbs';
 import { FAQSection } from '@/components/calculator/FAQSection';
 import { RelatedLinks, type RelatedLink } from '@/components/layout/RelatedLinks';
 import { Section } from '@/components/ui/Section';
+import { hasCalculatorFunction } from '@/lib/calculations/registry';
 
 interface GuidePageProps {
   params: Promise<{
@@ -65,7 +66,7 @@ export default async function GuidePage({ params }: GuidePageProps) {
   if (guide.relatedCalculators && guide.relatedCalculators.length > 0) {
     for (const relatedId of guide.relatedCalculators) {
       const relatedCalc = await getCalculatorBySlug(relatedId);
-      if (relatedCalc) {
+      if (relatedCalc && hasCalculatorFunction(relatedCalc.id)) {
         guideCalculators.push(relatedCalc);
         relatedCalculatorLinks.push({
           title: relatedCalc.name,
@@ -120,11 +121,7 @@ export default async function GuidePage({ params }: GuidePageProps) {
 
       <Section>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-          <CalculatorBreadcrumbs
-            category="guides"
-            subcategory=""
-            calculatorName={guide.title}
-          />
+          <CalculatorBreadcrumbs category="guides" calculatorName={guide.title} />
 
           {/* Header */}
           <div className="mb-8 rounded-3xl border border-amber-200 bg-gradient-to-br from-amber-50 via-orange-50 to-white p-6 shadow-sm">

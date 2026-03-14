@@ -61,10 +61,10 @@ export function Header() {
             </Link>
           ))}
           <Link
-            href="/guides/how-gross-to-net-salary-is-calculated"
+            href="/guides"
             className="whitespace-nowrap rounded-full border border-transparent bg-[#fff3db] px-4 py-2 text-sm font-semibold text-[#8a5a08] transition-all hover:border-[#f1d39a] hover:bg-white"
           >
-            Salary Guide
+            Guides
           </Link>
         </div>
 
