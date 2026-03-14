@@ -1,0 +1,82 @@
+{
+  "id": "how-to-calculate-a-salary-increase",
+  "pageType": "guide",
+  "status": "published",
+  "indexable": true,
+  "slug": "how-to-calculate-a-salary-increase",
+  "path": "guides/how-to-calculate-a-salary-increase",
+  "title": "How to Calculate a Salary Increase",
+  "titleTag": "How to Calculate a Salary Increase | Smart Calculator Pro",
+  "metaDescription": "Learn how to calculate a salary increase from either a raise amount or raise percentage, and how to estimate the real impact of a raise on take-home pay.",
+  "h1": "How to Calculate a Salary Increase",
+  "intro": "A raise can be described in dollars or as a percentage, but the useful question is not just how much the salary changes on paper. It is how that change affects real earnings decisions and what the raise means compared with other income paths.",
+  "primaryKeyword": "how to calculate a salary increase",
+  "secondaryKeywords": ["salary increase formula", "raise percentage calculator", "how to calculate a raise"],
+  "searchIntent": "informational",
+  "canonicalPath": "/guides/how-to-calculate-a-salary-increase",
+  "schemaType": "Article",
+  "ogImageTemplate": "guide-default",
+  "guideType": "how-to",
+  "summary": "This guide explains how to calculate a raise from either a dollar amount or a percentage, and how to think about the real impact of a salary increase in the context of taxes, overtime, and compensation planning.",
+  "quickAnswer": "To calculate a raise from a percentage, multiply current salary by the raise percentage and add the result to the current salary. To calculate the raise percentage from a dollar increase, divide the raise amount by the current salary and convert it to a percentage.",
+  "sections": [
+    {
+      "heading": "Raise Amount vs Raise Percentage",
+      "content": "<p>A salary increase can start from either a fixed dollar amount or a percentage. If someone earning $72,000 gets a $4,000 raise, the new salary is $76,000. If that same person gets a 6% raise, the estimated raise amount is $4,320 and the new salary is about $76,320.</p><p><strong>Amount workflow:</strong> <code>New Salary = Current Salary + Raise Amount</code></p><p><strong>Percent workflow:</strong> <code>Raise Amount = Current Salary x Raise Percent</code></p>"
+    },
+    {
+      "heading": "How To Calculate Raise Percentage From A Dollar Increase",
+      "content": "<p>If you already know the raise amount and want to understand how large it is in percentage terms, divide the raise amount by the current salary. For example, a $3,600 raise on a $60,000 salary equals 6%.</p><p><strong>Formula:</strong></p><p><code>Raise Percent = Raise Amount / Current Salary</code></p>"
+    },
+    {
+      "heading": "Why The Real Impact Can Feel Smaller",
+      "content": "<p>A raise changes gross salary first, not necessarily take-home pay in the same proportion. Taxes, payroll deductions, retirement contributions, health insurance premiums, and other paycheck settings can reduce how much of that raise reaches your bank account. That is why a gross salary increase calculator is useful as a first step, but not always the final answer.</p>"
+    },
+    {
+      "heading": "When To Compare A Raise With Overtime Or Other Work-Income Paths",
+      "content": "<p>Sometimes a raise is not the only way income changes. Overtime, schedule changes, and alternative hourly work can also affect earnings. If overtime is a realistic part of your income, compare the raise with an overtime estimate so you can see which path changes gross compensation more meaningfully. If your decision depends on take-home pay, use a net-pay calculator after estimating the new salary.</p>"
+    },
+    {
+      "heading": "A Practical Raise Workflow",
+      "content": "<p>Use the salary increase calculator first to estimate the gross raise in both dollars and percentage terms. Then use the gross to net salary calculator if you want to estimate take-home pay from the new salary. If you are planning from a target take-home number instead, the net to gross salary calculator can help you estimate whether the raise gets you close enough. If overtime is part of the decision, compare the raise with the overtime calculator before treating the raise as the only path to higher earnings.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "question": "How do I calculate a 5% salary increase?",
+      "answer": "Multiply current salary by 5%, then add that amount to the current salary. For example, 5% of $80,000 is $4,000, so the new salary is $84,000."
+    },
+    {
+      "question": "How do I find the raise percentage from a known dollar increase?",
+      "answer": "Divide the raise amount by the current salary and convert the result to a percentage. A $2,500 raise on a $50,000 salary equals 5%."
+    },
+    {
+      "question": "Why does my paycheck not increase by the full raise amount?",
+      "answer": "Because salary increases affect gross pay first. Taxes, deductions, and benefit costs can reduce the visible take-home impact."
+    },
+    {
+      "question": "Should I compare a raise with overtime?",
+      "answer": "Yes, if overtime is realistic in your job. Comparing both scenarios can help you decide whether the raise meaningfully changes your earnings path."
+    },
+    {
+      "question": "What should I do after estimating a salary increase?",
+      "answer": "Use the new salary with gross to net if take-home pay matters, use net to gross if you are working backward from a target number, and use overtime if extra hours are part of the decision."
+    }
+  ],
+  "relatedCalculators": [
+    "salary-increase-calculator",
+    "gross-to-net-salary-calculator",
+    "net-to-gross-salary-calculator",
+    "overtime-calculator"
+  ],
+  "relatedComparisons": [
+    "gross-to-net-salary-calculator-vs-net-to-gross-salary-calculator"
+  ],
+  "relatedGuides": [
+    "how-gross-to-net-salary-is-calculated",
+    "how-overtime-pay-works"
+  ],
+  "disclaimer": "This guide is for educational purposes only. Salary increases, payroll timing, deductions, taxes, and compensation structures vary. Use it for planning, not payroll, tax, or legal advice.",
+  "lastReviewedAt": "2026-03-13",
+  "reviewedBy": "Smart Calculator Pro Team"
+}

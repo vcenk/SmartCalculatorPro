@@ -17,8 +17,8 @@
   "schemaType": "Article",
   "ogImageTemplate": "guide-default",
   "guideType": "how-to",
-  "summary": "This guide explains how salary estimates move between gross pay and take-home pay, including filing-status-specific federal taxes, state taxes, Social Security, Medicare, and common deductions under simplified 2025 U.S. assumptions. It also shows where hourly-to-salary conversions and overtime estimates fit into compensation planning.",
-  "quickAnswer": "Gross salary minus federal taxes, state taxes, Social Security, Medicare, and other deductions equals your net take-home pay. If you start with a target net amount instead, you can work backward to estimate the gross salary required using the same 2025 U.S. assumptions. If you start with an hourly rate or an overtime-heavy pay pattern, estimate the gross earnings first before moving into take-home pay planning.",
+  "summary": "This guide explains how salary estimates move between gross pay and take-home pay, including filing-status-specific federal taxes, state taxes, Social Security, Medicare, and common deductions under simplified 2025 U.S. assumptions. It also shows where hourly-to-salary conversions, overtime estimates, and raise planning fit into compensation decisions.",
+  "quickAnswer": "Gross salary minus federal taxes, state taxes, Social Security, Medicare, and other deductions equals your net take-home pay. If you start with a target net amount instead, you can work backward to estimate the gross salary required using the same 2025 U.S. assumptions. If you start with an hourly rate, overtime-heavy pay pattern, or planned raise, estimate the gross earnings change first before moving into take-home pay planning.",
   "sections": [
     {
       "heading": "Understanding the Gross to Net Formula",
@@ -94,6 +94,7 @@
   "relatedCalculators": [
     "gross-to-net-salary-calculator",
     "net-to-gross-salary-calculator",
+    "salary-increase-calculator",
     "overtime-calculator",
     "hourly-to-salary-calculator",
     "salary-to-hourly-calculator"
@@ -104,6 +105,7 @@
   ],
   "relatedGuides": [
     "how-hourly-pay-and-annual-salary-convert",
+    "how-to-calculate-a-salary-increase",
     "how-overtime-pay-works"
   ],
   "disclaimer": "This guide is for educational purposes only and does not constitute tax or financial advice. Tax laws change frequently, and individual circumstances vary. Consult a qualified tax professional for personalized advice.",

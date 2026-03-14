@@ -205,12 +205,14 @@
     }
   ],
   "relatedCalculators": [
+    "salary-increase-calculator",
     "hourly-to-salary-calculator",
     "salary-to-hourly-calculator",
     "gross-to-net-salary-calculator"
   ],
   "relatedGuides": [
     "how-overtime-pay-works",
+    "how-to-calculate-a-salary-increase",
     "how-hourly-pay-and-annual-salary-convert"
   ],
   "comparisonPages": [],

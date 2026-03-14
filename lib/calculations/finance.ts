@@ -112,6 +112,19 @@ export interface OvertimeCalculatorOutput {
   annualizedPay: number;
 }
 
+export interface SalaryIncreaseCalculatorInput {
+  currentSalary: number;
+  increaseType: 'amount' | 'percent';
+  increaseValue: number;
+}
+
+export interface SalaryIncreaseCalculatorOutput {
+  currentSalary: number;
+  increaseAmount: number;
+  increasePercent: number;
+  newSalary: number;
+}
+
 // ============================================================================
 // Utility Functions
 // ============================================================================
@@ -430,6 +443,31 @@ export function calculateOvertime(
     totalHours,
     effectiveHourlyRate,
     annualizedPay,
+  };
+}
+
+export function calculateSalaryIncrease(
+  input: SalaryIncreaseCalculatorInput
+): SalaryIncreaseCalculatorOutput {
+  const {
+    currentSalary,
+    increaseType = 'amount',
+    increaseValue = 0,
+  } = input;
+
+  const increaseAmount =
+    increaseType === 'percent'
+      ? currentSalary * (increaseValue / 100)
+      : increaseValue;
+  const newSalary = currentSalary + increaseAmount;
+  const increasePercent =
+    currentSalary > 0 ? (increaseAmount / currentSalary) * 100 : 0;
+
+  return {
+    currentSalary,
+    increaseAmount,
+    increasePercent,
+    newSalary,
   };
 }
 

@@ -1,0 +1,185 @@
+{
+  "id": "salary-increase-calculator",
+  "pageType": "calculator",
+  "status": "published",
+  "indexable": true,
+  "category": "finance",
+  "subcategory": "salary",
+  "slug": "salary-increase-calculator",
+  "path": "finance/salary/salary-increase-calculator",
+  "title": "Salary Increase Calculator",
+  "name": "Salary Increase Calculator",
+  "titleTag": "Salary Increase Calculator | Smart Calculator Pro",
+  "metaDescription": "Estimate a salary increase from either a raise amount or raise percentage. Review current salary, raise size, and new salary in one planning tool.",
+  "h1": "Salary Increase Calculator",
+  "intro": "Estimate how a raise changes salary using either a fixed raise amount or a raise percentage workflow.",
+  "shortDescription": "Estimate raise amount, raise percentage, and new salary using either amount-based or percentage-based inputs.",
+  "longDescription": "This salary increase calculator helps you estimate how a raise changes compensation under two common planning workflows. You can start with a known raise amount, such as a $4,000 annual increase, or start with a raise percentage, such as 5%. The tool then shows the implied raise amount, raise percentage, and new salary so you can compare compensation scenarios more clearly.",
+  "primaryKeyword": "salary increase calculator",
+  "secondaryKeywords": ["raise calculator", "salary raise calculator", "salary increase percentage"],
+  "searchIntent": "transactional-tool",
+  "canonicalPath": "/finance/salary/salary-increase-calculator",
+  "schemaType": "SoftwareApplication",
+  "ogImageTemplate": "calculator-default",
+  "problemSolved": "Helps compare current salary, raise size, and updated compensation in a clean planning workflow.",
+  "whoItsFor": ["employees", "job seekers", "salary negotiators", "compensation planners"],
+  "calculationType": "formula",
+  "inputs": [
+    {
+      "key": "currentSalary",
+      "label": "Current Salary",
+      "type": "number",
+      "unit": "currency",
+      "required": true,
+      "explanation": "Enter the current annual salary before the raise is applied.",
+      "min": 0,
+      "step": 1000,
+      "defaultValue": 72000
+    },
+    {
+      "key": "increaseType",
+      "label": "Raise Workflow",
+      "type": "select",
+      "required": true,
+      "explanation": "Choose whether you are starting with a raise amount or a raise percentage.",
+      "options": [
+        { "value": "amount", "label": "Raise Amount" },
+        { "value": "percent", "label": "Raise Percentage" }
+      ],
+      "defaultValue": "percent"
+    },
+    {
+      "key": "increaseValue",
+      "label": "Raise Value",
+      "type": "number",
+      "required": true,
+      "explanation": "Enter the raise amount if you chose amount, or the raise percent if you chose percentage.",
+      "min": 0,
+      "step": 0.1,
+      "defaultValue": 6
+    }
+  ],
+  "outputs": [
+    {
+      "key": "currentSalary",
+      "label": "Current Salary",
+      "explanation": "The starting annual salary used in the scenario.",
+      "unit": "currency",
+      "precision": 0
+    },
+    {
+      "key": "increaseAmount",
+      "label": "Increase Amount",
+      "explanation": "Estimated dollar value of the raise.",
+      "unit": "currency",
+      "precision": 0
+    },
+    {
+      "key": "increasePercent",
+      "label": "Increase Percent",
+      "explanation": "Estimated raise size as a percentage of the current salary.",
+      "unit": "percent",
+      "precision": 2
+    },
+    {
+      "key": "newSalary",
+      "label": "New Salary",
+      "explanation": "Estimated annual salary after the raise is applied.",
+      "unit": "currency",
+      "precision": 0
+    }
+  ],
+  "defaultValues": {
+    "currentSalary": 72000,
+    "increaseType": "percent",
+    "increaseValue": 6
+  },
+  "formula": {
+    "label": "Salary Increase Formulas",
+    "expression": "New Salary = Current Salary + Raise Amount; Raise Amount = Current Salary x Raise Percent",
+    "plainText": "If you start with a raise amount, the new salary is current salary plus that amount. If you start with a raise percentage, the calculator converts the percentage into a dollar increase first and then adds it to the current salary."
+  },
+  "formulaExplanation": [
+    "When you choose the raise amount workflow, the calculator adds the raise amount directly to the current salary.",
+    "When you choose the raise percentage workflow, the calculator multiplies current salary by the raise percentage to estimate the raise amount.",
+    "The tool always shows the raise in both dollars and percentage terms so the scenario is easy to compare.",
+    "This is a gross salary planning calculator. It does not estimate taxes, deductions, or changes in take-home pay by itself."
+  ],
+  "methodologyNotes": [
+    "The calculator assumes the raise applies to the current annual salary amount you enter.",
+    "It is designed for planning and comparison, not payroll forecasting or contract interpretation.",
+    "Bonuses, commissions, overtime, benefits, and tax changes are not included in the output.",
+    "If you want to estimate take-home impact after the raise, pair the new salary with a gross to net or net to gross salary tool."
+  ],
+  "example": {
+    "scenario": "An employee earns $72,000 per year and wants to estimate the impact of a 6% raise.",
+    "inputs": {
+      "currentSalary": 72000,
+      "increaseType": "percent",
+      "increaseValue": 6
+    },
+    "resultSummary": "The calculator estimates a raise amount of about $4,320, an increase percentage of 6%, and a new salary of about $76,320."
+  },
+  "resultInterpretation": {
+    "defaultText": "Use the new salary as a gross compensation estimate first. If the raise decision affects budgeting, compare the updated salary with take-home pay or overtime alternatives before treating it as the full financial impact.",
+    "thresholds": [
+      {
+        "label": "Increase Percent",
+        "min": 3,
+        "max": 10,
+        "interpretation": "A raise in this range can materially change annual pay, but the real impact depends on taxes, deduction changes, and whether overtime or bonuses also shift."
+      }
+    ],
+    "warningMessages": [
+      "A raise that looks meaningful in gross salary may feel smaller in practice once taxes, benefit costs, and changed deductions are considered."
+    ]
+  },
+  "faq": [
+    {
+      "question": "How do I calculate a salary increase from a percentage?",
+      "answer": "Multiply the current salary by the raise percentage to estimate the raise amount, then add that amount to the current salary."
+    },
+    {
+      "question": "How do I calculate a raise percentage from a raise amount?",
+      "answer": "Divide the raise amount by the current salary and convert the result into a percentage. This calculator handles both directions depending on the workflow you choose."
+    },
+    {
+      "question": "Does this calculator show the real take-home impact of a raise?",
+      "answer": "No. This tool shows gross salary changes only. If you want a rough take-home estimate after the raise, use the new salary with a gross to net salary calculator."
+    },
+    {
+      "question": "Should I compare a raise with overtime pay?",
+      "answer": "Sometimes yes. If your work income can change through overtime as well as salary increases, compare both scenarios so you can see which path changes compensation more realistically."
+    },
+    {
+      "question": "Can I use this for offer negotiations?",
+      "answer": "Yes. It is useful for raise discussions, compensation planning, and comparing what different increase scenarios would mean before you negotiate."
+    }
+  ],
+  "relatedCalculators": [
+    "gross-to-net-salary-calculator",
+    "net-to-gross-salary-calculator",
+    "overtime-calculator"
+  ],
+  "relatedGuides": [
+    "how-to-calculate-a-salary-increase",
+    "how-gross-to-net-salary-is-calculated"
+  ],
+  "comparisonPages": [],
+  "parentCategoryPath": "/finance/salary",
+  "disclaimer": "This salary increase calculator provides estimate-based gross salary planning only. It does not account for taxes, bonus structures, benefits, payroll timing, contract terms, or employer-specific compensation rules.",
+  "ui": {
+    "buttonText": "Estimate Salary Increase",
+    "resetButtonText": "Reset",
+    "resultTitle": "Your Raise Estimate",
+    "showFormulaSection": true,
+    "showExampleSection": true,
+    "showInterpretation": true,
+    "showFAQSection": true,
+    "showRelatedLinks": true
+  },
+  "countryCode": "US",
+  "currencyCode": "USD",
+  "calculationVersion": "2026.1",
+  "assumptions": "Uses a simplified gross salary increase model based on current annual salary plus either a raise amount or raise percentage. It estimates salary only and does not include taxes, overtime, bonuses, or payroll deductions."
+}
