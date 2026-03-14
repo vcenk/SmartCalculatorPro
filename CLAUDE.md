@@ -222,3 +222,97 @@ See `lib/calculations/registry.ts` for current status. Calculators with placehol
 - `lib/types/content.ts` - All content type definitions (CalculatorPage, CategoryPage, etc.)
 - `lib/schemas/validation.ts` - Zod schemas for content validation
 - `lib/calculations/types.ts` - Calculator input/output types
+
+## UI and Navigation Integrity Rule
+- The current redesigned UI system is the baseline for all future additions
+- All new pages and components must use the shared design system
+- Every public button, CTA, card, and text link must lead to a valid destination
+- Do not leave placeholder navigation in public-facing pages
+- If a linked destination does not exist yet, either create it or change/remove the link
+- Public pages should be discoverable through clear internal navigation, not only by direct URL
+
+## Product Strategy Direction
+
+SmartCalculatorPro should not try to compete with broad calculator libraries like Calculator.net or OmniCalculator on sheer volume.
+
+### Positioning
+SmartCalculatorPro helps people make better money decisions with practical calculators, guides, and comparisons.
+
+### Core Competitive Strategy
+Do not compete on breadth.
+Compete on decision workflows.
+
+Each calculator cluster should support a real user journey, not exist as an isolated formula page.
+
+### Primary Build Pillars
+
+#### Pillar 1 - Salary, Compensation, and Work-Income Calculators
+This is the strongest current wedge and should remain the first major authority cluster.
+
+Examples:
+- gross-to-net salary calculator
+- net-to-gross salary calculator
+- hourly-to-salary calculator
+- salary-to-hourly calculator
+- overtime calculator
+- raise / salary increase calculator
+- contractor vs employee take-home estimator
+- side-hustle profit estimator
+
+#### Pillar 2 - Canada Personal Finance
+This should be the second focused expansion after salary/compensation is strong.
+
+Examples:
+- Canada paycheck calculator by province
+- RRSP vs TFSA calculator
+- mortgage affordability calculator
+- home buying cost calculator
+- rent vs buy calculator
+- emergency fund calculator
+- credit card payoff calculator
+- car ownership cost calculator
+- GST/HST calculator
+
+#### Pillar 3 - Small Business and Seller Calculators
+This should be the third expansion pillar with strong monetization potential.
+
+Examples:
+- Etsy fee/profit calculator
+- Amazon seller margin calculator
+- break-even calculator
+- startup cost calculator
+- ad ROAS breakeven calculator
+- pricing markup vs margin calculator
+
+### What To Avoid Early
+Do not prioritize:
+- basic arithmetic calculators
+- generic unit converters
+- random school math tools
+- generic geometry calculators
+- thin pages with one formula and no decision depth
+- medically sensitive calculators unless handled very carefully
+- copycat calculators with no differentiation
+
+### UX / SEO Principle
+Every cluster should include:
+- calculators
+- guides
+- comparison pages
+- strong internal linking
+- realistic user workflows
+
+### Monetization Principle
+Use a layered model:
+1. Free SEO calculators
+2. Scenario tools / saved results / downloadable summaries
+3. Premium reports, templates, partner offers, or related paid tools
+
+### Build Order
+1. Salary / compensation cluster
+2. Canada personal finance cluster
+3. Small business / seller cluster
+
+### Ongoing Rule
+Do not expand broadly just to increase page count.
+Prefer high-intent, workflow-based, decision-oriented calculators.
