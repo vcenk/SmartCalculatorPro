@@ -25,6 +25,7 @@ import {
   calculateCanadaGstHst,
   calculateCanadaRrspVsTfsa,
   calculateCanadaMortgageAffordability,
+  calculateCanadaRentVsBuy,
   calculateGrossToNetSalary,
   calculateNetToGrossSalary,
 } from './finance';
@@ -165,6 +166,13 @@ export const calculatorRegistry: Record<string, CalculatorRegistryEntry> = {
     calculate: calculateCanadaMortgageAffordability,
     inputType: 'CanadaMortgageAffordabilityCalculatorInput',
     outputType: 'CanadaMortgageAffordabilityCalculatorOutput',
+    category: 'finance',
+    implemented: true,
+  },
+  'rent-vs-buy-calculator': {
+    calculate: calculateCanadaRentVsBuy,
+    inputType: 'CanadaRentVsBuyCalculatorInput',
+    outputType: 'CanadaRentVsBuyCalculatorOutput',
     category: 'finance',
     implemented: true,
   },

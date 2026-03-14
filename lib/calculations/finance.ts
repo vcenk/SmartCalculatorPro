@@ -228,6 +228,26 @@ export interface CanadaMortgageAffordabilityCalculatorOutput {
   housingCostRatio: number;
 }
 
+export interface CanadaRentVsBuyCalculatorInput {
+  monthlyRent: number;
+  homePrice: number;
+  downPayment: number;
+  mortgageRate: number;
+  amortizationPeriodYears: number;
+  propertyTaxAnnual: number;
+  maintenanceCondoFeesMonthly: number;
+  expectedHomeAppreciation: number;
+  expectedRentIncrease: number;
+  yearsInHome: number;
+}
+
+export interface CanadaRentVsBuyCalculatorOutput {
+  estimatedTotalCostRenting: number;
+  estimatedTotalCostBuying: number;
+  estimatedHomeEquityAtEnd: number;
+  rentVsBuyDifference: number;
+}
+
 // ============================================================================
 // Utility Functions
 // ============================================================================
@@ -344,6 +364,41 @@ function calculatePresentValueFromMonthlyPayment(
 
   const growthFactor = Math.pow(1 + monthlyRate, numberOfPayments);
   return payment * ((growthFactor - 1) / (monthlyRate * growthFactor));
+}
+
+function calculateRemainingLoanBalance(
+  originalLoanAmount: number,
+  annualInterestRate: number,
+  amortizationYears: number,
+  paymentsMade: number
+): number {
+  const loanAmount = Math.max(0, originalLoanAmount);
+  const totalPayments = Math.max(0, amortizationYears) * 12;
+
+  if (loanAmount === 0 || totalPayments === 0) {
+    return 0;
+  }
+
+  const monthlyRate = Math.max(0, annualInterestRate) / 100 / 12;
+  const completedPayments = Math.min(Math.max(0, paymentsMade), totalPayments);
+
+  if (monthlyRate === 0) {
+    const principalPaid = loanAmount * (completedPayments / totalPayments);
+    return Math.max(0, loanAmount - principalPaid);
+  }
+
+  const monthlyPayment = calculateLoan({
+    loanAmount,
+    annualInterestRate,
+    loanTermYears: amortizationYears,
+  }).monthlyPayment;
+  const remainingFactor = Math.pow(1 + monthlyRate, completedPayments);
+
+  return Math.max(
+    0,
+    loanAmount * remainingFactor -
+      monthlyPayment * ((remainingFactor - 1) / monthlyRate)
+  );
 }
 
 // ============================================================================
@@ -895,6 +950,76 @@ export function calculateCanadaMortgageAffordability(
     estimatedAffordableMortgageAmount,
     estimatedMonthlyHousingCost,
     housingCostRatio,
+  };
+}
+
+export function calculateCanadaRentVsBuy(
+  input: CanadaRentVsBuyCalculatorInput
+): CanadaRentVsBuyCalculatorOutput {
+  const {
+    monthlyRent,
+    homePrice,
+    downPayment,
+    mortgageRate = 5,
+    amortizationPeriodYears = 25,
+    propertyTaxAnnual = 0,
+    maintenanceCondoFeesMonthly = 0,
+    expectedHomeAppreciation = 3,
+    expectedRentIncrease = 3,
+    yearsInHome = 5,
+  } = input;
+
+  const comparisonYears = Math.max(1, yearsInHome);
+  let estimatedTotalCostRenting = 0;
+  let currentMonthlyRent = Math.max(0, monthlyRent);
+
+  for (let year = 0; year < comparisonYears; year += 1) {
+    estimatedTotalCostRenting += currentMonthlyRent * 12;
+    currentMonthlyRent *= 1 + Math.max(0, expectedRentIncrease) / 100;
+  }
+
+  const mortgageAmount = Math.max(0, homePrice - downPayment);
+  const monthlyMortgagePayment = calculateLoan({
+    loanAmount: mortgageAmount,
+    annualInterestRate: mortgageRate,
+    loanTermYears: amortizationPeriodYears,
+  }).monthlyPayment;
+  const ownershipMonths = Math.min(
+    comparisonYears * 12,
+    Math.max(0, amortizationPeriodYears) * 12
+  );
+  const totalMortgagePayments = monthlyMortgagePayment * ownershipMonths;
+  const totalPropertyTax = Math.max(0, propertyTaxAnnual) * comparisonYears;
+  const totalMaintenanceCosts =
+    Math.max(0, maintenanceCondoFeesMonthly) * 12 * comparisonYears;
+  const estimatedFutureHomeValue =
+    Math.max(0, homePrice) *
+    Math.pow(1 + Math.max(0, expectedHomeAppreciation) / 100, comparisonYears);
+  const remainingLoanBalance = calculateRemainingLoanBalance(
+    mortgageAmount,
+    mortgageRate,
+    amortizationPeriodYears,
+    ownershipMonths
+  );
+  const estimatedHomeEquityAtEnd = Math.max(
+    0,
+    estimatedFutureHomeValue - remainingLoanBalance
+  );
+  const totalBuyingCashOutflow =
+    Math.max(0, downPayment) +
+    totalMortgagePayments +
+    totalPropertyTax +
+    totalMaintenanceCosts;
+  const estimatedTotalCostBuying = Math.max(
+    0,
+    totalBuyingCashOutflow - estimatedHomeEquityAtEnd
+  );
+
+  return {
+    estimatedTotalCostRenting,
+    estimatedTotalCostBuying,
+    estimatedHomeEquityAtEnd,
+    rentVsBuyDifference: estimatedTotalCostRenting - estimatedTotalCostBuying,
   };
 }
 

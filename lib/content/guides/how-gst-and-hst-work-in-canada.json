@@ -67,12 +67,14 @@
     "gst-hst-calculator",
     "rrsp-vs-tfsa-calculator",
     "mortgage-affordability-calculator",
+    "rent-vs-buy-calculator",
     "mortgage-calculator"
   ],
   "relatedComparisons": [],
   "relatedGuides": [
     "rrsp-vs-tfsa-explained",
     "how-mortgage-affordability-is-estimated-in-canada",
+    "rent-vs-buy-in-canada-explained",
     "how-to-calculate-loan-payments"
   ],
   "disclaimer": "This guide is for educational purposes only. Canadian sales tax rules can vary by province, product, exemption status, and business registration details. Use it for planning, not tax filing or legal advice.",

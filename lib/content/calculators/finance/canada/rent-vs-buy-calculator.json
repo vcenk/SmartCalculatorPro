@@ -1,0 +1,301 @@
+{
+  "id": "rent-vs-buy-calculator",
+  "pageType": "calculator",
+  "status": "published",
+  "indexable": true,
+  "category": "finance",
+  "subcategory": "canada",
+  "slug": "rent-vs-buy-calculator",
+  "path": "finance/canada/rent-vs-buy-calculator",
+  "title": "Canada Rent vs Buy Calculator",
+  "name": "Canada Rent vs Buy Calculator",
+  "titleTag": "Canada Rent vs Buy Calculator | Smart Calculator Pro",
+  "metaDescription": "Compare the estimated cost of renting vs buying in Canada using rent, home price, mortgage, ownership costs, appreciation, and time-horizon assumptions.",
+  "h1": "Canada Rent vs Buy Calculator",
+  "intro": "Estimate whether renting or buying may look stronger in Canada using a practical side-by-side cost comparison built around housing costs, appreciation, rent growth, and time horizon.",
+  "shortDescription": "Compare estimated renting cost vs buying cost in Canada using practical housing assumptions.",
+  "longDescription": "This Canada rent vs buy calculator is built for practical housing planning rather than perfect forecasting. It compares the estimated total cost of renting over your planned time horizon with an estimate of the net cost of buying after mortgage payments, property tax, maintenance or condo fees, and the home equity you may build. The result is meant to help you think more clearly about the decision, not to declare one universal answer for everyone.",
+  "primaryKeyword": "canada rent vs buy calculator",
+  "secondaryKeywords": [
+    "rent vs buy calculator canada",
+    "should i rent or buy canada",
+    "canada buy vs rent calculator"
+  ],
+  "searchIntent": "transactional-tool",
+  "canonicalPath": "/finance/canada/rent-vs-buy-calculator",
+  "schemaType": "SoftwareApplication",
+  "ogImageTemplate": "calculator-default",
+  "problemSolved": "Helps Canadian households compare a renting path with a buying path using a consistent time horizon and transparent housing assumptions.",
+  "whoItsFor": [
+    "canadian renters",
+    "potential home buyers",
+    "households comparing housing options",
+    "first-time buyers",
+    "users building a canada housing plan"
+  ],
+  "calculationType": "formula",
+  "inputs": [
+    {
+      "key": "monthlyRent",
+      "label": "Monthly Rent",
+      "type": "number",
+      "unit": "currency",
+      "required": true,
+      "explanation": "Enter the monthly rent for the renting scenario you want to compare.",
+      "min": 0,
+      "step": 50,
+      "defaultValue": 2800
+    },
+    {
+      "key": "homePrice",
+      "label": "Home Price",
+      "type": "number",
+      "unit": "currency",
+      "required": true,
+      "explanation": "Enter the purchase price of the home you want to model in the buying scenario.",
+      "min": 0,
+      "step": 1000,
+      "defaultValue": 700000
+    },
+    {
+      "key": "downPayment",
+      "label": "Down Payment",
+      "type": "number",
+      "unit": "currency",
+      "required": true,
+      "explanation": "Enter the amount you expect to put down up front toward the purchase.",
+      "min": 0,
+      "step": 1000,
+      "defaultValue": 140000
+    },
+    {
+      "key": "mortgageRate",
+      "label": "Mortgage Rate",
+      "type": "number",
+      "unit": "percent",
+      "required": true,
+      "explanation": "Use a practical mortgage-rate estimate for the buying scenario.",
+      "min": 0,
+      "max": 15,
+      "step": 0.01,
+      "defaultValue": 5.1
+    },
+    {
+      "key": "amortizationPeriodYears",
+      "label": "Amortization Period",
+      "type": "number",
+      "unit": "years",
+      "required": true,
+      "explanation": "Enter the amortization period used for the mortgage estimate.",
+      "min": 5,
+      "max": 35,
+      "step": 1,
+      "defaultValue": 25
+    },
+    {
+      "key": "propertyTaxAnnual",
+      "label": "Annual Property Tax",
+      "type": "number",
+      "unit": "currency",
+      "required": true,
+      "explanation": "Estimate annual property tax so the buying scenario includes recurring ownership costs beyond the mortgage payment.",
+      "min": 0,
+      "step": 100,
+      "defaultValue": 5200
+    },
+    {
+      "key": "maintenanceCondoFeesMonthly",
+      "label": "Monthly Maintenance or Condo Fees",
+      "type": "number",
+      "unit": "currency",
+      "required": true,
+      "explanation": "Use this for maintenance budgets, condo fees, or other recurring ownership costs that renters may not face directly.",
+      "min": 0,
+      "step": 25,
+      "defaultValue": 450
+    },
+    {
+      "key": "expectedHomeAppreciation",
+      "label": "Expected Home Appreciation",
+      "type": "number",
+      "unit": "percent",
+      "required": true,
+      "explanation": "Use a long-term annual appreciation estimate for the buying scenario.",
+      "min": 0,
+      "max": 15,
+      "step": 0.1,
+      "defaultValue": 3
+    },
+    {
+      "key": "expectedRentIncrease",
+      "label": "Expected Rent Increase",
+      "type": "number",
+      "unit": "percent",
+      "required": true,
+      "explanation": "Use an annual rent-growth estimate for the renting scenario.",
+      "min": 0,
+      "max": 15,
+      "step": 0.1,
+      "defaultValue": 3.5
+    },
+    {
+      "key": "yearsInHome",
+      "label": "Years in Home",
+      "type": "number",
+      "unit": "years",
+      "required": true,
+      "explanation": "Use the number of years you expect to stay in the renting or buying scenario before moving or re-evaluating.",
+      "min": 1,
+      "max": 30,
+      "step": 1,
+      "defaultValue": 7
+    }
+  ],
+  "outputs": [
+    {
+      "key": "estimatedTotalCostRenting",
+      "label": "Estimated Total Cost of Renting",
+      "explanation": "The estimated total rent paid over the time horizon after applying the rent-increase assumption.",
+      "unit": "currency",
+      "precision": 0
+    },
+    {
+      "key": "estimatedTotalCostBuying",
+      "label": "Estimated Total Cost of Buying",
+      "explanation": "The estimated net cost of buying after mortgage cash outflows, property tax, maintenance costs, and estimated home equity at the end of the time horizon.",
+      "unit": "currency",
+      "precision": 0
+    },
+    {
+      "key": "estimatedHomeEquityAtEnd",
+      "label": "Estimated Home Equity at End",
+      "explanation": "The projected home equity based on mortgage balance reduction and the appreciation assumption over the time horizon.",
+      "unit": "currency",
+      "precision": 0
+    },
+    {
+      "key": "rentVsBuyDifference",
+      "label": "Rent Minus Buy Cost Difference",
+      "explanation": "A positive result means buying looks less costly than renting under the assumptions entered. A negative result means renting looks less costly.",
+      "unit": "currency",
+      "precision": 0
+    }
+  ],
+  "defaultValues": {
+    "monthlyRent": 2800,
+    "homePrice": 700000,
+    "downPayment": 140000,
+    "mortgageRate": 5.1,
+    "amortizationPeriodYears": 25,
+    "propertyTaxAnnual": 5200,
+    "maintenanceCondoFeesMonthly": 450,
+    "expectedHomeAppreciation": 3,
+    "expectedRentIncrease": 3.5,
+    "yearsInHome": 7
+  },
+  "formula": {
+    "label": "Canada Rent vs Buy Method",
+    "expression": "Renting Cost = Sum of Annual Rent with Rent Growth; Buying Cost = Down Payment + Mortgage Payments + Property Tax + Maintenance - Estimated Equity at End",
+    "plainText": "The calculator compares a growing rent path with a buying path that includes mortgage payments, ownership costs, and estimated home equity built over the same time horizon."
+  },
+  "formulaExplanation": [
+    "The renting side adds up total rent paid over the years you expect to stay, increasing rent annually by the growth assumption you entered.",
+    "The buying side starts with the home price, down payment, mortgage rate, and amortization to estimate monthly mortgage payments.",
+    "Property tax and maintenance or condo fees are included so the ownership side reflects more than just the mortgage payment.",
+    "The model estimates home equity at the end of the time horizon by combining mortgage balance reduction with the home-appreciation assumption.",
+    "The final difference compares total renting cost with net buying cost so you can see which path looks financially lighter under the assumptions entered."
+  ],
+  "methodologyNotes": [
+    "This is an estimate-based planning tool, not a complete ownership-cost model.",
+    "The first version does not include legal fees, land transfer tax, moving costs, selling costs, mortgage insurance premiums, tax treatment, or investment opportunity cost on the down payment.",
+    "Shorter time horizons often make buying look weaker because there is less time to build equity and benefit from appreciation assumptions.",
+    "Small changes in appreciation, rate, and maintenance assumptions can materially change the result, so pressure-test more than one scenario.",
+    "The goal is not to prove that buying or renting is always better. The goal is to make the tradeoff easier to review honestly."
+  ],
+  "example": {
+    "scenario": "A household compares paying $2,800 in monthly rent with buying a $700,000 home using a $140,000 down payment, a 5.1% mortgage rate, 25-year amortization, $5,200 annual property tax, $450 in monthly maintenance or condo costs, 3% annual home appreciation, 3.5% annual rent growth, and a 7-year time horizon.",
+    "inputs": {
+      "monthlyRent": 2800,
+      "homePrice": 700000,
+      "downPayment": 140000,
+      "mortgageRate": 5.1,
+      "amortizationPeriodYears": 25,
+      "propertyTaxAnnual": 5200,
+      "maintenanceCondoFeesMonthly": 450,
+      "expectedHomeAppreciation": 3,
+      "expectedRentIncrease": 3.5,
+      "yearsInHome": 7
+    },
+    "resultSummary": "The calculator shows an estimated total renting cost of about $261,388, an estimated total buying cost of about $97,742, estimated home equity of about $394,197, and a rent-minus-buy difference of about $163,646 in favour of buying under these assumptions."
+  },
+  "resultInterpretation": {
+    "defaultText": "Treat the result as a planning comparison, not a guarantee. The most useful question is whether the assumptions are realistic for your market and your actual time horizon, because those two things often drive the answer more than anything else.",
+    "thresholds": [
+      {
+        "label": "Rent Minus Buy Cost Difference",
+        "min": 1,
+        "max": 500000,
+        "interpretation": "A positive result suggests buying may be financially stronger than renting under the assumptions entered, often because the time horizon is long enough for equity build-up and appreciation to matter."
+      },
+      {
+        "label": "Rent Minus Buy Cost Difference",
+        "min": -500000,
+        "max": -1,
+        "interpretation": "A negative result suggests renting may be financially lighter under the assumptions entered, often because the time horizon is shorter or the buying costs are too heavy for the equity build-up to offset."
+      }
+    ],
+    "warningMessages": [
+      "Affordability and rent-vs-buy are different questions. A home may be technically affordable and still not be the stronger rent-vs-buy choice for your time horizon."
+    ]
+  },
+  "faq": [
+    {
+      "question": "Why is rent vs buy different from mortgage affordability?",
+      "answer": "Mortgage affordability asks whether a home may fit your income and debt picture. Rent vs buy asks whether owning actually looks better than renting over a specific time horizon once equity, rent growth, and ownership costs are considered."
+    },
+    {
+      "question": "Why does time horizon matter so much?",
+      "answer": "Because buying usually needs time for mortgage balance reduction and appreciation assumptions to matter. A short stay can make the ownership side look weaker even if the home is affordable."
+    },
+    {
+      "question": "Why include maintenance or condo fees?",
+      "answer": "Because ownership costs are not limited to the mortgage. Maintenance budgets and condo fees can materially change the real cost of owning."
+    },
+    {
+      "question": "Does this result guarantee buying is better if the number is positive?",
+      "answer": "No. It only means buying looks stronger under the assumptions you entered. Real life can change the answer through fees, taxes, repairs, resale timing, and local market conditions."
+    },
+    {
+      "question": "What should I review next after using this calculator?",
+      "answer": "Review whether the home is affordable in the first place, whether your savings strategy for the down payment still makes sense, and whether you need a more detailed breakdown of purchase costs before deciding."
+    }
+  ],
+  "relatedCalculators": [
+    "mortgage-affordability-calculator",
+    "rrsp-vs-tfsa-calculator",
+    "gst-hst-calculator",
+    "mortgage-calculator"
+  ],
+  "relatedGuides": [
+    "rent-vs-buy-in-canada-explained",
+    "how-mortgage-affordability-is-estimated-in-canada",
+    "rrsp-vs-tfsa-explained"
+  ],
+  "comparisonPages": [],
+  "parentCategoryPath": "/finance/canada",
+  "disclaimer": "This Canada rent vs buy calculator is an estimate-based planning tool only. Results depend on your rent, price, mortgage, maintenance, appreciation, and time-horizon assumptions and do not replace financial, tax, legal, or mortgage advice.",
+  "ui": {
+    "buttonText": "Compare Rent vs Buy",
+    "resetButtonText": "Reset",
+    "resultTitle": "Your Canada Rent vs Buy Estimate",
+    "showFormulaSection": true,
+    "showExampleSection": true,
+    "showInterpretation": true,
+    "showFAQSection": true,
+    "showRelatedLinks": true
+  },
+  "countryCode": "CA",
+  "currencyCode": "CAD",
+  "calculationVersion": "2026.1",
+  "assumptions": "Uses a practical time-horizon comparison between a growing rent path and a simplified buying path that includes mortgage payments, property tax, maintenance costs, and estimated equity build-up."
+}
