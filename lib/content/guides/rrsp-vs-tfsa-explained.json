@@ -74,12 +74,14 @@
   "relatedCalculators": [
     "rrsp-vs-tfsa-calculator",
     "gst-hst-calculator",
+    "mortgage-affordability-calculator",
     "compound-interest-calculator",
     "savings-calculator"
   ],
   "relatedComparisons": [],
   "relatedGuides": [
-    "how-gst-and-hst-work-in-canada"
+    "how-gst-and-hst-work-in-canada",
+    "how-mortgage-affordability-is-estimated-in-canada"
   ],
   "disclaimer": "This guide is for educational purposes only. RRSP and TFSA outcomes depend on your tax situation, contribution room, investment performance, and withdrawal timing. Use it for planning, not tax, legal, or investment advice.",
   "lastReviewedAt": "2026-03-14",

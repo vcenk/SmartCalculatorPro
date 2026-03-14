@@ -212,12 +212,14 @@
   ],
   "relatedCalculators": [
     "gst-hst-calculator",
+    "mortgage-affordability-calculator",
     "compound-interest-calculator",
     "savings-calculator",
     "mortgage-calculator"
   ],
   "relatedGuides": [
     "rrsp-vs-tfsa-explained",
+    "how-mortgage-affordability-is-estimated-in-canada",
     "how-gst-and-hst-work-in-canada",
     "how-to-calculate-loan-payments"
   ],

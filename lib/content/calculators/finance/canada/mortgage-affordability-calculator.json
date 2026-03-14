@@ -1,0 +1,259 @@
+{
+  "id": "mortgage-affordability-calculator",
+  "pageType": "calculator",
+  "status": "published",
+  "indexable": true,
+  "category": "finance",
+  "subcategory": "canada",
+  "slug": "mortgage-affordability-calculator",
+  "path": "finance/canada/mortgage-affordability-calculator",
+  "title": "Canada Mortgage Affordability Calculator",
+  "name": "Canada Mortgage Affordability Calculator",
+  "titleTag": "Canada Mortgage Affordability Calculator | Smart Calculator Pro",
+  "metaDescription": "Estimate an affordable home price in Canada using household income, debt, down payment, mortgage rate, amortization, and housing-cost assumptions.",
+  "h1": "Canada Mortgage Affordability Calculator",
+  "intro": "Estimate how much home may fit your budget in Canada using practical income, debt, mortgage, down-payment, and monthly housing-cost assumptions.",
+  "shortDescription": "Estimate a practical home price and mortgage budget in Canada using transparent housing-cost assumptions.",
+  "longDescription": "This Canada mortgage affordability calculator is built for practical housing planning. It starts with annual household income, monthly debt payments, mortgage assumptions, down payment, and recurring housing costs such as property tax, heating, or condo fees. It then estimates the monthly mortgage payment that may fit inside simplified affordability limits and converts that into an affordable mortgage amount and a maximum home-price estimate. The goal is to provide a transparent planning range before you talk to a lender or dig deeper into exact qualification rules.",
+  "primaryKeyword": "canada mortgage affordability calculator",
+  "secondaryKeywords": [
+    "how much house can i afford canada",
+    "canada home affordability calculator",
+    "mortgage affordability calculator canada"
+  ],
+  "searchIntent": "transactional-tool",
+  "canonicalPath": "/finance/canada/mortgage-affordability-calculator",
+  "schemaType": "SoftwareApplication",
+  "ogImageTemplate": "calculator-default",
+  "problemSolved": "Helps Canadian households estimate a practical home budget before applying for financing.",
+  "whoItsFor": [
+    "canadian home buyers",
+    "households planning a purchase",
+    "first-time buyers",
+    "buyers comparing budget scenarios",
+    "canada personal finance users"
+  ],
+  "calculationType": "formula",
+  "inputs": [
+    {
+      "key": "annualHouseholdIncome",
+      "label": "Annual Household Income",
+      "type": "number",
+      "unit": "currency",
+      "required": true,
+      "explanation": "Enter total gross household income before tax for everyone contributing to the mortgage plan.",
+      "min": 0,
+      "step": 1000,
+      "defaultValue": 140000
+    },
+    {
+      "key": "monthlyDebtPayments",
+      "label": "Monthly Debt Payments",
+      "type": "number",
+      "unit": "currency",
+      "required": true,
+      "explanation": "Include ongoing monthly debt obligations such as car loans, credit-card minimums, student loans, or lines of credit.",
+      "min": 0,
+      "step": 50,
+      "defaultValue": 850
+    },
+    {
+      "key": "downPayment",
+      "label": "Down Payment",
+      "type": "number",
+      "unit": "currency",
+      "required": true,
+      "explanation": "Enter the amount you expect to put down up front toward the home purchase.",
+      "min": 0,
+      "step": 1000,
+      "defaultValue": 100000
+    },
+    {
+      "key": "interestRate",
+      "label": "Mortgage Interest Rate",
+      "type": "number",
+      "unit": "percent",
+      "required": true,
+      "explanation": "Use a practical mortgage-rate estimate for the scenario you want to test.",
+      "min": 0,
+      "max": 15,
+      "step": 0.01,
+      "defaultValue": 5.2
+    },
+    {
+      "key": "amortizationPeriodYears",
+      "label": "Amortization Period",
+      "type": "number",
+      "unit": "years",
+      "required": true,
+      "explanation": "Enter the amortization period used for the payment estimate. A longer amortization lowers the payment but increases total interest over time.",
+      "min": 5,
+      "max": 35,
+      "step": 1,
+      "defaultValue": 25
+    },
+    {
+      "key": "propertyTaxEstimateAnnual",
+      "label": "Annual Property Tax Estimate",
+      "type": "number",
+      "unit": "currency",
+      "required": true,
+      "explanation": "Estimate annual property tax so the affordability result reflects more than principal and interest alone.",
+      "min": 0,
+      "step": 100,
+      "defaultValue": 5400
+    },
+    {
+      "key": "heatingCondoFeesMonthly",
+      "label": "Monthly Heating or Condo Fees",
+      "type": "number",
+      "unit": "currency",
+      "required": true,
+      "explanation": "Use this for heating costs, condo fees, or similar recurring housing costs that affect affordability.",
+      "min": 0,
+      "step": 25,
+      "defaultValue": 350
+    }
+  ],
+  "outputs": [
+    {
+      "key": "estimatedMaximumHomePrice",
+      "label": "Estimated Maximum Home Price",
+      "explanation": "The estimated home price supported by the affordable mortgage amount plus your down payment.",
+      "unit": "currency",
+      "precision": 0
+    },
+    {
+      "key": "estimatedAffordableMortgageAmount",
+      "label": "Estimated Affordable Mortgage Amount",
+      "explanation": "The estimated mortgage balance supported by the income, debt, rate, amortization, and housing-cost assumptions entered.",
+      "unit": "currency",
+      "precision": 0
+    },
+    {
+      "key": "estimatedMonthlyHousingCost",
+      "label": "Estimated Monthly Housing Cost",
+      "explanation": "The estimated combined monthly housing cost used in the affordability scenario, including mortgage payment capacity plus tax and housing-cost assumptions.",
+      "unit": "currency",
+      "precision": 0
+    },
+    {
+      "key": "housingCostRatio",
+      "label": "Estimated Housing Cost Ratio",
+      "explanation": "The share of gross monthly income used by the estimated housing cost in this planning scenario.",
+      "unit": "percent",
+      "precision": 1
+    }
+  ],
+  "defaultValues": {
+    "annualHouseholdIncome": 140000,
+    "monthlyDebtPayments": 850,
+    "downPayment": 100000,
+    "interestRate": 5.2,
+    "amortizationPeriodYears": 25,
+    "propertyTaxEstimateAnnual": 5400,
+    "heatingCondoFeesMonthly": 350
+  },
+  "formula": {
+    "label": "Canada Mortgage Affordability Method",
+    "expression": "Affordable Mortgage Payment = min(GDS Limit, TDS Limit) - Housing Costs; Mortgage Amount = Present Value of Affordable Payment; Maximum Home Price = Mortgage Amount + Down Payment",
+    "plainText": "The calculator estimates how much monthly mortgage payment may fit simplified affordability thresholds, then converts that payment into an affordable mortgage amount and a maximum home-price estimate."
+  },
+  "formulaExplanation": [
+    "The calculator starts with gross monthly household income and applies simplified affordability limits that resemble common GDS and TDS planning rules.",
+    "Property tax and monthly heating or condo costs are included before the mortgage payment is estimated so the result reflects recurring housing costs instead of principal and interest alone.",
+    "Monthly debt payments reduce the total amount available for housing in the affordability model.",
+    "Once the affordable principal-and-interest payment is estimated, the calculator converts it into a mortgage amount using the interest rate and amortization period you entered.",
+    "The final home-price estimate adds your down payment to the affordable mortgage amount."
+  ],
+  "methodologyNotes": [
+    "This is an estimate-based planning tool, not a lender approval tool.",
+    "The first version uses simplified affordability limits and does not model mortgage insurance premiums, closing costs, rate holds, credit score impacts, or lender-specific underwriting rules.",
+    "Property tax, heating, and condo assumptions can materially change the result, so it is worth pressure-testing those inputs.",
+    "A longer amortization can raise the estimated affordable mortgage amount by lowering the modeled monthly payment, but it does not mean the home is automatically comfortable in your real budget.",
+    "Use the result as a reviewable planning range before moving into exact qualification or purchase-cost analysis."
+  ],
+  "example": {
+    "scenario": "A Canadian household earns $140,000 per year, has $850 in monthly debt payments, plans a $100,000 down payment, expects a 5.2% mortgage rate over 25 years, estimates $5,400 in annual property tax, and expects $350 in monthly heating or condo costs.",
+    "inputs": {
+      "annualHouseholdIncome": 140000,
+      "monthlyDebtPayments": 850,
+      "downPayment": 100000,
+      "interestRate": 5.2,
+      "amortizationPeriodYears": 25,
+      "propertyTaxEstimateAnnual": 5400,
+      "heatingCondoFeesMonthly": 350
+    },
+    "resultSummary": "The calculator shows an estimated affordable mortgage amount of about $584,100, an estimated maximum home price of about $684,100, an estimated monthly housing cost of about $4,283, and a housing-cost ratio of about 36.7% of gross monthly income."
+  },
+  "resultInterpretation": {
+    "defaultText": "Treat the result as a planning range rather than a target you must spend up to. The most useful signals are whether the monthly housing cost feels realistic for your full budget and how much room remains for savings, repairs, and life changes.",
+    "thresholds": [
+      {
+        "label": "Estimated Housing Cost Ratio",
+        "min": 0,
+        "max": 39,
+        "interpretation": "A housing-cost ratio in this range generally fits inside the simplified front-end affordability assumption used by this tool, which may indicate a more manageable starting point."
+      },
+      {
+        "label": "Estimated Housing Cost Ratio",
+        "min": 39.1,
+        "max": 44,
+        "interpretation": "A ratio in this range may still be possible in some scenarios, but it can leave less room for other goals and may depend more heavily on the rest of your debt picture."
+      }
+    ],
+    "warningMessages": [
+      "This result is not lender approval. Real qualification can change based on stress-test rules, insured vs uninsured mortgage rules, credit quality, closing costs, and the exact property."
+    ]
+  },
+  "faq": [
+    {
+      "question": "What does mortgage affordability mean in plain language?",
+      "answer": "It means estimating how much home price and mortgage payment may fit your income, existing debts, and recurring housing costs without stretching the budget too far."
+    },
+    {
+      "question": "Why do property tax and heating or condo fees matter?",
+      "answer": "Because they are real monthly housing costs that reduce how much room is left for principal and interest. Ignoring them can make a home look more affordable than it really is."
+    },
+    {
+      "question": "Is this the same as mortgage pre-approval?",
+      "answer": "No. This is a planning estimate only. Lenders use more detailed underwriting rules, stress tests, and documentation when deciding what they will actually approve."
+    },
+    {
+      "question": "Why does a longer amortization make the result look higher?",
+      "answer": "Because spreading the mortgage over more years lowers the modeled monthly payment, which increases the mortgage amount that fits the same monthly budget. That does not automatically make the home more comfortable to own."
+    },
+    {
+      "question": "What should I compare next after using this calculator?",
+      "answer": "A good next step is to review your Canada savings choices, likely purchase taxes and fees, and eventually compare owning with renting once you know the home-price range you are considering."
+    }
+  ],
+  "relatedCalculators": [
+    "gst-hst-calculator",
+    "rrsp-vs-tfsa-calculator",
+    "mortgage-calculator",
+    "savings-calculator"
+  ],
+  "relatedGuides": [
+    "how-mortgage-affordability-is-estimated-in-canada",
+    "rrsp-vs-tfsa-explained",
+    "how-gst-and-hst-work-in-canada"
+  ],
+  "comparisonPages": [],
+  "parentCategoryPath": "/finance/canada",
+  "disclaimer": "This Canada mortgage affordability calculator is an estimate-based planning tool only. Results depend on your income, debt, rate, amortization, down payment, and housing-cost assumptions and do not represent lender approval, legal advice, or mortgage qualification confirmation.",
+  "ui": {
+    "buttonText": "Estimate Affordability",
+    "resetButtonText": "Reset",
+    "resultTitle": "Your Canada Home Budget Estimate",
+    "showFormulaSection": true,
+    "showExampleSection": true,
+    "showInterpretation": true,
+    "showFAQSection": true,
+    "showRelatedLinks": true
+  },
+  "countryCode": "CA",
+  "currencyCode": "CAD",
+  "calculationVersion": "2026.1",
+  "assumptions": "Uses simplified Canada-style affordability limits, user-entered debt and housing costs, and a standard mortgage present-value approach to estimate a practical home-price range."
+}

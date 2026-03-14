@@ -1,0 +1,88 @@
+{
+  "id": "how-mortgage-affordability-is-estimated-in-canada",
+  "pageType": "guide",
+  "status": "published",
+  "indexable": true,
+  "slug": "how-mortgage-affordability-is-estimated-in-canada",
+  "path": "guides/how-mortgage-affordability-is-estimated-in-canada",
+  "title": "How Mortgage Affordability Is Estimated in Canada",
+  "titleTag": "How Mortgage Affordability Is Estimated in Canada | Smart Calculator Pro",
+  "metaDescription": "Learn what mortgage affordability means in Canada, how income, debt, rates, and housing costs affect it, and why an estimate is not the same as lender approval.",
+  "h1": "How Mortgage Affordability Is Estimated in Canada",
+  "intro": "Mortgage affordability is really a budgeting question first. Before a lender says yes or no, most households want to know whether a purchase price even makes sense based on income, debts, rates, and recurring housing costs.",
+  "primaryKeyword": "how mortgage affordability is estimated in canada",
+  "secondaryKeywords": [
+    "canada mortgage affordability guide",
+    "how much house can i afford canada guide",
+    "mortgage affordability explained canada"
+  ],
+  "searchIntent": "informational",
+  "canonicalPath": "/guides/how-mortgage-affordability-is-estimated-in-canada",
+  "schemaType": "Article",
+  "ogImageTemplate": "guide-default",
+  "guideType": "explanation",
+  "summary": "This guide explains mortgage affordability in plain language, including how income, debt, down payment, rates, and recurring housing costs affect a practical home budget in Canada.",
+  "quickAnswer": "Mortgage affordability in Canada is usually estimated by comparing household income with housing costs and other debts. Income, monthly debt, down payment, interest rate, amortization, property tax, and heating or condo fees can all change the result materially.",
+  "sections": [
+    {
+      "heading": "What Mortgage Affordability Means",
+      "content": "<p>Mortgage affordability means estimating how much home you may be able to buy without overloading your budget. It is not just about whether a lender might approve you. It is also about whether the payment, taxes, fees, and other housing costs still leave enough room for savings, repairs, transportation, groceries, and everything else your household needs.</p>"
+    },
+    {
+      "heading": "Why Income and Debt Matter First",
+      "content": "<p>Household income sets the starting point for what may be manageable each month. Existing debt payments matter because they already use part of that monthly capacity. A household with the same income can have a very different affordability result depending on whether it already carries car payments, student loans, or revolving debt.</p>"
+    },
+    {
+      "heading": "How Down Payment, Interest Rate, and Amortization Affect the Result",
+      "content": "<p>A larger down payment lowers the mortgage balance needed, which usually improves affordability immediately. Interest rate matters because even a modest rate change can move the monthly payment a lot. Amortization affects how much payment is required each month: a longer amortization lowers the modeled payment, but it also means paying interest for longer.</p>"
+    },
+    {
+      "heading": "Why Property Tax and Housing Costs Cannot Be Ignored",
+      "content": "<p>Mortgage affordability is often overstated when buyers look only at principal and interest. Property tax, heating costs, and condo fees are real recurring costs that reduce how much home is comfortable to own. Including them leads to a more honest planning range.</p>"
+    },
+    {
+      "heading": "Planning Estimate vs Lender Approval",
+      "content": "<p>A calculator can help you understand a plausible range, but it is not the same as pre-approval or final underwriting. Lenders can apply stress tests, insured versus uninsured mortgage rules, credit requirements, and property-specific checks that a first-pass planning tool does not model. That is why the estimate should guide your next conversation, not replace it.</p>"
+    },
+    {
+      "heading": "How This Fits the Canada Finance Workflow",
+      "content": "<p>Use the Canada mortgage affordability calculator when you want a first-pass home budget. Use RRSP vs TFSA when deciding how to allocate savings and down-payment strategy, and use the GST/HST calculator for province-aware tax math in everyday planning. This creates a clearer path through the Canada cluster: day-to-day taxes, savings strategy, then housing-budget decisions.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "question": "Does mortgage affordability mean the bank will approve me for that amount?",
+      "answer": "No. It is a planning estimate, not an approval. Lenders use more detailed underwriting, documentation, and stress-test rules."
+    },
+    {
+      "question": "Why does debt reduce affordability so much?",
+      "answer": "Because debt payments already use monthly cash flow. The more income that is already committed elsewhere, the less room remains for housing costs."
+    },
+    {
+      "question": "Why should I include condo fees or heating costs?",
+      "answer": "Because they are part of the real monthly cost of owning the home. Leaving them out can make a purchase price look safer than it really is."
+    },
+    {
+      "question": "Can a bigger down payment change affordability even if income stays the same?",
+      "answer": "Yes. A larger down payment reduces the mortgage balance needed, which usually lowers the monthly payment and can widen the practical price range."
+    },
+    {
+      "question": "What should I do after getting an affordability estimate?",
+      "answer": "Use it to set a realistic search range, then review your full ownership costs, savings strategy, and lender-specific qualification details before making a purchase decision."
+    }
+  ],
+  "relatedCalculators": [
+    "mortgage-affordability-calculator",
+    "rrsp-vs-tfsa-calculator",
+    "gst-hst-calculator",
+    "mortgage-calculator"
+  ],
+  "relatedComparisons": [],
+  "relatedGuides": [
+    "rrsp-vs-tfsa-explained",
+    "how-gst-and-hst-work-in-canada"
+  ],
+  "disclaimer": "This guide is for educational purposes only. Mortgage affordability depends on lender rules, interest rates, taxes, housing costs, insurance, and your broader financial situation. Use it for planning, not mortgage approval or legal advice.",
+  "lastReviewedAt": "2026-03-14",
+  "reviewedBy": "Smart Calculator Pro Team"
+}

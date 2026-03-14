@@ -211,6 +211,23 @@ export interface CanadaRrspVsTfsaCalculatorOutput {
   sideBySideComparisonSummary: number;
 }
 
+export interface CanadaMortgageAffordabilityCalculatorInput {
+  annualHouseholdIncome: number;
+  monthlyDebtPayments: number;
+  downPayment: number;
+  interestRate: number;
+  amortizationPeriodYears: number;
+  propertyTaxEstimateAnnual: number;
+  heatingCondoFeesMonthly: number;
+}
+
+export interface CanadaMortgageAffordabilityCalculatorOutput {
+  estimatedMaximumHomePrice: number;
+  estimatedAffordableMortgageAmount: number;
+  estimatedMonthlyHousingCost: number;
+  housingCostRatio: number;
+}
+
 // ============================================================================
 // Utility Functions
 // ============================================================================
@@ -305,6 +322,28 @@ function calculateAnnualContributionFutureValue(
   }
 
   return contribution * ((Math.pow(1 + rate, years) - 1) / rate);
+}
+
+function calculatePresentValueFromMonthlyPayment(
+  monthlyPayment: number,
+  annualInterestRate: number,
+  amortizationYears: number
+): number {
+  const payment = Math.max(0, monthlyPayment);
+  const numberOfPayments = Math.max(0, amortizationYears) * 12;
+
+  if (numberOfPayments === 0) {
+    return 0;
+  }
+
+  const monthlyRate = Math.max(0, annualInterestRate) / 100 / 12;
+
+  if (monthlyRate === 0) {
+    return payment * numberOfPayments;
+  }
+
+  const growthFactor = Math.pow(1 + monthlyRate, numberOfPayments);
+  return payment * ((growthFactor - 1) / (monthlyRate * growthFactor));
 }
 
 // ============================================================================
@@ -808,6 +847,54 @@ export function calculateCanadaRrspVsTfsa(
     contributionTaxDeductionEstimate,
     sideBySideComparisonSummary:
       estimatedAfterTaxRrspValue - estimatedTfsaValue,
+  };
+}
+
+export function calculateCanadaMortgageAffordability(
+  input: CanadaMortgageAffordabilityCalculatorInput
+): CanadaMortgageAffordabilityCalculatorOutput {
+  const {
+    annualHouseholdIncome,
+    monthlyDebtPayments = 0,
+    downPayment = 0,
+    interestRate = 5,
+    amortizationPeriodYears = 25,
+    propertyTaxEstimateAnnual = 4800,
+    heatingCondoFeesMonthly = 250,
+  } = input;
+
+  const monthlyIncome = Math.max(0, annualHouseholdIncome) / 12;
+  const monthlyPropertyTax = Math.max(0, propertyTaxEstimateAnnual) / 12;
+  const monthlyNonMortgageHousingCosts =
+    monthlyPropertyTax + Math.max(0, heatingCondoFeesMonthly);
+
+  const allowedByGds = monthlyIncome * 0.39 - monthlyNonMortgageHousingCosts;
+  const allowedByTds =
+    monthlyIncome * 0.44 -
+    Math.max(0, monthlyDebtPayments) -
+    monthlyNonMortgageHousingCosts;
+  const affordablePrincipalAndInterest = Math.max(
+    0,
+    Math.min(allowedByGds, allowedByTds)
+  );
+
+  const estimatedAffordableMortgageAmount = calculatePresentValueFromMonthlyPayment(
+    affordablePrincipalAndInterest,
+    interestRate,
+    amortizationPeriodYears
+  );
+  const estimatedMaximumHomePrice =
+    estimatedAffordableMortgageAmount + Math.max(0, downPayment);
+  const estimatedMonthlyHousingCost =
+    affordablePrincipalAndInterest + monthlyNonMortgageHousingCosts;
+  const housingCostRatio =
+    monthlyIncome > 0 ? (estimatedMonthlyHousingCost / monthlyIncome) * 100 : 0;
+
+  return {
+    estimatedMaximumHomePrice,
+    estimatedAffordableMortgageAmount,
+    estimatedMonthlyHousingCost,
+    housingCostRatio,
   };
 }
 
