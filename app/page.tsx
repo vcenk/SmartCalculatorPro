@@ -200,7 +200,7 @@ export default function HomePage() {
                   <CardContent>
                     <div className="flex items-center justify-between border-t border-[#e3edf5] pt-4 text-sm font-semibold text-[#244867]">
                       <span>Open tool</span>
-                      <span>→</span>
+                      <span aria-hidden="true">→</span>
                     </div>
                   </CardContent>
                 </Card>
@@ -236,7 +236,7 @@ export default function HomePage() {
                   <CardContent>
                     <div className="flex items-center justify-between border-t border-[#e3edf5] pt-4 text-sm font-semibold text-[#244867]">
                       <span>Browse category</span>
-                      <span>→</span>
+                      <span aria-hidden="true">→</span>
                     </div>
                   </CardContent>
                 </Card>

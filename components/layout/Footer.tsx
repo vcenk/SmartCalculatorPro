@@ -47,6 +47,12 @@ export function Footer() {
             <p className="max-w-sm text-sm leading-6 text-[#5d7187]">
               Search-first calculators with clear explanations, structured content, and trust-ready pages that can scale into a larger utility platform.
             </p>
+            <Link
+              href="/guides/how-to-check-calculator-estimates"
+              className="inline-flex text-sm font-semibold text-[#0b6bcb] transition-colors hover:text-[#0958a8]"
+            >
+              Learn how to review calculator estimates
+            </Link>
             <div className="rounded-2xl border border-[#dce8f2] bg-[#f7fbff] p-4 text-sm text-[#4f6780]">
               Future-ready layout note: this footer leaves clean room above and below for later ad/support modules without interrupting navigation or trust links.
             </div>

@@ -4,7 +4,7 @@
 
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { loadCategory, getCalculatorsByCategory } from '@/lib/content/loader';
+import { loadCategory, getCalculatorsByCategory, loadGuide } from '@/lib/content/loader';
 import { loadSiteConfig } from '@/lib/content/loader';
 import { generateMetadata as generatePageMetadata } from '@/lib/seo/metadata';
 import { generateBreadcrumbsFromPath, generateCollectionPageSchema } from '@/lib/seo/schema';
@@ -13,6 +13,7 @@ import { CategoryBreadcrumbs } from '@/components/layout/Breadcrumbs';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/Card';
 import { Section } from '@/components/ui/Section';
 import { Accordion } from '@/components/ui/Accordion';
+import { hasCalculatorFunction } from '@/lib/calculations/registry';
 import { notFound } from 'next/navigation';
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -35,7 +36,13 @@ export default async function FinanceCategoryPage() {
   }
 
   const allCalculators = await getCalculatorsByCategory('finance');
-  const calculators = allCalculators.filter(calc => calc.status === 'published');
+  const calculators = allCalculators.filter(
+    (calc) => calc.status === 'published' && hasCalculatorFunction(calc.id)
+  );
+  const featuredGuides = await Promise.all(
+    (category.featuredGuides ?? []).map((guideId) => loadGuide(guideId))
+  );
+  const liveGuides = featuredGuides.filter((guide): guide is NonNullable<typeof guide> => Boolean(guide));
 
   const breadcrumbs = generateBreadcrumbsFromPath('/finance', siteConfig.url);
   const collectionSchema = generateCollectionPageSchema(
@@ -82,12 +89,20 @@ export default async function FinanceCategoryPage() {
           </div>
 
           {/* Featured Guides */}
-          {category.featuredGuides && category.featuredGuides.length > 0 && (
+          {liveGuides.length > 0 && (
             <Section className="pt-8">
               <h2 className="text-2xl font-semibold mb-4">Featured Guides</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {/* Guides will be populated when guide content exists */}
-                <p className="text-muted-foreground">Coming soon...</p>
+                {liveGuides.map((guide) => (
+                  <Link key={guide.id} href={guide.canonicalPath}>
+                    <Card className="h-full hover:border-primary transition-colors cursor-pointer">
+                      <CardHeader>
+                        <CardTitle className="text-xl">{guide.title}</CardTitle>
+                        <CardDescription>{guide.summary}</CardDescription>
+                      </CardHeader>
+                    </Card>
+                  </Link>
+                ))}
               </div>
             </Section>
           )}

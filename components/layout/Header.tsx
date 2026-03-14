@@ -64,7 +64,7 @@ export function Header() {
             href="/guides/how-gross-to-net-salary-is-calculated"
             className="whitespace-nowrap rounded-full border border-transparent bg-[#fff3db] px-4 py-2 text-sm font-semibold text-[#8a5a08] transition-all hover:border-[#f1d39a] hover:bg-white"
           >
-            Salary Guides
+            Salary Guide
           </Link>
         </div>
 

@@ -13,6 +13,7 @@ import { CategoryBreadcrumbs } from '@/components/layout/Breadcrumbs';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/Card';
 import { Section } from '@/components/ui/Section';
 import { Accordion } from '@/components/ui/Accordion';
+import { hasCalculatorFunction } from '@/lib/calculations/registry';
 import { notFound } from 'next/navigation';
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -35,7 +36,9 @@ export default async function ConstructionCategoryPage() {
   }
 
   const allCalculators = await getCalculatorsByCategory('construction');
-  const calculators = allCalculators.filter(calc => calc.status === 'published');
+  const calculators = allCalculators.filter(
+    (calc) => calc.status === 'published' && hasCalculatorFunction(calc.id)
+  );
 
   const breadcrumbs = generateBreadcrumbsFromPath('/construction', siteConfig.url);
   const collectionSchema = generateCollectionPageSchema(
@@ -60,24 +63,38 @@ export default async function ConstructionCategoryPage() {
             <p className="text-muted-foreground">{category.purpose}</p>
           </div>
 
-          <h2 className="text-2xl font-semibold mb-4">Construction Calculators</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-            {calculators.map((calculator) => (
-              <Link key={calculator.canonicalPath} href={calculator.canonicalPath}>
-                <Card className="h-full hover:border-primary transition-colors cursor-pointer">
-                  <CardHeader>
-                    <CardTitle className="text-xl">{calculator.name}</CardTitle>
-                    <CardDescription>{calculator.shortDescription}</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-sm text-muted-foreground">
-                      {calculator.problemSolved}
-                    </p>
-                  </CardContent>
-                </Card>
+          {calculators.length > 0 ? (
+            <>
+              <h2 className="text-2xl font-semibold mb-4">Construction Calculators</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                {calculators.map((calculator) => (
+                  <Link key={calculator.canonicalPath} href={calculator.canonicalPath}>
+                    <Card className="h-full hover:border-primary transition-colors cursor-pointer">
+                      <CardHeader>
+                        <CardTitle className="text-xl">{calculator.name}</CardTitle>
+                        <CardDescription>{calculator.shortDescription}</CardDescription>
+                      </CardHeader>
+                      <CardContent>
+                        <p className="text-sm text-muted-foreground">
+                          {calculator.problemSolved}
+                        </p>
+                      </CardContent>
+                    </Card>
+                  </Link>
+                ))}
+              </div>
+            </>
+          ) : (
+            <div className="mb-8 rounded-2xl border border-[#dce7f1] bg-white/80 p-6 shadow-sm">
+              <h2 className="text-2xl font-semibold mb-2">Live Calculators</h2>
+              <p className="text-muted-foreground mb-4">
+                This category is still being expanded. For now, browse the live finance calculators while the construction toolset grows.
+              </p>
+              <Link href="/finance" className="inline-flex items-center px-4 py-2 bg-primary text-primary-foreground rounded-full hover:bg-primary/90 transition-colors">
+                Browse Live Calculators
               </Link>
-            ))}
-          </div>
+            </div>
+          )}
 
           {category.seoBodySections && category.seoBodySections.length > 0 && (
             <Section className="pt-8">

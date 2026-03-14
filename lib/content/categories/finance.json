@@ -20,7 +20,11 @@
   "summary": "Comprehensive finance calculators for personal and business financial planning.",
   "purpose": "Help users understand costs, plan payments, and project financial outcomes.",
   "featuredCalculators": ["loan-calculator", "mortgage-calculator", "compound-interest-calculator", "savings-calculator"],
-  "featuredGuides": [],
+  "featuredGuides": [
+    "how-gross-to-net-salary-is-calculated",
+    "how-hourly-pay-and-annual-salary-convert",
+    "how-to-calculate-loan-payments"
+  ],
   "relatedCategories": ["math", "everyday-life"],
   "faq": [
     {
