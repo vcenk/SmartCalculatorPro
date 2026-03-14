@@ -14,6 +14,7 @@ import type { CalculatorPage, GuidePage } from '@/lib/types/content';
 const PAGE_PATH = '/guides';
 
 const featuredGuideIds = [
+  'how-much-emergency-fund-you-need-in-canada',
   'home-buying-costs-in-canada-explained',
   'rent-vs-buy-in-canada-explained',
   'how-mortgage-affordability-is-estimated-in-canada',
@@ -49,8 +50,9 @@ const guideGroups = [
     description:
       'These guides break down common finance formulas, Canada planning tradeoffs, and borrowing decisions so users can understand the numbers behind the next money choice.',
     accent: 'from-indigo-600 via-blue-600 to-sky-500',
-    ids: [
-      'home-buying-costs-in-canada-explained',
+      ids: [
+        'how-much-emergency-fund-you-need-in-canada',
+        'home-buying-costs-in-canada-explained',
       'rent-vs-buy-in-canada-explained',
       'how-mortgage-affordability-is-estimated-in-canada',
       'rrsp-vs-tfsa-explained',

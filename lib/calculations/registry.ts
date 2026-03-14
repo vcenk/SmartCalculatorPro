@@ -27,6 +27,7 @@ import {
   calculateCanadaMortgageAffordability,
   calculateCanadaRentVsBuy,
   calculateCanadaHomeBuyingCost,
+  calculateCanadaEmergencyFund,
   calculateGrossToNetSalary,
   calculateNetToGrossSalary,
 } from './finance';
@@ -181,6 +182,13 @@ export const calculatorRegistry: Record<string, CalculatorRegistryEntry> = {
     calculate: calculateCanadaHomeBuyingCost,
     inputType: 'CanadaHomeBuyingCostCalculatorInput',
     outputType: 'CanadaHomeBuyingCostCalculatorOutput',
+    category: 'finance',
+    implemented: true,
+  },
+  'emergency-fund-calculator': {
+    calculate: calculateCanadaEmergencyFund,
+    inputType: 'CanadaEmergencyFundCalculatorInput',
+    outputType: 'CanadaEmergencyFundCalculatorOutput',
     category: 'finance',
     implemented: true,
   },

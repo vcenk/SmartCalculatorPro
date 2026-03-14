@@ -1,0 +1,85 @@
+{
+  "id": "how-much-emergency-fund-you-need-in-canada",
+  "pageType": "guide",
+  "status": "published",
+  "indexable": true,
+  "slug": "how-much-emergency-fund-you-need-in-canada",
+  "path": "guides/how-much-emergency-fund-you-need-in-canada",
+  "title": "How Much Emergency Fund You Need in Canada",
+  "titleTag": "How Much Emergency Fund You Need in Canada | Smart Calculator Pro",
+  "metaDescription": "Learn how to size an emergency fund in Canada using essential expenses, housing obligations, and job stability instead of rough guesses.",
+  "h1": "How Much Emergency Fund You Need in Canada",
+  "intro": "Emergency fund sizing usually becomes much clearer once you stop thinking in vague round numbers and start thinking in months of essential expenses.",
+  "primaryKeyword": "how much emergency fund you need in canada",
+  "secondaryKeywords": [
+    "emergency fund canada guide",
+    "how much emergency savings canada",
+    "canada emergency fund explained"
+  ],
+  "searchIntent": "informational",
+  "canonicalPath": "/guides/how-much-emergency-fund-you-need-in-canada",
+  "schemaType": "Article",
+  "ogImageTemplate": "guide-default",
+  "guideType": "explanation",
+  "summary": "This guide explains emergency fund sizing in plain language, why essential expenses matter more than total spending, and how housing obligations and job stability affect the target.",
+  "quickAnswer": "A practical emergency fund target is usually based on 3 to 6 months of essential expenses, not total lifestyle spending. Households with higher fixed housing costs, dependents, or less stable income often need a larger buffer.",
+  "sections": [
+    {
+      "heading": "Emergency Fund Sizing in Plain Language",
+      "content": "<p>An emergency fund is cash set aside to help your household absorb job loss, income disruption, urgent repairs, or other surprises without immediately taking on debt. The clearest way to size it is usually by asking how many months of essential expenses you would want covered if income stopped or dropped sharply.</p>"
+    },
+    {
+      "heading": "Why Essential Expenses Matter More Than Total Spending",
+      "content": "<p>Essential expenses usually include housing, groceries, utilities, insurance, transportation, and debt minimums. Total spending is often higher because it includes lifestyle choices that may be reduced temporarily in a disruption. That is why emergency fund sizing usually works better when it starts from essential costs rather than your full monthly spend.</p>"
+    },
+    {
+      "heading": "How Housing Obligations Change the Target",
+      "content": "<p>Households with high rent, mortgage payments, condo fees, or property tax obligations often need a more conservative emergency fund because those bills are large and hard to reduce quickly. Homeowners may also need a bigger buffer because urgent repairs can appear on top of normal monthly costs.</p>"
+    },
+    {
+      "heading": "Why Job Stability and Income Type Matter",
+      "content": "<p>A dual-income household with stable employment may be comfortable with a smaller months-covered target than a household with one income, variable work, commission-based earnings, or self-employment. The less predictable the income, the more valuable a deeper cash buffer can become.</p>"
+    },
+    {
+      "heading": "How This Fits the Canada Finance Workflow",
+      "content": "<p>Use the emergency fund calculator when you want a practical reserve target and a clear savings gap. This fits naturally alongside Canada housing planning, because a household considering a home purchase or higher housing costs should also understand whether its cash buffer is strong enough. RRSP vs TFSA can help with longer-term savings tradeoffs, but the emergency fund question is about resilience first.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "question": "Should I use total spending or essential expenses for my emergency fund?",
+      "answer": "Essential expenses are usually the better starting point because they reflect the costs you still need to cover even if you cut discretionary spending."
+    },
+    {
+      "question": "How many months of expenses should I keep?",
+      "answer": "A common starting range is 3 to 6 months of essential expenses, but households with variable income, dependents, or high fixed housing costs may want more."
+    },
+    {
+      "question": "Do homeowners need a bigger emergency fund than renters?",
+      "answer": "Often yes, because homeowners can face major repair costs and larger fixed monthly housing obligations on top of their normal bills."
+    },
+    {
+      "question": "Should I build an emergency fund before aggressive investing?",
+      "answer": "Many households benefit from building a meaningful cash buffer first, because it reduces the chance of needing debt or forced withdrawals when a disruption happens."
+    },
+    {
+      "question": "What should I review after sizing my emergency fund?",
+      "answer": "Review whether your housing costs, debt load, and savings priorities still fit together, especially if you are also planning a home purchase or reworking long-term savings goals."
+    }
+  ],
+  "relatedCalculators": [
+    "emergency-fund-calculator",
+    "savings-calculator",
+    "mortgage-affordability-calculator",
+    "rrsp-vs-tfsa-calculator"
+  ],
+  "relatedComparisons": [],
+  "relatedGuides": [
+    "how-mortgage-affordability-is-estimated-in-canada",
+    "rrsp-vs-tfsa-explained",
+    "home-buying-costs-in-canada-explained"
+  ],
+  "disclaimer": "This guide is for educational purposes only. Emergency fund targets depend on your income stability, essential expenses, debt obligations, and overall financial situation. Use it for planning, not personalized financial advice.",
+  "lastReviewedAt": "2026-03-14",
+  "reviewedBy": "Smart Calculator Pro Team"
+}

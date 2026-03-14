@@ -266,6 +266,21 @@ export interface CanadaHomeBuyingCostCalculatorOutput {
   estimatedTotalUpfrontCashNeeded: number;
 }
 
+export interface CanadaEmergencyFundCalculatorInput {
+  monthlyEssentialExpenses: number;
+  monthlyTotalExpenses: number;
+  currentEmergencySavings: number;
+  targetMonthsCovered: number;
+  monthlySavingsContribution: number;
+}
+
+export interface CanadaEmergencyFundCalculatorOutput {
+  recommendedEmergencyFundTarget: number;
+  currentMonthsCovered: number;
+  savingsGap: number;
+  estimatedMonthsToTarget: number;
+}
+
 // ============================================================================
 // Utility Functions
 // ============================================================================
@@ -1148,6 +1163,40 @@ export function calculateCanadaHomeBuyingCost(
     estimatedProvincialPurchaseCost,
     estimatedClosingCosts,
     estimatedTotalUpfrontCashNeeded,
+  };
+}
+
+export function calculateCanadaEmergencyFund(
+  input: CanadaEmergencyFundCalculatorInput
+): CanadaEmergencyFundCalculatorOutput {
+  const {
+    monthlyEssentialExpenses,
+    monthlyTotalExpenses,
+    currentEmergencySavings,
+    targetMonthsCovered = 3,
+    monthlySavingsContribution = 0,
+  } = input;
+
+  const essentialExpenses = Math.max(0, monthlyEssentialExpenses);
+  const currentSavings = Math.max(0, currentEmergencySavings);
+  const targetMonths = Math.max(0, targetMonthsCovered);
+  const recommendedEmergencyFundTarget = essentialExpenses * targetMonths;
+  const currentMonthsCovered =
+    essentialExpenses > 0 ? currentSavings / essentialExpenses : 0;
+  const savingsGap = Math.max(0, recommendedEmergencyFundTarget - currentSavings);
+  const monthlyContribution = Math.max(0, monthlySavingsContribution);
+  const estimatedMonthsToTarget =
+    savingsGap === 0
+      ? 0
+      : monthlyContribution > 0
+        ? savingsGap / monthlyContribution
+        : 0;
+
+  return {
+    recommendedEmergencyFundTarget,
+    currentMonthsCovered,
+    savingsGap,
+    estimatedMonthsToTarget,
   };
 }
 

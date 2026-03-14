@@ -1,0 +1,231 @@
+{
+  "id": "emergency-fund-calculator",
+  "pageType": "calculator",
+  "status": "published",
+  "indexable": true,
+  "category": "finance",
+  "subcategory": "canada",
+  "slug": "emergency-fund-calculator",
+  "path": "finance/canada/emergency-fund-calculator",
+  "title": "Canada Emergency Fund Calculator",
+  "name": "Canada Emergency Fund Calculator",
+  "titleTag": "Canada Emergency Fund Calculator | Smart Calculator Pro",
+  "metaDescription": "Estimate an emergency fund target in Canada using essential expenses, current savings, target months covered, and optional monthly savings contributions.",
+  "h1": "Canada Emergency Fund Calculator",
+  "intro": "Estimate how much emergency savings may make sense for your household in Canada using essential-expense coverage instead of rough guesswork.",
+  "shortDescription": "Estimate an emergency fund target, current coverage, and funding gap using practical household-expense assumptions.",
+  "longDescription": "This Canada emergency fund calculator is built for practical cash-reserve planning. It uses essential monthly expenses, current emergency savings, and a target months-covered goal to estimate how much reserve cash you may want and how far away you are from that target. If you add a monthly savings contribution, it also estimates how long it may take to close the gap. The first version is intentionally decision-oriented and transparent rather than pretending one universal emergency-fund number fits every household.",
+  "primaryKeyword": "canada emergency fund calculator",
+  "secondaryKeywords": [
+    "emergency fund calculator canada",
+    "how much emergency fund do i need canada",
+    "emergency savings calculator canada"
+  ],
+  "searchIntent": "transactional-tool",
+  "canonicalPath": "/finance/canada/emergency-fund-calculator",
+  "schemaType": "SoftwareApplication",
+  "ogImageTemplate": "calculator-default",
+  "problemSolved": "Helps Canadian households estimate an emergency-fund target and the path needed to reach it.",
+  "whoItsFor": [
+    "canadian households",
+    "renters",
+    "homeowners",
+    "job changers",
+    "users building a cash-reserve plan"
+  ],
+  "calculationType": "simple",
+  "inputs": [
+    {
+      "key": "monthlyEssentialExpenses",
+      "label": "Monthly Essential Expenses",
+      "type": "number",
+      "unit": "currency",
+      "required": true,
+      "explanation": "Enter the core monthly costs you would still need to pay during a disruption, such as housing, groceries, insurance, utilities, transportation, and debt minimums.",
+      "min": 0,
+      "step": 50,
+      "defaultValue": 4200
+    },
+    {
+      "key": "monthlyTotalExpenses",
+      "label": "Monthly Total Expenses",
+      "type": "number",
+      "unit": "currency",
+      "required": true,
+      "explanation": "Enter total monthly spending so you can compare essential costs with your broader lifestyle spending.",
+      "min": 0,
+      "step": 50,
+      "defaultValue": 6200
+    },
+    {
+      "key": "currentEmergencySavings",
+      "label": "Current Emergency Savings",
+      "type": "number",
+      "unit": "currency",
+      "required": true,
+      "explanation": "Include the amount you already have set aside in savings that you would realistically use for emergencies.",
+      "min": 0,
+      "step": 100,
+      "defaultValue": 9000
+    },
+    {
+      "key": "targetMonthsCovered",
+      "label": "Target Months Covered",
+      "type": "number",
+      "unit": "months",
+      "required": true,
+      "explanation": "Choose the number of months of essential expenses you want the emergency fund to cover.",
+      "min": 1,
+      "max": 24,
+      "step": 1,
+      "defaultValue": 6
+    },
+    {
+      "key": "monthlySavingsContribution",
+      "label": "Monthly Savings Contribution",
+      "type": "number",
+      "unit": "currency",
+      "required": false,
+      "explanation": "Use this optional monthly contribution to estimate how long it may take to close the emergency-fund gap.",
+      "min": 0,
+      "step": 25,
+      "defaultValue": 600
+    }
+  ],
+  "outputs": [
+    {
+      "key": "recommendedEmergencyFundTarget",
+      "label": "Recommended Emergency Fund Target",
+      "explanation": "The target reserve based on essential monthly expenses multiplied by your chosen months-covered goal.",
+      "unit": "currency",
+      "precision": 0
+    },
+    {
+      "key": "currentMonthsCovered",
+      "label": "Current Months Covered",
+      "explanation": "The number of months of essential expenses your current emergency savings could cover.",
+      "unit": "number",
+      "precision": 1
+    },
+    {
+      "key": "savingsGap",
+      "label": "Savings Gap",
+      "explanation": "The amount still needed to reach the emergency-fund target.",
+      "unit": "currency",
+      "precision": 0
+    },
+    {
+      "key": "estimatedMonthsToTarget",
+      "label": "Estimated Months to Target",
+      "explanation": "The estimated months needed to reach the target using your monthly savings contribution. A result of 0 means you are already at target or did not enter a monthly contribution.",
+      "unit": "number",
+      "precision": 1
+    }
+  ],
+  "defaultValues": {
+    "monthlyEssentialExpenses": 4200,
+    "monthlyTotalExpenses": 6200,
+    "currentEmergencySavings": 9000,
+    "targetMonthsCovered": 6,
+    "monthlySavingsContribution": 600
+  },
+  "formula": {
+    "label": "Emergency Fund Planning Method",
+    "expression": "Target Fund = Monthly Essential Expenses x Target Months; Current Months Covered = Current Savings / Monthly Essential Expenses; Savings Gap = Target Fund - Current Savings; Timeline = Savings Gap / Monthly Contribution",
+    "plainText": "The calculator sizes the emergency fund around essential monthly costs, then compares your current savings with that target and estimates the path to get there."
+  },
+  "formulaExplanation": [
+    "The target reserve is based on essential monthly expenses rather than total lifestyle spending, because emergency planning usually focuses on what must still be paid during a disruption.",
+    "Current months covered shows how many months of essential expenses your current emergency savings could cover right now.",
+    "The savings gap shows how much more cash you may want to build if you are not yet at the target reserve.",
+    "If you enter a monthly savings contribution, the calculator estimates how long it may take to close the gap using a simple contribution-only timeline."
+  ],
+  "methodologyNotes": [
+    "This is an estimate-based planning tool, not a full financial plan.",
+    "The most important input is monthly essential expenses, because that reflects the real cash strain your household would face in a disruption.",
+    "Monthly total expenses are included as a reality check so you can see whether your lifestyle spending is materially above your essential-cost base.",
+    "Households with higher housing obligations, variable income, or weaker job stability often need a larger months-covered target than households with lower fixed costs and steadier income.",
+    "This first version does not model interest earned on savings or inflation in future expenses."
+  ],
+  "example": {
+    "scenario": "A household has $4,200 in monthly essential expenses, $6,200 in total monthly spending, $9,000 already saved, wants 6 months of essential-expense coverage, and plans to save $600 per month.",
+    "inputs": {
+      "monthlyEssentialExpenses": 4200,
+      "monthlyTotalExpenses": 6200,
+      "currentEmergencySavings": 9000,
+      "targetMonthsCovered": 6,
+      "monthlySavingsContribution": 600
+    },
+    "resultSummary": "The calculator shows a recommended emergency fund target of about $25,200, current coverage of about 2.1 months, a savings gap of about $16,200, and an estimated timeline of about 27 months to reach the target."
+  },
+  "resultInterpretation": {
+    "defaultText": "Treat the result as a resilience-planning signal, not a fixed rule. The most useful question is whether the target months-covered number matches your real housing obligations, income stability, and ability to cut spending if something goes wrong.",
+    "thresholds": [
+      {
+        "label": "Current Months Covered",
+        "min": 0,
+        "max": 2.9,
+        "interpretation": "Coverage in this range often means the emergency fund is still in an early stage and may not provide much room if income stops or a large surprise cost appears."
+      },
+      {
+        "label": "Current Months Covered",
+        "min": 3,
+        "max": 6.9,
+        "interpretation": "Coverage in this range can provide a meaningful buffer for many households, though the right target still depends on fixed costs, dependents, and income stability."
+      }
+    ],
+    "warningMessages": [
+      "Essential expenses matter more than total spending when sizing an emergency fund, but households with high fixed housing costs may need a more conservative target."
+    ]
+  },
+  "faq": [
+    {
+      "question": "Why are essential expenses more important than total spending for an emergency fund?",
+      "answer": "Because the emergency fund is mainly meant to cover the bills you still need to pay if income is interrupted. Lifestyle spending is often more flexible than housing, food, utilities, insurance, and debt minimums."
+    },
+    {
+      "question": "How many months should an emergency fund cover?",
+      "answer": "Many households aim for 3 to 6 months of essential expenses, but households with variable income, dependents, or large housing obligations often want more."
+    },
+    {
+      "question": "Should homeowners keep a larger emergency fund than renters?",
+      "answer": "Often yes, because homeowners may face larger surprise repair costs and bigger fixed housing expenses on top of normal monthly obligations."
+    },
+    {
+      "question": "What if I do not enter a monthly savings contribution?",
+      "answer": "The calculator can still estimate the target, your current coverage, and the savings gap. The timeline output will only be meaningful if you also enter a monthly contribution."
+    },
+    {
+      "question": "What should I review next after sizing an emergency fund?",
+      "answer": "Review whether your housing budget, debt load, and broader savings priorities still make sense, especially if home ownership or job changes are part of your plan."
+    }
+  ],
+  "relatedCalculators": [
+    "savings-calculator",
+    "rrsp-vs-tfsa-calculator",
+    "mortgage-affordability-calculator",
+    "home-buying-cost-calculator"
+  ],
+  "relatedGuides": [
+    "how-much-emergency-fund-you-need-in-canada",
+    "rrsp-vs-tfsa-explained",
+    "how-mortgage-affordability-is-estimated-in-canada"
+  ],
+  "comparisonPages": [],
+  "parentCategoryPath": "/finance/canada",
+  "disclaimer": "This Canada emergency fund calculator is an estimate-based planning tool only. Results depend on how you define essential expenses, your target coverage months, and your savings assumptions, and they do not replace personalized financial advice.",
+  "ui": {
+    "buttonText": "Estimate Emergency Fund",
+    "resetButtonText": "Reset",
+    "resultTitle": "Your Canada Emergency Fund Estimate",
+    "showFormulaSection": true,
+    "showExampleSection": true,
+    "showInterpretation": true,
+    "showFAQSection": true,
+    "showRelatedLinks": true
+  },
+  "countryCode": "CA",
+  "currencyCode": "CAD",
+  "calculationVersion": "2026.1",
+  "assumptions": "Uses essential monthly expenses, a months-covered target, current savings, and an optional monthly savings contribution to estimate a practical emergency fund plan for Canadian households."
+}

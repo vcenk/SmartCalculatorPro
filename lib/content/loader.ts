@@ -115,6 +115,12 @@ const calculatorContentPaths: Record<string, string> = {
     'canada',
     'home-buying-cost-calculator.json'
   ),
+  'emergency-fund-calculator': path.join(
+    CALCULATORS_ROOT,
+    'finance',
+    'canada',
+    'emergency-fund-calculator.json'
+  ),
   'bmi-calculator': path.join(CALCULATORS_ROOT, 'health', 'bmi-calculator.json'),
   'calorie-calculator': path.join(CALCULATORS_ROOT, 'health', 'calorie-calculator.json'),
   'percentage-calculator': path.join(CALCULATORS_ROOT, 'math', 'percentage-calculator.json'),

@@ -19,13 +19,14 @@
   "ogImageTemplate": "category-default",
   "summary": "Finance calculators for salary workflows, borrowing, savings, and the first Canada personal finance use cases.",
   "purpose": "Help users understand costs, plan payments, compare work-income paths, and estimate finance outcomes with practical, reviewable workflows.",
-  "featuredCalculators": ["loan-calculator", "mortgage-calculator", "gst-hst-calculator", "rrsp-vs-tfsa-calculator", "mortgage-affordability-calculator", "rent-vs-buy-calculator", "home-buying-cost-calculator", "compound-interest-calculator", "savings-calculator"],
+  "featuredCalculators": ["loan-calculator", "mortgage-calculator", "gst-hst-calculator", "rrsp-vs-tfsa-calculator", "mortgage-affordability-calculator", "rent-vs-buy-calculator", "home-buying-cost-calculator", "emergency-fund-calculator", "compound-interest-calculator", "savings-calculator"],
   "featuredGuides": [
     "how-gst-and-hst-work-in-canada",
     "rrsp-vs-tfsa-explained",
     "how-mortgage-affordability-is-estimated-in-canada",
     "rent-vs-buy-in-canada-explained",
     "home-buying-costs-in-canada-explained",
+    "how-much-emergency-fund-you-need-in-canada",
     "how-gross-to-net-salary-is-calculated",
     "contractor-vs-employee-income-explained",
     "how-to-calculate-a-contractor-rate",
@@ -65,7 +66,7 @@
     },
     {
       "heading": "Canada Personal Finance Starting Points",
-      "content": "Some finance decisions depend on province-specific rules, savings tradeoffs, and housing budgets instead of one national assumption set. The Canada GST/HST calculator, RRSP vs TFSA calculator, mortgage affordability calculator, rent vs buy calculator, and home buying cost calculator now give users practical entry points for tax math, contribution planning, housing decisions, and purchase-entry budgeting inside the growing Canada personal finance cluster."
+        "content": "Some finance decisions depend on province-specific rules, savings tradeoffs, housing budgets, and cash-buffer planning instead of one national assumption set. The Canada GST/HST calculator, RRSP vs TFSA calculator, mortgage affordability calculator, rent vs buy calculator, home buying cost calculator, and emergency fund calculator now give users practical entry points for tax math, contribution planning, housing decisions, purchase-entry budgeting, and resilience planning inside the growing Canada personal finance cluster."
     }
   ],
   "lastReviewedAt": "2026-03-14",

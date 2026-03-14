@@ -71,13 +71,15 @@
     "home-buying-cost-calculator",
     "mortgage-affordability-calculator",
     "rent-vs-buy-calculator",
-    "rrsp-vs-tfsa-calculator"
+    "rrsp-vs-tfsa-calculator",
+    "emergency-fund-calculator"
   ],
   "relatedComparisons": [],
   "relatedGuides": [
     "how-mortgage-affordability-is-estimated-in-canada",
     "rent-vs-buy-in-canada-explained",
-    "rrsp-vs-tfsa-explained"
+    "rrsp-vs-tfsa-explained",
+    "how-much-emergency-fund-you-need-in-canada"
   ],
   "disclaimer": "This guide is for educational purposes only. Home buying costs in Canada vary by province, property, lender, and transaction details. Use it for planning, not legal, tax, or mortgage-closing advice.",
   "lastReviewedAt": "2026-03-14",

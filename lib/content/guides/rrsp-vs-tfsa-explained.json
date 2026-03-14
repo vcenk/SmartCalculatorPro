@@ -77,6 +77,7 @@
     "mortgage-affordability-calculator",
     "rent-vs-buy-calculator",
     "home-buying-cost-calculator",
+    "emergency-fund-calculator",
     "compound-interest-calculator",
     "savings-calculator"
   ],
@@ -85,7 +86,8 @@
     "home-buying-costs-in-canada-explained",
     "rent-vs-buy-in-canada-explained",
     "how-gst-and-hst-work-in-canada",
-    "how-mortgage-affordability-is-estimated-in-canada"
+    "how-mortgage-affordability-is-estimated-in-canada",
+    "how-much-emergency-fund-you-need-in-canada"
   ],
   "disclaimer": "This guide is for educational purposes only. RRSP and TFSA outcomes depend on your tax situation, contribution room, investment performance, and withdrawal timing. Use it for planning, not tax, legal, or investment advice.",
   "lastReviewedAt": "2026-03-14",
