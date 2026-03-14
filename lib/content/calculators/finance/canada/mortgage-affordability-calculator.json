@@ -230,12 +230,14 @@
   ],
   "relatedCalculators": [
     "rent-vs-buy-calculator",
+    "home-buying-cost-calculator",
     "gst-hst-calculator",
     "rrsp-vs-tfsa-calculator",
     "mortgage-calculator",
     "savings-calculator"
   ],
   "relatedGuides": [
+    "home-buying-costs-in-canada-explained",
     "rent-vs-buy-in-canada-explained",
     "how-mortgage-affordability-is-estimated-in-canada",
     "rrsp-vs-tfsa-explained",

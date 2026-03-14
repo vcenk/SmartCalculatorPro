@@ -248,6 +248,24 @@ export interface CanadaRentVsBuyCalculatorOutput {
   rentVsBuyDifference: number;
 }
 
+export interface CanadaHomeBuyingCostCalculatorInput {
+  homePrice: number;
+  downPayment: number;
+  provinceCode: string;
+  estimatedLegalFees: number;
+  inspectionCost: number;
+  appraisalCost: number;
+  movingCost: number;
+  optionalClosingCostBuffer: number;
+}
+
+export interface CanadaHomeBuyingCostCalculatorOutput {
+  estimatedDownPaymentAmount: number;
+  estimatedProvincialPurchaseCost: number;
+  estimatedClosingCosts: number;
+  estimatedTotalUpfrontCashNeeded: number;
+}
+
 // ============================================================================
 // Utility Functions
 // ============================================================================
@@ -322,6 +340,76 @@ const CANADA_SALES_TAX_RATES: Record<string, CanadaSalesTaxRates> = {
 
 function getCanadaSalesTaxRates(provinceCode: string): CanadaSalesTaxRates {
   return CANADA_SALES_TAX_RATES[provinceCode] ?? CANADA_SALES_TAX_RATES.ON;
+}
+
+function calculateOntarioLandTransferTax(homePrice: number): number {
+  const price = Math.max(0, homePrice);
+  let tax = 0;
+
+  tax += Math.min(price, 55000) * 0.005;
+  tax += Math.max(0, Math.min(price, 250000) - 55000) * 0.01;
+  tax += Math.max(0, Math.min(price, 400000) - 250000) * 0.015;
+  tax += Math.max(0, Math.min(price, 2000000) - 400000) * 0.02;
+  tax += Math.max(0, price - 2000000) * 0.025;
+
+  return tax;
+}
+
+function calculateBritishColumbiaPropertyTransferTax(homePrice: number): number {
+  const price = Math.max(0, homePrice);
+  let tax = 0;
+
+  tax += Math.min(price, 200000) * 0.01;
+  tax += Math.max(0, Math.min(price, 2000000) - 200000) * 0.02;
+  tax += Math.max(0, Math.min(price, 3000000) - 2000000) * 0.03;
+  tax += Math.max(0, price - 3000000) * 0.05;
+
+  return tax;
+}
+
+function calculateManitobaLandTransferTax(homePrice: number): number {
+  const price = Math.max(0, homePrice);
+  let tax = 0;
+
+  tax += Math.max(0, Math.min(price, 90000) - 30000) * 0.005;
+  tax += Math.max(0, Math.min(price, 150000) - 90000) * 0.01;
+  tax += Math.max(0, Math.min(price, 200000) - 150000) * 0.015;
+  tax += Math.max(0, price - 200000) * 0.02;
+
+  return tax;
+}
+
+function calculateAlbertaTransferLevy(homePrice: number, mortgageAmount: number): number {
+  const propertyLevy = Math.ceil(Math.max(0, homePrice) / 5000) * 5;
+  const mortgageLevy = Math.ceil(Math.max(0, mortgageAmount) / 5000) * 5;
+  return 50 + propertyLevy + mortgageLevy;
+}
+
+function calculateProvincePurchaseCostEstimate(
+  provinceCode: string,
+  homePrice: number,
+  mortgageAmount: number
+): number {
+  const price = Math.max(0, homePrice);
+
+  switch (provinceCode) {
+    case 'BC':
+      return calculateBritishColumbiaPropertyTransferTax(price);
+    case 'ON':
+      return calculateOntarioLandTransferTax(price);
+    case 'MB':
+      return calculateManitobaLandTransferTax(price);
+    case 'AB':
+      return calculateAlbertaTransferLevy(price, mortgageAmount);
+    case 'PE':
+      return price * 0.01;
+    case 'NB':
+      return price * 0.0025;
+    case 'QC':
+      return price * 0.015;
+    default:
+      return 0;
+  }
 }
 
 function calculateAnnualContributionFutureValue(
@@ -1020,6 +1108,46 @@ export function calculateCanadaRentVsBuy(
     estimatedTotalCostBuying,
     estimatedHomeEquityAtEnd,
     rentVsBuyDifference: estimatedTotalCostRenting - estimatedTotalCostBuying,
+  };
+}
+
+export function calculateCanadaHomeBuyingCost(
+  input: CanadaHomeBuyingCostCalculatorInput
+): CanadaHomeBuyingCostCalculatorOutput {
+  const {
+    homePrice,
+    downPayment,
+    provinceCode,
+    estimatedLegalFees = 0,
+    inspectionCost = 0,
+    appraisalCost = 0,
+    movingCost = 0,
+    optionalClosingCostBuffer = 0,
+  } = input;
+
+  const purchasePrice = Math.max(0, homePrice);
+  const estimatedDownPaymentAmount = Math.max(0, downPayment);
+  const mortgageAmount = Math.max(0, purchasePrice - estimatedDownPaymentAmount);
+  const estimatedProvincialPurchaseCost = calculateProvincePurchaseCostEstimate(
+    provinceCode,
+    purchasePrice,
+    mortgageAmount
+  );
+  const estimatedClosingCosts =
+    estimatedProvincialPurchaseCost +
+    Math.max(0, estimatedLegalFees) +
+    Math.max(0, inspectionCost) +
+    Math.max(0, appraisalCost) +
+    Math.max(0, movingCost) +
+    Math.max(0, optionalClosingCostBuffer);
+  const estimatedTotalUpfrontCashNeeded =
+    estimatedDownPaymentAmount + estimatedClosingCosts;
+
+  return {
+    estimatedDownPaymentAmount,
+    estimatedProvincialPurchaseCost,
+    estimatedClosingCosts,
+    estimatedTotalUpfrontCashNeeded,
   };
 }
 

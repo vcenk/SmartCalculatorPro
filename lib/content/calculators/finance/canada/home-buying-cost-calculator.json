@@ -1,0 +1,276 @@
+{
+  "id": "home-buying-cost-calculator",
+  "pageType": "calculator",
+  "status": "published",
+  "indexable": true,
+  "category": "finance",
+  "subcategory": "canada",
+  "slug": "home-buying-cost-calculator",
+  "path": "finance/canada/home-buying-cost-calculator",
+  "title": "Canada Home Buying Cost Calculator",
+  "name": "Canada Home Buying Cost Calculator",
+  "titleTag": "Canada Home Buying Cost Calculator | Smart Calculator Pro",
+  "metaDescription": "Estimate upfront home buying costs in Canada using home price, down payment, province, legal fees, inspection, appraisal, moving costs, and optional closing-cost assumptions.",
+  "h1": "Canada Home Buying Cost Calculator",
+  "intro": "Estimate how much cash you may need to actually enter a home purchase in Canada, not just the headline price and down payment.",
+  "shortDescription": "Estimate down payment, closing costs, and total upfront cash needed to buy a home in Canada.",
+  "longDescription": "This Canada home buying cost calculator is built for purchase-entry planning. It combines down payment, province-based purchase-cost assumptions, legal fees, inspection, appraisal, moving costs, and an optional closing-cost buffer so you can see a more honest estimate of the cash needed to complete a home purchase. The first version is intentionally practical and transparent rather than pretending to cover every tax, municipal fee, or lender-specific cost in every scenario.",
+  "primaryKeyword": "canada home buying cost calculator",
+  "secondaryKeywords": [
+    "closing cost calculator canada",
+    "home purchase cost calculator canada",
+    "how much cash needed to buy a house canada"
+  ],
+  "searchIntent": "transactional-tool",
+  "canonicalPath": "/finance/canada/home-buying-cost-calculator",
+  "schemaType": "SoftwareApplication",
+  "ogImageTemplate": "calculator-default",
+  "problemSolved": "Helps Canadian home buyers estimate the real upfront cash needed to complete a purchase.",
+  "whoItsFor": [
+    "canadian home buyers",
+    "first-time buyers",
+    "households saving for a purchase",
+    "buyers comparing provinces",
+    "users planning total home-entry cash"
+  ],
+  "calculationType": "lookup",
+  "inputs": [
+    {
+      "key": "homePrice",
+      "label": "Home Price",
+      "type": "number",
+      "unit": "currency",
+      "required": true,
+      "explanation": "Enter the purchase price of the home you are planning around.",
+      "min": 0,
+      "step": 1000,
+      "defaultValue": 700000
+    },
+    {
+      "key": "downPayment",
+      "label": "Down Payment",
+      "type": "number",
+      "unit": "currency",
+      "required": true,
+      "explanation": "Enter the amount you expect to put down up front.",
+      "min": 0,
+      "step": 1000,
+      "defaultValue": 140000
+    },
+    {
+      "key": "provinceCode",
+      "label": "Province or Territory",
+      "type": "select",
+      "required": true,
+      "explanation": "Select the province or territory so the calculator can apply a practical province-based purchase-cost assumption where one is available.",
+      "options": [
+        { "value": "AB", "label": "Alberta" },
+        { "value": "BC", "label": "British Columbia" },
+        { "value": "MB", "label": "Manitoba" },
+        { "value": "NB", "label": "New Brunswick" },
+        { "value": "NL", "label": "Newfoundland and Labrador" },
+        { "value": "NS", "label": "Nova Scotia" },
+        { "value": "NT", "label": "Northwest Territories" },
+        { "value": "NU", "label": "Nunavut" },
+        { "value": "ON", "label": "Ontario" },
+        { "value": "PE", "label": "Prince Edward Island" },
+        { "value": "QC", "label": "Quebec" },
+        { "value": "SK", "label": "Saskatchewan" },
+        { "value": "YT", "label": "Yukon" }
+      ],
+      "defaultValue": "ON"
+    },
+    {
+      "key": "estimatedLegalFees",
+      "label": "Estimated Legal Fees",
+      "type": "number",
+      "unit": "currency",
+      "required": true,
+      "explanation": "Use a practical estimate for legal and registration work related to the purchase.",
+      "min": 0,
+      "step": 50,
+      "defaultValue": 1800
+    },
+    {
+      "key": "inspectionCost",
+      "label": "Inspection Cost",
+      "type": "number",
+      "unit": "currency",
+      "required": true,
+      "explanation": "Enter the expected inspection cost if you plan to have the property inspected.",
+      "min": 0,
+      "step": 25,
+      "defaultValue": 650
+    },
+    {
+      "key": "appraisalCost",
+      "label": "Appraisal Cost",
+      "type": "number",
+      "unit": "currency",
+      "required": true,
+      "explanation": "Use an appraisal-cost estimate if your mortgage or purchase plan is likely to require one.",
+      "min": 0,
+      "step": 25,
+      "defaultValue": 450
+    },
+    {
+      "key": "movingCost",
+      "label": "Moving Cost",
+      "type": "number",
+      "unit": "currency",
+      "required": true,
+      "explanation": "Include the moving budget you expect to spend to complete the transition into the property.",
+      "min": 0,
+      "step": 50,
+      "defaultValue": 2200
+    },
+    {
+      "key": "optionalClosingCostBuffer",
+      "label": "Optional Closing-Cost Buffer",
+      "type": "number",
+      "unit": "currency",
+      "required": false,
+      "explanation": "Use this optional buffer for province-specific fees, title insurance, utility hookups, or other purchase-entry costs you want to include in the estimate.",
+      "min": 0,
+      "step": 100,
+      "defaultValue": 1500
+    }
+  ],
+  "outputs": [
+    {
+      "key": "estimatedDownPaymentAmount",
+      "label": "Estimated Down Payment Amount",
+      "explanation": "The down payment amount entered for the purchase scenario.",
+      "unit": "currency",
+      "precision": 0
+    },
+    {
+      "key": "estimatedProvincialPurchaseCost",
+      "label": "Estimated Provincial Purchase Cost",
+      "explanation": "The province-based purchase-tax or transfer-cost estimate used in the calculation where a practical assumption is available.",
+      "unit": "currency",
+      "precision": 0
+    },
+    {
+      "key": "estimatedClosingCosts",
+      "label": "Estimated Closing Costs",
+      "explanation": "The combined estimate for provincial purchase cost, legal fees, inspection, appraisal, moving, and the optional closing-cost buffer.",
+      "unit": "currency",
+      "precision": 0
+    },
+    {
+      "key": "estimatedTotalUpfrontCashNeeded",
+      "label": "Estimated Total Upfront Cash Needed",
+      "explanation": "The estimated cash needed to enter the purchase, combining down payment and closing costs.",
+      "unit": "currency",
+      "precision": 0
+    }
+  ],
+  "defaultValues": {
+    "homePrice": 700000,
+    "downPayment": 140000,
+    "provinceCode": "ON",
+    "estimatedLegalFees": 1800,
+    "inspectionCost": 650,
+    "appraisalCost": 450,
+    "movingCost": 2200,
+    "optionalClosingCostBuffer": 1500
+  },
+  "formula": {
+    "label": "Canada Home Buying Cost Method",
+    "expression": "Total Upfront Cash = Down Payment + Provincial Purchase Cost Estimate + Legal Fees + Inspection + Appraisal + Moving + Optional Buffer",
+    "plainText": "The calculator adds the down payment to the major upfront purchase-entry costs that buyers often need to fund separately from the mortgage."
+  },
+  "formulaExplanation": [
+    "The down payment is treated separately because it is usually the largest cash requirement and does not disappear just because the purchase price looks manageable.",
+    "Province selection applies a practical purchase-tax or transfer-cost assumption where a straightforward province-based estimate is available.",
+    "Legal fees, inspection, appraisal, and moving costs are included because they are common real-world cash costs that buyers often forget when they focus only on mortgage qualification.",
+    "The optional closing-cost buffer exists so users can account for transaction-specific extras that this first version does not model directly.",
+    "The total upfront cash estimate helps answer the real question many buyers need to solve first: how much money do I need available to get into the home at all?"
+  ],
+  "methodologyNotes": [
+    "This is an estimate-based planning tool, not a legal or mortgage-closing statement.",
+    "Province-based purchase-cost assumptions are intentionally simplified and do not capture every municipal rule, exemption, rebate, or city-specific surcharge.",
+    "Some provinces and territories rely more on registration or local transaction fees than on a single province-wide transfer tax, so the optional buffer matters.",
+    "This calculator does not include mortgage insurance premiums, lender setup fees, insurance, repairs after possession, or furnishing costs unless you add them through your own buffer assumption.",
+    "Use the result as a planning baseline before relying on exact quotes from your lawyer, lender, or real-estate professionals."
+  ],
+  "example": {
+    "scenario": "A buyer in Ontario is planning around a $700,000 home with a $140,000 down payment, $1,800 in legal fees, a $650 inspection, a $450 appraisal, $2,200 in moving costs, and a $1,500 closing-cost buffer.",
+    "inputs": {
+      "homePrice": 700000,
+      "downPayment": 140000,
+      "provinceCode": "ON",
+      "estimatedLegalFees": 1800,
+      "inspectionCost": 650,
+      "appraisalCost": 450,
+      "movingCost": 2200,
+      "optionalClosingCostBuffer": 1500
+    },
+    "resultSummary": "The calculator shows an estimated down payment of about $140,000, an Ontario purchase-cost estimate of about $10,475, estimated closing costs of about $17,075, and total upfront cash needed of about $157,075."
+  },
+  "resultInterpretation": {
+    "defaultText": "Treat the result as a purchase-entry budget check. The most important takeaway is usually whether your cash plan covers more than the down payment, because many buyers underestimate how much extra cash is needed to actually close and move into the property.",
+    "thresholds": [
+      {
+        "label": "Estimated Closing Costs",
+        "min": 5000,
+        "max": 30000,
+        "interpretation": "A closing-cost estimate in this range is common for many mainstream purchase scenarios, but province rules, local fees, and the transaction details can still move the final number materially."
+      }
+    ],
+    "warningMessages": [
+      "A home can be mortgage-affordable and still be hard to buy if the full upfront cash requirement is larger than expected."
+    ]
+  },
+  "faq": [
+    {
+      "question": "Why is the down payment not the only upfront cost?",
+      "answer": "Because buyers often also face purchase taxes or transfer costs, legal fees, inspection, appraisal, moving expenses, and other transaction-specific cash needs before or at closing."
+    },
+    {
+      "question": "Why does province selection matter?",
+      "answer": "Because some provinces have more meaningful purchase-tax or transfer-cost assumptions than others, and those rules can change the cash needed to complete the purchase."
+    },
+    {
+      "question": "Is this the exact amount I will need on closing day?",
+      "answer": "No. This is a planning estimate only. Your final statement can change based on local taxes, municipal rules, lender requirements, insurance, rebates, and professional quotes."
+    },
+    {
+      "question": "What should I include in the optional closing-cost buffer?",
+      "answer": "Use it for title insurance, utility setup, small registration costs, local transaction fees, or other purchase-entry expenses not captured directly by the core inputs."
+    },
+    {
+      "question": "What should I review next after estimating home buying costs?",
+      "answer": "Review whether the home is affordable month to month, whether buying still looks stronger than renting for your timeline, and whether your savings strategy still supports the total cash requirement."
+    }
+  ],
+  "relatedCalculators": [
+    "mortgage-affordability-calculator",
+    "rent-vs-buy-calculator",
+    "rrsp-vs-tfsa-calculator",
+    "gst-hst-calculator"
+  ],
+  "relatedGuides": [
+    "home-buying-costs-in-canada-explained",
+    "how-mortgage-affordability-is-estimated-in-canada",
+    "rent-vs-buy-in-canada-explained"
+  ],
+  "comparisonPages": [],
+  "parentCategoryPath": "/finance/canada",
+  "disclaimer": "This Canada home buying cost calculator is an estimate-based planning tool only. Province-based purchase-cost assumptions, legal fees, inspection, appraisal, moving costs, and other transaction details can vary widely and do not replace lender, legal, or tax guidance.",
+  "ui": {
+    "buttonText": "Estimate Buying Costs",
+    "resetButtonText": "Reset",
+    "resultTitle": "Your Canada Purchase-Entry Cost Estimate",
+    "showFormulaSection": true,
+    "showExampleSection": true,
+    "showInterpretation": true,
+    "showFAQSection": true,
+    "showRelatedLinks": true
+  },
+  "countryCode": "CA",
+  "currencyCode": "CAD",
+  "calculationVersion": "2026.1",
+  "assumptions": "Uses down payment, province-based purchase-cost assumptions where available, and common upfront service-cost inputs to estimate the cash needed to complete a home purchase in Canada."
+}

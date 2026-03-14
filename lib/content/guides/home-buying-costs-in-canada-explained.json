@@ -1,0 +1,85 @@
+{
+  "id": "home-buying-costs-in-canada-explained",
+  "pageType": "guide",
+  "status": "published",
+  "indexable": true,
+  "slug": "home-buying-costs-in-canada-explained",
+  "path": "guides/home-buying-costs-in-canada-explained",
+  "title": "Home Buying Costs in Canada Explained",
+  "titleTag": "Home Buying Costs in Canada Explained | Smart Calculator Pro",
+  "metaDescription": "Learn the major upfront costs of buying a home in Canada, why price is not the full cash needed, and how province and transaction assumptions change the result.",
+  "h1": "Home Buying Costs in Canada Explained",
+  "intro": "The purchase price is not the same thing as the cash you need to actually buy a home. That gap catches many buyers off guard, especially when they focus on mortgage qualification first and only think about closing costs later.",
+  "primaryKeyword": "home buying costs in canada explained",
+  "secondaryKeywords": [
+    "closing costs in canada explained",
+    "upfront home buying costs canada",
+    "how much cash do you need to buy a home in canada"
+  ],
+  "searchIntent": "informational",
+  "canonicalPath": "/guides/home-buying-costs-in-canada-explained",
+  "schemaType": "Article",
+  "ogImageTemplate": "guide-default",
+  "guideType": "explanation",
+  "summary": "This guide explains the major upfront costs of buying a home in Canada, why purchase price is not the full cash needed, and how province and transaction assumptions change the final number.",
+  "quickAnswer": "Buying a home in Canada usually requires more cash than just the down payment. Buyers may also need to cover province-based purchase costs, legal fees, inspection, appraisal, moving costs, and other transaction-specific expenses.",
+  "sections": [
+    {
+      "heading": "The Major Upfront Costs of Buying a Home",
+      "content": "<p>The down payment is usually the biggest cash requirement, but it is rarely the only one. Buyers may also face province-based purchase or transfer costs, legal fees, inspection, appraisal, moving expenses, and small transaction costs that add up quickly. That is why the real purchase-entry budget is often larger than expected even before the first mortgage payment starts.</p>"
+    },
+    {
+      "heading": "Why Purchase Price Is Not the Full Cash Needed",
+      "content": "<p>A home may look affordable if the monthly payment fits your income, but that does not mean you have enough cash to complete the purchase. Mortgage affordability and purchase-entry cash are different questions. One is about carrying the home over time. The other is about having enough money available to actually close the transaction and move in.</p>"
+    },
+    {
+      "heading": "How Province and Transaction Assumptions Affect the Cost",
+      "content": "<p>Province matters because some provinces have more meaningful purchase or transfer-cost assumptions than others. Transaction details matter because legal work, inspection, appraisal, moving plans, and local fees do not look the same in every deal. That is why a planning calculator should be transparent about what it includes and leave room for a buffer rather than pretending every purchase works the same way.</p>"
+    },
+    {
+      "heading": "Why Buyers Often Underestimate the Buffer They Need",
+      "content": "<p>Many buyers budget carefully for the down payment and then treat everything else like a rounding error. In practice, the extra cash needed around closing can be large enough to delay the purchase or force compromises elsewhere. Building a realistic buffer into the plan usually reduces stress more than trying to get the estimate down to the last dollar.</p>"
+    },
+    {
+      "heading": "How This Fits the Canada Housing Workflow",
+      "content": "<p>Use the mortgage affordability calculator to estimate what price range may fit your budget. Use the rent vs buy calculator to decide whether owning still looks stronger than renting for your timeline. Then use the home buying cost calculator to estimate how much upfront cash you may need to complete the purchase. RRSP vs TFSA can support the savings side of that plan when you are still building the down payment.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "question": "Is the down payment the same as total cash needed to buy the home?",
+      "answer": "No. The down payment is usually the largest piece, but buyers often also need cash for province-based purchase costs, legal fees, inspection, appraisal, moving, and other transaction-specific expenses."
+    },
+    {
+      "question": "Why does province matter for home buying costs?",
+      "answer": "Because province-level purchase or transfer-cost rules and assumptions can change the upfront cash required, and some locations have more meaningful province-based costs than others."
+    },
+    {
+      "question": "Can a home be affordable monthly but still hard to buy?",
+      "answer": "Yes. A home can fit your monthly budget while still being difficult to purchase if the total upfront cash needed is higher than your available savings."
+    },
+    {
+      "question": "Should I include a buffer for costs not shown directly?",
+      "answer": "Yes. A buffer is helpful because many real transactions include smaller fees or local costs that are easy to miss in an early estimate."
+    },
+    {
+      "question": "What should I review after estimating home buying costs?",
+      "answer": "Review whether the home is still affordable over time, whether buying still beats renting for your expected timeline, and whether your savings strategy is enough to cover the full purchase-entry cash need."
+    }
+  ],
+  "relatedCalculators": [
+    "home-buying-cost-calculator",
+    "mortgage-affordability-calculator",
+    "rent-vs-buy-calculator",
+    "rrsp-vs-tfsa-calculator"
+  ],
+  "relatedComparisons": [],
+  "relatedGuides": [
+    "how-mortgage-affordability-is-estimated-in-canada",
+    "rent-vs-buy-in-canada-explained",
+    "rrsp-vs-tfsa-explained"
+  ],
+  "disclaimer": "This guide is for educational purposes only. Home buying costs in Canada vary by province, property, lender, and transaction details. Use it for planning, not legal, tax, or mortgage-closing advice.",
+  "lastReviewedAt": "2026-03-14",
+  "reviewedBy": "Smart Calculator Pro Team"
+}

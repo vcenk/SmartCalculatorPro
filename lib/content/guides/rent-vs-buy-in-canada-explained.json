@@ -70,11 +70,13 @@
   "relatedCalculators": [
     "rent-vs-buy-calculator",
     "mortgage-affordability-calculator",
+    "home-buying-cost-calculator",
     "rrsp-vs-tfsa-calculator",
     "mortgage-calculator"
   ],
   "relatedComparisons": [],
   "relatedGuides": [
+    "home-buying-costs-in-canada-explained",
     "how-mortgage-affordability-is-estimated-in-canada",
     "rrsp-vs-tfsa-explained"
   ],
