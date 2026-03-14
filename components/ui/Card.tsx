@@ -12,7 +12,7 @@ export const Card = forwardRef<HTMLDivElement, CardProps>(
   ({ className = '', children, ...props }, ref) => (
     <div
       ref={ref}
-      className={`rounded-lg border bg-card text-card-foreground shadow-sm ${className}`}
+      className={`panel-surface group rounded-[1.4rem] border border-white/75 text-card-foreground shadow-[0_18px_40px_rgba(16,32,51,0.08)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_24px_54px_rgba(16,32,51,0.14)] ${className}`}
       {...props}
     >
       {children}
@@ -26,7 +26,7 @@ export interface CardHeaderProps extends HTMLAttributes<HTMLDivElement> {}
 
 export const CardHeader = forwardRef<HTMLDivElement, CardHeaderProps>(
   ({ className = '', children, ...props }, ref) => (
-    <div ref={ref} className={`flex flex-col space-y-1.5 p-6 ${className}`} {...props}>
+    <div ref={ref} className={`flex flex-col space-y-2 p-6 md:p-7 ${className}`} {...props}>
       {children}
     </div>
   )
@@ -40,7 +40,7 @@ export const CardTitle = forwardRef<HTMLHeadingElement, CardTitleProps>(
   ({ className = '', children, ...props }, ref) => (
     <h3
       ref={ref}
-      className={`text-2xl font-semibold leading-none tracking-tight ${className}`}
+      className={`text-xl font-semibold leading-tight text-slate-950 ${className}`}
       {...props}
     >
       {children}
@@ -54,7 +54,7 @@ export interface CardDescriptionProps extends HTMLAttributes<HTMLParagraphElemen
 
 export const CardDescription = forwardRef<HTMLParagraphElement, CardDescriptionProps>(
   ({ className = '', children, ...props }, ref) => (
-    <p ref={ref} className={`text-sm text-muted-foreground ${className}`} {...props}>
+    <p ref={ref} className={`text-sm leading-6 text-muted-foreground ${className}`} {...props}>
       {children}
     </p>
   )
@@ -66,7 +66,7 @@ export interface CardContentProps extends HTMLAttributes<HTMLDivElement> {}
 
 export const CardContent = forwardRef<HTMLDivElement, CardContentProps>(
   ({ className = '', children, ...props }, ref) => (
-    <div ref={ref} className={`p-6 pt-0 ${className}`} {...props}>
+    <div ref={ref} className={`px-6 pb-6 pt-0 md:px-7 md:pb-7 ${className}`} {...props}>
       {children}
     </div>
   )

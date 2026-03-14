@@ -29,31 +29,37 @@ const footerLinks = {
 
 export function Footer() {
   return (
-    <footer className="border-t bg-muted/50">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {/* Brand */}
-          <div className="space-y-4">
-            <div className="flex items-center space-x-2">
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary">
-                <span className="text-sm font-bold text-primary-foreground">SC</span>
+    <footer className="mt-10 border-t border-[#d8e4ef] bg-[linear-gradient(180deg,#edf4fa_0%,#f9fbfd_100%)]">
+      <div className="container mx-auto px-4 py-14 sm:px-6 lg:px-8">
+        <div className="mb-10 grid gap-8 rounded-[2rem] border border-white/70 bg-[linear-gradient(180deg,rgba(255,255,255,0.9),rgba(255,255,255,0.75))] p-8 shadow-[0_22px_60px_rgba(16,32,51,0.08)] md:grid-cols-[1.4fr_1fr_1fr_1fr]">
+          <div className="space-y-5">
+            <div className="flex items-center gap-3">
+              <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[linear-gradient(135deg,#0b6bcb,#0d8eb8)] shadow-[0_12px_28px_rgba(11,107,203,0.28)]">
+                <span className="text-sm font-bold tracking-[0.08em] text-white">SC</span>
               </div>
-              <span className="font-bold">Smart Calculator Pro</span>
+              <div>
+                <p className="text-lg font-semibold text-slate-950">Smart Calculator Pro</p>
+                <p className="text-xs font-medium uppercase tracking-[0.14em] text-[#56718b]">
+                  Modern calculator platform
+                </p>
+              </div>
             </div>
-            <p className="text-sm text-muted-foreground">
-              Free online calculators for finance, health, math, construction, and everyday life.
+            <p className="max-w-sm text-sm leading-6 text-[#5d7187]">
+              Search-first calculators with clear explanations, structured content, and trust-ready pages that can scale into a larger utility platform.
             </p>
+            <div className="rounded-2xl border border-[#dce8f2] bg-[#f7fbff] p-4 text-sm text-[#4f6780]">
+              Future-ready layout note: this footer leaves clean room above and below for later ad/support modules without interrupting navigation or trust links.
+            </div>
           </div>
 
-          {/* Popular Calculators */}
           <div>
-            <h3 className="font-semibold mb-4">Popular Calculators</h3>
-            <ul className="space-y-2">
-              {footerLinks.calculators.map(link => (
+            <h3 className="mb-4 text-lg font-semibold text-slate-950">Popular Calculators</h3>
+            <ul className="space-y-3">
+              {footerLinks.calculators.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                    className="text-sm font-medium text-[#5d7187] transition-colors hover:text-slate-950"
                   >
                     {link.name}
                   </Link>
@@ -62,15 +68,14 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Categories */}
           <div>
-            <h3 className="font-semibold mb-4">Categories</h3>
-            <ul className="space-y-2">
-              {footerLinks.categories.map(link => (
+            <h3 className="mb-4 text-lg font-semibold text-slate-950">Categories</h3>
+            <ul className="space-y-3">
+              {footerLinks.categories.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                    className="text-sm font-medium text-[#5d7187] transition-colors hover:text-slate-950"
                   >
                     {link.name}
                   </Link>
@@ -79,15 +84,14 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Company */}
           <div>
-            <h3 className="font-semibold mb-4">Company</h3>
-            <ul className="space-y-2">
-              {footerLinks.company.map(link => (
+            <h3 className="mb-4 text-lg font-semibold text-slate-950">Company</h3>
+            <ul className="space-y-3">
+              {footerLinks.company.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                    className="text-sm font-medium text-[#5d7187] transition-colors hover:text-slate-950"
                   >
                     {link.name}
                   </Link>
@@ -97,9 +101,13 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Bottom bar */}
-        <div className="mt-12 pt-8 border-t text-center text-sm text-muted-foreground">
+        <div className="flex flex-col gap-3 border-t border-[#d8e4ef] pt-8 text-sm text-[#5d7187] md:flex-row md:items-center md:justify-between">
           <p>&copy; {new Date().getFullYear()} Smart Calculator Pro. All rights reserved.</p>
+          <div className="flex flex-wrap gap-4">
+            <span>Calculator-first UX</span>
+            <span>SEO-ready architecture</span>
+            <span>Trust pages in place</span>
+          </div>
         </div>
       </div>
     </footer>

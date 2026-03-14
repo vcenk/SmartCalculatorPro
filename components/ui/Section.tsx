@@ -12,7 +12,7 @@ export interface SectionProps extends HTMLAttributes<HTMLElement> {
 
 export const Section = forwardRef<HTMLElement, SectionProps>(
   ({ className = '', as: Component = 'section', children, ...props }, ref) => (
-    <Component ref={ref} className={`py-8 md:py-12 ${className}`} {...props}>
+    <Component ref={ref} className={`py-14 md:py-20 ${className}`} {...props}>
       {children}
     </Component>
   )

@@ -4,20 +4,23 @@
 
 @layer base {
   :root {
-    --foreground: #0a0a0a;
-    --background: #ffffff;
-    --card: #ffffff;
-    --card-foreground: #0a0a0a;
+    --foreground: #102033;
+    --background: #f4f8fc;
+    --card: rgba(255, 255, 255, 0.92);
+    --card-foreground: #102033;
     --popover: #ffffff;
-    --popover-foreground: #0a0a0a;
-    --primary: #0ea5e9;
+    --popover-foreground: #102033;
+    --primary: #0b6bcb;
     --primary-foreground: #ffffff;
-    --muted: #f1f5f9;
-    --muted-foreground: #64748b;
-    --border: #e2e8f0;
-    --input: #e2e8f0;
-    --ring: #0ea5e9;
-    --radius: 0.5rem;
+    --muted: #e8f0f7;
+    --muted-foreground: #5d7187;
+    --border: #d6e1ec;
+    --input: #d6e1ec;
+    --ring: #0b6bcb;
+    --radius: 1rem;
+    --surface-strong: #0e1f33;
+    --surface-accent: #e9f5ff;
+    --accent-warm: #f5a524;
   }
 
   .dark {
@@ -41,7 +44,69 @@
   * {
     border-color: var(--border);
   }
+  html {
+    scroll-behavior: smooth;
+  }
   body {
-    @apply bg-background text-foreground antialiased;
+    background:
+      radial-gradient(circle at top left, rgba(11, 107, 203, 0.1), transparent 28%),
+      radial-gradient(circle at top right, rgba(245, 165, 36, 0.12), transparent 22%),
+      linear-gradient(180deg, #f8fbfe 0%, #f4f8fc 100%);
+    color: var(--foreground);
+    font-family: var(--font-body), sans-serif;
+    @apply antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display), sans-serif;
+    letter-spacing: -0.03em;
+  }
+
+  ::selection {
+    background: rgba(11, 107, 203, 0.16);
+  }
+}
+
+@layer components {
+  .site-shell {
+    position: relative;
+  }
+
+  .site-shell::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.12) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.12) 1px, transparent 1px);
+    background-size: 32px 32px;
+    mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.28), transparent 80%);
+    opacity: 0.22;
+  }
+
+  .panel-surface {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 0.86));
+    backdrop-filter: blur(14px);
+    box-shadow: 0 24px 60px rgba(16, 32, 51, 0.08);
+  }
+
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-radius: 9999px;
+    border: 1px solid rgba(11, 107, 203, 0.18);
+    background: rgba(255, 255, 255, 0.8);
+    padding: 0.45rem 0.8rem;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #25557f;
+  }
+
+  .balanced-text {
+    text-wrap: balance;
   }
 }
