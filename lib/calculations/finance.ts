@@ -195,6 +195,22 @@ export interface CanadaGstHstCalculatorOutput {
   provincialTaxAmount: number;
 }
 
+export interface CanadaRrspVsTfsaCalculatorInput {
+  annualContributionAmount: number;
+  currentMarginalTaxRate: number;
+  expectedInvestmentGrowthRate: number;
+  yearsInvested: number;
+  expectedRetirementTaxRate: number;
+}
+
+export interface CanadaRrspVsTfsaCalculatorOutput {
+  estimatedRrspValue: number;
+  estimatedTfsaValue: number;
+  estimatedAfterTaxRrspValue: number;
+  contributionTaxDeductionEstimate: number;
+  sideBySideComparisonSummary: number;
+}
+
 // ============================================================================
 // Utility Functions
 // ============================================================================
@@ -269,6 +285,26 @@ const CANADA_SALES_TAX_RATES: Record<string, CanadaSalesTaxRates> = {
 
 function getCanadaSalesTaxRates(provinceCode: string): CanadaSalesTaxRates {
   return CANADA_SALES_TAX_RATES[provinceCode] ?? CANADA_SALES_TAX_RATES.ON;
+}
+
+function calculateAnnualContributionFutureValue(
+  annualContributionAmount: number,
+  annualGrowthRate: number,
+  yearsInvested: number
+): number {
+  const contribution = Math.max(0, annualContributionAmount);
+  const rate = Math.max(0, annualGrowthRate) / 100;
+  const years = Math.max(0, yearsInvested);
+
+  if (years === 0) {
+    return 0;
+  }
+
+  if (rate === 0) {
+    return contribution * years;
+  }
+
+  return contribution * ((Math.pow(1 + rate, years) - 1) / rate);
 }
 
 // ============================================================================
@@ -728,6 +764,50 @@ export function calculateCanadaGstHst(
     gstAmount,
     hstAmount,
     provincialTaxAmount,
+  };
+}
+
+export function calculateCanadaRrspVsTfsa(
+  input: CanadaRrspVsTfsaCalculatorInput
+): CanadaRrspVsTfsaCalculatorOutput {
+  const {
+    annualContributionAmount,
+    currentMarginalTaxRate = 30,
+    expectedInvestmentGrowthRate = 5,
+    yearsInvested = 20,
+    expectedRetirementTaxRate = 20,
+  } = input;
+
+  const contribution = Math.max(0, annualContributionAmount);
+  const currentTaxRate = Math.max(0, currentMarginalTaxRate) / 100;
+  const retirementTaxRate = Math.max(0, expectedRetirementTaxRate) / 100;
+
+  const estimatedTfsaValue = calculateAnnualContributionFutureValue(
+    contribution,
+    expectedInvestmentGrowthRate,
+    yearsInvested
+  );
+  const estimatedRrspValue = calculateAnnualContributionFutureValue(
+    contribution,
+    expectedInvestmentGrowthRate,
+    yearsInvested
+  );
+  const contributionTaxDeductionEstimate = contribution * currentTaxRate;
+  const deductionGrowthValue = calculateAnnualContributionFutureValue(
+    contributionTaxDeductionEstimate,
+    expectedInvestmentGrowthRate,
+    yearsInvested
+  );
+  const estimatedAfterTaxRrspValue =
+    estimatedRrspValue * (1 - retirementTaxRate) + deductionGrowthValue;
+
+  return {
+    estimatedRrspValue,
+    estimatedTfsaValue,
+    estimatedAfterTaxRrspValue,
+    contributionTaxDeductionEstimate,
+    sideBySideComparisonSummary:
+      estimatedAfterTaxRrspValue - estimatedTfsaValue,
   };
 }
 

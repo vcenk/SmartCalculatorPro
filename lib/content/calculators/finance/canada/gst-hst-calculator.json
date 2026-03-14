@@ -185,12 +185,13 @@
     }
   ],
   "relatedCalculators": [
-    "loan-calculator",
+    "rrsp-vs-tfsa-calculator",
     "mortgage-calculator",
     "savings-calculator"
   ],
   "relatedGuides": [
     "how-gst-and-hst-work-in-canada",
+    "rrsp-vs-tfsa-explained",
     "how-to-calculate-loan-payments"
   ],
   "comparisonPages": [],

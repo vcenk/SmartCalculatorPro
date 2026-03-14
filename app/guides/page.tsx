@@ -14,6 +14,7 @@ import type { CalculatorPage, GuidePage } from '@/lib/types/content';
 const PAGE_PATH = '/guides';
 
 const featuredGuideIds = [
+  'rrsp-vs-tfsa-explained',
   'how-gst-and-hst-work-in-canada',
   'how-gross-to-net-salary-is-calculated',
   'contractor-vs-employee-income-explained',
@@ -43,9 +44,9 @@ const guideGroups = [
   {
     title: 'Finance Guides',
     description:
-      'These guides break down common finance formulas so users can understand the numbers behind borrowing and repayment decisions.',
+      'These guides break down common finance formulas, Canada planning tradeoffs, and borrowing decisions so users can understand the numbers behind the next money choice.',
     accent: 'from-indigo-600 via-blue-600 to-sky-500',
-    ids: ['how-gst-and-hst-work-in-canada', 'how-to-calculate-loan-payments'],
+    ids: ['rrsp-vs-tfsa-explained', 'how-gst-and-hst-work-in-canada', 'how-to-calculate-loan-payments'],
   },
   {
     title: 'Calculator Trust & Methodology',

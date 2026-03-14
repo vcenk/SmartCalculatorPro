@@ -1,0 +1,241 @@
+{
+  "id": "rrsp-vs-tfsa-calculator",
+  "pageType": "calculator",
+  "status": "published",
+  "indexable": true,
+  "category": "finance",
+  "subcategory": "canada",
+  "slug": "rrsp-vs-tfsa-calculator",
+  "path": "finance/canada/rrsp-vs-tfsa-calculator",
+  "title": "RRSP vs TFSA Calculator",
+  "name": "RRSP vs TFSA Calculator",
+  "titleTag": "RRSP vs TFSA Calculator | Smart Calculator Pro",
+  "metaDescription": "Compare RRSP and TFSA outcomes in Canada using annual contributions, growth assumptions, years invested, and tax-rate estimates.",
+  "h1": "RRSP vs TFSA Calculator",
+  "intro": "Compare the estimated long-term value of RRSP and TFSA contributions using transparent Canada planning assumptions for tax deductions now and withdrawal taxes later.",
+  "shortDescription": "Estimate whether an RRSP or TFSA may look stronger using contribution, growth, and tax-rate assumptions.",
+  "longDescription": "This RRSP vs TFSA calculator is built for practical Canada personal finance planning. It compares the future value of annual contributions under both account types, estimates the current RRSP tax deduction, estimates the RRSP value after a retirement tax assumption, and shows the side-by-side difference so users can see which option looks stronger under their current assumptions. The first version stays intentionally transparent rather than trying to model every contribution-rule detail or province-specific tax edge case.",
+  "primaryKeyword": "rrsp vs tfsa calculator",
+  "secondaryKeywords": [
+    "rrsp or tfsa calculator",
+    "canada rrsp tfsa comparison",
+    "rrsp vs tfsa which is better"
+  ],
+  "searchIntent": "transactional-tool",
+  "canonicalPath": "/finance/canada/rrsp-vs-tfsa-calculator",
+  "schemaType": "SoftwareApplication",
+  "ogImageTemplate": "calculator-default",
+  "problemSolved": "Helps Canadian savers compare current tax deductions and future after-tax value when deciding between RRSP and TFSA contributions.",
+  "whoItsFor": [
+    "canadian savers",
+    "retirement planners",
+    "young professionals",
+    "households comparing account choices",
+    "users building a canada personal finance plan"
+  ],
+  "calculationType": "formula",
+  "inputs": [
+    {
+      "key": "annualContributionAmount",
+      "label": "Annual Contribution Amount",
+      "type": "number",
+      "unit": "currency",
+      "required": true,
+      "explanation": "Enter the amount you expect to contribute each year to either account for this comparison.",
+      "min": 0,
+      "step": 500,
+      "defaultValue": 6000
+    },
+    {
+      "key": "currentMarginalTaxRate",
+      "label": "Current Marginal Tax Rate Estimate",
+      "type": "number",
+      "unit": "percent",
+      "required": true,
+      "explanation": "Use your best estimate of the marginal tax rate that would apply to an RRSP contribution deduction today.",
+      "min": 0,
+      "max": 60,
+      "step": 0.5,
+      "defaultValue": 32
+    },
+    {
+      "key": "expectedInvestmentGrowthRate",
+      "label": "Expected Annual Growth Rate",
+      "type": "number",
+      "unit": "percent",
+      "required": true,
+      "explanation": "Use a long-term annual growth estimate for the invested contributions in either account.",
+      "min": 0,
+      "max": 15,
+      "step": 0.1,
+      "defaultValue": 5
+    },
+    {
+      "key": "yearsInvested",
+      "label": "Years Invested",
+      "type": "number",
+      "unit": "years",
+      "required": true,
+      "explanation": "Estimate how many years the contributions may stay invested before you need the money.",
+      "min": 1,
+      "step": 1,
+      "defaultValue": 25
+    },
+    {
+      "key": "expectedRetirementTaxRate",
+      "label": "Expected Retirement Tax Rate",
+      "type": "number",
+      "unit": "percent",
+      "required": true,
+      "explanation": "Use a planning estimate for the tax rate that might apply when RRSP money is withdrawn later.",
+      "min": 0,
+      "max": 50,
+      "step": 0.5,
+      "defaultValue": 22
+    }
+  ],
+  "outputs": [
+    {
+      "key": "estimatedRrspValue",
+      "label": "Estimated RRSP Value",
+      "explanation": "The projected RRSP account value before tax on future withdrawals.",
+      "unit": "currency",
+      "precision": 0
+    },
+    {
+      "key": "estimatedTfsaValue",
+      "label": "Estimated TFSA Value",
+      "explanation": "The projected TFSA value assuming tax-free growth and tax-free withdrawals.",
+      "unit": "currency",
+      "precision": 0
+    },
+    {
+      "key": "estimatedAfterTaxRrspValue",
+      "label": "Estimated After-Tax RRSP Value",
+      "explanation": "The projected RRSP value after the retirement-tax estimate, plus the value of reinvested contribution tax deductions.",
+      "unit": "currency",
+      "precision": 0
+    },
+    {
+      "key": "contributionTaxDeductionEstimate",
+      "label": "Contribution Tax Deduction Estimate",
+      "explanation": "The estimated current-year tax deduction created by the RRSP contribution.",
+      "unit": "currency",
+      "precision": 0
+    },
+    {
+      "key": "sideBySideComparisonSummary",
+      "label": "RRSP Advantage Over TFSA",
+      "explanation": "A positive result means the after-tax RRSP estimate is ahead of the TFSA estimate under the current assumptions. A negative result means the TFSA estimate is ahead.",
+      "unit": "currency",
+      "precision": 0
+    }
+  ],
+  "defaultValues": {
+    "annualContributionAmount": 6000,
+    "currentMarginalTaxRate": 32,
+    "expectedInvestmentGrowthRate": 5,
+    "yearsInvested": 25,
+    "expectedRetirementTaxRate": 22
+  },
+  "formula": {
+    "label": "RRSP vs TFSA Planning Method",
+    "expression": "Future Value = Annual Contribution x [((1 + Growth Rate)^Years - 1) / Growth Rate]; RRSP Deduction Estimate = Contribution x Current Marginal Tax Rate; After-Tax RRSP Estimate = RRSP Value x (1 - Retirement Tax Rate) + Future Value of Deduction",
+    "plainText": "The calculator estimates the future value of annual contributions in both account types, then adjusts the RRSP scenario by estimating a current deduction and a future retirement-tax haircut."
+  },
+  "formulaExplanation": [
+    "Both RRSP and TFSA scenarios start with the same annual contribution amount and the same growth assumption so the comparison stays focused on tax treatment rather than contribution size.",
+    "The RRSP contribution tax deduction estimate is based on your current marginal tax-rate assumption, which reflects the immediate tax value of contributing to an RRSP today.",
+    "The RRSP value is then adjusted by the expected retirement tax rate to estimate what that account may be worth after taxes when money is withdrawn later.",
+    "The TFSA scenario keeps tax-free growth and tax-free withdrawals, so there is no retirement tax haircut in that side of the comparison.",
+    "The side-by-side difference helps show which account looks stronger under the assumptions you entered, not which account is universally better."
+  ],
+  "methodologyNotes": [
+    "This is an estimate-based planning tool, not personalized tax or investment advice.",
+    "The first version uses simplified annual contributions and flat tax-rate assumptions instead of modeling contribution room, carry-forward rules, province-specific tax brackets, or withdrawal timing details.",
+    "The RRSP scenario assumes the current tax deduction is meaningful and can be treated as part of the overall value of the RRSP strategy.",
+    "If your current marginal tax rate is much higher than your future retirement tax rate, the RRSP scenario often looks stronger.",
+    "If your current and future tax rates are similar, or if tax-free withdrawals matter more to your plan, the TFSA scenario can look more attractive."
+  ],
+  "example": {
+    "scenario": "A Canadian saver contributes $6,000 per year, expects 5% annual growth for 25 years, estimates a 32% current marginal tax rate, and expects a 22% tax rate in retirement.",
+    "inputs": {
+      "annualContributionAmount": 6000,
+      "currentMarginalTaxRate": 32,
+      "expectedInvestmentGrowthRate": 5,
+      "yearsInvested": 25,
+      "expectedRetirementTaxRate": 22
+    },
+    "resultSummary": "The calculator shows an RRSP value of about $286,363, a TFSA value of about $286,363, an estimated after-tax RRSP value of about $314,999, a current-year RRSP deduction estimate of about $1,920, and an RRSP advantage over TFSA of about $28,636 under these assumptions."
+  },
+  "resultInterpretation": {
+    "defaultText": "Treat the result as a decision prompt, not a final answer. The strongest signal usually comes from how your current tax rate compares with your expected retirement tax rate and whether you value tax-free withdrawals later.",
+    "thresholds": [
+      {
+        "label": "RRSP Advantage Over TFSA",
+        "min": 1,
+        "max": 50000,
+        "interpretation": "A positive result in this range suggests the RRSP path may be stronger under your current assumptions, especially if the deduction today matters and your retirement tax rate stays lower."
+      },
+      {
+        "label": "RRSP Advantage Over TFSA",
+        "min": -50000,
+        "max": -1,
+        "interpretation": "A negative result suggests the TFSA path may be stronger under your current assumptions, especially if tax-free withdrawals and flexibility matter more than a current deduction."
+      }
+    ],
+    "warningMessages": [
+      "This comparison can shift meaningfully if your current tax rate, future retirement tax rate, or contribution pattern changes."
+    ]
+  },
+  "faq": [
+    {
+      "question": "What is the main difference between RRSP and TFSA?",
+      "answer": "An RRSP can create a tax deduction today, but withdrawals are generally taxed later. A TFSA usually does not create a deduction today, but growth and withdrawals are generally tax-free."
+    },
+    {
+      "question": "When does RRSP usually look stronger?",
+      "answer": "RRSP often looks stronger when your current marginal tax rate is meaningfully higher than the tax rate you expect in retirement, because the deduction today is more valuable than the tax you may pay later."
+    },
+    {
+      "question": "When does TFSA usually look stronger?",
+      "answer": "TFSA can look stronger when your current tax rate is lower, when you value tax-free withdrawals and flexibility, or when you do not expect a large tax-rate drop in retirement."
+    },
+    {
+      "question": "Why does this calculator ask for both a current tax rate and a retirement tax rate?",
+      "answer": "Because the RRSP decision depends on tax timing. The value of the deduction today and the tax cost later are both important to the comparison."
+    },
+    {
+      "question": "Does this calculator handle contribution limits or every tax rule?",
+      "answer": "No. It is designed for clear planning, not full tax optimization. Use it to understand the tradeoff first, then check account rules and your real contribution room separately."
+    }
+  ],
+  "relatedCalculators": [
+    "gst-hst-calculator",
+    "compound-interest-calculator",
+    "savings-calculator",
+    "mortgage-calculator"
+  ],
+  "relatedGuides": [
+    "rrsp-vs-tfsa-explained",
+    "how-gst-and-hst-work-in-canada",
+    "how-to-calculate-loan-payments"
+  ],
+  "comparisonPages": [],
+  "parentCategoryPath": "/finance/canada",
+  "disclaimer": "This RRSP vs TFSA calculator is an estimate-based planning tool only. Results depend on your contribution amount, growth assumptions, and tax-rate estimates, and they do not replace tax, investment, or financial-planning advice.",
+  "ui": {
+    "buttonText": "Compare RRSP vs TFSA",
+    "resetButtonText": "Reset",
+    "resultTitle": "Your RRSP vs TFSA Estimate",
+    "showFormulaSection": true,
+    "showExampleSection": true,
+    "showInterpretation": true,
+    "showFAQSection": true,
+    "showRelatedLinks": true
+  },
+  "countryCode": "CA",
+  "currencyCode": "CAD",
+  "calculationVersion": "2026.1",
+  "assumptions": "Uses annual contributions, a flat current marginal tax-rate estimate, a flat retirement tax-rate estimate, and a simple annual growth assumption to compare RRSP and TFSA planning outcomes in Canada."
+}

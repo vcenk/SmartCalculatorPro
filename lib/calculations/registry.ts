@@ -23,6 +23,7 @@ import {
   calculateSideHustleProfit,
   calculateContractorRate,
   calculateCanadaGstHst,
+  calculateCanadaRrspVsTfsa,
   calculateGrossToNetSalary,
   calculateNetToGrossSalary,
 } from './finance';
@@ -149,6 +150,13 @@ export const calculatorRegistry: Record<string, CalculatorRegistryEntry> = {
     calculate: calculateCanadaGstHst,
     inputType: 'CanadaGstHstCalculatorInput',
     outputType: 'CanadaGstHstCalculatorOutput',
+    category: 'finance',
+    implemented: true,
+  },
+  'rrsp-vs-tfsa-calculator': {
+    calculate: calculateCanadaRrspVsTfsa,
+    inputType: 'CanadaRrspVsTfsaCalculatorInput',
+    outputType: 'CanadaRrspVsTfsaCalculatorOutput',
     category: 'finance',
     implemented: true,
   },

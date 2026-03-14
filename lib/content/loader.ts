@@ -91,6 +91,12 @@ const calculatorContentPaths: Record<string, string> = {
     'canada',
     'gst-hst-calculator.json'
   ),
+  'rrsp-vs-tfsa-calculator': path.join(
+    CALCULATORS_ROOT,
+    'finance',
+    'canada',
+    'rrsp-vs-tfsa-calculator.json'
+  ),
   'bmi-calculator': path.join(CALCULATORS_ROOT, 'health', 'bmi-calculator.json'),
   'calorie-calculator': path.join(CALCULATORS_ROOT, 'health', 'calorie-calculator.json'),
   'percentage-calculator': path.join(CALCULATORS_ROOT, 'math', 'percentage-calculator.json'),
