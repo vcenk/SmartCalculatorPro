@@ -1,0 +1,82 @@
+{
+  "id": "how-overtime-pay-works",
+  "pageType": "guide",
+  "status": "published",
+  "indexable": true,
+  "slug": "how-overtime-pay-works",
+  "path": "guides/how-overtime-pay-works",
+  "title": "How Overtime Pay Works",
+  "titleTag": "How Overtime Pay Works | Smart Calculator Pro",
+  "metaDescription": "Learn how overtime pay is estimated, how overtime multipliers affect gross pay, and how overtime fits into broader hourly and salary planning.",
+  "h1": "How Overtime Pay Works",
+  "intro": "Overtime can change weekly and annual earnings more than many workers expect, but the estimate only makes sense when you understand the multiplier, the hours counted as overtime, and how often that pattern actually repeats.",
+  "primaryKeyword": "how overtime pay works",
+  "secondaryKeywords": ["overtime pay formula", "time and a half explained", "overtime pay estimate"],
+  "searchIntent": "informational",
+  "canonicalPath": "/guides/how-overtime-pay-works",
+  "schemaType": "Article",
+  "ogImageTemplate": "guide-default",
+  "guideType": "how-to",
+  "summary": "This guide explains how overtime pay is estimated, how time-and-a-half changes gross earnings, and how to connect overtime estimates with hourly, salary, and take-home pay planning.",
+  "quickAnswer": "Overtime pay is typically estimated by multiplying regular hourly pay by an overtime multiplier such as 1.5, then multiplying that overtime rate by the overtime hours worked. Total gross pay equals regular pay plus overtime pay.",
+  "sections": [
+    {
+      "heading": "The Basic Overtime Formula",
+      "content": "<p>A simple overtime estimate starts with your regular hourly pay, your standard hours, your overtime hours, and the multiplier applied to overtime time.</p><p><strong>Formula:</strong></p><p><code>Total Pay = (Regular Hourly Pay x Standard Hours) + ((Regular Hourly Pay x Overtime Multiplier) x Overtime Hours)</code></p><p>If a worker earns $28 per hour, works 40 standard hours, and works 8 overtime hours at time-and-a-half, the estimate is $1,120 in regular pay plus $336 in overtime pay, for total weekly gross pay of $1,456.</p>"
+    },
+    {
+      "heading": "What Time-And-A-Half Means",
+      "content": "<p>Time-and-a-half means the overtime hourly rate is 1.5 times the regular hourly rate. If the regular hourly rate is $20, time-and-a-half overtime is $30 per hour. If the regular hourly rate is $32, time-and-a-half overtime is $48 per hour.</p><p>Some jobs, union agreements, or employer policies may use a different multiplier in certain cases. That is why the overtime calculator lets you enter the multiplier directly instead of assuming one fixed rule for everyone.</p>"
+    },
+    {
+      "heading": "Why Standard Hours And Overtime Hours Both Matter",
+      "content": "<p>The total effect of overtime depends on more than the overtime rate alone. You also need to know how many standard hours are still paid at the base rate and how many extra hours are paid at the premium rate. Someone with 4 overtime hours and someone with 14 overtime hours can have very different total weekly earnings even if they share the same base wage.</p>"
+    },
+    {
+      "heading": "When Annualizing Overtime Can Mislead",
+      "content": "<p>Annualizing overtime is useful for planning, but only when the pattern is reasonably consistent. If overtime happens only during busy seasons, specific projects, or occasional staffing shortages, multiplying one heavy week by 52 may overstate the full-year result. Use the weeks-per-year assumption carefully so the estimate matches the real pattern you expect.</p>"
+    },
+    {
+      "heading": "How Overtime Fits Into Salary Planning",
+      "content": "<p>Overtime is usually a gross-pay question first. Use the overtime calculator to estimate weekly gross pay when extra hours are part of the scenario. If you want to compare that pattern with a salary offer, use the hourly to salary calculator or salary to hourly calculator next. If you want a rough after-tax view, use the gross to net salary calculator after you have a reasonable gross earnings estimate.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "question": "How do I calculate overtime pay quickly?",
+      "answer": "Multiply regular hourly pay by the overtime multiplier to get the overtime rate, then multiply that rate by overtime hours. Add the result to regular pay from standard hours."
+    },
+    {
+      "question": "Does overtime always use a 1.5 multiplier?",
+      "answer": "Not always. Time-and-a-half is common, but some jobs, employer policies, union agreements, or local labor rules may use different overtime terms."
+    },
+    {
+      "question": "Should I annualize overtime pay?",
+      "answer": "Only if the overtime pattern is reasonably consistent. If extra hours are seasonal or occasional, reduce the weeks-per-year assumption so the annual estimate stays realistic."
+    },
+    {
+      "question": "Is overtime pay the same as take-home pay?",
+      "answer": "No. Overtime pay is part of gross earnings. If you want an estimate of what may reach your bank account after taxes, use a take-home salary calculator after estimating gross pay."
+    },
+    {
+      "question": "What is the best next calculator after an overtime estimate?",
+      "answer": "If you want to compare overtime-heavy hourly work with salary compensation, use hourly to salary or salary to hourly next. If you want to estimate after-tax pay from the overtime-adjusted gross amount, use gross to net salary."
+    }
+  ],
+  "relatedCalculators": [
+    "overtime-calculator",
+    "hourly-to-salary-calculator",
+    "salary-to-hourly-calculator",
+    "gross-to-net-salary-calculator"
+  ],
+  "relatedComparisons": [
+    "hourly-to-salary-calculator-vs-salary-to-hourly-calculator"
+  ],
+  "relatedGuides": [
+    "how-hourly-pay-and-annual-salary-convert",
+    "how-gross-to-net-salary-is-calculated"
+  ],
+  "disclaimer": "This guide is for educational purposes only. Overtime eligibility, exemption status, and payroll treatment can depend on labor laws, employer policies, and job classification. Use it for planning, not legal or payroll advice.",
+  "lastReviewedAt": "2026-03-13",
+  "reviewedBy": "Smart Calculator Pro Team"
+}

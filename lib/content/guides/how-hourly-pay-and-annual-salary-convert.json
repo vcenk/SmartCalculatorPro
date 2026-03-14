@@ -17,8 +17,8 @@
   "schemaType": "Article",
   "ogImageTemplate": "guide-default",
   "guideType": "how-to",
-  "summary": "This guide explains how to convert hourly pay into annual salary, how to convert salary back into an hourly rate, and why hours per week and weeks worked per year can change the result more than many people expect.",
-  "quickAnswer": "To convert hourly pay to salary, multiply hourly rate by hours per week and weeks worked per year. To convert salary to an hourly rate, divide annual salary by total annual work hours. In both cases, the quality of the result depends on the schedule assumptions you use.",
+  "summary": "This guide explains how to convert hourly pay into annual salary, how to convert salary back into an hourly rate, why hours per week and weeks worked per year can change the result more than many people expect, and when overtime should be modeled separately first.",
+  "quickAnswer": "To convert hourly pay to salary, multiply hourly rate by hours per week and weeks worked per year. To convert salary to an hourly rate, divide annual salary by total annual work hours. If overtime meaningfully changes your weekly pay, estimate that pattern separately before relying on a salary conversion.",
   "sections": [
     {
       "heading": "Hourly Pay to Annual Salary",
@@ -38,7 +38,7 @@
     },
     {
       "heading": "Using Conversion Tools for Real Comparisons",
-      "content": "<p>Use the hourly to salary calculator when you know the wage first and want annual, monthly, biweekly, or semimonthly salary-style numbers. Use the salary to hourly calculator when you know the salary first and want to estimate the effective hourly rate under the same assumptions.</p><p>Once you have a gross annual compensation estimate, the gross to net salary calculator can help you approximate take-home pay under the current U.S.-oriented salary assumptions. If your goal is a target net amount, the net to gross salary calculator can help you work backward from take-home pay to a rough gross salary target.</p>"
+      "content": "<p>Use the hourly to salary calculator when you know the wage first and want annual, monthly, biweekly, or semimonthly salary-style numbers. Use the salary to hourly calculator when you know the salary first and want to estimate the effective hourly rate under the same assumptions.</p><p>If overtime is part of the picture, estimate that weekly pattern first with the overtime calculator so you do not treat premium hours like standard pay by accident. Once you have a gross annual compensation estimate, the gross to net salary calculator can help you approximate take-home pay under the current U.S.-oriented salary assumptions. If your goal is a target net amount, the net to gross salary calculator can help you work backward from take-home pay to a rough gross salary target.</p>"
     }
   ],
   "faq": [
@@ -64,6 +64,7 @@
     }
   ],
   "relatedCalculators": [
+    "overtime-calculator",
     "hourly-to-salary-calculator",
     "salary-to-hourly-calculator",
     "gross-to-net-salary-calculator",
@@ -74,7 +75,8 @@
     "gross-to-net-salary-calculator-vs-net-to-gross-salary-calculator"
   ],
   "relatedGuides": [
-    "how-gross-to-net-salary-is-calculated"
+    "how-gross-to-net-salary-is-calculated",
+    "how-overtime-pay-works"
   ],
   "disclaimer": "This guide is for educational purposes only. Compensation conversion estimates depend heavily on your hours-per-week and weeks-worked assumptions, and they do not reflect taxes, benefits, overtime premiums, or employer-specific payroll terms.",
   "lastReviewedAt": "2026-03-13",

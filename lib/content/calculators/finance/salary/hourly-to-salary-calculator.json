@@ -153,7 +153,7 @@
     },
     {
       "question": "Does this calculator include overtime?",
-      "answer": "No. It assumes a single hourly rate across all hours worked. If overtime is part of your pay, you can approximate it only by adjusting the inputs manually."
+      "answer": "No. It assumes a single hourly rate across all hours worked. If overtime is part of your pay, estimate that pattern separately with the overtime calculator before treating it like a standard salary-style schedule."
     },
     {
       "question": "What is the difference between biweekly and semimonthly pay?",
@@ -165,11 +165,13 @@
     }
   ],
   "relatedCalculators": [
+    "overtime-calculator",
     "salary-to-hourly-calculator",
     "gross-to-net-salary-calculator",
     "net-to-gross-salary-calculator"
   ],
   "relatedGuides": [
+    "how-overtime-pay-works",
     "how-hourly-pay-and-annual-salary-convert",
     "how-gross-to-net-salary-is-calculated"
   ],

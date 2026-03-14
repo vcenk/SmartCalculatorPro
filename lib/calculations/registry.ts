@@ -17,6 +17,7 @@ import {
   calculateSavings,
   calculateHourlyToSalary,
   calculateSalaryToHourly,
+  calculateOvertime,
   calculateGrossToNetSalary,
   calculateNetToGrossSalary,
 } from './finance';
@@ -101,6 +102,13 @@ export const calculatorRegistry: Record<string, CalculatorRegistryEntry> = {
     calculate: calculateSalaryToHourly,
     inputType: 'SalaryToHourlyCalculatorInput',
     outputType: 'SalaryToHourlyCalculatorOutput',
+    category: 'finance',
+    implemented: true,
+  },
+  'overtime-calculator': {
+    calculate: calculateOvertime,
+    inputType: 'OvertimeCalculatorInput',
+    outputType: 'OvertimeCalculatorOutput',
     category: 'finance',
     implemented: true,
   },

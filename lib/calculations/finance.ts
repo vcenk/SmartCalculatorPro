@@ -94,6 +94,24 @@ export interface SalaryToHourlyCalculatorOutput {
   annualSalary: number;
 }
 
+export interface OvertimeCalculatorInput {
+  regularHourlyPay: number;
+  standardHours: number;
+  overtimeHours: number;
+  overtimeMultiplier: number;
+  weeksPerYear: number;
+}
+
+export interface OvertimeCalculatorOutput {
+  regularPay: number;
+  overtimeRate: number;
+  overtimePay: number;
+  totalPay: number;
+  totalHours: number;
+  effectiveHourlyRate: number;
+  annualizedPay: number;
+}
+
 // ============================================================================
 // Utility Functions
 // ============================================================================
@@ -382,6 +400,36 @@ export function calculateSalaryToHourly(
   return {
     hourlyRate,
     ...buildCompensationBreakdown(annualSalary),
+  };
+}
+
+export function calculateOvertime(
+  input: OvertimeCalculatorInput
+): OvertimeCalculatorOutput {
+  const {
+    regularHourlyPay,
+    standardHours = 40,
+    overtimeHours = 0,
+    overtimeMultiplier = 1.5,
+    weeksPerYear = 52,
+  } = input;
+
+  const regularPay = regularHourlyPay * standardHours;
+  const overtimeRate = regularHourlyPay * overtimeMultiplier;
+  const overtimePay = overtimeRate * overtimeHours;
+  const totalPay = regularPay + overtimePay;
+  const totalHours = standardHours + overtimeHours;
+  const effectiveHourlyRate = totalHours > 0 ? totalPay / totalHours : 0;
+  const annualizedPay = totalPay * weeksPerYear;
+
+  return {
+    regularPay,
+    overtimeRate,
+    overtimePay,
+    totalPay,
+    totalHours,
+    effectiveHourlyRate,
+    annualizedPay,
   };
 }
 
