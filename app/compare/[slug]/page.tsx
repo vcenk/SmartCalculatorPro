@@ -25,6 +25,7 @@ import { CalculatorBreadcrumbs } from '@/components/layout/Breadcrumbs';
 import { FAQSection } from '@/components/calculator/FAQSection';
 import { RelatedLinks, type RelatedLink } from '@/components/layout/RelatedLinks';
 import { Section } from '@/components/ui/Section';
+import { hasCalculatorFunction } from '@/lib/calculations/registry';
 
 interface ComparisonPageProps {
   params: Promise<{
@@ -67,7 +68,7 @@ export default async function ComparisonPage({ params }: ComparisonPageProps) {
   if (comparison.relatedCalculators && comparison.relatedCalculators.length > 0) {
     for (const relatedId of comparison.relatedCalculators) {
       const relatedCalc = await getCalculatorBySlug(relatedId);
-      if (relatedCalc) {
+      if (relatedCalc && hasCalculatorFunction(relatedCalc.id)) {
         relatedCalculatorLinks.push({
           title: relatedCalc.name,
           href: relatedCalc.canonicalPath,
@@ -110,11 +111,7 @@ export default async function ComparisonPage({ params }: ComparisonPageProps) {
 
       <Section>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
-          <CalculatorBreadcrumbs
-            category="compare"
-            subcategory=""
-            calculatorName={comparison.title}
-          />
+          <CalculatorBreadcrumbs category="compare" calculatorName={comparison.title} />
 
           {/* Header */}
           <div className="mb-8 rounded-3xl border border-sky-200 bg-gradient-to-br from-sky-50 via-cyan-50 to-white p-6 shadow-sm">

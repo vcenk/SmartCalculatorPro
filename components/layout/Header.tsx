@@ -66,6 +66,12 @@ export function Header() {
           >
             Guides
           </Link>
+          <Link
+            href="/compare"
+            className="whitespace-nowrap rounded-full border border-transparent bg-[#e8f7f5] px-4 py-2 text-sm font-semibold text-[#126c62] transition-all hover:border-[#b8e5de] hover:bg-white"
+          >
+            Compare
+          </Link>
         </div>
 
         <div className="flex items-center justify-between border-t border-white/80 py-3 text-xs text-[#597088]">
