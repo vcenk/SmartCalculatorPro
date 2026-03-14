@@ -1,0 +1,103 @@
+{
+  "id": "salary-increase-vs-side-hustle-income",
+  "pageType": "comparison",
+  "status": "published",
+  "indexable": true,
+  "slug": "salary-increase-vs-side-hustle-income",
+  "path": "compare/salary-increase-vs-side-hustle-income",
+  "title": "Salary Increase vs Side Hustle Income",
+  "titleTag": "Salary Increase vs Side Hustle Income | Smart Calculator Pro",
+  "metaDescription": "Compare a salary increase with side-hustle income, learn when each path may be stronger, and choose the better work-income move for your situation.",
+  "h1": "Salary Increase vs Side Hustle Income",
+  "intro": "A raise and a side hustle can both increase income, but they improve your financial position in very different ways. One changes your main job compensation directly. The other adds a second income stream with its own costs, taxes, and time demands.",
+  "primaryKeyword": "salary increase vs side hustle income",
+  "secondaryKeywords": ["raise vs side hustle", "salary increase or side hustle", "extra income comparison"],
+  "searchIntent": "comparison",
+  "canonicalPath": "/compare/salary-increase-vs-side-hustle-income",
+  "schemaType": "Article",
+  "ogImageTemplate": "comparison-default",
+  "comparedItems": ["Salary Increase Calculator", "Side Hustle Profit Estimator"],
+  "summary": "Use a salary increase workflow when your strongest income lever is improving your primary job compensation. Use a side-hustle workflow when your stronger lever is building extra after-tax profit outside your job. The better path depends on how much income each option adds, how much time it requires, and how much of the money you actually keep after costs and taxes.",
+  "quickDecision": "If the realistic win is better compensation from the job you already have, start with salary increase. If the realistic win is building extra income outside your job, start with side-hustle profit. Compare both only after taxes, costs, and time are made explicit.",
+  "keyDifferences": [
+    {
+      "topic": "Starting Question",
+      "itemA": "How much more can my main job pay me?",
+      "itemB": "How much extra profit can I create outside my job?"
+    },
+    {
+      "topic": "Main Constraint",
+      "itemA": "Employer budget, role level, and negotiation leverage",
+      "itemB": "Demand, costs, taxes, and available time"
+    },
+    {
+      "topic": "Best Metric",
+      "itemA": "Gross raise and take-home change",
+      "itemB": "After-tax profit and hourly profit"
+    },
+    {
+      "topic": "When It Wins",
+      "itemA": "When a raise meaningfully improves income without extra work hours",
+      "itemB": "When the side hustle produces worthwhile after-tax profit for the time invested"
+    },
+    {
+      "topic": "Best Next Step",
+      "itemA": "Check the raise against take-home pay",
+      "itemB": "Check side-hustle profit against contractor or job-income alternatives"
+    }
+  ],
+  "whenToUseA": [
+    "You are actively preparing for a raise or compensation review.",
+    "Your employer path is realistic and you want more pay without adding a second income stream.",
+    "You want a cleaner income increase that does not require business expenses or platform fees.",
+    "Your main question is how much a raise changes gross and take-home pay."
+  ],
+  "whenToUseB": [
+    "You want extra income but the raise path is weak, slow, or uncertain.",
+    "You already have a side-hustle idea, clients, or audience to monetize.",
+    "You need to test whether extra business income is worth the time after taxes and costs.",
+    "You want a more flexible second-income path that is not tied to employer decisions."
+  ],
+  "exampleScenarios": [
+    "An employee expects a possible 5% raise and wants to know whether that improvement is stronger than building a small freelance stream on evenings and weekends. This comparison is the right starting point.",
+    "A worker can either spend the next three months negotiating for higher compensation or spend the same period growing a side service business. The better option depends on take-home impact, business costs, and hourly effort.",
+    "Someone already earning overtime occasionally wants to know whether pushing for a raise is still a better path than turning spare hours into side-hustle income."
+  ],
+  "relatedCalculators": [
+    "salary-increase-calculator",
+    "side-hustle-profit-estimator",
+    "contractor-vs-employee-take-home-estimator",
+    "gross-to-net-salary-calculator",
+    "net-to-gross-salary-calculator"
+  ],
+  "relatedGuides": [
+    "how-to-calculate-a-salary-increase",
+    "how-to-estimate-side-hustle-profit",
+    "contractor-vs-employee-income-explained",
+    "how-gross-to-net-salary-is-calculated"
+  ],
+  "faq": [
+    {
+      "question": "Is a raise usually better than a side hustle?",
+      "answer": "Not always. A raise can be stronger when it meaningfully increases pay without consuming extra time, but a side hustle can be stronger when it creates good after-tax profit and a worthwhile hourly return."
+    },
+    {
+      "question": "What is the biggest mistake in this comparison?",
+      "answer": "Comparing gross dollars only. A raise affects take-home pay after taxes, while a side hustle also has business costs, fees, and time demands that can materially change the result."
+    },
+    {
+      "question": "When should I use gross to net after a raise estimate?",
+      "answer": "Use gross to net after you estimate the new salary if you want a better view of what the raise may actually change in take-home terms."
+    },
+    {
+      "question": "When should I use contractor vs employee together with a side hustle estimate?",
+      "answer": "Use contractor vs employee when the side income could become a larger freelance or self-employed path, not just a small extra-income project."
+    },
+    {
+      "question": "How should I compare a raise with a side hustle fairly?",
+      "answer": "Estimate the raise first, estimate side-hustle after-tax profit next, and then compare both against the time, stress, and opportunity cost involved."
+    }
+  ],
+  "lastReviewedAt": "2026-03-14",
+  "reviewedBy": "Smart Calculator Pro Team"
+}

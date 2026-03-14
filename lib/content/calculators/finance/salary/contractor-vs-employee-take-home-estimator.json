@@ -284,7 +284,9 @@
     "how-gross-to-net-salary-is-calculated",
     "how-hourly-pay-and-annual-salary-convert"
   ],
-  "comparisonPages": [],
+  "comparisonPages": [
+    "salary-increase-vs-side-hustle-income"
+  ],
   "parentCategoryPath": "/finance/salary",
   "disclaimer": "This estimator is an assumptions-based planning tool only. It uses simplified 2025 U.S. tax, expense, and benefits assumptions and does not provide tax, payroll, legal, or entity-structure advice.",
   "ui": {

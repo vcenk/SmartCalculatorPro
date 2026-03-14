@@ -169,7 +169,9 @@
     "how-to-estimate-side-hustle-profit",
     "how-gross-to-net-salary-is-calculated"
   ],
-  "comparisonPages": [],
+  "comparisonPages": [
+    "salary-increase-vs-side-hustle-income"
+  ],
   "parentCategoryPath": "/finance/salary",
   "disclaimer": "This salary increase calculator provides estimate-based gross salary planning only. It does not account for taxes, bonus structures, benefits, payroll timing, contract terms, or employer-specific compensation rules.",
   "ui": {

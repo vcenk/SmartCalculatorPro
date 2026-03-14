@@ -203,7 +203,9 @@
     "contractor-vs-employee-income-explained",
     "how-gross-to-net-salary-is-calculated"
   ],
-  "comparisonPages": [],
+  "comparisonPages": [
+    "salary-increase-vs-side-hustle-income"
+  ],
   "parentCategoryPath": "/finance/salary",
   "disclaimer": "This side hustle profit estimator is an assumptions-based planning tool only. It uses simplified revenue, cost, tax, and time inputs and does not provide bookkeeping, payroll, tax, legal, or business-entity advice.",
   "ui": {

@@ -19,6 +19,7 @@ import type { CalculatorPage, ComparisonPage, GuidePage } from '@/lib/types/cont
 const PAGE_PATH = '/compare';
 
 const featuredComparisonIds = [
+  'salary-increase-vs-side-hustle-income',
   'gross-to-net-salary-calculator-vs-net-to-gross-salary-calculator',
   'hourly-to-salary-calculator-vs-salary-to-hourly-calculator',
   'loan-calculator-vs-mortgage-calculator',
@@ -31,6 +32,7 @@ const comparisonGroups = [
       'These pages help users choose the right direction for salary planning, pay conversion, and compensation analysis before they open a calculator.',
     accent: 'from-sky-600 via-cyan-500 to-teal-400',
     ids: [
+      'salary-increase-vs-side-hustle-income',
       'gross-to-net-salary-calculator-vs-net-to-gross-salary-calculator',
       'hourly-to-salary-calculator-vs-salary-to-hourly-calculator',
     ],
